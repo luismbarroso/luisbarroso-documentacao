@@ -38,13 +38,13 @@ A Line 32 é uma das Lines do Grupo 30. Divida em 5 estações das quais resulta
 
 ## Processo
 
-A Line 32, do Grupo 30, consiste num conjunto de estações, **cada uma com Equipamentos/Componenetes independentes**. A Line 32, assim com cada uma da estações, funcionam usando **sistemas pneumáticos** sendo assim possivel realizar os movimentos pretendidos. 
+A Line 32, do Grupo 30 consiste num conjunto de estações, **cada uma com Equipamentos/Componenetes independentes**. Cada uma da estações, funcionam usando **sistemas pneumáticos e eletromecânicos** sendo assim possivel realizar os movimentos pretendidos.
+
+Os **sistemas pneumático** são usados principalmente para atuação de cilindros, nomeadamente o avanço e recuo do mesmo. Os sistemas pneumático estão aplicados em todas as estações. Já os **sistemas eletromecânicos**, só são aplicados nas estações 10 e 50. Na estação 10, são responsaveis pelo movimento do **robô**. Este robô é utilizado para o transporte das peças pelas diversas estações. Acoplado ao robô, temos uma **garra**, sendo assim possivel realizar as tarefas pretendidas. Para se deslocar pelas diversas estações, o robô, está conectado a um Servo Motor (Simotics S-1FL6) e um Inversor de Frequência (Siemens V90). Na estação 50, este sistemas, são responsáveis pelo movimento do tapete. Para o movimento deste tapete é usado um motor trifasico que acupolado tem um enconder, que, através da sua posição é possivel fazer o encaminhamento das peças, para a posição pretendida. Para a movimento do Motor é uitlizado um Inversor de Frequência (Siemens G120C), que converte o sinal elétrico em sinal analógico sendo assim possivel fazer o movimento do tapete e controlo da velocidade.
 
 Para o controlo das peças são usados Sensores, como: **Sensores Fotoelétricos**, usados para a detecção das peças em deterniadas posições; **Sensores Indutivos** usados para distiguir as peças metálicas das peças de plástico; **Sensores Óticos** usados para distiguir a peças brancas das peças pretas e **Sensores Magneticos** usados para detetar a posição da haste do cilindro.
 
-Para além dos **sistemas pneumáticos** também existem **sistemas eletromecânico**, na Estação 10 e 50. Na estação 10, este sistemas, são responsaveis pelo movimento do **robô**. Este robô é utilizado para o transporte das peças pelas diversas estações. Acoplado ao robô, temos uma **garra**, sendo assim possivel realizar as tarefas pretendidas. Para se deslocar pelas diversas estações, o robô, está conectado a um Servo Motor (Simotics S-1FL6) e um Inversor de Frequência (Siemens V90). Na estação 50, este sistemas, são responsáveis pelo movimento do tapete. Para o movimento deste tapete é usado um motor trifasico que acupolado tem um enconder, que, através da sua posição é possivel fazer o encaminhamento das peças, para a posição pretendida. Para a movimento do Motor é uitlizado um Inversor de Frequência (Siemens G120C), que converte o sinal elétrico em sinal analógico sendo assim possivel fazer o movimento do tapete e controlo da velocidade.
-
-Para a comunicação entre as diversas estações é usado o protocolo de comunicação **PROFINET**, este protocolo é baseado em **Ethernet**. No programa TIA Portal é definida uma área de transferência de Bytes, desta forma, tanto o Master com os Slaves podem operar na zona defenida. 
+Para a comunicação entre as diversas estações é usado o protocolo de comunicação **PROFINET**, este protocolo é baseado em **Ethernet**, logo todas a comunicações entre PLC/PC ou PLC/PLC são feitas em rede. No programa TIA Portal é definida uma área de transferência de Bytes, desta forma, tanto o Master com os Slaves podem operar na zona defenida. 
 
 ### Peças
 
@@ -94,15 +94,7 @@ A Estação 50, **estação de seleção**, responsável por ordenar as peças n
 
 ### Modo de Funcionamento
 
-Assim que a estação 20 for alimentada com o corpo da peça, essa informação é enviada para o PLC Master (Estação 10), assim que recebida, a peça é processada, ou seja, o cilindro avança e a peça esta pronta para o robô a processar e avançar para a proxima estação. 
-
-Quando o robô estiver na posição realtiva à estação 30, a garra avança e pousa a peça na pinça e a peça é processada, quando concluido este processo o carro avança para a proxima estação. 
-
-Quando o robô estiver na posição realtiva à estação 40, a garra avança e pousa a peça *suporte*. Assim que o corpo da peça for recebido pela estacão 40, a estacão entra em processamento, ou seja, o miolo é colocado no corpo da peça. Quando concluido este processo o carro avança para a proxima estação. 
-
-Quando o robô estiver na posição realtiva à estação 50, a garra avança e pousa a peça no tapete. O tapete entra em funciomaneto, a peça é identificada, pelos sensores e encaminhada. Caso for uma peça pretendida (Metálico/Metálico; Branco/Branco; Preto/Preto) é encaminhada para o respetivo armazém, senão, a peça é rejeitda.
-
-Depois do robô, pousar a pesa no tapete da estação 50, retorna para a sua posição de *home* e desta forma o ciclo foi concluido e pronto a realizar um novo ciclo. 
+Assim que a estação 20 for alimentada com o corpo da peça, essa informação é enviada para o PLC Master (Estação 10), assim que recebida, a peça é processada, ou seja, o cilindro avança e a peça esta pronta para o robô a processar e avançar para a proxima estação. Quando o robô estiver na posição realtiva à estação 30, a garra avança e pousa a peça na pinça e a peça é processada, quando concluido este processo o carro avança para a proxima estação. Quando o robô estiver na posição realtiva à estação 40, a garra avança e pousa a peça *suporte*. Assim que o corpo da peça for recebido pela estacão 40, a estacão entra em processamento, ou seja, o miolo é colocado no corpo da peça. Quando concluido este processo o carro avança para a proxima estação. Quando o robô estiver na posição realtiva à estação 50, a garra avança e pousa a peça no tapete. O tapete entra em funciomaneto, a peça é identificada, pelos sensores e encaminhada. Caso for uma peça pretendida (Metálico/Metálico; Branco/Branco; Preto/Preto) é encaminhada para o respetivo armazém, senão, a peça é rejeitda. Depois do robô, pousar a pesa no tapete da estação 50, retorna para a sua posição de *home* e desta forma o ciclo foi concluido e pronto a realizar um novo ciclo. 
 
 ## Trabalho Realizado
 ### Classificação
