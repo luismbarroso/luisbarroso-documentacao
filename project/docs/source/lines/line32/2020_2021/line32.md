@@ -1,6 +1,6 @@
 # Line 32
 
-**Autor:** *Luís Barroso*
+**Autor:** Luís Barroso
 
 - [Introdução](#introdução)
 - [Processo](#processo)
