@@ -38,18 +38,6 @@ Grupo 30 - YL-335B
    Grupo 30 - YL335B <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo30.html>
        ⠀  ⠀  ⠀  ⠀  ⠀  ⠀  ⠀  ⠀ 
 
-***********
-Explanation 
-***********
-
-*Aqui encontrará explicações, com liguagem simples e clara. Com ele chegará ao objetivo pretendido.*
-
-.. toctree::
-   :caption: Explanation
-   :maxdepth: 2
-   
-   Classifiçação - Estações <https://documentacao-luban-portugal.readthedocs.io/en/latest/classificacao_estacoes.html>
-
 
 *********
 How to do 
