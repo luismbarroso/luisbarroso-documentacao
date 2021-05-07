@@ -36,13 +36,18 @@ Grupo 30 - YL-335B
    :maxdepth: 2
    
    Grupo 30 - YL335B <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo30.html>
-       ⠀  ⠀  ⠀  ⠀  ⠀  ⠀  ⠀  ⠀ 
+   Classificação <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo30.html#classificacao>
+   Componentes <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo30.html#componentes>
+   Equipamentos <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo30.html#equipamentos>
+   Lines <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo30.html#lines>
+   Software <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo30.html#software>
+   Manuais Gerais <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo30.html#manuais-gerais>   ⠀  ⠀  ⠀  ⠀  ⠀  ⠀  ⠀  ⠀ 
 
 *********
 How to do 
 *********
 
-*Aqui encontrará guias, com liguagem simples e clara. Com ele chegará ao objetivo pretendido.*
+*Aqui encontrará guias, com linguagem simples e clara. Com ele chegará ao objetivo pretendido.*
 
 .. toctree::
    :caption: How to do
