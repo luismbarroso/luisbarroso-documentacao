@@ -1,6 +1,6 @@
 # Line 32
 
-**Autor:** Luís Barroso
+**Autor:** Luís Barrosoo
 
 - [Trabalho fora da Line](../../../o_lines/o_lines.md)
 - [Introdução](#introdução)
