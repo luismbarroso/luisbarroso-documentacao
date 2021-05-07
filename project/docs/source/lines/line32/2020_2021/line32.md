@@ -32,6 +32,9 @@
             - [Estação 30](#estação-30-automático) 
             - [Estação 40](#estação-40-automático)
             - [Estação 50](#estação-50-automático)
+        - [Programação](#programação)
+            - [Estação 10](#estação-10-automático)
+            - [Estação 50](#estação-50-automático)
         - [Gemma](#gemma)
             - [Projeto 1](#projeto-1)
  
