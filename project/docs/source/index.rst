@@ -15,7 +15,7 @@ Grupo 10 - SX-185Q
 .. toctree::
    :maxdepth: 2
    
-   grupo10
+   Grupo 10 - SX-185Q <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo10.html>
    
    
 Grupo 20 - THMSRB-3DS
@@ -25,7 +25,7 @@ Grupo 20 - THMSRB-3DS
 .. toctree::
    :maxdepth: 2
    
-   grupo20
+   Grupo 20 - THMSRB-3DS <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo20.html>
 
 
 Grupo 30 - YL-335B
@@ -35,17 +35,17 @@ Grupo 30 - YL-335B
 .. toctree::
    :maxdepth: 2
    
-   grupo30
+   Grupo 30 - YL335B <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo30.html>
 
 
 *********
 How to do 
 *********
 
-*Aqui encontrará guias, com liguagem simples e clara. Com ele chegará ao objetivo pretendido.*
+*Aqui encontrará guias, com linguagem simples e clara. Com ele chegará ao objetivo pretendido.*
 
 .. toctree::
    :caption: How to do
    :maxdepth: 2
    
-   criacao_de_documentacao
+   Criação de Documentação <https://documentacao-luban-portugal.readthedocs.io/en/latest/criacao_de_documentacao.html>
