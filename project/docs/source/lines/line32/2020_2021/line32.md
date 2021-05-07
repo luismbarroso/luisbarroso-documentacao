@@ -1,5 +1,3 @@
-"cSpell.language": "en,pt,pt_PT",
-
 # Line 32
 
 **Autor:** Luís Barroso
@@ -387,7 +385,7 @@ Como já foi dito anteriormente a estação 10 possui um robô. Para a realizaç
 
 Para não sobrecarregar o código com 4 funções **MC_MoveAbsolute** foi criado com conjunto de **Moves** (como o próprio nome indica, mover valores de entrada de forma a serem aplicados numa saída) na entrada é colocado o valor, em mm, da posição do carro relativa a cada estação; na saída é colocado uma memória do tipo Real, com a função de guardar esse valor e enviar para o  **MC_MoveAbsolute**.
 
-![](./software/tia_portal/programacao/estacao_10/6.PNG)
+![](./software/tia_portal/programacao/estacao_10/6.png)
 
 ## Estação 50
 
