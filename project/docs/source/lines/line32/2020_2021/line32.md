@@ -334,11 +334,11 @@ Enconder_Z|%I0.2|Enconder Z
 
 ![](./software/grafcets/bancada32_automatico/59PLC.svg)
 
-# Programação
+#### Programação
 
 A programação das Line 32 foi feita usando o programa TIA Portal. A Programação pode ser encontrada na integra usando o QR abaixo. Desta forma, aqui, serão apenas abordados o blocos mais importantes e fundamentais para o funcionamento da Line32.
 
-## Estação 10
+##### Estação 10
 
 Como já foi dito anteriormente a estação 10 possui um robô. Para a realização dos seus movimentos são necessários alguns blocos, como: **MC_Power**, **MC_Home**, **MC_Reset**, **MC_Halt**, **MC_MoveAbsolute**-
 
@@ -390,7 +390,7 @@ Para não sobrecarregar o código com 4 funções **MC_MoveAbsolute** foi criado
 
 ![](./software/tia_portal/programacao/estacao_10/6.png)
 
-## Estação 50
+##### Estação 50
 
 Como já foi dito anteriormente a estação 50 possui um tapete para transporte das peças processadas. Para o controlo da velocidade do tapete é usada uma função **Move** (como o próprio nome indica, mover valores de entrada de forma a serem aplicados numa saída) na entrada é colocado o valor analógico da velocidade; na saída é saída do Inversor de Frequência. Este valor analógico é enviado para o Inversor de Frequência e convertido em tensão.
 
