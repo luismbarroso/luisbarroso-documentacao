@@ -13,8 +13,8 @@ Considerações:
 
 ### Guia de Iluminação 
 
-| Amarelo | Verde | Vermelho | Função | Código Gemma
---------- | ----- | -------- | ------ | ------------			
+|Amarelo |Verde |Vermelho |Função |Código Gemma
+--- | --- | --- | --- | --- 
 Fixo|-|-|Parado no estado inicial|A1
 Piscar (2s)|-|-|Fim do ciclo solicitado|A2
 Piscar (1s)|-|-|Paragem solicitada|A3
