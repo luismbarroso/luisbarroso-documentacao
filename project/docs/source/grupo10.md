@@ -1,1 +1,0 @@
-# [Grupo 10 - SX-185Q](https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo10.html)
