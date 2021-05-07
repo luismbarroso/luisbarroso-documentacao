@@ -37,7 +37,7 @@
             - [Estação 50](#estação-50-automático)
         - [Gemma](#gemma)
             - [Projeto 1](#projeto-1)
- 
+- [Trabalho fora da Line](../../../o_lines/o_lines.md)
 
 ## Introdução
 
