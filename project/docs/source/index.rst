@@ -36,6 +36,7 @@ Grupo 30 - YL-335B
    :maxdepth: 2
    
    Grupo 30 - YL335B <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo30.html>
+   ----------------------------------------------------------------------------------------------
       Classificação <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo30.html#classificacao>
       Componentes <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo30.html#componentes>
       Equipamentos <https://documentacao-luban-portugal.readthedocs.io/en/latest/grupo30.html#equipamentos>
