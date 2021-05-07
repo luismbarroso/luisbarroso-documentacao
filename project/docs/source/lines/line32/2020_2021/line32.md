@@ -6,6 +6,12 @@
 - [Processo](#processo)
     - [Peças](#peças)
     - [Estações](#estacoes)
+        - [Estação 10](#estação-10)
+        - [Estação 20](#estação-20)
+        - [Estação 30](#estação-30) 
+        - [Estação 40](#estação-40)
+        - [Estação 50](#estação-50)   
+    - [Modo de Funcionamento](#modo-de-funcionamento)
 - [Trabalho Realizado](#trabalho-realizado)
     - [Classificação](#classificacao)
         - [Estação 10](#estação-10)
@@ -38,13 +44,14 @@ A Line 32 é uma das Lines do Grupo 30. Divida em 5 estações das quais resulta
 
 ## Processo
 
-A Line 32, do Grupo 30, consiste num conjunto de estações, **cada uma com Equipamentos/Componenetes independentes**. A Line 32, assim com cada uma da estações, funcionam usando **sistemas pneumáticos** sendo assim possivel realizar os movimentos pretendidos. 
+A Line 32, do Grupo 30, consiste num conjunto de estações, **cada uma com Equipamentos/Componenetes independentes**. A Line 32, assim com cada uma da estações, funcionam usando **sistemas pneumáticos** e **sistemas eletromecânicos**
+
+Os **sistemas pneumáticos** estão presenetes em todas as estações. Responsáveis pelos movimentos dos Cilindros, ou seja, avanaço e recuo. Já os **sistemas eletromecânicos** só estão presentes nas estações 10 e 50. Na estação 10, são responsaveis pelo movimento do **robô**. Este robô é utilizado para o transporte das peças pelas diversas estações. Acoplado ao robô, temos uma **garra**, sendo assim possivel realizar as tarefas pretendidas. Para se deslocar pelas diversas estações, o robô, está conectado a um Servo Motor (Simotics S-1FL6) e um Inversor de Frequência (Siemens V90). Na estação 50, este sistemas, são responsáveis pelo movimento do tapete. Para o movimento deste tapete é usado um motor trifasico que acupolado tem um enconder, que, através da sua posição é possivel fazer o encaminhamento das peças. Para a movimento do Motor é uitlizado um Inversor de Frequência (Siemens G120C), que converte o sinal elétrico em sinal analógico sendo assim possivel fazer o movimento do tapete e controlo da velocidade.
 
 Para o controlo das peças são usados Sensores, como: **Sensores Fotoelétricos**, usados para a detecção das peças em deterniadas posições; **Sensores Indutivos** usados para distiguir as peças metálicas das peças de plástico; **Sensores Óticos** usados para distiguir a peças brancas das peças pretas e **Sensores Magneticos** usados para detetar a posição da haste do cilindro.
 
-Para além dos **sistemas pneumáticos** também existem **sistemas eletromecânico**, na Estação 10 e 50. Na estação 10, este sistemas, são responsaveis pelo movimento do **robô**. Este robô é utilizado para o transporte das peças pelas diversas estações. Acoplado ao robô, temos uma **garra**, sendo assim possivel realizar as tarefas pretendidas. Para se deslocar pelas diversas estações, o robô, está conectado a um Servo Motor (Simotics S-1FL6) e um Inversor de Frequência (Siemens V90). Na estação 50, este sistemas, são responsáveis pelo movimento do tapete. Para o movimento deste tapete é usado um motor trifasico que acupolado tem um enconder, que, através da sua posição é possivel fazer o encaminhamento das peças, para a posição pretendida. Para a movimento do Motor é uitlizado um Inversor de Frequência (Siemens G120C), que converte o sinal elétrico em sinal analógico sendo assim possivel fazer o movimento do tapete e controlo da velocidade.
-
-Para a comunicação entre as diversas estações é usado o protocolo de comunicação **PROFINET**, este protocolo é baseado em **Ethernet**. No programa TIA Portal é definida uma área de transferência de Bytes, desta forma, tanto o Master com os Slaves podem operar na zona defenida. 
+Para a comunicação entre as diversas estações é usado o protocolo de comunicação **PROFINET**, este protocolo é baseado em **Ethernet**, ou seja, todas as comunicaç
+oes entre PC/PLC ou PLC/PLC são feitas em rede. No programa TIA Portal é definida uma área de transferência de Bytes, desta forma, tanto o Master com os Slaves podem operar na zona defenida. 
 
 ### Peças
 
@@ -62,31 +69,35 @@ Os **x** a negrito indicanos a combinações pretendidas, quando esseas combina�
 
 ### Estações
 
-**Estação 10**
+#### Estação 10
 
-A Estação 10, **estação de transporte da peça**, desde a sua fase inicial até à sua finalização. 
+A Estação 10, **estação de transporte da peça**, desde a sua fase inicial até à sua finalização. A Estação 10 é constituida por 7 sensores e 6 cilindros, dos quais resultam: Sensor de Garra em baixo, Sensor de Garra em cima, Sensor de Garra de rotação à esquerda, Sensor de Garra de rotação à direita, Sensor de Garra avançada, Sensor de Garra recuada, Sensor de Garra fechada; Cilindro de Garra subida e descida, Cilindro de rotação à esquerda da Garra, Cilindro de rotação à direita da Garra, Cilindro de Garra avançada e recuada, Cilindro de fecho da Garra, Cilindro de abertura da Garra
+
+**Modo de Funcionamento da Estação 10**: Assim que o corpo da peça é processado pela estação 20, a garra avança, fecha e soube. Assim que concluido este processo avança para a próxima estação. Já na estação 30, a garra avança, baixa, abre, recua e aguarda que a peça seja processada pela estação 30. Assim que concluido este processo, a garra avança, fecha, soube, recua e avança para a próxima estação. Já na estação 40, a garra avança, baixa, abre, recua e aguarda que a peça seja processada pela estação 40. Assim que concluido este processo, a garra avança, baixa, fecha, soube, recua, roda para a esquerda e avança para a próxima estação. Já na estação 50, a garra avança, baixa, abre, recua. Assim que concluido este processo, retorna para a sua posição de *home*. Quando alcançar a posição de *home*, a garra, roda para a diretita, desta forma, está pronta para começar um novo ciclo.
 
 ![ST10](./images/station/st_10.jpg)
 
-**Estação 20**
+#### Estação 20
 
-A Estação 20, **estação de alimentação do corpo da peça**, o corpo da peça, é colocado no funil para ser processado. 
+A Estação 20, **estação de alimentação do corpo da peça**, o corpo da peça, é colocado no funil para ser processado. A Estação 20 é constituida por 8 sensores e 2 cilindros, dos quais resultam: Sensor de Peça à Frente, Sensor Cilindro1 Avançado, Sensor Cilindro1 Recuado, Sensor Cilindro2 Avançado, Sensor Cilindro2 Recuado, Sensor no Funil (Cima), Sensor no Funil (Baixo), Sensor de Peça Metálica; Cilindro 1, Cilindro 2
+
+**Modo de Funcionamento da Estação 20**: Assim que o corpo da peça é detectado pelo sensor (Sensor no Funil (Baixo)), o Cilindro 2 avança, isto para evitar que a segunda peça caia antes do Cilindro 1 recuar. Com o Cilindro 2 avançado, o Cilindro 1 avança, colocando a peça á frente, em posição para a Estação 10 a processar. Enquanto a peça se encontrar á frente não será processada mais nenhuma peça. Quando esta peça for retirada pelo robô, uma nova peça ser+a processada.
 
 ![ST20](./images/station/st_20.jpg)
 
-**Estação 30**
+#### Estação 30
 
 A Estação 30, **estação de aplicação**, é aplicada uma *cola* para fixar o miolo ao corpo da peça. 
 
 ![ST30](./images/station/st_30.jpg)
 
-**Estação 40**
+#### Estação 40
 
 A Estação 40, **estação de alimentação do miolo da peça**, o miolo da peça, é colocado na funil para ser processado.  
 
 ![ST40](./images/station/st_40.jpg)
 
-**Estação 50**
+#### Estação 50
 
 A Estação 50, **estação de seleção**, responsável por ordenar as peças no respsetivo armazém. 
 
@@ -94,15 +105,9 @@ A Estação 50, **estação de seleção**, responsável por ordenar as peças n
 
 ### Modo de Funcionamento
 
-Assim que a estação 20 for alimentada com o corpo da peça, essa informação é enviada para o PLC Master (Estação 10), assim que recebida, a peça é processada, ou seja, o cilindro avança e a peça esta pronta para o robô a processar e avançar para a proxima estação. 
+Assim que a estação 20 for alimentada com o corpo da peça, essa informação é enviada para o PLC Master (Estação 10), assim que recebida, a peça é processada. Quando concluido o processamento, a peça, esta pronta para o robô a processar e avançar para a proxima estação. Quando o robô estiver na posição relativa à estação 30, a garra avança e pousa a peça na pinça e a peça é processada. Quando concluido o processamento, a peça, esta pronta para o robô a processar e avançar para a proxima estação. Quando o robô estiver na posição realtiva à estação 40, a garra avança e pousa a peça *suporte*. Assim que o corpo da peça for recebido pela estacão 40, a estacão entra em processamento, ou seja, o miolo é colocado no corpo da peça. Quando concluido o processamento, a peça, esta pronta para o robô a processar e avançar para a proxima estação. Quando o robô estiver na posição realtiva à estação 50, a garra avança e pousa a peça no tapete. O tapete entra em funciomaneto, a peça é identificada, pelos sensores e encaminhada. Caso for uma peça pretendida (Metálico/Metálico; Branco/Branco; Preto/Preto) é encaminhada para o respetivo armazém, senão, a peça é rejeitda. Depois do robô, pousar a peça no tapete da estação 50, retorna para a sua posição de *home* e desta forma o ciclo foi concluido e pronto a realizar um novo ciclo. 
 
-Quando o robô estiver na posição realtiva à estação 30, a garra avança e pousa a peça na pinça e a peça é processada, quando concluido este processo o carro avança para a proxima estação. 
-
-Quando o robô estiver na posição realtiva à estação 40, a garra avança e pousa a peça *suporte*. Assim que o corpo da peça for recebido pela estacão 40, a estacão entra em processamento, ou seja, o miolo é colocado no corpo da peça. Quando concluido este processo o carro avança para a proxima estação. 
-
-Quando o robô estiver na posição realtiva à estação 50, a garra avança e pousa a peça no tapete. O tapete entra em funciomaneto, a peça é identificada, pelos sensores e encaminhada. Caso for uma peça pretendida (Metálico/Metálico; Branco/Branco; Preto/Preto) é encaminhada para o respetivo armazém, senão, a peça é rejeitda.
-
-Depois do robô, pousar a pesa no tapete da estação 50, retorna para a sua posição de *home* e desta forma o ciclo foi concluido e pronto a realizar um novo ciclo. 
+        Futuramente: Video!
 
 ## Trabalho Realizado
 ### Classificação
