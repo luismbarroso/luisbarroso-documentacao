@@ -2,6 +2,7 @@
 
 **Autor:** Luís Barroso
 
+- [Trabalho fora da Line](../../../o_lines/o_lines.md)
 - [Introdução](#introdução)
 - [Processo](#processo)
     - [Peças](#peças)
@@ -37,9 +38,8 @@
             - [Estação 50](#estação-50-automático)
         - [Gemma](#gemma)
             - [Projeto 1](#projeto-1)
-- [Trabalho fora da Line](../../../o_lines/o_lines.md)
 
-
+## [Trabalho fora da Line](../../../o_lines/o_lines.md)
 ## Introdução
 
 A Line 32 é uma das Lines do Grupo 30. Divida em 5 estações das quais resultam: **"Transporte (Estação 10)"**, **"Aplicação (Estação 30)"**, **"Alimentação (Corpo (Estação 20) e Miolo (Estação 40))"** e **"Seleção (Estação 50)"**.
@@ -403,5 +403,3 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 
 #### Gemma
 - [Projeto1](./software/gemma/projeto1/gemma.md)
-
-## [Trabalho fora da Line](../../../o_lines/o_lines.md)
