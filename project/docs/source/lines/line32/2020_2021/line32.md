@@ -75,6 +75,8 @@ A Estação 10, **estação de transporte da peça**, desde a sua fase inicial a
 
 **Modo de Funcionamento da Estação 10**: Assim que o corpo da peça é processado pela estação 20, a garra avança, fecha e soube. Assim que concluido este processo avança para a próxima estação. Já na estação 30, a garra avança, baixa, abre, recua e aguarda que a peça seja processada pela estação 30. Assim que concluido este processo, a garra avança, fecha, soube, recua e avança para a próxima estação. Já na estação 40, a garra avança, baixa, abre, recua e aguarda que a peça seja processada pela estação 40. Assim que concluido este processo, a garra avança, baixa, fecha, soube, recua, roda para a esquerda e avança para a próxima estação. Já na estação 50, a garra avança, baixa, abre, recua. Assim que concluido este processo, retorna para a sua posição de *home*. Quando alcançar a posição de *home*, a garra, roda para a diretita, desta forma, está pronta para começar um novo ciclo.
 
+        Futuramente: Video!
+
 ![ST10](./images/station/st_10.jpg)
 
 #### Estação 20
@@ -83,23 +85,38 @@ A Estação 20, **estação de alimentação do corpo da peça**, o corpo da pe�
 
 **Modo de Funcionamento da Estação 20**: Assim que o corpo da peça é detectado pelo sensor (Sensor no Funil (Baixo)), o Cilindro 2 avança, isto para evitar que a segunda peça caia antes do Cilindro 1 recuar. Com o Cilindro 2 avançado, o Cilindro 1 avança, colocando a peça á frente, em posição para a Estação 10 a processar. Enquanto a peça se encontrar á frente não será processada mais nenhuma peça. Quando esta peça for retirada pelo robô, uma nova peça ser+a processada.
 
+        Futuramente: Video!
+
 ![ST20](./images/station/st_20.jpg)
 
 #### Estação 30
 
-A Estação 30, **estação de aplicação**, é aplicada uma *cola* para fixar o miolo ao corpo da peça. 
+A Estação 30, **estação de aplicação**, é aplicada uma *cola* para fixar o miolo ao corpo da peça. A Estação 30 é constituida por 7 sensores e 6 cilindros, dos quais resultam: Sensor de peça na Pinça, Sensor de Pinça aberta e fechada, Sensor de Pinça avancada, Sensor de Pinça recuada, Sensor de Prensa subida, Sensor de Prensa descida; Cilindro de fecho da Pinça, Cilindro de Pinça avançada e recuada, Cilindro da Prensa subida e descida
+
+**Modo de Funcionamento da Estação 30**: Assim que o corpo da peça é detectado pelo sensor (Sensor de peça na Pinça), a Pinça fecha e recua. Quando for deteta pelo sensor (Sensor de Pinça recuada), a peça, é processada pela prensa. Assim que concluido este processamento, a pinça, avança e abre para que o corpo da peça possa seguir para a próxima estação.
+
+        Futuramente: Video!
 
 ![ST30](./images/station/st_30.jpg)
 
 #### Estação 40
 
-A Estação 40, **estação de alimentação do miolo da peça**, o miolo da peça, é colocado na funil para ser processado.  
+A Estação 40, **estação de alimentação do miolo da peça**, o miolo da peça, é colocado na funil para ser processado. A Estação 40 é constituida por 16 sensores e 6 cilindros, dos quais resultam: Sensor Cilindro1 Avançado, Sensor Cilindro1 Recuado, Sensor Cilindro2 Avançado, Sensor Cilindro2 Recuado, Sensor Prato de rotação à esquerda, Sensor Prato de rotação à direita, Sensor copo em cima, Sensor copo em baixo, Sensor do Prato à esquerda, Sensor do Prato à direita, Sensor de Garra avançada, Sensor de Garra recuada, Sensor de Garra subida, Sensor de Garra descida, Sensor de Garra fechada, Sensor de Peça à frente; Cilindro 1, Cilindro 2, Cilindro Prato, Cilindro da Garra avançada e recuada, Cilindro da Garra subida e descida, Cilindro da Garra aberta e fechada
+
+**Modo de Funcionamento da Estação 40**: Assim que o miolo da peça é detectada pelo sensor (Sensor copo em baixo), o miolo é processado, ou seja, cai e o prato roda para que depois seja colocado no corpo da peça. Esta informação fica guardada e assim que o corpo da peça foi recebido pela estação, a garra processa o miolo, colocando-o no corpo da peça. Assim que concluido este processo a peça esta concluída e pronta a seguir para a próxima estação.
+
+        Futuramente: Video!
 
 ![ST40](./images/station/st_40.jpg)
 
 #### Estação 50
 
-A Estação 50, **estação de seleção**, responsável por ordenar as peças no respsetivo armazém. 
+A Estação 50, **estação de seleção**, responsável por ordenar as peças no respsetivo armazém.  Estação 40 é constituida por 6 sensores e 3 cilindros, dos quais resultam:
+Sensor de Peça no Tapete, Sensor de Peça Metálica, Sensor de Peça Branca/Metálica, Sensor Cilindro1 Avançado, Sensor Cilindro2 Avançado, Sensor Cilindro3 Avançado; Cilindro 1, Cilindro 2, Cilindro 3.
+
+**Modo de Funcionamento da Estação 40**: Assim que a peça é detetada pelo sensor (Sensor de Peça no Tapete), o tapete entra em funciomaneto, a peça é identificada, pelos sensores e encaminhada. Caso for uma peça pretendida (Metálico/Metálico; Branco/Branco; Preto/Preto) é encaminhada para o respetivo armazém, senão, a peça é rejeitda. 
+
+        Futuramente: Video!
 
 ![ST50](./images/station/st_50.jpg)
 
@@ -232,7 +249,7 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 3240*H11|%Q1.0|Semáforo Verde
 3241*Y10|%Q0.1|Cilindro 1 Tubo
 3241*Y20|%Q0.0|Cilindro 2 Tubo
-3241*Y30|%Q0.2|Prato
+3241*Y30|%Q0.2|Cilindro Prato
 3242*Y10|%Q0.5|Cilindro da Garra (Frente e Tras)
 3242*Y20|%Q0.4|Cilindro da Garra (Cima e Baixo)
 3242*Y30|%Q0.3|Cilindro da Garra (Abrir e Fechar)
