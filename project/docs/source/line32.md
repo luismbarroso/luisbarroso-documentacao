@@ -44,7 +44,7 @@
 
 A Line 32 é uma das Lines do Grupo 30. Divida em 5 estações das quais resultam: **"Transporte (Estação 10)"**, **"Aplicação (Estação 30)"**, **"Alimentação (Corpo (Estação 20) e Miolo (Estação 40))"** e **"Seleção (Estação 50)"**.
 
-![LIN32_1](./images/line/line32_1.jpg)
+![LIN32_1](./lines/line32/2020_2021/images/line/line32_1.jpg)
 
 ## Processo
 
@@ -58,7 +58,7 @@ Para a comunicação entre as diversas estações é usado o protocolo de comuni
 
 ### Peças
 
-![P_1](./images/station/p_1.jpg)
+![P_1](./lines/line32/2020_2021/images/station/p_1.jpg)
 
 Peças, constituídas por Corpo (Parte Exterior) e por um Miolo (Parte Interior). Representa o objeto processado na Line32, quando os elementos são unificados representam o produto final. Podem ser classificadas de 9 maneiras, como nos mostra a tabela abaixo.
 
@@ -80,7 +80,7 @@ A Estação 10, **estação de transporte da peça**, desde a sua fase inicial a
 
         Futuramente: Video!
 
-![ST10](./images/station/st_10.jpg)
+![ST10](./lines/line32/2020_2021/images/station/st_10.jpg)
 
 #### Estação 20
 
@@ -90,7 +90,7 @@ A Estação 20, **estação de alimentação do corpo da peça**, o corpo da pe�
 
         Futuramente: Video!
 
-![ST20](./images/station/st_20.jpg)
+![ST20](./lines/line32/2020_2021/images/station/st_20.jpg)
 
 #### Estação 30
 
@@ -100,7 +100,7 @@ A Estação 30, **estação de aplicação**, é aplicada uma *cola* para fixar 
 
         Futuramente: Video!
 
-![ST30](./images/station/st_30.jpg)
+![ST30](./lines/line32/2020_2021/images/station/st_30.jpg)
 
 #### Estação 40
 
@@ -110,7 +110,7 @@ A Estação 40, **estação de alimentação do miolo da peça**, o miolo da pe�
 
         Futuramente: Video!
 
-![ST40](./images/station/st_40.jpg)
+![ST40](./lines/line32/2020_2021/images/station/st_40.jpg)
 
 #### Estação 50
 
@@ -121,7 +121,7 @@ Sensor de Peça no Tapete, Sensor de Peça Metálica, Sensor de Peça Branca/Met
 
         Futuramente: Video!
 
-![ST50](./images/station/st_50.jpg)
+![ST50](./lines/line32/2020_2021/images/station/st_50.jpg)
 
 ### Modo de Funcionamento
 
@@ -296,44 +296,44 @@ Enconder_Z|%I0.2|Enconder Z
 #### Grafcets Modo: Manual
 ##### Estação 10 (Manual)
 
-![](./software/grafcets/bancada32_manual/19PLC.svg)
+![](./lines/line32/2020_2021/software/grafcets/bancada32_manual/19PLC.svg)
 
 ##### Estação 20 (Manual)
 
-![](./software/grafcets/bancada32_manual/29PLC.svg)
+![](./lines/line32/2020_2021/software/grafcets/bancada32_manual/29PLC.svg)
 
 ##### Estação 30 (Manual)
 
-![](./software/grafcets/bancada32_manual/39PLC.svg)
+![](./lines/line32/2020_2021/software/grafcets/bancada32_manual/39PLC.svg)
 
 ##### Estação 40 (Manual)
 
-![](./software/grafcets/bancada32_manual/49PLC.svg)
+![](./lines/line32/2020_2021/software/grafcets/bancada32_manual/49PLC.svg)
 
 ##### Estação 50 (Manual)
 
-![](./software/grafcets/bancada32_manual/59PLC.svg)
+![](./lines/line32/2020_2021/software/grafcets/bancada32_manual/59PLC.svg)
 
 #### Grafcets Modo: Automático
 ##### Estação 10 (Automático)
 
-![](./software/grafcets/bancada32_automatico/19PLC.svg)
+![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/19PLC.svg)
 
 ##### Estação 20 (Automático)
 
-![](./software/grafcets/bancada32_automatico/29PLC.svg)
+![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/29PLC.svg)
 
 ##### Estação 30 (Automático)
 
-![](./software/grafcets/bancada32_automatico/39PLC.svg)
+![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/39PLC.svg)
 
 ##### Estação 40 (Automático)
 
-![](./software/grafcets/bancada32_automatico/49PLC.svg)
+![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/49PLC.svg)
 
 ##### Estação 50 (Automático)
 
-![](./software/grafcets/bancada32_automatico/59PLC.svg)
+![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/59PLC.svg)
 
 #### Programação
 
@@ -349,7 +349,7 @@ Como já foi dito anteriormente a estação 10 possui um robô. Para a realizaç
 - **Axis:** Nome do servo/eixo configurado
 - **Enable:** Entrada do sinal que irá ligar o servo
 
-![](./software/tia_portal/programacao/estacao_10/1.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/1.PNG)
 
 **MC_Home** – é a função responsável de levar o servo até ao local onde está situado o sensor configurado para “homing”, a sua posição inicial.
 
@@ -359,7 +359,7 @@ Como já foi dito anteriormente a estação 10 possui um robô. Para a realizaç
 - **Position:** Valor absoluto da localização do servo, após ter chegado à posição home (coordenada absoluta de home)
 - **Mode:** Permite escolher entre os diferentes tipos de **“homing”**
 
-![](./software/tia_portal/programacao/estacao_10/2.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/2.PNG)
 
 **MC_Reset** – é a função que permite ignorar erros causados pela paragem do servo ao entrar em contacto com um fim de curso ou erros de configuração.
 
@@ -367,7 +367,7 @@ Como já foi dito anteriormente a estação 10 possui um robô. Para a realizaç
 - **Axis:** Nome do servo/eixo configurado
 - **Enable:** Entrada do sinal que irá ditar a ordem de reset
 
-![](./software/tia_portal/programacao/estacao_10/4.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/4.PNG)
 
 **MC_Halt** – é a função que para os movimentos do servo.
 
@@ -375,7 +375,7 @@ Como já foi dito anteriormente a estação 10 possui um robô. Para a realizaç
 - **Axis:** Nome do servo/eixo configurado
 - **Enable:** Entrada do sinal que irá parar o servo
 
-![](./software/tia_portal/programacao/estacao_10/3.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/3.PNG)
 
 **MC_MoveAbsolute** – é a função responsável por levar o servo até uma posição absoluta através de uma coordenada.
 
@@ -385,21 +385,21 @@ Como já foi dito anteriormente a estação 10 possui um robô. Para a realizaç
 - **Position:** Coordenada absoluta para a qual o servo se irá mover
 - **Velocity:** Velocidade com a qual o servo executará o movimento
 
-![](./software/tia_portal/programacao/estacao_10/5.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/5.PNG)
 
 Para não sobrecarregar o código com 4 funções **MC_MoveAbsolute** foi criado com conjunto de **Moves** (como o próprio nome indica, mover valores de entrada de forma a serem aplicados numa saída) na entrada é colocado o valor, em mm, da posição do carro relativa a cada estação; na saída é colocado uma memória do tipo Real, com a função de guardar esse valor e enviar para o  **MC_MoveAbsolute**.
 
-![](./software/tia_portal/programacao/estacao_10/6.png)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/6.png)
 
 ##### Estação 50
 
 Como já foi dito anteriormente a estação 50 possui um tapete para transporte das peças processadas. Para o controlo da velocidade do tapete é usada uma função **Move** (como o próprio nome indica, mover valores de entrada de forma a serem aplicados numa saída) na entrada é colocado o valor analógico da velocidade; na saída é saída do Inversor de Frequência. Este valor analógico é enviado para o Inversor de Frequência e convertido em tensão.
 
-![](./software/tia_portal/programacao/estacao_50/2.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_50/2.PNG)
 
 Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acoplado ao motor entra em funcionamento. Para analise das posições do enconder é usado um CTRL_HSC, quando configurado, torna-se num contador de alta velocidade. Desta forma, como os valores do enconder, é possível fazer o encaminhamento de cada peça. 
 
-![](./software/tia_portal/programacao/estacao_50/1.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_50/1.PNG)
 
 #### Gemma
-- [Projeto1](./software/gemma/projeto1/gemma.md)
+- [Projeto1](./lines/line32/2020_2021/software/gemma/projeto1/gemma.md)
