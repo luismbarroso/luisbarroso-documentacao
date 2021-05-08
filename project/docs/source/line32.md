@@ -14,12 +14,12 @@
         - [Estação 50](#estação-50)
     - [Modo de Funcionamento](#modo-de-funcionamento)
 - [Trabalho Realizado](#trabalho-realizado)
-    - [Classificação: Estações](#classificação:-estações)
-        - [Estação 10](#estação-10-estações)
-        - [Estação 20](#estação-20-estações)
-        - [Estação 30](#estação-30-estações) 
-        - [Estação 40](#estação-40-estações)
-        - [Estação 50](#estação-50-estações)
+    - [Classificação](#classificação)
+        - [Estação 10](#estação-10-classificação)
+        - [Estação 20](#estação-20-classificação)
+        - [Estação 30](#estação-30-classificação) 
+        - [Estação 40](#estação-40-classificação)
+        - [Estação 50](#estação-50-classificação)
     - [Software](#software)
         - [Grafcets Modo: Manual](#grafcets-modo:-manual)
             - [Estação 10](#estação-10-manual)
@@ -35,9 +35,8 @@
             - [Estação 50](#estação-50-automático)
         - [Programação](#programação)
         - [Gemma](#gemma)
-            - [Projeto 1](#projeto-1)
+            - [Projeto 1](./lines/line32/2020_2021/software/gemma/projeto1/gemma.md)
 
-## [Trabalho fora da Line](../../../o_lines/o_lines.md)
 ## Introdução
 
 A Line 32 é uma das Lines do Grupo 30. Divida em 5 estações das quais resultam: **"Transporte (Estação 10)"**, **"Aplicação (Estação 30)"**, **"Alimentação (Corpo (Estação 20) e Miolo (Estação 40))"** e **"Seleção (Estação 50)"**.
@@ -48,7 +47,8 @@ A Line 32 é uma das Lines do Grupo 30. Divida em 5 estações das quais resulta
 
 A Line 32, do Grupo 30, consiste num conjunto de estações, **cada uma com Equipamentos/Componentes independentes**. A Line 32, assim com cada uma da estações, funcionam usando **sistemas pneumáticos** e **sistemas eletromecânicos**.
 
-Os **sistemas pneumáticos** estão presentes em todas as estações. Responsáveis pelos movimentos dos Cilindros, ou seja, avanço e recuo. Já os **sistemas eletromecânicos** só estão presentes nas estações 10 e 50. Na estação 10, são responsáveis pelo movimento do **robô**. Este robô é utilizado para o transporte das peças pelas diversas estações. Acoplado ao robô, temos uma **garra**, sendo assim possível realizar as tarefas pretendidas, com por exemplo, o avança e recuo da garra. Para se deslocar pelas diversas estações, o robô, está conectado a um **Servo Motor** (Simotics S-1FL6) e um **Inversor de Frequência** (Siemens V90); Na estação 50, são responsáveis pelo movimento do tapete. Para o movimento deste tapete é usado um **Motor Trifásico** que acoplado tem um **Enconder**, que, através da sua posição é possível fazer o encaminhamento das peças. Para a movimento do Motor é utilizado um **Inversor de Frequência** (Siemens G120C), que converte o sinal elétrico em sinal analógico sendo assim possível fazer o movimento do tapete e controlo da velocidade.
+Os **sistemas pneumáticos** estão presentes em todas as estações. Responsáveis pelos movimentos dos Cilindros, ou seja, avanço e recuo. Já os **sistemas eletromecânicos** só estão presentes nas estações 10 e 50. Na estação 10, são responsáveis pelo movimento do **robô**. Este robô é utilizado para o transporte das peças pelas diversas estações. Acoplado ao robô, temos uma **garra**, sendo assim possível realizar as tarefas pretendidas, com por exemplo, o avança e recuo da garra. Para se deslocar pelas diversas estações, o robô, está conectado a um **Servo Motor** (Simotics S-1FL6) e um **Inversor de Frequência** (Siemens V90); Na estação 50, são responsáveis pelo movimento do tapete. Para o movimento deste tapete é usado um **Motor Trifásico** que acoplado tem um **Enconder**, que, através da sua posição é possível fazer o encaminhamento das peças. Para a movimento do Motor é utilizado um **Inversor de Frequência** (Siemens G120C), que converte o sinal elétrico em sinal analógico sendo assim possível fazer o 
+movimento do tapete e controlo da velocidade.
 
 Para o controlo das peças são usados Sensores, como: **Sensores Fotoelétricos**, usados para a deteção das peças em determinadas posições; **Sensores Indutivos** usados para distinguir as peças metálicas das peças de plástico; **Sensores Óticos** usados para distinguir a peças brancas das peças pretas e **Sensores Magnéticos** usados para detetar a posição da haste do cilindro.
 
@@ -128,8 +128,8 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
         Futuramente: Video!
 
 ## Trabalho Realizado
-### Classificação: Estações
-#### Estação 10
+### Classificação
+#### Estação 10 (Classificação)
 *Entradas dos 19PLC*
 
 |Label |Endereço  | Comentário|
@@ -160,7 +160,7 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 321920HL12|%Q8.6|Painel Luz Verde
 321920HL13|%Q8.7|Painel Luz Vermelha
 
-#### Estação 20
+#### Estação 20 (Classificação)
 *Entradas dos 29PLC*
 
 |Label |Endereço  | Comentário|
@@ -188,7 +188,7 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 322920HL12|%Q1.0|Painel Luz Verde
 322920HL13|%Q1.1|Painel Luz Vermelha
 
-#### Estação 30
+#### Estação 30 (Classificação)
 *Entradas dos 39PLC*
 
 |Label |Endereço  | Comentário|
@@ -215,7 +215,7 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 323920HL12|%Q1.0|Painel Luz Verde
 323920HL13|%Q1.1|Painel Luz Vermelha
 
-#### Estação 40
+#### Estação 40 (Classificação)
 *Entradas dos 49PLC*
 
 |Label |Endereço  | Comentário|
@@ -258,7 +258,7 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 324920HL12|%Q8.6|Luz do Painel (Verde)
 324920HL13|%Q8.7|Luz do Painel (Vermelha)
 
-#### Estação 50
+#### Estação 50 (Classificação)
 *Entradas dos 59PLC*
 
 |Label |Endereço  | Comentário|
