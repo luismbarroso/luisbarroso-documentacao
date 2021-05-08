@@ -20,7 +20,7 @@ from recommonmark.transform import AutoStructify
 project = "Documentação Luban"
 html_title = "Documentação Luban"
 
-copyright = '2021, Nome do Aluno'
+copyright = '2021, Luís Barroso'
 author = 'Luís Barroso'
 
 # The full version, including alpha/beta/rc tags
