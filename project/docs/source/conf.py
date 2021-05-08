@@ -81,7 +81,7 @@ html_logo = "./logos/Logo_Luban.png"
 html_theme_options = {
     "base_url": "https://documentacao-luban-portugal.readthedocs.io/en/latest/index.html",
     "repo_url": "https://github.com/luismbarroso/luisbarroso-documentacao",
-    "repo_name": "NLuís Barroso - Documentação ",
+    "repo_name": "Luís Barroso - Documentação ",
     "google_analytics_account": "UA-XXXXX",
     "html_minify": False,
     "html_prettify": True,
