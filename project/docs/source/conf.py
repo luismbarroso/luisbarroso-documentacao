@@ -20,8 +20,8 @@ from recommonmark.transform import AutoStructify
 project = "Documentação Luban"
 html_title = "Documentação Luban"
 
-copyright = '20xx, Nome do Aluno'
-author = 'Nome do Aluno'
+copyright = '2021, Nome do Aluno'
+author = 'Luís Barroso'
 
 # The full version, including alpha/beta/rc tags
 release = LooseVersion(sphinx_material.__version__).vstring
@@ -75,13 +75,13 @@ extensions.append("sphinx_material")
 html_theme_path = sphinx_material.html_theme_path()
 html_context = sphinx_material.get_html_context()
 html_theme = "sphinx_material"
-html_logo = './equipments/manuais/logos/Logo_Luban.png'
+html_logo = "./logos/Logo_Luban.png"
 
 # material theme options (see theme.conf for more information)
 html_theme_options = {
     "base_url": "https://documentacao-luban-portugal.readthedocs.io/en/latest/index.html",
-    "repo_url": "https://github.com/../..",
-    "repo_name": "Nome do Aluno - Documentação ",
+    "repo_url": "https://github.com/luismbarroso/luisbarroso-documentacao",
+    "repo_name": "NLuís Barroso - Documentação ",
     "google_analytics_account": "UA-XXXXX",
     "html_minify": False,
     "html_prettify": True,
@@ -101,7 +101,10 @@ language = "en"
 html_last_updated_fmt = ""
 
 todo_include_todos = True
-html_favicon = "./equipments/manuais/logos/Logo_Luban.png"
+html_favicon = "./logos/Logo_Luban.png"
 
 html_use_index = True
 html_domain_indices = True
+
+
+
