@@ -1,6 +1,7 @@
 # Line 32
 
 **Autor:** *Luís Barroso*
+**Data:** *8/5/2021, 21h15*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 - [Introdução](#introducao)
