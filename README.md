@@ -1,4 +1,4 @@
-<img src="./project/docs/source/logos/Logo_Luban_IPS.png" width="200" />     
+<img src="./project/docs/source/logos/Logo_Luban_IPS.png" width="199" />     
 
 ## Lu ban Workshop Portugal
 
