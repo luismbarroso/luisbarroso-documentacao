@@ -9,7 +9,7 @@ Considerações:
 
 ### Gemma
 
-![](./imagens/GEMMA.svg)
+![](./imagens/Gemma.svg)
 
 ### Guia de Iluminação 
 
