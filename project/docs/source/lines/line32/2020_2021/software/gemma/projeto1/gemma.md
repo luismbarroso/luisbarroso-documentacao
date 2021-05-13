@@ -33,11 +33,11 @@ Piscar (500ms)|Piscar (500ms)|-|Marchas de finalização|F3
 
 ### Grafcet Geral (Estações)
 
-![](./imagens/Line32_Gemma_1.svg)
+      ![](./imagens/Line32_Gemma_1.svg)
 
 ### Grafcets Iluminação (Etapas, Grafcet Geral)
 
-![](./imagens/Line32_Gemma_2.svg)
+      ![](./imagens/Line32_Gemma_2.svg)
 
 #### Explicação
 
