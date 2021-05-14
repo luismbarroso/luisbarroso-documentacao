@@ -23,18 +23,12 @@
         - [Estação 40](#estacao-40-classificacao)
         - [Estação 50](#estacao-50-classificacao)
     - [Software](#software)
-        - [Grafcets Modo: Manual](#grafcets-modo:-manual)
-            - [Estação 10](#estacao-10-manual)
-            - [Estação 20](#estacao-20-manual)
-            - [Estação 30](#estacao-30-manual) 
-            - [Estação 40](#estacao-40-manual)
-            - [Estação 50](#estacao-50-manual)
-        - [Grafcets Modo: Automático](#grafcets-modo:-automatico)	
-            - [Estação 10](#estacao-10-automatico)
-            - [Estação 20](#estacao-20-automatico)
-            - [Estação 30](#estacao-30-automatico) 
-            - [Estação 40](#estacao-40-automatico)
-            - [Estação 50](#estacao-50-automatico)
+        - [Grafcets](#grafcets)
+            - [Estação 10](#estacao-10)
+            - [Estação 20](#estacao-20)
+            - [Estação 30](#estacao-30) 
+            - [Estação 40](#estacao-40)
+            - [Estação 50](#estacao-50)
         - [Programação](#programacao)
         - [Gemma](#gemma)
             - [Projeto 1](./lines/line32/2020_2021/software/gemma/projeto1/gemma.md)
@@ -294,45 +288,24 @@ Enconder_Z|%I0.2|Enconder Z
 325920HL13|%Q1.1|Luz do Painel (Vermelha)
 
 ### Software
-#### Grafcets Modo: Manual
-##### Estação 10 (Manual)
-
-![](./lines/line32/2020_2021/software/grafcets/bancada32_manual/19PLC.svg)
-
-##### Estação 20 (Manual)
-
-![](./lines/line32/2020_2021/software/grafcets/bancada32_manual/29PLC.svg)
-
-##### Estação 30 (Manual)
-
-![](./lines/line32/2020_2021/software/grafcets/bancada32_manual/39PLC.svg)
-
-##### Estação 40 (Manual)
-
-![](./lines/line32/2020_2021/software/grafcets/bancada32_manual/49PLC.svg)
-
-##### Estação 50 (Manual)
-
-![](./lines/line32/2020_2021/software/grafcets/bancada32_manual/59PLC.svg)
-
-#### Grafcets Modo: Automático
-##### Estação 10 (Automático)
+#### Grafcets
+##### Estação 10 
 
 ![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/19PLC.svg)
 
-##### Estação 20 (Automático)
+##### Estação 20 
 
 ![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/29PLC.svg)
 
-##### Estação 30 (Automático)
+##### Estação 30
 
 ![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/39PLC.svg)
 
-##### Estação 40 (Automático)
+##### Estação 40
 
 ![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/49PLC.svg)
 
-##### Estação 50 (Automático)
+##### Estação 50
 
 ![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/59PLC.svg)
 
