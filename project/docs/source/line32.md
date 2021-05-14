@@ -24,11 +24,11 @@
         - [Estação 50](#estacao-50-classificacao)
     - [Software](#software)
         - [Grafcets](#grafcets)
-            - [Estação 10](#id1)
-            - [Estação 20](#id2)
-            - [Estação 30](#id3) 
-            - [Estação 40](#id4)
-            - [Estação 50](#id5)
+            - [Estação 10](#estacao-10-grafcet)
+            - [Estação 20](#estacao-20-grafcet)
+            - [Estação 30](#estacao-30-grafcet) 
+            - [Estação 40](#estacao-40-grafcet)
+            - [Estação 50](#estacao-50-grafcet)
         - [Programação](#programacao)
         - [Gemma](#gemma)
             - [Projeto 1](./lines/line32/2020_2021/software/gemma/projeto1/gemma.md)
@@ -289,23 +289,23 @@ Enconder_Z|%I0.2|Enconder Z
 
 ### Software
 #### Grafcets
-##### Estação 10 
+##### Estação 10 (Grafcet)
 
 ![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/19PLC.svg)
 
-##### Estação 20 
+##### Estação 20 (Grafcet)
 
 ![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/29PLC.svg)
 
-##### Estação 30
+##### Estação 30 (Grafcet)
 
 ![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/39PLC.svg)
 
-##### Estação 40
+##### Estação 40 (Grafcet)
 
 ![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/49PLC.svg)
 
-##### Estação 50
+##### Estação 50 (Grafcet)
 
 ![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/59PLC.svg)
 
