@@ -39,6 +39,7 @@
         - [Gemma](#gemma)
             - [Projeto 1](./lines/line32/2020_2021/software/gemma/projeto1/gemma.md)
 
+
 ## Introdução
 
 A Line 32 é uma das Lines do Grupo 30. Divida em 5 estações das quais resultam: **"Transporte (Estação 10)"**, **"Aplicação (Estação 30)"**, **"Alimentação (Corpo (Estação 20) e Miolo (Estação 40))"** e **"Seleção (Estação 50)"**.
