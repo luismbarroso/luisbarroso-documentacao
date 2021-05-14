@@ -16,8 +16,8 @@ Considerações:
 |Amarelo |Verde |Vermelho |Função |Código Gemma
 --- | --- | --- | --- | --- 
 Fixo|-|-|Parado no estado inicial|A1
-Piscar (1s)|-|-|Paragem solicitada|A3
-Fixo|Piscar (1s)|-|Paragem finalizada|A4
+Piscar (500ms)|Fixo|-|Paragem solicitada|A3
+Piscar (500ms)|Piscar (500ms)|-|Paragem finalizada|A4
 Piscar (500ms)|-|-|Colocação no estado inicial|A6
 -|-|Fixo|Paragem de emergência|D1
 -|Fixo|-|Marcha de produção com ordem|F1
