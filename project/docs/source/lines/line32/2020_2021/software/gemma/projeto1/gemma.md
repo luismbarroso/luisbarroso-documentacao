@@ -2,9 +2,8 @@
 ## Line 32: YL-335B
 
 Considerações:
-- Modos de Marcha - Automático e Ciclo
-- Modos de Paragem - Solicitada e Emergência
-- Diagnóstico/tratamento de falha
+- Modos de Marcha: Automático 
+- Modos de Paragem: Solicitada e Emergência
 - Implementação de Sinalização
 
 ### Gemma
