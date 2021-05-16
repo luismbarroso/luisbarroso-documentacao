@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *14/05/2021, 21h10*
+**Data:** *16/05/2021, 20h14*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 - [Introdução](#introducao)
@@ -291,23 +291,21 @@ Enconder_Z|%I0.2|Enconder Z
 #### Grafcets
 ##### Estação 10 (Grafcet)
 
-![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/19PLC.svg)
+![](./lines/line32/2020_2021/software/grafcets/funcionamento/s_gemma/ST10.svg)
 
 ##### Estação 20 (Grafcet)
 
-![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/29PLC.svg)
-
+![](./lines/line32/2020_2021/software/grafcets/funcionamento/s_gemma/ST20.svg)
 ##### Estação 30 (Grafcet)
 
-![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/39PLC.svg)
-
+![](./lines/line32/2020_2021/software/grafcets/funcionamento/s_gemma/ST30.svg)
 ##### Estação 40 (Grafcet)
 
-![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/49PLC.svg)
+![](./lines/line32/2020_2021/software/grafcets/funcionamento/s_gemma/ST40.svg)
 
 ##### Estação 50 (Grafcet)
 
-![](./lines/line32/2020_2021/software/grafcets/bancada32_automatico/59PLC.svg)
+![](./lines/line32/2020_2021/software/grafcets/funcionamento/s_gemma/ST50.svg)
 
 #### Programação
 

@@ -9,7 +9,7 @@ Considerações:
 
 ### Gemma
 
-![](./imagens/Gemma.svg)
+![](./imagens/Line32_Gemma.svg)
 
 ### Guia de Iluminação 
 
@@ -25,11 +25,7 @@ Fixo|Piscar (500ms)|-|Marcha de preparação|F2
 
 ### Grafcet Geral (Estações)
 
-      ![](./imagens/Line32_Gemma_1.svg)
-
 ### Grafcets Iluminação (Etapas, Grafcet Geral)
-
-      ![](./imagens/Line32_Gemma_2.svg)
 
 #### Explicação
 
@@ -44,16 +40,8 @@ Fixo|Piscar (500ms)|-|Marcha de preparação|F2
 
 - **Etapa F1** - Modo de Marcha: Automático (Corre a estação de forma automático, não sendo necessário qualquer ativação).
 
-- **Etapa F5** - Modo de Marcha: Ciclo (Corre a estação de forma cíclica, assim que concluído e necessário fazer o Start (SB1)).
-
 - **Etapa A3** - Paragem solicitado, através do **Switch (SB2)** é possível proceder a paragem da estação.
 
 - **Etapa A4** - Paragem finalizada, a paragem solicitada é concluída voltado a assim à **Marcha de Produção**, aguardado a ordem de inicialização da produção (Start (SB1)).
 
 - **Etapa D1** - Paragem de emergência, através da **Botoneira (QS)** é possível proceder a paragem de emergência da estação.
-
-- **Etapa A5** - Preparação para retomar, a emergência é retirada. Desta forma o processo pode retomar o processo, com a necessidade de fazer a inicialização da estação.
-
-- **Etapa D3** - Produção em estado de emergência, nesta etapa, mesmo a estação estando em emergência, pode continua em funcionamento até concluir o ciclo. 
-
-- **Etapa D2** - Diagnóstico/tratamento de falha, nesta etapa, é diagnósticado/tratado o que originou a falha.
