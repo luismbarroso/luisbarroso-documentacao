@@ -31,8 +31,6 @@
             - [Estação 50](#estacao-50-grafcet)
         - [Programação](#programacao)
         - [Gemma](#gemma)
-            - [Projeto 1](./lines/line32/2020_2021/software/gemma/projeto1/gemma.md)
-
 
 ## Introdução
 
@@ -374,4 +372,64 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_50/1.PNG)
 
 #### Gemma
-- [Projeto1](./lines/line32/2020_2021/software/gemma/projeto1/gemma.md)
+
+                EXPLICAÇÃO
+
+Considerações:
+- Modos de Marcha: Automático 
+- Modos de Paragem: Solicitada e Emergência
+- Implementação de Sinalização
+
+##### Esquema  
+
+![](./lines/line32/2020_2021/software/gemma/imagens/Line32_Gemma.svg)
+
+##### Guia de Iluminação 
+
+|Amarelo |Verde |Vermelho |Função |Código Gemma
+--- | --- | --- | --- | --- 
+Fixo|-|-|Parado no estado inicial|A1
+Piscar (500ms)|Fixo|-|Paragem solicitada|A3
+Piscar (500ms)|Piscar (500ms)|-|Paragem finalizada|A4
+Piscar (500ms)|-|-|Colocação no estado inicial|A6
+-|-|Fixo|Paragem de emergência|D1
+-|Fixo|-|Marcha de produção com ordem|F1
+Fixo|Piscar (500ms)|-|Marcha de preparação|F2
+
+##### Grafcet's
+###### Gemma Master
+![](./lines/line32/2020_2021/software/grafcets/gemma/Master_Gemma.svg)
+
+###### Gemma Estações
+
+**Estação 10**
+![](./lines/line32/2020_2021/software/grafcets/gemma/ST10_Gemma.svg)
+**Estação 20**
+![](./lines/line32/2020_2021/software/grafcets/gemma/ST20_Gemma.svg)
+**Estação 30**
+![](./lines/line32/2020_2021/software/grafcets/gemma/ST30_Gemma.svg)
+**Estação 40**
+![](./lines/line32/2020_2021/software/grafcets/gemma/ST40_Gemma.svg)
+**Estação 50**
+![](./lines/line32/2020_2021/software/grafcets/gemma/ST50_Gemma.svg)
+
+###### Gemma Iluminação 
+
+##### Explicação
+
+- **Etapa A6** - Parado no estado inicial, assim que o PLC entrar em **Modo Run**, a FC **Init** é *corrida* e essa informação é guardada e envidada para a próxima etapa.
+
+- **Etapa A1** - Parado no estado inicial, nesta etapa, confirmamos que o **Init** foi *corrido*. Também é verificado se as **Estações 20 e 40** contém peças para começar o processo. Caso as **duas** estações contenham peças passamos a próxima etapa, caso isso não aconteça ficamos na etapa. 
+
+- **Etapa F2** - Marcha de preparação, nesta etapa, confirmamos **Estações 20 e 40** contém peças para começar o processo. Quando for dado o **Start Inicial (SB1)** passamos a próxima etapa.
+
+      Através do **Seletor (SA)** é possível escolher o modo de funcionamento de cada estação. 
+      (Posição 0 - Modo de Marcha: Automático / Posição 1 - Modo de Marcha: Ciclo).
+
+- **Etapa F1** - Modo de Marcha: Automático (Corre a estação de forma automático, não sendo necessário qualquer ativação).
+
+- **Etapa A3** - Paragem solicitado, através do **Switch (SB2)** é possível proceder a paragem da estação.
+
+- **Etapa A4** - Paragem finalizada, a paragem solicitada é concluída voltado a assim à **Marcha de Produção**, aguardado a ordem de inicialização da produção (Start (SB1)).
+
+- **Etapa D1** - Paragem de emergência, através da **Botoneira (QS)** é possível proceder a paragem de emergência da estação.
