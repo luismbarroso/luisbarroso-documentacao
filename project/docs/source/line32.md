@@ -394,23 +394,35 @@ Piscar (500ms)|Piscar (500ms)|-|Paragem finalizada|A4
 Piscar (500ms)|-|-|Colocação no estado inicial|A6
 -|-|Fixo|Paragem de emergência|D1
 -|Fixo|-|Marcha de produção com ordem|F1
+-|-|-|Marcha de produção com ordem|F1_1 (Apenas nas Estações)
 Fixo|Piscar (500ms)|-|Marcha de preparação|F2
+-|-|-|Marcha de verificação com Ordem|F5
 
 ##### Grafcet's
 ###### Gemma Master
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/Master_Gemma.svg)
 
 ###### Gemma Estações
 
 **Estação 10**
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/ST10_Gemma.svg)
+
 **Estação 20**
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/ST20_Gemma.svg)
+
 **Estação 30**
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/ST30_Gemma.svg)
+
 **Estação 40**
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/ST40_Gemma.svg)
+
 **Estação 50**
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/ST50_Gemma.svg)
 
 ###### Gemma Iluminação 
