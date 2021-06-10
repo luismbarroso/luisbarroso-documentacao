@@ -512,3 +512,69 @@ Q116|Q117|Q118|Q119|I116|I117|I118|I119
 
 
 ###### Estação 50
+
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{array}
+\usepackage{wrapfig}
+\usepackage{multirow}
+\usepackage{tabularx}
+
+
+%-19PLC---------------------------------------------------------------------
+\begin{table}[h!]
+\caption{I/0 Locais - 19PLC}
+\vspace{1cm}
+\begin{tabular}{|c|c|c|c|c|c|}
+ \hline
+ \multicolumn{3}{|c|}{Entrada} \\
+ \hline
+ Label & Endereço & Comentário \\
+ \hline
+ 3211*B42 & I0.3 & Sensor de Garra em Baixo \\
+ \hline
+ 3211*B41 & I0.4 & Sensor de Garra em Cima \\
+ \hline
+ 3211*B32 & I0.5 & Sensor Garra (Rotação) \\
+ \hline
+ 3211*B31 & I0.6 & Sensor Garra (Posição Inicial) \\
+ \hline
+ 3211*B21 & I0.7 & Sensor de Garra á Frente \\
+ \hline
+ 3211*B22 & I1.0 & Sensor de Garra Atrás \\
+ \hline
+ 3211*B11 & I1.1 & Sensor de Garra Fechada \\
+ \hline
+ 321920SB22 & I8.4 & Botão Vermelho \\
+ \hline
+ 321920SB21 & I8.5 & Botão Verde \\
+ \hline
+ 321920QS24 & I8.6 & Botão Emergência \\
+ \hline
+ 321920SA23 & I8.7 & Seletor \\
+ \hline\hline
+ 
+ \multicolumn{3}{|c|}{Saidas} \\
+ \hline
+ Label & Endereço & Comentário \\
+ \hline
+ 3211*Y40 & Q0.3 & Cilindro da Garra (Sobe e Baixa) \\
+ \hline
+ 3211*Y30B & Q0.4 & Cilindro da Garra (Rotação) \\
+ \hline
+ 3211*Y30A & Q0.5 & Cilindro da Garra (Posição Inicial) \\
+ \hline
+ 3211*Y20 & Q0.6 & Cilindro da Garra (Frente e Atrás) \\
+ \hline
+ 3211*Y10B & Q0.7 & Cilindro de Fecho Garra \\
+ \hline
+ 3211*Y10A & Q1.0 & Cilindro de Abertura da Garra \\
+ \hline
+ 321920HL11 & Q8.5 & Painel Luz Laranja \\
+ \hline
+ 321920HL12 & Q8.6 & Painel Luz Verde \\
+ \hline
+ 321920HL13 & Q8.7 & Painel Luz Vermelha \\
+ \hline
+ \end{tabular}
+ \end{table}
