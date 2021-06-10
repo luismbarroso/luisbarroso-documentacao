@@ -373,10 +373,12 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 
 #### Gemma
 
-                EXPLICAÇÃO
+O Gemma consiste num Guia de estudo dos modos de Marcha e Paragem. Num processo automaziado, por necessidade, é necessário prever todos os estados possíveis, desta forma, com o Gemma, é possivel executar arranques ou paragens de forma segura sem prejudicar ou Homem ou a Máquina.
+
+Como podemos observar na figura a baixo, o Gemma, devide-se em 3 grande blocos: “Procedimentos de paragem” , “Procedimentos de execução” , “Procedimentos de falha” e a cada um dele correspondem um conjunto de funções/tarefas.
 
 Considerações:
-- Modos de Marcha: Automático 
+- Modos de Marcha: Automático, Ciclo e Manual
 - Modos de Paragem: Solicitada e Emergência
 - Implementação de Sinalização
 
