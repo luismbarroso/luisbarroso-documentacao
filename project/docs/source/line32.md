@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *16/05/2021, 20h14*
+**Data:** *10/06/2021, 23h47*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 - [Introdução](#introducao)
@@ -31,6 +31,23 @@
             - [Estação 50](#estacao-50-grafcet)
         - [Programação](#programacao)
         - [Gemma](#gemma)
+            - [Esquema](#esquema)
+            - [Guia de Iluminação](#guia-de-iluminacao)
+            - [Grafcet’s](#grafcet-s)
+                - [Gemma Master](#gemma-master)
+                - [Gemma Estações](#gemma-estacoes)
+                - [Gemma Iluminação](#gemma-iluminacao)
+            - [Explicação](#explicacao)
+            - [Classificação]
+                - [Master]
+                - [Estação 10]
+                - [Estação 20]
+                - [Estação 30]
+                - [Estação 40]
+                - [Estação 50]
+        - [HMI](#HMI)  
+        - [Tesla Scada](#tesla-scada)
+        - [Anexos](#anexos)
 
 ## Introdução
 
@@ -289,21 +306,21 @@ Enconder_Z|%I0.2|Enconder Z
 #### Grafcets
 ##### Estação 10 (Grafcet)
 
-![](./lines/line32/2020_2021/software/grafcets/funcionamento/s_gemma/ST10.svg)
+![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST10.svg)
 
 ##### Estação 20 (Grafcet)
 
-![](./lines/line32/2020_2021/software/grafcets/funcionamento/s_gemma/ST20.svg)
+![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST20.svg)
 ##### Estação 30 (Grafcet)
 
-![](./lines/line32/2020_2021/software/grafcets/funcionamento/s_gemma/ST30.svg)
+![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST30.svg)
 ##### Estação 40 (Grafcet)
 
-![](./lines/line32/2020_2021/software/grafcets/funcionamento/s_gemma/ST40.svg)
+![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST40.svg)
 
 ##### Estação 50 (Grafcet)
 
-![](./lines/line32/2020_2021/software/grafcets/funcionamento/s_gemma/ST50.svg)
+![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST50.svg)
 
 #### Programação
 
@@ -373,9 +390,9 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 
 #### Gemma
 
-O Gemma consiste num Guia de estudo dos modos de Marcha e Paragem. Num processo automaziado, por necessidade, é necessário prever todos os estados possíveis, desta forma, com o Gemma, é possivel executar arranques ou paragens de forma segura sem prejudicar ou Homem ou a Máquina.
+O Gemma consiste num Guia de estudo dos modos de Marcha e Paragem. Num processo automatizado, por necessidade, é necessário prever todos os estados possíveis, desta forma, com o Gemma, é possível executar arranques ou paragens de forma segura sem prejudicar ou Homem ou a Máquina.
 
-Como podemos observar na figura a baixo, o Gemma, devide-se em 3 grande blocos: “Procedimentos de paragem” , “Procedimentos de execução” , “Procedimentos de falha” e a cada um dele correspondem um conjunto de funções/tarefas.
+Como podemos observar na figura a baixo, o Gemma, divide-se em 3 grande blocos: “Procedimentos de paragem” , “Procedimentos de execução” , “Procedimentos de falha” e a cada um dele correspondem um conjunto de funções/tarefas.
 
 Considerações:
 - Modos de Marcha: Automático, Ciclo e Manual
@@ -384,21 +401,27 @@ Considerações:
 
 ##### Esquema  
 
+**Proposta Inicial:**
+
+![](./lines/line32/2020_2021/software/gemma/imagens/Luban_Gemma.svg)
+
+**Conseguido:**
+
 ![](./lines/line32/2020_2021/software/gemma/imagens/Line32_Gemma.svg)
 
 ##### Guia de Iluminação 
 
-|Amarelo |Verde |Vermelho |Função |Código Gemma
---- | --- | --- | --- | --- 
-Fixo|-|-|Parado no estado inicial|A1
-Piscar (500ms)|Fixo|-|Paragem solicitada|A3
-Piscar (500ms)|Piscar (500ms)|-|Paragem finalizada|A4
-Piscar (500ms)|-|-|Colocação no estado inicial|A6
--|-|Fixo|Paragem de emergência|D1
--|Fixo|-|Marcha de produção com ordem|F1
--|-|-|Marcha de produção com ordem|F1_1 (Apenas nas Estações)
-Fixo|Piscar (500ms)|-|Marcha de preparação|F2
--|-|-|Marcha de verificação com Ordem|F5
+|Amarelo |Verde |Vermelho |Função |Código Gemma|Observações
+--- | --- | --- | --- | --- | --- 
+Fixo|-|-|Parado no estado inicial|A1|
+Piscar (500ms)|Fixo|-|Paragem solicitada|A3|
+Piscar (500ms)|Piscar (500ms)|-|Paragem finalizada|A4|
+Piscar (500ms)|-|-|Colocação no estado inicial|A6|
+-|-|Fixo|Paragem de emergência|D1|
+-|Fixo|-|Marcha de produção com ordem|F1|
+-|Piscar (500ms)|-|Marcha de produção com ordem|F1_1| Apenas nas Estações
+Fixo|Piscar (500ms)|-|Marcha de preparação|F2|
+-|Piscar (500ms)|-|Marcha de verificação com Ordem|F5| Apenas na Sinalização da Line
 
 ##### Grafcet's
 ###### Gemma Master
@@ -429,7 +452,7 @@ Fixo|Piscar (500ms)|-|Marcha de preparação|F2
 
 ###### Gemma Iluminação 
 
-##### Explicação
+##### Explicação (DESATUALIZADO!)
 
 - **Etapa A6** - Parado no estado inicial, assim que o PLC entrar em **Modo Run**, a FC **Init** é *corrida* e essa informação é guardada e envidada para a próxima etapa.
 
@@ -447,3 +470,45 @@ Fixo|Piscar (500ms)|-|Marcha de preparação|F2
 - **Etapa A4** - Paragem finalizada, a paragem solicitada é concluída voltado a assim à **Marcha de Produção**, aguardado a ordem de inicialização da produção (Start (SB1)).
 
 - **Etapa D1** - Paragem de emergência, através da **Botoneira (QS)** é possível proceder a paragem de emergência da estação.
+
+##### Classificação 
+
+###### Zonas de Comunicação
+
+|||||||||	
+--- | --- | --- | --- | --- | --- | --- | ---
+--- | --- | --- | --- | 19PLC | --- | --- | ---
+I100|I101|I102|I103|Q100|Q101|Q102|Q103
+Q100|Q101|Q102|Q103|I100|I101|I102|I103
+--- | --- | --- | --- | 29PLC | --- | --- | ---
+I104|I105|I106|I107|Q104|I105|Q106|Q107
+Q104|I105|Q106|Q107|I104|I105|I106|I107
+--- | --- | --- | --- | 39PLC | --- | --- | --- 
+I108|I109|I110|I111|Q108|Q109|Q110|Q111
+Q108|Q109|Q110|Q111|I108|I109|I110|I111
+--- | --- | --- | --- | 59PLC | --- | --- | --- 
+I112|I113|I114|I115|Q112|Q113|Q114|Q115
+Q112|Q113|Q114|Q115|I112|I113|I114|I115
+--- | --- | --- | --- | 59PLC | --- | --- | ---
+I116|I117|I118|I119|Q116|Q117|Q118|Q119
+Q116|Q117|Q118|Q119|I116|I117|I118|I119
+
+
+
+
+###### Master
+
+
+###### Estação 10
+
+
+###### Estação 20
+
+
+###### Estação 30
+
+
+###### Estação 40
+
+
+###### Estação 50
