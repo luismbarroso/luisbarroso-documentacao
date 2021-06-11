@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *11/06/2021, 22h41*
+**Data:** *11/06/2021, 22h46*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 - [Introdução](#introducao)
@@ -14,58 +14,58 @@
         - [Estação 30](#estacao-30) 
         - [Estação 40](#estacao-40)
         - [Estação 50](#estacao-50)
-    - [Modo de Funcionamento](#modo-de-funcionamento) #Tesla,Local,HMI
+    - [Modo de Funcionamento](#modo-de-funcionamento)
 - [Trabalho Realizado](#trabalho-realizado)
     - [Classificação](#classificacao)
         - [Estação 10](#estacao-10-classificacao)
-                - [Entradas e Saidas (PLC)]
-                        - [Entradas]
-                        - [Saidas]
-                - [Memórias]
-                - [Comunicações]
-                        - [Entradas]
-                        - [Saidas]
+            - [Entradas e Saidas (PLC)](#)
+                - [Entradas](#)
+                - [Saidas](#)
+            - [Memórias](#)
+            - [Comunicações](#)
+                - [Entradas](#)
+                - [Saidas](#)
         - [Estação 20](#estacao-20-classificacao)
-                - [Entradas e Saidas (PLC)]
-                        - [Entradas]
-                        - [Saidas]
-                - [Memórias]
-                - [Comunicações]
-                        - [Entradas]
-                        - [Saidas]
+            - [Entradas e Saidas (PLC)](#)
+                - [Entradas](#)
+                - [Saidas](#)
+            - [Memórias](#)
+            - [Comunicações](#)
+                - [Entradas](#)
+                - [Saidas](#)
         - [Estação 30](#estacao-30-classificacao) 
-                - [Entradas e Saidas (PLC)]
-                        - [Entradas]
-                        - [Saidas]
-                - [Memórias]
-                - [Comunicações]
-                        - [Entradas]
-                        - [Saidas]
+            - [Entradas e Saidas (PLC)](#)
+                - [Entradas](#)
+                - [Saidas](#)
+            - [Memórias](#)
+            - [Comunicações](#)
+                - [Entradas](#)
+                - [Saidas](#)
         - [Estação 40](#estacao-40-classificacao)
-                - [Entradas e Saidas (PLC)]
-                        - [Entradas]
-                        - [Saidas]
-                - [Memórias]
-                - [Comunicações]
-                        - [Entradas]
-                        - [Saidas]
+            - [Entradas e Saidas (PLC)](#)
+                - [Entradas](#)
+                - [Saidas](#)
+            - [Memórias](#)
+            - [Comunicações](#)
+                - [Entradas](#)
+                - [Saidas](#)
         - [Estação 50](#estacao-50-classificacao)
-                - [Entradas e Saidas (PLC)]
-                        - [Entradas]
-                        - [Saidas]
-                - [Memórias]
-                - [Comunicações]
-                        - [Entradas]
-                        - [Saidas]
+            - [Entradas e Saidas (PLC)](#)
+                - [Entradas](#)
+                - [Saidas](#)
+            - [Memórias](#)
+            - [Comunicações](#)
+                - [Entradas](#)
+                - [Saidas](#)
     - [Comunicações](#comunicacoes)
         - [Zonas de Comunicação (Profinet)](#zonas-de-comunicacao-profinet)                
     - [Software](#software)
         - [Grafcets](#grafcets)
-                - [Estação 10](#estacao-10-grafcet)
-                - [Estação 20](#estacao-20-grafcet)
-                - [Estação 30](#estacao-30-grafcet) 
-                - [Estação 40](#estacao-40-grafcet)
-                - [Estação 50](#estacao-50-grafcet)
+            - [Estação 10](#estacao-10-grafcet)
+            - [Estação 20](#estacao-20-grafcet)
+            - [Estação 30](#estacao-30-grafcet) 
+            - [Estação 40](#estacao-40-grafcet)
+            - [Estação 50](#estacao-50-grafcet)
         - [Programação](#programacao)
         - [Gemma](#gemma)
             - [Esquema](#esquema)
@@ -167,6 +167,7 @@ Sensor de Peça no Tapete, Sensor de Peça Metálica, Sensor de Peça Branca/Met
 
 Assim que a estação 20 for alimentada com o corpo da peça, essa informação é enviada para o PLC Master (Estação 10), assim que recebida, a peça é processada. Quando concluído o processamento, a peça, esta pronta para o robô a processar e avançar para a próxima estação. Quando o robô estiver na posição relativa à estação 30, a garra avança e pousa a peça na pinça e a peça é processada. Quando concluído o processamento, a peça, esta pronta para o robô a processar e avançar para a próxima estação. Quando o robô estiver na posição relativa à estação 40, a garra avança e pousa a peça *suporte*. Assim que o corpo da peça for recebido pela estação 40, a estação entra em processamento, ou seja, o miolo é colocado no corpo da peça. Quando concluído o processamento, a peça, esta pronta para o robô a processar e avançar para a próxima estação. Quando o robô estiver na posição relativa à estação 50, a garra avança e pousa a peça no tapete. O tapete entra em funcionamento, a peça é identificada, pelos sensores e encaminhada. Caso for uma peça pretendida (Metálico/Metálico; Branco/Branco; Preto/Preto) é encaminhada para o respetivo armazém, senão, a peça é rejeitada. Depois do robô, pousar a peça no tapete da estação 50, retorna para a sua posição de *home* e desta forma o ciclo foi concluído e pronto a realizar um novo ciclo. 
 
+        IMPORTANTE:  #Tesla,Local,HMI
         Futuramente: Video!
 
 ## Trabalho Realizado
