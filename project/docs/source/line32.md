@@ -142,7 +142,10 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 ## Trabalho Realizado
 ### Classificação
 #### Estação 10 (Classificação)
-*Entradas dos 19PLC*
+
+**Entradas e Saídas**
+
+*Entradas 19PLC*
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -158,7 +161,7 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 321920QS24|%I8.6|Botão Emergência
 321920SA23|%I8.7|Seletor
 
-*Saídas dos 19PLC*
+*Saídas 19PLC*
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -172,8 +175,292 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 321920HL12|%Q8.6|Painel Luz Verde
 321920HL13|%Q8.7|Painel Luz Vermelha
 
+**Memórias**
+
+|Label |Endereço  | Comentário|
+--- | --- | ---
+Grafcet_10|%MB10|
+E10|%M10.0|
+E11|%M10.1|
+E12|%M10.2|
+E13|%M10.3|
+E14|%M10.4|
+E15|%M10.5|
+E16|%M10.6|
+E17|%M10.7|
+Grafcet_10_1|%MB11
+E18|%M11.0|
+E19|%M11.1|
+E20|%M11.2|
+E21|%M11.3|
+E22|%M11.4|
+E23|%M11.5|
+E24|%M11.6|
+E25|%M11.7|
+Grafcet_10_2|%MB12|
+E26|%M12.0|
+E27|%M12.1|
+E28|%M12.2|
+E29|%M12.3|
+E30|%M12.4|
+E31|%M12.5|
+E32|%M12.6|
+E33|%M12.7|
+Grafcet_10_3|%MB13|
+E34|%M13.0|
+E35|%M13.1|
+E36|%M13.2|
+E37|%M13.3|
+E38|%M13.4|
+E39|%M13.5|
+E40|%M13.6|
+E41|%M13.7|
+Grafcet_10_4|%MB14|
+E42|%M14.0|
+E43|%M14.1|
+E44|%M14.2|
+E45|%M14.3|
+E46|%M14.4|
+MC_Absolute_Done|%M15.0|
+MC_Relative_Done|%M15.1|
+MC_Home_Done|%M15.2|
+MC_Execute_Reset|%M15.3|
+MC_Halt_Done|%M15.4|
+Grafcet_Gemma_M|%MB16|
+A6_M|%M16.0|
+A1_M|%M16.1|
+F2_M|%M16.2|
+F1_M|%M16.3|
+F5_M|%M16.4|
+F6_M|%M16.5|
+A3_M|%M16.6|
+A4_M|%M16.7|
+Grafcet_Gemma_M_1|%MB17|
+D1_M|%M17.0|
+Grafcet_Gemma|%MB18|
+A6|%M18.0|
+A1|%M18.1|
+F2|%M18.2|
+F1|%M18.3|
+F1_1|%M18.4|
+F5|%M18.5|
+F6|%M18.6|
+A3|%M18.7|
+Grafcet_Gemma_1|%MB19|
+A4|%M19.0|
+D1|%M19.1|
+Reset_ST10_Memorys|%MB20|
+Grafcet_Parado|%M20.0|
+Grafcet_Emergencia|%M20.1|
+O_Start|%M20.2|
+O_Stop|%M20.3|
+O_Emerg|%M20.4|
+O_Marcha_A|%M20.5|
+O_Marcha_C|%M20.6|
+A6_ST10|%M20.7|
+Reset_ST10_Memorys_1|%MB21|
+A1_ST10|%M21.0|
+F2_ST10|%M21.1|
+F1_ST10|%M21.2|
+F5_ST10|%M21.3|
+F6_ST10|%M21.4|
+A3_ST10|%M21.5|
+A4_ST10|%M21.6|
+D1_ST10|%M21.7|
+Reset_ST10_Memorys_2|%MB22|
+Emerg_M_ST10|%M22.0|
+Stop_M_ST10|%M22.1|
+Init_M_ST10|%M22.2|
+MM_A_ST10|%M22.3|
+MM_C_ST10|%M22.4|
+MM_M_ST10|%M22.5|
+MF_HMI_ST10|%M22.6|
+MF_SCADA_ST10|%M22.7|
+Reset_ST10_Memorys_3|%MB23|
+MF_Local_ST10|%M23.0|
+Scada_O_Start_ST10|%M23.1|
+Scada_O_Stop_ST10|%M23.2|
+Scada_O_Emerg_ST10|%M23.3|
+O_Start_M|%M23.7|
+Reset_ST10_Memorys_4|%MB24|
+O_Stop_M|%M24.0|
+O_Emerg_M|%M24.1|
+HL11_ON/OFF_Condition|%M30.0|
+HL12_ON/OFF_Condition|%M30.1|
+HL13_ON/OFF_Condition|%M30.2|
+MC_MoveAbsolute_Position|%MD300|
+MC_MoveAbsolute_Velocity|%MD304|
+HMI_MC_MoveRelative_Distance|%MD308|
+HMI_MC_MoveAbsolute_Position|%MD312|
+HMI_MC_MoveRelative_Velocity|%MD316|
+HMI_MC_MoveAbsolute_Velocity|%MD320|
+HMI_MC_MoveAbsolute_Velocity_2|%MD324|
+HMI_MC_MoveJog_Velocity|%MD328|
+
+**Comunicações**
+
+*Entradas*
+
+|Label |Endereço  | Comentário|
+--- | --- | ---	
+Tag_1|%IB100|
+Tag_2|%IB101|
+Tag_3|%IB102|
+Tag_4|%IB103|
+Tag_9|%IB104|
+ST20_Ok|%I104.0|
+A6_ST20|%I104.1|
+A1_ST20|%I104.2|
+F2_ST20|%I104.3|
+F1_ST20|%I104.4|
+A3_ST20|%I104.5|
+F5_ST20|%I104.6|
+F6_ST20|%I104.7|
+Tag_10|%IB105|
+A4_ST20|%I105.0|
+D1_ST20|%I105.1|
+Tag_11|%IB106|
+Tag_12|%IB107|
+Tag_17|%IB108|
+ST30_Ok|%I108.0|
+A6_ST30|%I108.1|
+A1_ST30|%I108.2|
+F2_ST30|%I108.3|
+F1_ST30|%I108.4|
+F5_ST30|%I108.5|
+F6_ST30|%I108.6|
+A3_ST30|%I108.7|
+Tag_18|%IB109|
+A4_ST30|%I109.0|
+D1_ST30|%I109.1|
+Tag_19|%IB110|
+Tag_20|%IB111|
+Tag_25|%IB112|
+ST40_Ok|%I112.0|
+A6_ST40|%I112.1|
+A1_ST40|%I112.2|
+F2_ST40|%I112.3|
+F1_ST40|%I112.4|
+F5_ST40|%I112.5|
+F6_ST40|%I112.6|
+A3_ST40|%I112.7|
+Tag_26|%IB113|
+A4_ST40|%I113.0|
+D1_ST40|%I113.1|
+Tag_27|%IB114|
+Tag_28|%IB115|
+Tag_33|%IB116|
+ST50_Ok|%I116.0|
+A6_ST50|%I116.1|
+A1_ST50|%I116.2|
+F2_ST50|%I116.3|
+F1_ST50|%I116.4|
+F5_ST50|%I116.5|
+F6_ST50|%I116.6|
+A3_ST50|%I116.7|
+Tag_34|%IB117|
+A4_ST50|%I117.0|
+D1_ST50|%I117.1|
+Tag_35|%IB118|
+Tag_36|%IB119|
+
+*Saídas*
+
+|Label |Endereço  | Comentário|
+--- | --- | ---	
+Tag_6|%QB100
+Tag_5|%QB101
+Tag_7|%QB102
+Tag_8|%QB103
+Tag_13|%QB104
+ST10_Ok_ST20|%Q104.0
+Tag_14|%QB105
+Emerg_M_ST20|%Q105.2
+Stop_M_ST20|%Q105.3
+Init_M_ST20|%Q105.4
+MM_A_ST20|%Q105.5
+MM_C_ST20|%Q105.6
+MM_M_ST20|%Q105.7
+Tag_15|%QB106
+MF_HMI_ST20|%Q106.0
+MF_SCADA_ST20|%Q106.1
+MF_Local_ST20|%Q106.2
+HLs_ST20|%Q106.3
+Scada_O_Start_ST20|%Q106.4
+Scada_O_Stop_ST20|%Q106.5
+Scada_O_Emerg_ST20|%Q106.6
+Cilindros_ST20|%Q106.7
+Tag_16|%QB107
+Tag_21|%QB108
+ST10_Ok_ST30|%Q108.0
+Tag_22|%QB109
+Emerg_M_ST30|%Q109.2
+Stop_M_ST30|%Q109.3
+Init_M_ST30|%Q109.4
+MM_A_ST30|%Q109.5
+MM_C_ST30|%Q109.6
+MM_M_ST30|%Q109.7
+Tag_23|%QB110
+MF_HMI_ST30|%Q110.0
+MF_Local_ST30|%Q110.1
+MF_SCADA_ST30|%Q110.2
+HLs_ST30|%Q110.3
+Scada_O_Start_ST30|%Q110.4
+Scada_O_Stop_ST30|%Q110.5
+Scada_O_Emerg_ST30|%Q110.6
+Cilindros_ST30|%Q110.7
+Tag_24|%QB111
+Tag_29|%QB112
+ST10_Ok_ST40|%Q112.0
+Tag_30|%QB113
+A6_M_ST40|%Q113.2
+A1_M_ST40|%Q113.3
+F2_M_ST40|%Q113.4
+F1_M_ST40|%Q113.5
+F5_M_ST40|%Q113.6
+F6_M_ST40|%Q113.7
+Tag_31|%QB114
+A3_M_ST40|%Q114.0
+D1_M_ST40|%Q114.1
+A4_M_ST40|%Q114.2
+Emerg_M_ST40|%Q114.3
+Stop_M_ST40|%Q114.4
+Init_M_ST40|%Q114.5
+MM_A_ST40|%Q114.6
+MM_C_ST40|%Q114.7
+Tag_32|%QB115
+MM_M_ST40|%Q115.0
+MF_HMI_ST40|%Q115.1
+MF_SCADA_ST40|%Q115.2
+MF_Local_ST40|%Q115.3
+Cilindros_ST40_HLs_ST40|%Q115.4
+Scada_O_Start_ST40|%Q115.5
+Scada_O_Stop_ST40|%Q115.6
+Scada_O_Emerg_ST40|%Q115.7
+Tag_37|%QB116
+ST10_Ok_ST50|%Q116.0
+Emerg_M_ST50|%Q117.2
+Stop_M_ST50|%Q117.3
+Init_M_ST50|%Q117.4
+MM_A_ST50|%Q117.5
+MM_C_ST50|%Q117.6
+MM_M_ST50|%Q117.7
+Tag_38|%QB118
+MF_HMI_ST50|%Q118.0
+MF_SCADA_ST50|%Q118.1
+MF_Local_ST50|%Q118.2
+HLs_ST50|%Q118.3
+Scada_O_Start_ST50|%Q118.4
+Scada_O_Stop_ST50|%Q118.5
+Scada_O_Emerg_ST50|%Q118.6
+Cilindros_ST50|%Q118.7
+Tag_39|%QB119
+
 #### Estação 20 (Classificação)
-*Entradas dos 29PLC*
+
+**Entradas e Saídas**
+
+*Entradas 29PLC*
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -190,7 +477,7 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 322920QS24|%I1.4|Botão Emergência
 322920SA23|%I1.5|Seletor
 
-*Saídas dos 29PLC*
+*Saídas 29PLC*
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -201,7 +488,10 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 322920HL13|%Q1.1|Painel Luz Vermelha
 
 #### Estação 30 (Classificação)
-*Entradas dos 39PLC*
+
+**Entradas e Saídas**
+
+*Entradas 39PLC*
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -216,7 +506,7 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 323920QS24|%I1.4|Botão Emergência
 323920SA23|%I1.5|Seletor
 
-*Saídas dos 39PLC*
+*Saídas 39PLC*
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -228,7 +518,10 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 323920HL13|%Q1.1|Painel Luz Vermelha
 
 #### Estação 40 (Classificação)
-*Entradas dos 49PLC*
+
+**Entradas e Saídas**
+
+*Entradas 49PLC*
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -253,7 +546,7 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 324920QS24|%I8.6|Botão Emergência
 324920SA23|%I8.7|Seletor
 
-*Saídas dos 49PLC*
+*Saídas 49PLC*
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -271,7 +564,10 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 324920HL13|%Q8.7|Luz do Painel (Vermelha)
 
 #### Estação 50 (Classificação)
-*Entradas dos 59PLC*
+
+**Entradas e Saídas**
+
+*Entradas 59PLC*
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -289,7 +585,7 @@ Enconder_Z|%I0.2|Enconder Z
 325920QS24|%I1.4|Botão Emergência
 325920SA23|%I1.5|Seletor
 
-*Saídas dos 59PLC*
+*Saídas 59PLC*
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
