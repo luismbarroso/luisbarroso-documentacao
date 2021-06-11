@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *11/06/2021, 22h27*
+**Data:** *11/06/2021, 22h41*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 - [Introdução](#introducao)
@@ -1058,7 +1058,6 @@ HMI_Stop_Tapete|%I2.7|
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
-	
 Grafcet_10|%MB10|
 E10|%M10.0|
 E11|%M10.1|
@@ -1196,7 +1195,7 @@ Tag_39|%QB119|
 ### Zonas de Comunicação (Profinet)
 
 |PLC |Address in I/O Controller  | |Address in I-Device|
---- | --- | --- | ---
+--- | --- | :---: | ---
 19PLC|I100, I101, I102, I103|←| Q100, Q101, Q102, Q103
 -|Q100, Q101, Q102, Q103|→|I100, I101, I102, I103
 29PLC|I104, I105, I106, I107|←|Q104, I105, Q106, Q107
@@ -1531,7 +1530,7 @@ A ativação da Lâmpada Verde, do Semáforo, pode ser feita por F2 ou F1 ou A4 
 ###### Estação 40
 ###### Estação 50
 
-#### Gemma
+#### HMI
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/line32.png)
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_funcionamento.png)
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st10.png)
