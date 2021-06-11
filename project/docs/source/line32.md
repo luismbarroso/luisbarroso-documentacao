@@ -419,7 +419,6 @@ Piscar (500ms)|Piscar (500ms)|-|Paragem finalizada|A4|
 Piscar (500ms)|-|-|Colocação no estado inicial|A6|
 -|-|Fixo|Paragem de emergência|D1|
 -|Fixo|-|Marcha de produção com ordem|F1|
--|Piscar (500ms)|-|Marcha de produção com ordem|F1_1| Apenas nas Estações
 Fixo|Piscar (500ms)|-|Marcha de preparação|F2|
 -|Piscar (500ms)|-|Marcha de verificação com Ordem|F5| Apenas na Sinalização da Line
 
@@ -561,9 +560,13 @@ Fixo|Piscar (500ms)|-|Marcha de preparação|F2|
 
 - **Etapa D1** - Paragem de emergência, através da **Ordem de Emergência** é possível proceder a paragem de emergência da estação. Assim que a estação saír da situação de emergência, a **Etapas A6** é executada, ou seja, a *Function (FC)* **Init** é executada.
 
-###### Gemma Iluminação 
+###### Gemma Iluminação Master
+###### Gemma Iluminação Estações
 
-        LOADing...
+
+
+
+
 
 ##### Classificação 
 ###### Zonas de Comunicação
