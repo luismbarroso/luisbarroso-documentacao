@@ -569,6 +569,8 @@ No **Modo Automático** a Line está a funcionar de forma automática, ou seja, 
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/Master_Ilum_HL11.svg)
 
+A ativação da Lâmpada Verde, do Semáforo, pode ser feita por F2 ou F1 ou A4 ou F5.
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/Master_Ilum_HL12.svg)
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/Master_Ilum_HL13.svg)
@@ -636,22 +638,12 @@ Q112|Q113|Q114|Q115|I112|I113|I114|I115
 I116|I117|I118|I119|Q116|Q117|Q118|Q119
 Q116|Q117|Q118|Q119|I116|I117|I118|I119
 
-
-
-
 ###### Master
-
-
-###### Estação 10
-
-
+##### Estação 10
 ###### Estação 20
-
-
 ###### Estação 30
-
-
 ###### Estação 40
-
-
 ###### Estação 50
+
+#### Gemma
+![](./lines/line32/2020_2021/software/tia_portal/hmi/
