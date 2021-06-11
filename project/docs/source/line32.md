@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *10/06/2021, 23h47*
+**Data:** *11/06/2021, 12h08*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 - [Introdução](#introducao)
@@ -14,7 +14,7 @@
         - [Estação 30](#estacao-30) 
         - [Estação 40](#estacao-40)
         - [Estação 50](#estacao-50)
-    - [Modo de Funcionamento](#modo-de-funcionamento)
+    - [Modo de Funcionamento](#modo-de-funcionamento) #Tesla,Local,HMI
 - [Trabalho Realizado](#trabalho-realizado)
     - [Classificação](#classificacao)
         - [Estação 10](#estacao-10-classificacao)
@@ -37,7 +37,7 @@
                 - [Gemma Master](#gemma-master)
                 - [Gemma Estações](#gemma-estacoes)
                 - [Gemma Iluminação](#gemma-iluminacao)
-            - [Explicação](#explicacao)
+            - [Modos de Marcha]
             - [Classificação]
                 - [Master]
                 - [Estação 10]
@@ -423,10 +423,31 @@ Piscar (500ms)|-|-|Colocação no estado inicial|A6|
 Fixo|Piscar (500ms)|-|Marcha de preparação|F2|
 -|Piscar (500ms)|-|Marcha de verificação com Ordem|F5| Apenas na Sinalização da Line
 
+##### Modos de Marcha
+
+
 ##### Grafcet's
 ###### Gemma Master
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/Master_Gemma.svg)
+
+- **Etapa A6** - Parado no estado inicial, assim que o PLC entrar em **Modo Run**, a *Function (FC)* **Init** é executada. Assim que o Grafcet de Funcionamento estiver a primeira Etapa do Grafcet Gemma segue para a próxima etapa. 
+
+- **Etapa A1** - Parado no estado inicial, nesta etapa, é dada a Ordem de Start (O_Start), permitindo assim, o arranque o processo. 
+
+- **Etapa F2** - Marcha de preparação, nesta etapa, com a Ordem de Start executada, verificamos se as **Estações 20 e 40** contém peças para começar o processo e se o **Modo de Marcha, Automático e Ciclo** foi escolhido para todas as estações. 
+
+      Através da **HMI** é possível escolher o modo de funcionamento de cada estação, na Janela **Line 32**
+
+- **Etapa F1** - Marcha de produção com ordem, nesta etapa, o processo está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start.
+
+- **Etapa F5** - Marchas de verificação com ordem, nesta etapa, o processo está a funcionar de forma cíclica, ou seja, é necessária a Ordem de Start na Etapa Inicial do Grafcet de Funcionamento.
+
+- **Etapa A3** - Paragem solicitado, através da **Ordem de Stop** é possível proceder a paragem da Line e de todas as estações.
+
+- **Etapa A4** - Paragem finalizada, após paragem solicitada estar concluída (Na line e nas estações) e como o Modo de Marcha selecionado, voltamos à **Marcha de produção com ordem**, voltando assim o processo a ser executado no estado onde ficou parado.
+
+- **Etapa D1** - Paragem de emergência, através da **Ordem de Emergência** é possível proceder a paragem de emergência da line e das estações. Assim que a line e as estações saírem da situação de emergência, a **Etapas A6** é executada, ou seja, a *Function (FC)* **Init** é executada.
 
 ###### Gemma Estações
 
@@ -434,45 +455,117 @@ Fixo|Piscar (500ms)|-|Marcha de preparação|F2|
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/ST10_Gemma.svg)
 
+- **Etapa A6** - Parado no estado inicial, assim que o PLC entrar em **Modo Run**, a *Function (FC)* **Init** é executada. Assim que o Grafcet de Funcionamento estiver a primeira Etapa do Grafcet Gemma segue para a próxima etapa. 
+
+- **Etapa A1** - Parado no estado inicial, nesta etapa, é dada a Ordem de Start (O_Start), permitindo assim, o arranque da estação. 
+
+- **Etapa F2** - Marcha de preparação, nesta etapa, com a Ordem de Start executada, verificamos se o robô esta na posição *Home* e se o **Modo de Marcha, Automático e Ciclo** foi escolhido. 
+
+- **Etapa F1** - Marcha de produção com ordem, nesta etapa, o processo está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start.
+
+- **Etapa F5** - Marchas de verificação com ordem, nesta etapa, o processo está a funcionar de forma cíclica, ou seja, é necessária a Ordem de Start na Etapa Inicial do Grafcet de Funcionamento.
+
+        Nota: Os Modos de Marcha, são selecionados pelo Gemma Master.
+
+- **Etapa A3** - Paragem solicitado, através da **Ordem de Stop** é possível proceder a paragem das estações.
+
+- **Etapa A4** - Paragem finalizada, após paragem solicitada estar concluída e como o Modo de Marcha selecionado, voltamos à **Marcha de produção com ordem**, desta forma, a estação, entra em execução no estado onde ficou parado.
+
+- **Etapa D1** - Paragem de emergência, através da **Ordem de Emergência** é possível proceder a paragem de emergência da estação. Assim que a estação saír da situação de emergência, a **Etapas A6** é executada, ou seja, a *Function (FC)* **Init** é executada.
+
 **Estação 20**
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/ST20_Gemma.svg)
+
+- **Etapa A6** - Parado no estado inicial, assim que o PLC entrar em **Modo Run**, a *Function (FC)* **Init** é executada. Assim que o Grafcet de Funcionamento estiver a primeira Etapa do Grafcet Gemma segue para a próxima etapa. 
+
+- **Etapa A1** - Parado no estado inicial, nesta etapa, é dada a Ordem de Start (O_Start), permitindo assim, o arranque da estação. 
+
+- **Etapa F2** - Marcha de preparação, nesta etapa, com a Ordem de Start executada, verificamos se a estação **contém peças** para começar o processo e se o **Modo de Marcha, Automático e Ciclo** foi escolhido. 
+
+- **Etapa F1** - Marcha de produção com ordem, nesta etapa, o processo está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start.
+
+- **Etapa F5** - Marchas de verificação com ordem, nesta etapa, o processo está a funcionar de forma cíclica, ou seja, é necessária a Ordem de Start na Etapa Inicial do Grafcet de Funcionamento.
+
+        Nota: Os Modos de Marcha, são selecionados pelo Gemma Master.
+
+- **Etapa A3** - Paragem solicitado, através da **Ordem de Stop** é possível proceder a paragem das estações.
+
+- **Etapa A4** - Paragem finalizada, após paragem solicitada estar concluída e como o Modo de Marcha selecionado, voltamos à **Marcha de produção com ordem**, desta forma, a estação, entra em execução no estado onde ficou parado.
+
+- **Etapa D1** - Paragem de emergência, através da **Ordem de Emergência** é possível proceder a paragem de emergência da estação. Assim que a estação saír da situação de emergência, a **Etapas A6** é executada, ou seja, a *Function (FC)* **Init** é executada.
 
 **Estação 30**
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/ST30_Gemma.svg)
 
+- **Etapa A6** - Parado no estado inicial, assim que o PLC entrar em **Modo Run**, a *Function (FC)* **Init** é executada. Assim que o Grafcet de Funcionamento estiver a primeira Etapa do Grafcet Gemma segue para a próxima etapa. 
+
+- **Etapa A1** - Parado no estado inicial, nesta etapa, é dada a Ordem de Start (O_Start), permitindo assim, o arranque da estação. 
+
+- **Etapa F2** - Marcha de preparação, nesta etapa, com a Ordem de Start executada, verificamos se a estação **não contém peça na pinça** e se o **Modo de Marcha, Automático e Ciclo** foi escolhido. 
+
+- **Etapa F1** - Marcha de produção com ordem, nesta etapa, o processo está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start.
+
+- **Etapa F5** - Marchas de verificação com ordem, nesta etapa, o processo está a funcionar de forma cíclica, ou seja, é necessária a Ordem de Start na Etapa Inicial do Grafcet de Funcionamento.
+
+        Nota: Os Modos de Marcha, são selecionados pelo Gemma Master.
+
+- **Etapa A3** - Paragem solicitado, através da **Ordem de Stop** é possível proceder a paragem das estações.
+
+- **Etapa A4** - Paragem finalizada, após paragem solicitada estar concluída e como o Modo de Marcha selecionado, voltamos à **Marcha de produção com ordem**, desta forma, a estação, entra em execução no estado onde ficou parado.
+
+- **Etapa D1** - Paragem de emergência, através da **Ordem de Emergência** é possível proceder a paragem de emergência da estação. Assim que a estação saír da situação de emergência, a **Etapas A6** é executada, ou seja, a *Function (FC)* **Init** é executada.
+
 **Estação 40**
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/ST40_Gemma.svg)
+
+- **Etapa A6** - Parado no estado inicial, assim que o PLC entrar em **Modo Run**, a *Function (FC)* **Init** é executada. Assim que o Grafcet de Funcionamento estiver a primeira Etapa do Grafcet Gemma segue para a próxima etapa. 
+
+- **Etapa A1** - Parado no estado inicial, nesta etapa, é dada a Ordem de Start (O_Start), permitindo assim, o arranque da estação. 
+
+- **Etapa F2** - Marcha de preparação, nesta etapa, com a Ordem de Start executada, verificamos se a estação **contém peças** para começar o processo e se o **Modo de Marcha, Automático e Ciclo** foi escolhido. 
+
+- **Etapa F1** - Marcha de produção com ordem, nesta etapa, o processo está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start.
+
+- **Etapa F5** - Marchas de verificação com ordem, nesta etapa, o processo está a funcionar de forma cíclica, ou seja, é necessária a Ordem de Start na Etapa Inicial do Grafcet de Funcionamento.
+
+        Nota: Os Modos de Marcha, são selecionados pelo Gemma Master.
+
+- **Etapa A3** - Paragem solicitado, através da **Ordem de Stop** é possível proceder a paragem das estações.
+
+- **Etapa A4** - Paragem finalizada, após paragem solicitada estar concluída e como o Modo de Marcha selecionado, voltamos à **Marcha de produção com ordem**, desta forma, a estação, entra em execução no estado onde ficou parado.
+
+- **Etapa D1** - Paragem de emergência, através da **Ordem de Emergência** é possível proceder a paragem de emergência da estação. Assim que a estação saír da situação de emergência, a **Etapas A6** é executada, ou seja, a *Function (FC)* **Init** é executada.
 
 **Estação 50**
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/ST50_Gemma.svg)
 
+- **Etapa A6** - Parado no estado inicial, assim que o PLC entrar em **Modo Run**, a *Function (FC)* **Init** é executada. Assim que o Grafcet de Funcionamento estiver a primeira Etapa do Grafcet Gemma segue para a próxima etapa. 
+
+- **Etapa A1** - Parado no estado inicial, nesta etapa, é dada a Ordem de Start (O_Start), permitindo assim, o arranque da estação. 
+
+- **Etapa F2** - Marcha de preparação, nesta etapa, com a Ordem de Start executada, verificamos se a estação **não contém peça no tapete** e se o **Modo de Marcha, Automático e Ciclo** foi escolhido. 
+
+- **Etapa F1** - Marcha de produção com ordem, nesta etapa, o processo está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start.
+
+- **Etapa F5** - Marchas de verificação com ordem, nesta etapa, o processo está a funcionar de forma cíclica, ou seja, é necessária a Ordem de Start na Etapa Inicial do Grafcet de Funcionamento.
+
+        Nota: Os Modos de Marcha, são selecionados pelo Gemma Master.
+
+- **Etapa A3** - Paragem solicitado, através da **Ordem de Stop** é possível proceder a paragem das estações.
+
+- **Etapa A4** - Paragem finalizada, após paragem solicitada estar concluída e como o Modo de Marcha selecionado, voltamos à **Marcha de produção com ordem**, desta forma, a estação, entra em execução no estado onde ficou parado.
+
+- **Etapa D1** - Paragem de emergência, através da **Ordem de Emergência** é possível proceder a paragem de emergência da estação. Assim que a estação saír da situação de emergência, a **Etapas A6** é executada, ou seja, a *Function (FC)* **Init** é executada.
+
 ###### Gemma Iluminação 
 
-##### Explicação (DESATUALIZADO!)
-
-- **Etapa A6** - Parado no estado inicial, assim que o PLC entrar em **Modo Run**, a FC **Init** é *corrida* e essa informação é guardada e envidada para a próxima etapa.
-
-- **Etapa A1** - Parado no estado inicial, nesta etapa, confirmamos que o **Init** foi *corrido*. Também é verificado se as **Estações 20 e 40** contém peças para começar o processo. Caso as **duas** estações contenham peças passamos a próxima etapa, caso isso não aconteça ficamos na etapa. 
-
-- **Etapa F2** - Marcha de preparação, nesta etapa, confirmamos **Estações 20 e 40** contém peças para começar o processo. Quando for dado o **Start Inicial (SB1)** passamos a próxima etapa.
-
-      Através do **Seletor (SA)** é possível escolher o modo de funcionamento de cada estação. 
-      (Posição 0 - Modo de Marcha: Automático / Posição 1 - Modo de Marcha: Ciclo).
-
-- **Etapa F1** - Modo de Marcha: Automático (Corre a estação de forma automático, não sendo necessário qualquer ativação).
-
-- **Etapa A3** - Paragem solicitado, através do **Switch (SB2)** é possível proceder a paragem da estação.
-
-- **Etapa A4** - Paragem finalizada, a paragem solicitada é concluída voltado a assim à **Marcha de Produção**, aguardado a ordem de inicialização da produção (Start (SB1)).
-
-- **Etapa D1** - Paragem de emergência, através da **Botoneira (QS)** é possível proceder a paragem de emergência da estação.
+        LOADing...
 
 ##### Classificação 
-
 ###### Zonas de Comunicação
 
 |||||||||	
@@ -512,69 +605,3 @@ Q116|Q117|Q118|Q119|I116|I117|I118|I119
 
 
 ###### Estação 50
-
-\documentclass{article}
-\usepackage[utf8]{inputenc}
-\usepackage{array}
-\usepackage{wrapfig}
-\usepackage{multirow}
-\usepackage{tabularx}
-
-
-%-19PLC---------------------------------------------------------------------
-\begin{table}[h!]
-\caption{I/0 Locais - 19PLC}
-\vspace{1cm}
-\begin{tabular}{|c|c|c|c|c|c|}
- \hline
- \multicolumn{3}{|c|}{Entrada} \\
- \hline
- Label & Endereço & Comentário \\
- \hline
- 3211*B42 & I0.3 & Sensor de Garra em Baixo \\
- \hline
- 3211*B41 & I0.4 & Sensor de Garra em Cima \\
- \hline
- 3211*B32 & I0.5 & Sensor Garra (Rotação) \\
- \hline
- 3211*B31 & I0.6 & Sensor Garra (Posição Inicial) \\
- \hline
- 3211*B21 & I0.7 & Sensor de Garra á Frente \\
- \hline
- 3211*B22 & I1.0 & Sensor de Garra Atrás \\
- \hline
- 3211*B11 & I1.1 & Sensor de Garra Fechada \\
- \hline
- 321920SB22 & I8.4 & Botão Vermelho \\
- \hline
- 321920SB21 & I8.5 & Botão Verde \\
- \hline
- 321920QS24 & I8.6 & Botão Emergência \\
- \hline
- 321920SA23 & I8.7 & Seletor \\
- \hline\hline
- 
- \multicolumn{3}{|c|}{Saidas} \\
- \hline
- Label & Endereço & Comentário \\
- \hline
- 3211*Y40 & Q0.3 & Cilindro da Garra (Sobe e Baixa) \\
- \hline
- 3211*Y30B & Q0.4 & Cilindro da Garra (Rotação) \\
- \hline
- 3211*Y30A & Q0.5 & Cilindro da Garra (Posição Inicial) \\
- \hline
- 3211*Y20 & Q0.6 & Cilindro da Garra (Frente e Atrás) \\
- \hline
- 3211*Y10B & Q0.7 & Cilindro de Fecho Garra \\
- \hline
- 3211*Y10A & Q1.0 & Cilindro de Abertura da Garra \\
- \hline
- 321920HL11 & Q8.5 & Painel Luz Laranja \\
- \hline
- 321920HL12 & Q8.6 & Painel Luz Verde \\
- \hline
- 321920HL13 & Q8.7 & Painel Luz Vermelha \\
- \hline
- \end{tabular}
- \end{table}
