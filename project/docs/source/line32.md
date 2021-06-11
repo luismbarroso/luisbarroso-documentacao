@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *11/06/2021, 17h56*
+**Data:** *11/06/2021, 22h27*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 - [Introdução](#introducao)
@@ -18,17 +18,54 @@
 - [Trabalho Realizado](#trabalho-realizado)
     - [Classificação](#classificacao)
         - [Estação 10](#estacao-10-classificacao)
+                - [Entradas e Saidas (PLC)]
+                        - [Entradas]
+                        - [Saidas]
+                - [Memórias]
+                - [Comunicações]
+                        - [Entradas]
+                        - [Saidas]
         - [Estação 20](#estacao-20-classificacao)
+                - [Entradas e Saidas (PLC)]
+                        - [Entradas]
+                        - [Saidas]
+                - [Memórias]
+                - [Comunicações]
+                        - [Entradas]
+                        - [Saidas]
         - [Estação 30](#estacao-30-classificacao) 
+                - [Entradas e Saidas (PLC)]
+                        - [Entradas]
+                        - [Saidas]
+                - [Memórias]
+                - [Comunicações]
+                        - [Entradas]
+                        - [Saidas]
         - [Estação 40](#estacao-40-classificacao)
+                - [Entradas e Saidas (PLC)]
+                        - [Entradas]
+                        - [Saidas]
+                - [Memórias]
+                - [Comunicações]
+                        - [Entradas]
+                        - [Saidas]
         - [Estação 50](#estacao-50-classificacao)
+                - [Entradas e Saidas (PLC)]
+                        - [Entradas]
+                        - [Saidas]
+                - [Memórias]
+                - [Comunicações]
+                        - [Entradas]
+                        - [Saidas]
+    - [Comunicações](#comunicacoes)
+        - [Zonas de Comunicação (Profinet)](#zonas-de-comunicacao-profinet)                
     - [Software](#software)
         - [Grafcets](#grafcets)
-            - [Estação 10](#estacao-10-grafcet)
-            - [Estação 20](#estacao-20-grafcet)
-            - [Estação 30](#estacao-30-grafcet) 
-            - [Estação 40](#estacao-40-grafcet)
-            - [Estação 50](#estacao-50-grafcet)
+                - [Estação 10](#estacao-10-grafcet)
+                - [Estação 20](#estacao-20-grafcet)
+                - [Estação 30](#estacao-30-grafcet) 
+                - [Estação 40](#estacao-40-grafcet)
+                - [Estação 50](#estacao-50-grafcet)
         - [Programação](#programacao)
         - [Gemma](#gemma)
             - [Esquema](#esquema)
@@ -37,14 +74,7 @@
                 - [Gemma Master](#gemma-master)
                 - [Gemma Estações](#gemma-estacoes)
                 - [Gemma Iluminação](#gemma-iluminacao)
-            - [Modos de Marcha]
-            - [Classificação]
-                - [Master]
-                - [Estação 10]
-                - [Estação 20]
-                - [Estação 30]
-                - [Estação 40]
-                - [Estação 50]
+            - [Modos de Marcha](#modos-de-marcha)
         - [HMI](#HMI)  
         - [Tesla Scada](#tesla-scada)
         - [Anexos](#anexos)
@@ -143,7 +173,7 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 ### Classificação
 #### Estação 10 (Classificação)
 
-**Entradas e Saídas**
+**Entradas e Saídas (PLC)**
 
 *Entradas 19PLC*
 
@@ -156,6 +186,39 @@ Assim que a estação 20 for alimentada com o corpo da peça, essa informação 
 3211*B21|%I0.7|Sensor de Garra á Frente
 3211*B22|%I1.0|Sensor de Garra Atrás
 3211*B11|%I1.1|Sensor de Garra Fechada
+Reset_HMI_Inputs|%IB2|
+HMI_SB1|%I2.0|
+HMI_SB2|%I2.1|
+HMI_QS|%I2.2|
+HMI_SB1_ST10|%I2.3|
+HMI_SB2_ST10|%I2.4|
+HMI_QS_ST10|%I2.5|
+HMI_Modo_HMI|%I2.6|
+HMI_Modo_Local|%I2.7|
+Reset_HMI_Inputs_2|%IB3|
+HMI_Modo_Scada|%I3.0|
+Init_Manual|%I3.1|
+HMI_MM_Automatico|%I3.2|
+HMI_MM_Ciclo|%I3.3|
+HMI_MM_Manual|%I3.4|
+HMI_MC_Power_Enable|%I3.5|
+HMI_MC_Home_Execute_A|%I3.6|
+HMI_MC_Home_Execute|%I3.7|
+Reset_HMI_Inputs_3|%IB4|
+HMI_MC_Reset_Execute|%I4.0|
+HMI_MC_MoveJog_Esq|%I4.1|
+HMI_MC_MoveJog_Drt|%I4.2|
+HMI_MC_MoveAbsolute_Execute|%I4.3|
+HMI_MC_MoveRelative_Execute|%I4.4|
+HMI_MC_Halt_Execute|%I4.5|
+HMI_Teste_Luzes|%I4.6|
+HMI_Posicao_ST20|%I4.7|
+Reset_HMI_Inputs_4|%IB5|
+HMI_Posicao_ST30|%I5.0|
+HMI_Posicao_ST40|%I5.1|
+HMI_Posicao_ST50|%I5.2|
+HMI_Testes_Cilindros|%I5.3|
+HMI_Init_Manual_All_STS|%I6.0|
 321920SB22|%I8.4|Botão Vermelho
 321920SB21|%I8.5|Botão Verde
 321920QS24|%I8.6|Botão Emergência
@@ -368,93 +431,93 @@ Tag_36|%IB119|
 
 |Label |Endereço  | Comentário|
 --- | --- | ---	
-Tag_6|%QB100
-Tag_5|%QB101
-Tag_7|%QB102
-Tag_8|%QB103
-Tag_13|%QB104
-ST10_Ok_ST20|%Q104.0
-Tag_14|%QB105
-Emerg_M_ST20|%Q105.2
-Stop_M_ST20|%Q105.3
-Init_M_ST20|%Q105.4
-MM_A_ST20|%Q105.5
-MM_C_ST20|%Q105.6
-MM_M_ST20|%Q105.7
-Tag_15|%QB106
-MF_HMI_ST20|%Q106.0
-MF_SCADA_ST20|%Q106.1
-MF_Local_ST20|%Q106.2
-HLs_ST20|%Q106.3
-Scada_O_Start_ST20|%Q106.4
-Scada_O_Stop_ST20|%Q106.5
-Scada_O_Emerg_ST20|%Q106.6
-Cilindros_ST20|%Q106.7
-Tag_16|%QB107
-Tag_21|%QB108
-ST10_Ok_ST30|%Q108.0
-Tag_22|%QB109
-Emerg_M_ST30|%Q109.2
-Stop_M_ST30|%Q109.3
-Init_M_ST30|%Q109.4
-MM_A_ST30|%Q109.5
-MM_C_ST30|%Q109.6
-MM_M_ST30|%Q109.7
-Tag_23|%QB110
-MF_HMI_ST30|%Q110.0
-MF_Local_ST30|%Q110.1
-MF_SCADA_ST30|%Q110.2
-HLs_ST30|%Q110.3
-Scada_O_Start_ST30|%Q110.4
-Scada_O_Stop_ST30|%Q110.5
-Scada_O_Emerg_ST30|%Q110.6
-Cilindros_ST30|%Q110.7
-Tag_24|%QB111
-Tag_29|%QB112
-ST10_Ok_ST40|%Q112.0
-Tag_30|%QB113
-A6_M_ST40|%Q113.2
-A1_M_ST40|%Q113.3
-F2_M_ST40|%Q113.4
-F1_M_ST40|%Q113.5
-F5_M_ST40|%Q113.6
-F6_M_ST40|%Q113.7
-Tag_31|%QB114
-A3_M_ST40|%Q114.0
-D1_M_ST40|%Q114.1
-A4_M_ST40|%Q114.2
-Emerg_M_ST40|%Q114.3
-Stop_M_ST40|%Q114.4
-Init_M_ST40|%Q114.5
-MM_A_ST40|%Q114.6
-MM_C_ST40|%Q114.7
-Tag_32|%QB115
-MM_M_ST40|%Q115.0
-MF_HMI_ST40|%Q115.1
-MF_SCADA_ST40|%Q115.2
-MF_Local_ST40|%Q115.3
-Cilindros_ST40_HLs_ST40|%Q115.4
-Scada_O_Start_ST40|%Q115.5
-Scada_O_Stop_ST40|%Q115.6
-Scada_O_Emerg_ST40|%Q115.7
-Tag_37|%QB116
-ST10_Ok_ST50|%Q116.0
-Emerg_M_ST50|%Q117.2
-Stop_M_ST50|%Q117.3
-Init_M_ST50|%Q117.4
-MM_A_ST50|%Q117.5
-MM_C_ST50|%Q117.6
-MM_M_ST50|%Q117.7
-Tag_38|%QB118
-MF_HMI_ST50|%Q118.0
-MF_SCADA_ST50|%Q118.1
-MF_Local_ST50|%Q118.2
-HLs_ST50|%Q118.3
-Scada_O_Start_ST50|%Q118.4
-Scada_O_Stop_ST50|%Q118.5
-Scada_O_Emerg_ST50|%Q118.6
-Cilindros_ST50|%Q118.7
-Tag_39|%QB119
+Tag_6|%QB100|
+Tag_5|%QB101|
+Tag_7|%QB102|
+Tag_8|%QB103|
+Tag_13|%QB104|
+ST10_Ok_ST20|%Q104.0|
+Tag_14|%QB105|
+Emerg_M_ST20|%Q105.2|
+Stop_M_ST20|%Q105.3|
+Init_M_ST20|%Q105.4|
+MM_A_ST20|%Q105.5|
+MM_C_ST20|%Q105.6|
+MM_M_ST20|%Q105.7|
+Tag_15|%QB106|
+MF_HMI_ST20|%Q106.0|
+MF_SCADA_ST20|%Q106.1|
+MF_Local_ST20|%Q106.2|
+HLs_ST20|%Q106.3|
+Scada_O_Start_ST20|%Q106.4|
+Scada_O_Stop_ST20|%Q106.5|
+Scada_O_Emerg_ST20|%Q106.6|
+Cilindros_ST20|%Q106.7|
+Tag_16|%QB107|
+Tag_21|%QB108|
+ST10_Ok_ST30|%Q108.0|
+Tag_22|%QB109|
+Emerg_M_ST30|%Q109.2|
+Stop_M_ST30|%Q109.3|
+Init_M_ST30|%Q109.4|
+MM_A_ST30|%Q109.5|
+MM_C_ST30|%Q109.6|
+MM_M_ST30|%Q109.7|
+Tag_23|%QB110|
+MF_HMI_ST30|%Q110.0|
+MF_Local_ST30|%Q110.1|
+MF_SCADA_ST30|%Q110.2|
+HLs_ST30|%Q110.3|
+Scada_O_Start_ST30|%Q110.4|
+Scada_O_Stop_ST30|%Q110.5|
+Scada_O_Emerg_ST30|%Q110.6|
+Cilindros_ST30|%Q110.7|
+Tag_24|%QB111|
+Tag_29|%QB112|
+ST10_Ok_ST40|%Q112.0|
+Tag_30|%QB113|
+A6_M_ST40|%Q113.2|
+A1_M_ST40|%Q113.3|
+F2_M_ST40|%Q113.4|
+F1_M_ST40|%Q113.5|
+F5_M_ST40|%Q113.6|
+F6_M_ST40|%Q113.7|
+Tag_31|%QB114|
+A3_M_ST40|%Q114.0|
+D1_M_ST40|%Q114.1|
+A4_M_ST40|%Q114.2|
+Emerg_M_ST40|%Q114.3|
+Stop_M_ST40|%Q114.4|
+Init_M_ST40|%Q114.5|
+MM_A_ST40|%Q114.6|
+MM_C_ST40|%Q114.7|
+Tag_32|%QB115|
+MM_M_ST40|%Q115.0|
+MF_HMI_ST40|%Q115.1|
+MF_SCADA_ST40|%Q115.2|
+MF_Local_ST40|%Q115.3|
+Cilindros_ST40_HLs_ST40|%Q115.4|
+Scada_O_Start_ST40|%Q115.5|
+Scada_O_Stop_ST40|%Q115.6|
+Scada_O_Emerg_ST40|%Q115.7|
+Tag_37|%QB116|
+ST10_Ok_ST50|%Q116.0|
+Emerg_M_ST50|%Q117.2|
+Stop_M_ST50|%Q117.3|
+Init_M_ST50|%Q117.4|
+MM_A_ST50|%Q117.5|
+MM_C_ST50|%Q117.6|
+MM_M_ST50|%Q117.7|
+Tag_38|%QB118|
+MF_HMI_ST50|%Q118.0|
+MF_SCADA_ST50|%Q118.1|
+MF_Local_ST50|%Q118.2|
+HLs_ST50|%Q118.3|
+Scada_O_Start_ST50|%Q118.4|
+Scada_O_Stop_ST50|%Q118.5|
+Scada_O_Emerg_ST50|%Q118.6|
+Cilindros_ST50|%Q118.7|
+Tag_39|%QB119|
 
 #### Estação 20 (Classificação)
 
@@ -476,6 +539,11 @@ Tag_39|%QB119
 322920SB21|%I1.3|Botão Verde
 322920QS24|%I1.4|Botão Emergência
 322920SA23|%I1.5|Seletor
+Reset_HMI_Inputs|%IB2|
+HMI_SB1|%I2.0|
+HMI_SB2|%I2.1|
+HMI_QS|%I2.2|
+Init_Manual|%I2.3|
 
 *Saídas 29PLC*
 
@@ -486,6 +554,120 @@ Tag_39|%QB119
 322920HL11|%Q0.7|Painel Luz Laranja
 322920HL12|%Q1.0|Painel Luz Verde
 322920HL13|%Q1.1|Painel Luz Vermelha
+
+**Memórias**
+
+|Label |Endereço  | Comentário|
+--- | --- | ---	
+Grafcet_10|%MB10|
+E10|%M10.0|
+E11|%M10.1|
+E12|%M10.2|
+E13|%M10.3|
+E14|%M10.4|
+E15|%M10.5|
+E16|%M10.6|
+E17|%M10.7|
+Grafcet_10_1|%MB11|
+E18|%M11.0|
+Grafcet_Gemma|%MB12|
+A6|%M12.0|
+A1|%M12.1|
+F2|%M12.2|
+F1|%M12.3|
+F1_1|%M12.4|
+F5|%M12.5|
+F6|%M12.6|
+A3|%M12.7|
+Grafcet_Gemma_1|%MB13|
+A4|%M13.0|
+D1|%M13.1|
+Reset_ST20_Memorys|%MB14|
+Grafcet_Parado|%M14.0|
+Grafcet_Emergencia|%M14.1|
+O_Start|%M14.2|
+O_Stop|%M14.3|
+O_Emerg|%M14.4|
+O_Marcha_A|%M14.5|
+O_Marcha_C|%M14.6|
+HL11_ON/OFF_Condition|%M15.0|
+HL12_ON/OFF_Condition|%M15.1|
+HL13_ON/OFF_Condition|%M15.2|
+	
+**Comunicações**
+
+*Entradas*
+
+|Label |Endereço  | Comentário|
+--- | --- | ---	
+Tag_1|%IB100|
+Tag_2|%IB101|
+Tag_3|%IB102|
+Tag_4|%IB103|
+Tag_9|%IB104|
+ST10_Ok_ST20|%I104.0|
+Tag_10|%IB105|
+Emerg_M_ST20|%I105.2|
+Stop_M_ST20|%I105.3|
+Init_M_ST20|%I105.4|
+MM_A_ST20|%I105.5|
+MM_C_ST20|%I105.6|
+MM_M_ST20|%I105.7|
+Tag_11|%IB106|
+MF_HMI_ST20|%I106.0|
+MF_SCADA_ST20|%I106.1|
+MF_Local_ST20|%I106.2|
+HLs_ST20|%I106.3|
+Scada_O_Start_ST20|%I106.4|
+Scada_O_Stop_ST20|%I106.5|
+Scada_O_Emerg_ST20|%I106.6|
+Cilindros_ST20|%I106.7|
+Tag_12|%IB107|
+Tag_18|%IB109|
+Tag_19|%IB110|
+Tag_20|%IB111|
+Tag_25|%IB112|
+Tag_26|%IB113|
+Tag_27|%IB114|
+Tag_28|%IB115|
+Tag_33|%IB116|
+Tag_34|%IB117|
+Tag_35|%IB118|
+Tag_36|%IB119|
+
+*Saídas*
+
+|Label |Endereço  | Comentário|
+--- | --- | ---	
+Tag_6|%QB100|
+Tag_5|%QB101|
+Tag_7|%QB102|
+Tag_8|%QB103|
+Tag_13|%QB104|
+ST20_Ok|%Q104.0|
+A6_ST20|%Q104.1|
+A1_ST20|%Q104.2|
+F2_ST20|%Q104.3|
+F1_ST20|%Q104.4|
+A3_ST20|%Q104.5|
+F5_ST20|%Q104.6|
+F6_ST20|%Q104.7|
+Tag_14|%QB105|
+A4_ST20|%Q105.0|
+D1_ST20|%Q105.1|
+Tag_15|%QB106|
+Tag_16|%QB107|
+Tag_21|%QB108|
+Tag_22|%QB109|
+Tag_23|%QB110|
+Tag_24|%QB111|
+Tag_29|%QB112|
+Tag_30|%QB113|
+Tag_31|%QB114|
+Tag_32|%QB115|
+Tag_37|%QB116|
+Tag_38|%QB118|
+Tag_39|%QB119|
 
 #### Estação 30 (Classificação)
 
@@ -505,6 +687,11 @@ Tag_39|%QB119
 323920SB21|%I1.3|Botão Verde
 323920QS24|%I1.4|Botão Emergência
 323920SA23|%I1.5|Seletor
+Reset_HMI_Inputs|%IB2|
+HMI_SB1|%I2.0|
+HMI_SB2|%I2.1|
+HMI_QS|%I2.2|
+Init_Manual|%I2.3|
 
 *Saídas 39PLC*
 
@@ -517,6 +704,123 @@ Tag_39|%QB119
 323920HL12|%Q1.0|Painel Luz Verde
 323920HL13|%Q1.1|Painel Luz Vermelha
 
+**Memórias**
+
+|Label |Endereço  | Comentário|
+--- | --- | ---
+Grafcet_10|%MB10|
+E10|%M10.0|
+E11|%M10.1|
+E12|%M10.2|
+E13|%M10.3|
+E14|%M10.4|
+E15|%M10.5|
+E16|%M10.6|
+E17|%M10.7|
+Grafcet_10_1|%MB11|
+E18|%M11.0|
+E19|%M11.1|
+Grafcet_Gemma|%MB12|
+A6|%M12.0|
+A1|%M12.1|
+F2|%M12.2|
+F1|%M12.3|
+F1_1|%M12.4|
+F5|%M12.5|
+F6|%M12.6|
+A3|%M12.7|
+Grafcet_Gemma_1|%MB13|
+A4|%M13.0|
+D1|%M13.1|
+Reset_ST30_Memorys|%MB14|
+O_Marcha_C|%M14.0|
+Grafcet_Parado|%M14.1|
+Grafcet_Emergencia|%M14.2|
+O_Marcha_A|%M14.3|
+O_Start|%M14.4|
+O_Stop|%M14.5|
+O_Emerg|%M14.6|
+HL11_ON/OFF_Condition|%M15.0|
+HL12_ON/OFF_Condition|%M15.1|
+HL13_ON/OFF_Condition|%M15.2|
+
+**Comunicações**
+
+*Entradas*
+
+|Label |Endereço  | Comentário|
+--- | --- | ---
+Tag_1|%IB100|
+Tag_2|%IB101|
+Tag_3|%IB102|
+Tag_4|%IB103|
+Tag_9|%IB104|
+Tag_10|%IB105|
+Tag_11|%IB106|
+Tag_12|%IB107|
+Tag_17|%IB108|
+ST10_Ok_ST30|%I108.0|
+Tag_18|%IB109|
+Emerg_M_ST30|%I109.2|
+Stop_M_ST30|%I109.3|
+Init_M_ST30|%I109.4|
+MM_A_ST30|%I109.5|
+MM_C_ST30|%I109.6|
+MM_M_ST30|%I109.7|
+Tag_19|%IB110|
+MF_HMI_ST30|%I110.0|
+MF_Local_ST30|%I110.1|
+MF_SCADA_ST30|%I110.2|
+HLs_ST30|%I110.3|
+Scada_O_Start_ST30|%I110.4|
+Scada_O_Stop_ST30|%I110.5|
+Scada_O_Emerg_ST30|%I110.6|
+Cilindros_ST30|%I110.7|
+Tag_20|%IB111|
+Tag_25|%IB112|
+Tag_26|%IB113|
+Tag_27|%IB114|
+Tag_28|%IB115|
+Tag_33|%IB116|
+Tag_34|%IB117|
+Tag_35|%IB118|
+Tag_36|%IB119|
+
+
+*Saídas*
+
+|Label |Endereço  | Comentário|
+--- | --- | ---
+Tag_6|%QB100|
+Tag_5|%QB101|
+Tag_7|%QB102|
+Tag_8|%QB103|
+Tag_13|%QB104|
+Tag_14|%QB105|
+Tag_15|%QB106|
+Tag_16|%QB107|
+Tag_21|%QB108|
+ST30_Ok|%Q108.0|
+A6_ST30|%Q108.1|
+A1_ST30|%Q108.2|
+F2_ST30|%Q108.3|
+F1_ST30|%Q108.4|
+F5_ST30|%Q108.5|
+F6_ST30|%Q108.6|
+A3_ST30|%Q108.7|
+Tag_22|%QB109|
+A4_ST30|%Q109.0|
+D1_ST30|%Q109.1|
+Tag_23|%QB110|
+Tag_24|%QB111|
+Tag_29|%QB112|
+Tag_30|%QB113|
+Tag_31|%QB114|
+Tag_32|%QB115|
+Tag_37|%QB116|
+Tag_38|%QB118|
+Tag_39|%QB119|
+
 #### Estação 40 (Classificação)
 
 **Entradas e Saídas**
@@ -525,22 +829,27 @@ Tag_39|%QB119
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
+3241*B41|%I0.0|Sensor no Copo (Cima)
+3241*B42|%I0.1|Sensor no Copo (Baixo)
+3241*B43|%I0.2|Sensor do Prato (Esquerdo)
+3241*B44|%I0.3|Sensor do Prato (Direito)
+3242*B41|%I0.4|Sensor de Peça à Frente
 3241*B11|%I0.5|Sensor Cilindro1 Avançado
 3241*B12|%I0.6|Sensor Cilindro1 Recuado
 3241*B21|%I0.7|Sensor Cilindro2 Avançado
 3241*B22|%I1.0|Sensor Cilindro2 Recuado
 3241*B31|%I1.1|Sensor Prato (Posição Inicial)
 3241*B32|%I1.2|Sensor Prato (Rotação)
-3241*B41|%I0.0|Sensor no Copo (Cima)
-3241*B42|%I0.1|Sensor no Copo (Baixo)
-3241*B43|%I0.2|Sensor do Prato (Esquerdo)
-3241*B44|%I0.3|Sensor do Prato (Direito)
+3242*B31|%I1.3|Sensor de Garra (Abrir/Fechar)
+3242*B22|%I1.4|Sensor de Garra em Baixo
+3242*B21|%I1.5|Sensor de Garra em Cima
+Reset_HMI_Inputs|%IB2|
+HMI_SB1|%I2.0|
+HMI_SB2|%I2.1|
+HMI_QS|%I2.2|
+Init_Manual|%I2.3|
 3242*B11|%I8.1|Sensor de Garra á Frente
 3242*B12|%I8.0|Sensor de Garra Atrás
-3242*B21|%I1.5|Sensor de Garra em Cima
-3242*B22|%I1.4|Sensor de Garra em Baixo
-3242*B31|%I1.3|Sensor de Garra (Abrir/Fechar)
-3242*B41|%I0.4|Sensor de Peça à Frente
 324920SB22|%I8.4|Botão Vermelho
 324920SB21|%I8.5|Botão Verde
 324920QS24|%I8.6|Botão Emergência
@@ -550,19 +859,157 @@ Tag_39|%QB119
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
+3241*Y20|%Q0.0|Cilindro 2 Tubo
+3241*Y10|%Q0.1|Cilindro 1 Tubo
+3241*Y30|%Q0.2|Cilindro Prato
+3242*Y30|%Q0.3|Cilindro da Garra (Abrir e Fechar)
+3242*Y20|%Q0.4|Cilindro da Garra (Cima e Baixo)
+3242*Y10|%Q0.5|Cilindro da Garra (Frente e Trás)
 3240*H13|%Q0.6|Semáforo Vermelho
 3240*H12|%Q0.7|Semáforo Amarelo
 3240*H11|%Q1.0|Semáforo Verde
-3241*Y10|%Q0.1|Cilindro 1 Tubo
-3241*Y20|%Q0.0|Cilindro 2 Tubo
-3241*Y30|%Q0.2|Cilindro Prato
-3242*Y10|%Q0.5|Cilindro da Garra (Frente e Trás)
-3242*Y20|%Q0.4|Cilindro da Garra (Cima e Baixo)
-3242*Y30|%Q0.3|Cilindro da Garra (Abrir e Fechar)
 324920HL11|%Q8.5|Luz do Painel (Laranja)
 324920HL12|%Q8.6|Luz do Painel (Verde)
 324920HL13|%Q8.7|Luz do Painel (Vermelha)
 
+**Memórias**
+
+|Label |Endereço  | Comentário|
+--- | --- | ---
+Grafcet_10|%MB10|
+E10|%M10.0|
+E11|%M10.1|
+E12|%M10.2|
+E13|%M10.3|
+E14|%M10.4|
+E15||%M10.5|
+Grafcet_20|%MB11|
+E20|%M11.0|
+E21|%M11.1|
+E22|%M11.2|
+E23|%M11.3|
+Grafcet_30|%MB12|
+E30|%M12.0|
+E31|%M12.1|
+E32|%M12.2|
+E33|%M12.3|
+E34|%M12.4|
+E35|%M12.5|
+E36|%M12.6|
+E37|%M12.7|
+Grafcet_30_1|%MB13|
+E38|%M13.0|
+Grafcet_Gemma|%MB14|
+A6|%M14.0|
+A1|%M14.1|
+F2|%M14.2|
+F1|%M14.3|
+F1_1|%M14.4|
+F5|%M14.5|
+F6|%M14.6|
+A3|%M14.7|
+Grafcet_Gemma_1|%MB15|
+A4|%M15.0|
+D1|%M15.1|
+Reset_ST40_Memorys|%MB16|
+Grafcet_Parado|%M16.0|
+O_Marcha_C|%M16.1|
+Grafcet_Emergencia|%M16.2|
+O_Start|%M16.3|
+O_Stop|%M16.4|
+O_Emerg|%M16.5|
+O_Marcha_A|%M16.6|
+HL11_M_ON/OFF_Condition|%M17.0|
+HL11_ON/OFF_Condition|%M17.1|
+HL12_M_ON/OFF_Condition|%M17.2|
+HL12_ON/OFF_Condition|%M17.3|
+HL13_M_ON/OFF_Condition|%M17.4|
+HL13_ON/OFF_Condition|%M17.5|
+
+**Comunicações**
+
+*Entradas*
+
+|Label |Endereço  | Comentário|
+--- | --- | ---
+Tag_1|%IB100|
+Tag_2|%IB101|
+Tag_3|%IB102|
+Tag_4|%IB103|
+Tag_9|%IB104|
+Tag_10|%IB105|
+Tag_11|%IB106|
+Tag_12|%IB107|
+Tag_17|%IB108|
+Tag_18|%IB109|
+Tag_19|%IB110|
+Tag_20|%IB111|
+Tag_25|%IB112|
+ST10_Ok_ST40|%I112.0|
+Tag_26|%IB113|
+A6_M_ST40|%I113.2|
+A1_M_ST40|%I113.3|
+F2_M_ST40|%I113.4|
+F1_M_ST40|%I113.5|
+F5_M_ST40|%I113.6|
+F6_M_ST40|%I113.7|
+Tag_27|%IB114|
+A3_M_ST40|%I114.0|
+D1_M_ST40|%I114.1|
+A4_M_ST40|%I114.2|
+Emerg_M_ST40|%I114.3|
+Stop_M_ST40|%I114.4|
+Init_M_ST40|%I114.5|
+MM_A_ST40|%I114.6|
+MM_C_ST40|%I114.7|
+Tag_28|%IB115|
+MM_M_ST40|%I115.0|
+MF_HMI_ST40|%I115.1|
+MF_SCADA_ST40|%I115.2|
+MF_Local_ST40|%I115.3|
+HLs_ST40|%I115.4|
+Scada_O_Start_ST40|%I115.5|
+Scada_O_Stop_ST40|%I115.6|
+Scada_O_Emerg_ST40|%I115.7|
+Tag_33|%IB116|
+Tag_34|%IB117|
+Tag_35|%IB118|
+Tag_36|%IB119|
+	
+*Saídas*
+
+|Label |Endereço  | Comentário|
+--- | --- | ---
+Tag_6|%QB100|
+Tag_5|%QB101|
+Tag_7|%QB102|
+Tag_8|%QB103|
+Tag_13|%QB104|
+Tag_14|%QB105|
+Tag_15|%QB106|
+Tag_16|%QB107|
+Tag_21|%QB108|
+Tag_22|%QB109|
+Tag_23|%QB110|
+Tag_24|%QB111|
+Tag_29|%QB112|
+ST40_Ok|%Q112.0|
+A6_ST40|%Q112.1|
+A1_ST40|%Q112.2|
+F2_ST40|%Q112.3|
+F1_ST40|%Q112.4|
+F5_ST40|%Q112.5|
+F6_ST40|%Q112.6|
+A3_ST40|%Q112.7|
+Tag_30|%QB113|
+A4_ST40|%Q113.0|
+D1_ST40|%Q113.1|
+Tag_31|%QB114|
+Tag_32|%QB115|
+Tag_37|%QB116|
+Tag_38|%QB118|
+Tag_39|%QB119|
+	
 #### Estação 50 (Classificação)
 
 **Entradas e Saídas**
@@ -584,6 +1031,15 @@ Enconder_Z|%I0.2|Enconder Z
 325920SB21|%I1.3|Botão Verde
 325920QS24|%I1.4|Botão Emergência
 325920SA23|%I1.5|Seletor
+Reset_HMI_Inputs|%IB2|
+HMI_SB1|%I2.0|
+HMI_SB2|%I2.1|
+HMI_QS|%I2.2|
+Init_Manual|%I2.3|
+Reset_Contadores|%I2.4|
+HMI_CV|%I2.5|
+HMI_Start_Tapete|%I2.6|
+HMI_Stop_Tapete|%I2.7|
 
 *Saídas 59PLC*
 
@@ -597,6 +1053,161 @@ Enconder_Z|%I0.2|Enconder Z
 325920HL11|%Q0.7|Luz do Painel (Laranja)
 325920HL12|%Q1.0|Luz do Painel (Verde)
 325920HL13|%Q1.1|Luz do Painel (Vermelha)
+
+**Memórias**
+
+|Label |Endereço  | Comentário|
+--- | --- | ---
+	
+Grafcet_10|%MB10|
+E10|%M10.0|
+E11|%M10.1|
+E12|%M10.2|
+E13|%M10.3|
+E14|%M10.4|
+E15|%M10.5|
+E16|%M10.6|
+E17|%M10.7|
+Grafcet_10_1|%MB11|
+E18|%M11.0|
+E19|%M11.1|
+E20|%M11.2|
+E21|%M11.3|
+E22|%M11.4|
+E23|%M11.5|
+E24|%M11.6|
+E25|%M11.7|
+Grafcet_10_2|%MB12|
+E26|%M12.0|
+E27|%M12.1|
+E28|%M12.2|
+E29|%M12.3|
+Grafcet_Funcionamento|%M12.4|
+Grafcet_Gemma|%MB13|
+A6|%M13.0|
+A1|%M13.1|
+F2|%M13.2|
+F1|%M13.3|
+F1_1|%M13.4|
+F5|%M13.5|
+F6|%M13.6|
+A3|%M13.7|
+Grafcet_Gemma_1|%MB14|
+A4|%M14.0|
+D1|%M14.1|
+Reset_ST50_Memorys|%MB15|
+Grafcet_Parado|%M15.0|
+Grafcet_Emergencia|%M15.1|
+O_Start|%M15.2|
+O_Stop|%M15.3|
+O_Emerg|%M15.4|
+O_Marcha_A|%M15.5|
+O_Marcha_C|%M15.6|
+HL11_ON/OFF_Condition|%M16.0|
+HL12_ON/OFF_Condition|%M16.1|
+HL13_ON/OFF_Condition|%M16.2|
+HMI_Velocidade_Tapete|%MD300|
+Total_Pecas_Metalicas|%MD304|
+Total_Pecas_Brancas|%MD308|
+Total_Pecas_Pretas|%MD312|
+Total_Pecas|%MD316|
+Total_Pecas_Prefeitas|%MD320|
+Total_Pecas_Defeito|%MD324|
+Valor_Contador|%MD328|
+
+**Comunicações**
+
+*Entradas*
+
+|Label |Endereço  | Comentário|
+--- | --- | ---
+Tag_1|%IB100|
+Tag_2|%IB101|
+Tag_3|%IB102|
+Tag_4|%IB103|
+Tag_9|%IB104|
+Tag_10|%IB105|
+Tag_11|%IB106|
+Tag_12|%IB107|
+Tag_17|%IB108|
+Tag_18|%IB109|
+Tag_19|%IB110|
+Tag_20|%IB111|
+Tag_25|%IB112|
+Tag_26|%IB113|
+Tag_27|%IB114|
+Tag_28|%IB115|
+Tag_33|%IB116|
+ST10_Ok_ST50|%I116.0|
+Tag_34|%IB117|
+Emerg_M_ST50|%I117.2|
+Stop_M_ST50|%I117.3|
+Init_M_ST50|%I117.4|
+MM_A_ST50|%I117.5|
+MM_C_ST50|%I117.6|
+MM_M_ST50|%I117.7|
+Tag_35|%IB118|
+MF_HMI_ST50|%I118.0|
+MF_SCADA_ST50|%I118.1|
+MF_Local_ST50|%I118.2|
+HLs_ST50|%I118.3|
+Scada_O_Start_ST50|%I118.4|
+Scada_O_Stop_ST50|%I118.5|
+Scada_O_Emerg_ST50|%I118.6|
+Cilindros_ST50|%I118.7|
+Tag_36|%IB119|
+
+*Saídas*
+
+|Label |Endereço  | Comentário|
+--- | --- | ---
+Tag_6|%QB100|
+Tag_5|%QB101|
+Tag_7|%QB102|
+Tag_8|%QB103|
+Tag_13|%QB104|
+Tag_14|%QB105|
+Tag_15|%QB106|
+Tag_16|%QB107|
+Tag_21|%QB108|
+Tag_22|%QB109|
+Tag_23|%QB110|
+Tag_24|%QB111|
+Tag_29|%QB112|
+Tag_30|%QB113|
+Tag_31|%QB114|
+Tag_32|%QB115|
+Tag_37|%QB116|
+ST50_Ok|%Q116.0|
+A6_ST50|%Q116.1|
+A1_ST50|%Q116.2|
+F2_ST50|%Q116.3|
+F1_ST50|%Q116.4|
+F5_ST50|%Q116.5|
+F6_ST50|%Q116.6|
+A3_ST50|%Q116.7|
+A4_ST50|%Q117.0|
+D1_ST50|%Q117.1|
+Tag_38|%QB118|
+Tag_39|%QB119|
+
+### Comunicações
+
+### Zonas de Comunicação (Profinet)
+
+|PLC |Address in I/O Controller  | |Address in I-Device|
+--- | --- | --- | ---
+19PLC|I100, I101, I102, I103|←| Q100, Q101, Q102, Q103
+-|Q100, Q101, Q102, Q103|→|I100, I101, I102, I103
+29PLC|I104, I105, I106, I107|←|Q104, I105, Q106, Q107
+-|Q104, I105, Q106, Q107|→|I104, I105, I106, I107
+39PLC|I108, I109, I110, I111|←|Q108, Q109, Q110, Q111
+-|Q108, Q109, Q110, Q111|→|I108, I109, I110, I111
+49PLC|I112, I113, I114, I115|←|Q112, Q113, Q114, Q115
+-|Q112, Q113, Q114, Q115|→|I112, I113, I114, I115
+59PLC|I116, I117, I118, I119|←|Q116, Q117, Q118, Q119
+-|Q116, Q117, Q118, Q119|→|I116, I117, I118, I119
+
 
 ### Software
 #### Grafcets
@@ -912,27 +1523,6 @@ A ativação da Lâmpada Verde, do Semáforo, pode ser feita por F2 ou F1 ou A4 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST50_Ilum_HL12.svg)
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST50_Ilum_HL13.svg)
-
-##### Classificação 
-###### Zonas de Comunicação
-
-|||||||||	
---- | --- | --- | --- | --- | --- | --- | ---
---- | --- | --- | --- | 19PLC | --- | --- | ---
-I100|I101|I102|I103|Q100|Q101|Q102|Q103
-Q100|Q101|Q102|Q103|I100|I101|I102|I103
---- | --- | --- | --- | 29PLC | --- | --- | ---
-I104|I105|I106|I107|Q104|I105|Q106|Q107
-Q104|I105|Q106|Q107|I104|I105|I106|I107
---- | --- | --- | --- | 39PLC | --- | --- | --- 
-I108|I109|I110|I111|Q108|Q109|Q110|Q111
-Q108|Q109|Q110|Q111|I108|I109|I110|I111
---- | --- | --- | --- | 59PLC | --- | --- | --- 
-I112|I113|I114|I115|Q112|Q113|Q114|Q115
-Q112|Q113|Q114|Q115|I112|I113|I114|I115
---- | --- | --- | --- | 59PLC | --- | --- | ---
-I116|I117|I118|I119|Q116|Q117|Q118|Q119
-Q116|Q117|Q118|Q119|I116|I117|I118|I119
 
 ###### Master
 ##### Estação 10
