@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *11/06/2021, 12h08*
+**Data:** *11/06/2021, 17h56*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 - [Introdução](#introducao)
@@ -646,4 +646,22 @@ Q116|Q117|Q118|Q119|I116|I117|I118|I119
 ###### Estação 50
 
 #### Gemma
-![](./lines/line32/2020_2021/software/tia_portal/hmi/
+![](./lines/line32/2020_2021/software/tia_portal/hmi/line32.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_funcionamento.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st10.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st10_1.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st20.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st30.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st40.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st40_1.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50_1.png)
+![](./lines/line32/2020_2021/software/tia_portal/pecas.png)
+![](./lines/line32/2020_2021/software/tia_portal/root_screen.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st10.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st20.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st30.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st40.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st50.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/stations.png)
+![](./lines/line32/2020_2021/software/tia_portal/hmi/stations_modo_manual.png)
