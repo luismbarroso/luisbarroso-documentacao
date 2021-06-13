@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 11/06/2021, 22h46*
+**Data:** *Last Upgrade: 13/06/2021, 16h03*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 - [Introdução](#introducao)
@@ -15,6 +15,8 @@
         - [Estação 40](#estacao-40)
         - [Estação 50](#estacao-50)
     - [Modo de Funcionamento](#modo-de-funcionamento)
+    - [Comunicações](#comunicacoes)
+  
 - [Trabalho Realizado](#trabalho-realizado)
     - [Classificação](#classificacao)
         - [Estação 10](#estacao-10-classificacao)
@@ -56,9 +58,7 @@
             - [Memórias](#)
             - [Comunicações](#)
                 - [Entradas](#)
-                - [Saidas](#)
-    - [Comunicações](#comunicacoes)
-        - [Zonas de Comunicação (Profinet)](#zonas-de-comunicacao-profinet)                
+                - [Saidas](#)      
     - [Software](#software)
         - [Grafcets](#grafcets)
             - [Estação 10](#estacao-10-grafcet)
@@ -118,8 +118,6 @@ A Estação 10, **estação de transporte da peça**, desde a sua fase inicial a
 
 **Modo de Funcionamento da Estação 10**: Assim que o corpo da peça é processado pela estação 20, a garra avança, fecha e soube. Assim que concluído este processo avança para a próxima estação. Já na estação 30, a garra avança, baixa, abre, recua e aguarda que a peça seja processada pela estação 30. Assim que concluído este processo, a garra avança, fecha, soube, recua e avança para a próxima estação. Já na estação 40, a garra avança, baixa, abre, recua e aguarda que a peça seja processada pela estação 40. Assim que concluído este processo, a garra avança, baixa, fecha, soube, recua, roda para a esquerda e avança para a próxima estação. Já na estação 50, a garra avança, baixa, abre, recua. Assim que concluído este processo, retorna para a sua posição de *home*. Quando alcançar a posição de *home*, a garra, roda para a direita, desta forma, está pronta para começar um novo ciclo.
 
-        Futuramente: Video!
-
 ![ST10](./lines/line32/2020_2021/images/station/st_10.jpg)
 
 #### Estação 20
@@ -127,8 +125,6 @@ A Estação 10, **estação de transporte da peça**, desde a sua fase inicial a
 A Estação 20, **estação de alimentação do corpo da peça**, o corpo da peça, é colocado no funil para ser processado. A Estação 20 é constituída por 8 sensores e 2 cilindros, dos quais resultam: Sensor de Peça à Frente, Sensor Cilindro1 Avançado, Sensor Cilindro1 Recuado, Sensor Cilindro2 Avançado, Sensor Cilindro2 Recuado, Sensor no Funil (Cima), Sensor no Funil (Baixo), Sensor de Peça Metálica; Cilindro 1, Cilindro 2.
 
 **Modo de Funcionamento da Estação 20**: Assim que o corpo da peça é detectado pelo sensor (Sensor no Funil (Baixo)), o Cilindro 2 avança, isto para evitar que a segunda peça caia antes do Cilindro 1 recuar. Com o Cilindro 2 avançado, o Cilindro 1 avança, colocando a peça á frente, em posição para a Estação 10 a processar. Enquanto a peça se encontrar á frente não será processada mais nenhuma peça. Quando esta peça for retirada pelo robô, uma nova peça ser+a processada.
-
-        Futuramente: Video!
 
 ![ST20](./lines/line32/2020_2021/images/station/st_20.jpg)
 
@@ -138,8 +134,6 @@ A Estação 30, **estação de aplicação**, é aplicada uma *cola* para fixar 
 
 **Modo de Funcionamento da Estação 30**: Assim que o corpo da peça é detectado pelo sensor (Sensor de peça na Pinça), a Pinça fecha e recua. Quando for deteta pelo sensor (Sensor de Pinça recuada), a peça, é processada pela prensa. Assim que concluído este processamento, a pinça, avança e abre para que o corpo da peça possa seguir para a próxima estação.
 
-        Futuramente: Video!
-
 ![ST30](./lines/line32/2020_2021/images/station/st_30.jpg)
 
 #### Estação 40
@@ -147,8 +141,6 @@ A Estação 30, **estação de aplicação**, é aplicada uma *cola* para fixar 
 A Estação 40, **estação de alimentação do miolo da peça**, o miolo da peça, é colocado na funil para ser processado. A Estação 40 é constituída por 16 sensores e 6 cilindros, dos quais resultam: Sensor Cilindro1 Avançado, Sensor Cilindro1 Recuado, Sensor Cilindro2 Avançado, Sensor Cilindro2 Recuado, Sensor Prato de rotação à esquerda, Sensor Prato de rotação à direita, Sensor copo em cima, Sensor copo em baixo, Sensor do Prato à esquerda, Sensor do Prato à direita, Sensor de Garra avançada, Sensor de Garra recuada, Sensor de Garra subida, Sensor de Garra descida, Sensor de Garra fechada, Sensor de Peça à frente; Cilindro 1, Cilindro 2, Cilindro Prato, Cilindro da Garra avançada e recuada, Cilindro da Garra subida e descida, Cilindro da Garra aberta e fechada.
 
 **Modo de Funcionamento da Estação 40**: Assim que o miolo da peça é detetada pelo sensor (Sensor copo em baixo), o miolo é processado, ou seja, cai e o prato roda para que depois seja colocado no corpo da peça. Esta informação fica guardada e assim que o corpo da peça foi recebido pela estação, a garra processa o miolo, colocando-o no corpo da peça. Assim que concluído este processo a peça esta concluída e pronta a seguir para a próxima estação.
-
-        Futuramente: Video!
 
 ![ST40](./lines/line32/2020_2021/images/station/st_40.jpg)
 
@@ -159,16 +151,33 @@ Sensor de Peça no Tapete, Sensor de Peça Metálica, Sensor de Peça Branca/Met
 
 **Modo de Funcionamento da Estação 40**: Assim que a peça é detetada pelo sensor (Sensor de Peça no Tapete), o tapete entra em funcionamento, a peça é identificada, pelos sensores e encaminhada. Caso for uma peça pretendida (Metálico/Metálico; Branco/Branco; Preto/Preto) é encaminhada para o respetivo armazém, senão, a peça é rejeitada. 
 
-        Futuramente: Video!
-
 ![ST50](./lines/line32/2020_2021/images/station/st_50.jpg)
 
 ### Modo de Funcionamento
 
-Assim que a estação 20 for alimentada com o corpo da peça, essa informação é enviada para o PLC Master (Estação 10), assim que recebida, a peça é processada. Quando concluído o processamento, a peça, esta pronta para o robô a processar e avançar para a próxima estação. Quando o robô estiver na posição relativa à estação 30, a garra avança e pousa a peça na pinça e a peça é processada. Quando concluído o processamento, a peça, esta pronta para o robô a processar e avançar para a próxima estação. Quando o robô estiver na posição relativa à estação 40, a garra avança e pousa a peça *suporte*. Assim que o corpo da peça for recebido pela estação 40, a estação entra em processamento, ou seja, o miolo é colocado no corpo da peça. Quando concluído o processamento, a peça, esta pronta para o robô a processar e avançar para a próxima estação. Quando o robô estiver na posição relativa à estação 50, a garra avança e pousa a peça no tapete. O tapete entra em funcionamento, a peça é identificada, pelos sensores e encaminhada. Caso for uma peça pretendida (Metálico/Metálico; Branco/Branco; Preto/Preto) é encaminhada para o respetivo armazém, senão, a peça é rejeitada. Depois do robô, pousar a peça no tapete da estação 50, retorna para a sua posição de *home* e desta forma o ciclo foi concluído e pronto a realizar um novo ciclo. 
+Assim que a Estação 20 for alimentada com o corpo da peça, essa informação é enviada para o PLC Master (Estação 10), assim que recebida, a peça é processada. Quando concluído o processamento, a peça, esta pronta para o robô a processar e avançar para a próxima estação. Quando o robô estiver na posição relativa à estação 30, a garra avança e pousa a peça na pinça e a peça é processada. Quando concluído o processamento, a peça, esta pronta para o robô a processar e avançar para a próxima estação. Quando o robô estiver na posição relativa à estação 40, a garra avança e pousa a peça *suporte*. Assim que o corpo da peça for recebido pela estação 40, a estação entra em processamento, ou seja, o miolo é colocado no corpo da peça. Quando concluído o processamento, a peça, esta pronta para o robô a processar e avançar para a próxima estação. Quando o robô estiver na posição relativa à estação 50, a garra avança e pousa a peça no tapete. O tapete entra em funcionamento, a peça é identificada, pelos sensores e encaminhada. Caso for uma peça pretendida (Metálico/Metálico; Branco/Branco; Preto/Preto) é encaminhada para o respetivo armazém, senão, a peça é rejeitada. Depois do robô, pousar a peça no tapete da estação 50, retorna para a sua posição de *home* e desta forma o ciclo foi concluído e pronto a realizar um novo ciclo. 
 
-        IMPORTANTE:  #Tesla,Local,HMI
+A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remoto**. **No Modo de Funcionamento Local**, os comandos para as estações são dados através da Botoneiras. Já os comandos para a line são dados pela HMI. **No Modo de Funcionamento HMI**, todos os comandos, tanto para as estações como para a line, são dados pela HMI. **No Modo de Funcionamento Remoto**, todos os comandos, tanto para as estações como para a line, são dados remotamente, usando o software Tesla Scada. Quando um destes Modos de Funcionamento é selecionado, na HMI, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Assim que um destes três modos de funcionamento for selecionados, todos os comandos, depende do modo selecionado. Por exemplo: se estivermos a funcionar em modo HMI, se forem dados comandos através da Botoneiras ou através do Tesla Scada, este comandos não funcionaram, pois o Modo HMI está selecionado. 
+
+        Screenshot do Codigo do Botões e da Selecão do Modos
         Futuramente: Video!
+
+### Comunicações
+
+### Zonas de Comunicação (Profinet)
+
+|PLC |Address in I/O Controller  | |Address in I-Device|
+--- | --- | :---: | ---
+19PLC|I100, I101, I102, I103|←| Q100, Q101, Q102, Q103
+-|Q100, Q101, Q102, Q103|→|I100, I101, I102, I103
+29PLC|I104, I105, I106, I107|←|Q104, I105, Q106, Q107
+-|Q104, I105, Q106, Q107|→|I104, I105, I106, I107
+39PLC|I108, I109, I110, I111|←|Q108, Q109, Q110, Q111
+-|Q108, Q109, Q110, Q111|→|I108, I109, I110, I111
+49PLC|I112, I113, I114, I115|←|Q112, Q113, Q114, Q115
+-|Q112, Q113, Q114, Q115|→|I112, I113, I114, I115
+59PLC|I116, I117, I118, I119|←|Q116, Q117, Q118, Q119
+-|Q116, Q117, Q118, Q119|→|I116, I117, I118, I119
 
 ## Trabalho Realizado
 ### Classificação
@@ -1190,25 +1199,7 @@ A4_ST50|%Q117.0|
 D1_ST50|%Q117.1|
 Tag_38|%QB118|
 Tag_39|%QB119|
-
-### Comunicações
-
-### Zonas de Comunicação (Profinet)
-
-|PLC |Address in I/O Controller  | |Address in I-Device|
---- | --- | :---: | ---
-19PLC|I100, I101, I102, I103|←| Q100, Q101, Q102, Q103
--|Q100, Q101, Q102, Q103|→|I100, I101, I102, I103
-29PLC|I104, I105, I106, I107|←|Q104, I105, Q106, Q107
--|Q104, I105, Q106, Q107|→|I104, I105, I106, I107
-39PLC|I108, I109, I110, I111|←|Q108, Q109, Q110, Q111
--|Q108, Q109, Q110, Q111|→|I108, I109, I110, I111
-49PLC|I112, I113, I114, I115|←|Q112, Q113, Q114, Q115
--|Q112, Q113, Q114, Q115|→|I112, I113, I114, I115
-59PLC|I116, I117, I118, I119|←|Q116, Q117, Q118, Q119
--|Q116, Q117, Q118, Q119|→|I116, I117, I118, I119
-
-
+ 
 ### Software
 #### Grafcets
 ##### Estação 10 (Grafcet)
@@ -1231,7 +1222,7 @@ Tag_39|%QB119|
 
 #### Programação
 
-A programação das Line 32 foi feita usando o programa TIA Portal. A Programação pode ser encontrada na integra usando o QR abaixo. Desta forma, aqui, serão apenas abordados o blocos mais importantes e fundamentais para o funcionamento da Line32.
+A programação das Line 32 foi feita usando o programa TIA Portal. A Programação pode ser encontrada na integra na parte dos anexos. Desta forma, aqui, serão apenas abordados o blocos mais importantes e fundamentais para o funcionamento da Line32.
 
 **Estação 10**
 
@@ -1334,8 +1325,6 @@ Fixo|Piscar (500ms)|-|Marcha de preparação|F2|
 A Line 32 pode operar em 3 modos diferentes: **Automático, Ciclo, Manual.** 
 
 No **Modo Automático** a Line está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start; No **Modo Ciclo** a Line está a funcionar de forma cíclica, ou seja, é necessária a **Ordem de Start** na etapa inicial do Grafcet de Funcionamento; No **Modo Manual** é possível fazer a ativação de qualquer cilindro ou lâmpada, consultar o estado de um sensor, comandar o robô, ativar/desativar o tapete e consultar o valor do enconder. Para evitar conflitos, o Grafcet de Funcionamento é *comentado* para evitar conflitos. Para fazer a escolha do Modo de Marcha é usada a HMI.
-
-                Imagens HMI!
 
 ##### Grafcet's
 ###### Gemma Master
