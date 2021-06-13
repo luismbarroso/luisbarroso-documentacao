@@ -2,24 +2,28 @@
 
 **Autor:** *Luis Barroso*
 
-**Data:** *Last Upgrade: 13/06/2021, 16h03*
+**Data:** *Last Upgrade: 13/06/2021, 16h54*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
+
 - [Introdução](#introducao)
 - [Processo](#processo)
     - [Peças](#pecas)
     - [Estações](#estacoes)
-        - [Estação 10](#estacao-10)
-        - [Estação 20](#estacao-20)
-        - [Estação 30](#estacao-30) 
-        - [Estação 40](#estacao-40)
-        - [Estação 50](#estacao-50)
+        - [Estação 10](#)
+        - [Estação 20](#)
+        - [Estação 30](#) 
+        - [Estação 40](#)
+        - [Estação 50](#)
     - [Modo de Funcionamento](#modo-de-funcionamento)
     - [Comunicações](#comunicacoes)
-  
+        - [Profinet](#)
+            - [Zonas de Comunicação](#)
+        - [Modbus](#)
+            - [Zonas de Comunicação](#)
 - [Trabalho Realizado](#trabalho-realizado)
     - [Classificação](#classificacao)
-        - [Estação 10](#estacao-10-classificacao)
+        - [Estação 10](#)
             - [Entradas e Saidas (PLC)](#)
                 - [Entradas](#)
                 - [Saidas](#)
@@ -27,7 +31,7 @@
             - [Comunicações](#)
                 - [Entradas](#)
                 - [Saidas](#)
-        - [Estação 20](#estacao-20-classificacao)
+        - [Estação 20](#)
             - [Entradas e Saidas (PLC)](#)
                 - [Entradas](#)
                 - [Saidas](#)
@@ -35,7 +39,7 @@
             - [Comunicações](#)
                 - [Entradas](#)
                 - [Saidas](#)
-        - [Estação 30](#estacao-30-classificacao) 
+        - [Estação 30](#)
             - [Entradas e Saidas (PLC)](#)
                 - [Entradas](#)
                 - [Saidas](#)
@@ -43,7 +47,7 @@
             - [Comunicações](#)
                 - [Entradas](#)
                 - [Saidas](#)
-        - [Estação 40](#estacao-40-classificacao)
+        - [Estação 40](#)
             - [Entradas e Saidas (PLC)](#)
                 - [Entradas](#)
                 - [Saidas](#)
@@ -51,7 +55,7 @@
             - [Comunicações](#)
                 - [Entradas](#)
                 - [Saidas](#)
-        - [Estação 50](#estacao-50-classificacao)
+        - [Estação 50](#)
             - [Entradas e Saidas (PLC)](#)
                 - [Entradas](#)
                 - [Saidas](#)
@@ -61,23 +65,30 @@
                 - [Saidas](#)      
     - [Software](#software)
         - [Grafcets](#grafcets)
-            - [Estação 10](#estacao-10-grafcet)
-            - [Estação 20](#estacao-20-grafcet)
-            - [Estação 30](#estacao-30-grafcet) 
-            - [Estação 40](#estacao-40-grafcet)
-            - [Estação 50](#estacao-50-grafcet)
-        - [Programação](#programacao)
+            - [Estação 10](#)
+            - [Estação 20](#)
+            - [Estação 30](#) 
+            - [Estação 40](#)
+            - [Estação 50](#)
         - [Gemma](#gemma)
             - [Esquema](#esquema)
             - [Guia de Iluminação](#guia-de-iluminacao)
             - [Grafcet’s](#grafcet-s)
                 - [Gemma Master](#gemma-master)
                 - [Gemma Estações](#gemma-estacoes)
-                - [Gemma Iluminação](#gemma-iluminacao)
-            - [Modos de Marcha](#modos-de-marcha)
-        - [HMI](#HMI)  
+                - [Gemma Iluminação Master](#gemma-iluminacao-master)
+                - [Gemma Iluminação Estações](#gemma-iluminacao-estacoes)
+            - [Modos de Marcha](#modos-de-marcha)        
+        - [Programação](#programacao)
+            - [Estação 10](#)
+            - [Estação 50](#)
+            - [Inicialização](#)        
+            - [Modo de Funcionamento](#)
+            - [Modo de Marcha](#)
+            - [Botões](#)
+        - [HMI](#hmi)  
         - [Tesla Scada](#tesla-scada)
-        - [Anexos](#anexos)
+- [Anexos](#anexos)
 
 ## Introdução
 
@@ -164,7 +175,8 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 
 ### Comunicações
 
-### Zonas de Comunicação (Profinet)
+### Profinet
+#### Zonas de Comunicação
 
 |PLC |Address in I/O Controller  | |Address in I-Device|
 --- | --- | :---: | ---
@@ -179,13 +191,14 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 59PLC|I116, I117, I118, I119|←|Q116, Q117, Q118, Q119
 -|Q116, Q117, Q118, Q119|→|I116, I117, I118, I119
 
+### Modbus
+#### Zonas de Comunicação
+
 ## Trabalho Realizado
 ### Classificação
-#### Estação 10 (Classificação)
-
-**Entradas e Saídas (PLC)**
-
-*Entradas 19PLC*
+#### Estação 10
+##### Entradas e Saídas (PLC)
+###### Entradas 19PLC
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -234,7 +247,7 @@ HMI_Init_Manual_All_STS|%I6.0|
 321920QS24|%I8.6|Botão Emergência
 321920SA23|%I8.7|Seletor
 
-*Saídas 19PLC*
+###### Saídas 19PLC
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -248,7 +261,7 @@ HMI_Init_Manual_All_STS|%I6.0|
 321920HL12|%Q8.6|Painel Luz Verde
 321920HL13|%Q8.7|Painel Luz Vermelha
 
-**Memórias**
+##### Memórias
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -370,9 +383,9 @@ HMI_MC_MoveAbsolute_Velocity|%MD320|
 HMI_MC_MoveAbsolute_Velocity_2|%MD324|
 HMI_MC_MoveJog_Velocity|%MD328|
 
-**Comunicações**
+##### Comunicações
 
-*Entradas*
+###### Entradas
 
 |Label |Endereço  | Comentário|
 --- | --- | ---	
@@ -437,7 +450,7 @@ D1_ST50|%I117.1|
 Tag_35|%IB118|
 Tag_36|%IB119|
 
-*Saídas*
+###### Saídas
 
 |Label |Endereço  | Comentário|
 --- | --- | ---	
@@ -529,11 +542,9 @@ Scada_O_Emerg_ST50|%Q118.6|
 Cilindros_ST50|%Q118.7|
 Tag_39|%QB119|
 
-#### Estação 20 (Classificação)
-
-**Entradas e Saídas**
-
-*Entradas 29PLC*
+#### Estação 20
+##### Entradas e Saídas (PLC)
+###### Entradas 29PLC
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -555,7 +566,7 @@ HMI_SB2|%I2.1|
 HMI_QS|%I2.2|
 Init_Manual|%I2.3|
 
-*Saídas 29PLC*
+###### Saídas 29PLC
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -565,7 +576,7 @@ Init_Manual|%I2.3|
 322920HL12|%Q1.0|Painel Luz Verde
 322920HL13|%Q1.1|Painel Luz Vermelha
 
-**Memórias**
+##### Memórias
 
 |Label |Endereço  | Comentário|
 --- | --- | ---	
@@ -606,7 +617,8 @@ HL13_ON/OFF_Condition|%M15.2|
 	
 **Comunicações**
 
-*Entradas*
+##### Comunicações
+###### Entradas
 
 |Label |Endereço  | Comentário|
 --- | --- | ---	
@@ -645,7 +657,7 @@ Tag_34|%IB117|
 Tag_35|%IB118|
 Tag_36|%IB119|
 
-*Saídas*
+###### Saídas
 
 |Label |Endereço  | Comentário|
 --- | --- | ---	
@@ -679,11 +691,9 @@ Tag_37|%QB116|
 Tag_38|%QB118|
 Tag_39|%QB119|
 
-#### Estação 30 (Classificação)
-
-**Entradas e Saídas**
-
-*Entradas 39PLC*
+#### Estação 30
+##### Entradas e Saídas (PLC)
+###### Entradas 39PLC
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -703,7 +713,7 @@ HMI_SB2|%I2.1|
 HMI_QS|%I2.2|
 Init_Manual|%I2.3|
 
-*Saídas 39PLC*
+###### Saídas 39PLC
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -714,7 +724,7 @@ Init_Manual|%I2.3|
 323920HL12|%Q1.0|Painel Luz Verde
 323920HL13|%Q1.1|Painel Luz Vermelha
 
-**Memórias**
+##### Memórias
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -754,9 +764,8 @@ HL11_ON/OFF_Condition|%M15.0|
 HL12_ON/OFF_Condition|%M15.1|
 HL13_ON/OFF_Condition|%M15.2|
 
-**Comunicações**
-
-*Entradas*
+##### Comunicações
+###### Entradas
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -796,8 +805,7 @@ Tag_34|%IB117|
 Tag_35|%IB118|
 Tag_36|%IB119|
 
-
-*Saídas*
+###### Saídas
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -831,11 +839,9 @@ Tag_37|%QB116|
 Tag_38|%QB118|
 Tag_39|%QB119|
 
-#### Estação 40 (Classificação)
-
-**Entradas e Saídas**
-
-*Entradas 49PLC*
+#### Estação 40
+##### Entradas e Saídas (PLC)
+###### Entradas 49PLC
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -865,7 +871,7 @@ Init_Manual|%I2.3|
 324920QS24|%I8.6|Botão Emergência
 324920SA23|%I8.7|Seletor
 
-*Saídas 49PLC*
+###### Saídas 49PLC
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -882,7 +888,7 @@ Init_Manual|%I2.3|
 324920HL12|%Q8.6|Luz do Painel (Verde)
 324920HL13|%Q8.7|Luz do Painel (Vermelha)
 
-**Memórias**
+##### Memórias
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -936,9 +942,8 @@ HL12_ON/OFF_Condition|%M17.3|
 HL13_M_ON/OFF_Condition|%M17.4|
 HL13_ON/OFF_Condition|%M17.5|
 
-**Comunicações**
-
-*Entradas*
+##### Comunicações
+###### Entradas
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -986,7 +991,7 @@ Tag_34|%IB117|
 Tag_35|%IB118|
 Tag_36|%IB119|
 	
-*Saídas*
+###### Saídas
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -1020,11 +1025,9 @@ Tag_37|%QB116|
 Tag_38|%QB118|
 Tag_39|%QB119|
 	
-#### Estação 50 (Classificação)
-
-**Entradas e Saídas**
-
-*Entradas 59PLC*
+#### Estação 50
+##### Entradas e Saídas (PLC)
+###### Entradas 59PLC
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -1051,7 +1054,7 @@ HMI_CV|%I2.5|
 HMI_Start_Tapete|%I2.6|
 HMI_Stop_Tapete|%I2.7|
 
-*Saídas 59PLC*
+###### Saídas 59PLC
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -1064,7 +1067,7 @@ HMI_Stop_Tapete|%I2.7|
 325920HL12|%Q1.0|Luz do Painel (Verde)
 325920HL13|%Q1.1|Luz do Painel (Vermelha)
 
-**Memórias**
+##### Memórias
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -1124,9 +1127,8 @@ Total_Pecas_Prefeitas|%MD320|
 Total_Pecas_Defeito|%MD324|
 Valor_Contador|%MD328|
 
-**Comunicações**
-
-*Entradas*
+##### Comunicações
+###### Entradas
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -1166,7 +1168,7 @@ Scada_O_Emerg_ST50|%I118.6|
 Cilindros_ST50|%I118.7|
 Tag_36|%IB119|
 
-*Saídas*
+###### Saídas
 
 |Label |Endereço  | Comentário|
 --- | --- | ---
@@ -1202,89 +1204,25 @@ Tag_39|%QB119|
  
 ### Software
 #### Grafcets
-##### Estação 10 (Grafcet)
+##### Estação 10 
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST10.svg)
 
-##### Estação 20 (Grafcet)
+##### Estação 20
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST20.svg)
-##### Estação 30 (Grafcet)
+
+##### Estação 30 
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST30.svg)
-##### Estação 40 (Grafcet)
+
+##### Estação 40 
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST40.svg)
 
-##### Estação 50 (Grafcet)
+##### Estação 50 
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST50.svg)
-
-#### Programação
-
-A programação das Line 32 foi feita usando o programa TIA Portal. A Programação pode ser encontrada na integra na parte dos anexos. Desta forma, aqui, serão apenas abordados o blocos mais importantes e fundamentais para o funcionamento da Line32.
-
-**Estação 10**
-
-Como já foi dito anteriormente a estação 10 possui um robô. Para a realização dos seus movimentos são necessários alguns blocos, como: **MC_Power**, **MC_Home**, **MC_Reset**, **MC_Halt**, **MC_MoveAbsolute**-
-
-**MC_Power** – é uma função que deve ser chamada e ligada antes de qualquer instrução de movimento, sem ela não será possível comando o servo.
-
-**Principais parâmetros:**
-- **Axis:** Nome do servo/eixo configurado
-- **Enable:** Entrada do sinal que irá ligar o servo
-
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/1.PNG)
-
-**MC_Home** – é a função responsável de levar o servo até ao local onde está situado o sensor configurado para “homing”, a sua posição inicial.
-
-**Principais parâmetros:**
-- **Axis:** Nome do servo/eixo configurado
-- **Execute:** Entrada do sinal que irá ditar a ordem de movimento do servo
-- **Position:** Valor absoluto da localização do servo, após ter chegado à posição home (coordenada absoluta de home)
-- **Mode:** Permite escolher entre os diferentes tipos de **“homing”**
-
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/2.PNG)
-
-**MC_Reset** – é a função que permite ignorar erros causados pela paragem do servo ao entrar em contacto com um fim de curso ou erros de configuração.
-
-**Principais parâmetros:**
-- **Axis:** Nome do servo/eixo configurado
-- **Enable:** Entrada do sinal que irá ditar a ordem de reset
-
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/4.PNG)
-
-**MC_Halt** – é a função que para os movimentos do servo.
-
-**Principais parâmetros:**
-- **Axis:** Nome do servo/eixo configurado
-- **Enable:** Entrada do sinal que irá parar o servo
-
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/3.PNG)
-
-**MC_MoveAbsolute** – é a função responsável por levar o servo até uma posição absoluta através de uma coordenada.
-
-**Principais parâmetros:**
-- **Axis:** Nome do servo/eixo configurado
-- **Execute:** Entrada do sinal que irá ditar a ordem de movimento do servo
-- **Position:** Coordenada absoluta para a qual o servo se irá mover
-- **Velocity:** Velocidade com a qual o servo executará o movimento
-
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/5.PNG)
-
-Para não sobrecarregar o código com 4 funções **MC_MoveAbsolute** foi criado com conjunto de **Moves** (como o próprio nome indica, mover valores de entrada de forma a serem aplicados numa saída) na entrada é colocado o valor, em mm, da posição do carro relativa a cada estação; na saída é colocado uma memória do tipo Real, com a função de guardar esse valor e enviar para o  **MC_MoveAbsolute**.
-
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/6.png)
-
-**Estação 50**
-
-Como já foi dito anteriormente a estação 50 possui um tapete para transporte das peças processadas. Para o controlo da velocidade do tapete é usada uma função **Move** (como o próprio nome indica, mover valores de entrada de forma a serem aplicados numa saída) na entrada é colocado o valor analógico da velocidade; na saída é saída do Inversor de Frequência. Este valor analógico é enviado para o Inversor de Frequência e convertido em tensão.
-
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_50/2.PNG)
-
-Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acoplado ao motor entra em funcionamento. Para analise das posições do enconder é usado um CTRL_HSC, quando configurado, torna-se num contador de alta velocidade. Desta forma, como os valores do enconder, é possível fazer o encaminhamento de cada peça. 
-
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_50/1.PNG)
 
 #### Gemma
 
@@ -1465,7 +1403,7 @@ No **Modo Automático** a Line está a funcionar de forma automática, ou seja, 
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/Master_Ilum_HL11.svg)
 
-A ativação da Lâmpada Verde, do Semáforo, pode ser feita por F2 ou F1 ou A4 ou F5.
+A primeira etapa do Grafcet *Gemma Iluminação Master* consiste na ativação da Lâmpada Verde, do Semáforo. Pode ser feita por F2 ou F1 ou A4 ou F5, a jusante destas condições temos dois contactos normalmente fechados, ou seja, quando ativados a Lâmpada Verde irá desligar. Com 
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/Master_Ilum_HL12.svg)
 
@@ -1513,12 +1451,78 @@ A ativação da Lâmpada Verde, do Semáforo, pode ser feita por F2 ou F1 ou A4 
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST50_Ilum_HL13.svg)
 
-###### Master
+##### Modos de Marcha
+
+#### Programação
+
+A programação das Line 32 foi feita usando o programa TIA Portal. A Programação pode ser encontrada na integra na parte dos anexos. Desta forma, aqui, serão apenas abordados o blocos mais importantes e fundamentais para o funcionamento da Line32.
+
 ##### Estação 10
-###### Estação 20
-###### Estação 30
-###### Estação 40
-###### Estação 50
+
+Como já foi dito anteriormente a estação 10 possui um robô. Para a realização dos seus movimentos são necessários alguns blocos, como: **MC_Power**, **MC_Home**, **MC_Reset**, **MC_Halt**, **MC_MoveAbsolute**-
+
+**MC_Power** – é uma função que deve ser chamada e ligada antes de qualquer instrução de movimento, sem ela não será possível comando o servo.
+
+**Principais parâmetros:**
+- **Axis:** Nome do servo/eixo configurado
+- **Enable:** Entrada do sinal que irá ligar o servo
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/1.PNG)
+
+**MC_Home** – é a função responsável de levar o servo até ao local onde está situado o sensor configurado para “homing”, a sua posição inicial.
+
+**Principais parâmetros:**
+- **Axis:** Nome do servo/eixo configurado
+- **Execute:** Entrada do sinal que irá ditar a ordem de movimento do servo
+- **Position:** Valor absoluto da localização do servo, após ter chegado à posição home (coordenada absoluta de home)
+- **Mode:** Permite escolher entre os diferentes tipos de **“homing”**
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/2.PNG)
+
+**MC_Reset** – é a função que permite ignorar erros causados pela paragem do servo ao entrar em contacto com um fim de curso ou erros de configuração.
+
+**Principais parâmetros:**
+- **Axis:** Nome do servo/eixo configurado
+- **Enable:** Entrada do sinal que irá ditar a ordem de reset
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/4.PNG)
+
+**MC_Halt** – é a função que para os movimentos do servo.
+
+**Principais parâmetros:**
+- **Axis:** Nome do servo/eixo configurado
+- **Enable:** Entrada do sinal que irá parar o servo
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/3.PNG)
+
+**MC_MoveAbsolute** – é a função responsável por levar o servo até uma posição absoluta através de uma coordenada.
+
+**Principais parâmetros:**
+- **Axis:** Nome do servo/eixo configurado
+- **Execute:** Entrada do sinal que irá ditar a ordem de movimento do servo
+- **Position:** Coordenada absoluta para a qual o servo se irá mover
+- **Velocity:** Velocidade com a qual o servo executará o movimento
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/5.PNG)
+
+Para não sobrecarregar o código com 4 funções **MC_MoveAbsolute** foi criado com conjunto de **Moves** (como o próprio nome indica, mover valores de entrada de forma a serem aplicados numa saída) na entrada é colocado o valor, em mm, da posição do carro relativa a cada estação; na saída é colocado uma memória do tipo Real, com a função de guardar esse valor e enviar para o  **MC_MoveAbsolute**.
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/6.png)
+
+##### Estação 50 
+
+Como já foi dito anteriormente a estação 50 possui um tapete para transporte das peças processadas. Para o controlo da velocidade do tapete é usada uma função **Move** (como o próprio nome indica, mover valores de entrada de forma a serem aplicados numa saída) na entrada é colocado o valor analógico da velocidade; na saída é saída do Inversor de Frequência. Este valor analógico é enviado para o Inversor de Frequência e convertido em tensão.
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_50/2.PNG)
+
+Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acoplado ao motor entra em funcionamento. Para analise das posições do enconder é usado um CTRL_HSC, quando configurado, torna-se num contador de alta velocidade. Desta forma, como os valores do enconder, é possível fazer o encaminhamento de cada peça. 
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_50/1.PNG)
+
+##### Inicialização   
+##### Modo de Funcionamento
+##### Modo de Marcha
+##### Botões
 
 #### HMI
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/line32.png)
@@ -1540,3 +1544,7 @@ A ativação da Lâmpada Verde, do Semáforo, pode ser feita por F2 ou F1 ou A4 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/st50.png)
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/stations.png)
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/stations_modo_manual.png)
+
+#### Tesla Scada
+
+## Anexos
