@@ -2,7 +2,7 @@
 
 **Autor:** *Luis Barroso*
 
-**Data:** *Last Upgrade: 13/06/2021, 16h54*
+**Data:** *Last Upgrade: 13/06/2021, 18h23*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -24,7 +24,7 @@
 - [Trabalho Realizado](#trabalho-realizado)
     - [Classificação](#classificacao)
         - [Estação 10](#)
-            - [Entradas e Saidas (PLC)](#)
+            - [Entradas e Saidas (PLC)](#est-10-entradas-e-saidas-plc)
                 - [Entradas](#)
                 - [Saidas](#)
             - [Memórias](#)
@@ -32,7 +32,7 @@
                 - [Entradas](#)
                 - [Saidas](#)
         - [Estação 20](#)
-            - [Entradas e Saidas (PLC)](#)
+            - [Entradas e Saidas (PLC)](#est-20-entradas-e-saidas-plc)
                 - [Entradas](#)
                 - [Saidas](#)
             - [Memórias](#)
@@ -122,7 +122,6 @@ Preto|x|x|**x**|
 Os **x** a negrito indicados as combinações pretendidas, quando essas combinações são processadas são encaminhadas para o respetivo armazém.
 
 ### Estações
-
 #### Estação 10
 
 A Estação 10, **estação de transporte da peça**, desde a sua fase inicial até à sua finalização. A Estação 10 é constituída por 7 sensores e 6 cilindros, dos quais resultam: Sensor de Garra em baixo, Sensor de Garra em cima, Sensor de Garra de rotação à esquerda, Sensor de Garra de rotação à direita, Sensor de Garra avançada, Sensor de Garra recuada, Sensor de Garra fechada; Cilindro de Garra subida e descida, Cilindro de rotação à esquerda da Garra, Cilindro de rotação à direita da Garra, Cilindro de Garra avançada e recuada, Cilindro de fecho da Garra, Cilindro de abertura da Garra.
@@ -170,7 +169,6 @@ Assim que a Estação 20 for alimentada com o corpo da peça, essa informação 
 
 A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remoto**. **No Modo de Funcionamento Local**, os comandos para as estações são dados através da Botoneiras. Já os comandos para a line são dados pela HMI. **No Modo de Funcionamento HMI**, todos os comandos, tanto para as estações como para a line, são dados pela HMI. **No Modo de Funcionamento Remoto**, todos os comandos, tanto para as estações como para a line, são dados remotamente, usando o software Tesla Scada. Quando um destes Modos de Funcionamento é selecionado, na HMI, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Assim que um destes três modos de funcionamento for selecionados, todos os comandos, depende do modo selecionado. Por exemplo: se estivermos a funcionar em modo HMI, se forem dados comandos através da Botoneiras ou através do Tesla Scada, este comandos não funcionaram, pois o Modo HMI está selecionado. 
 
-        Screenshot do Codigo do Botões e da Selecão do Modos
         Futuramente: Video!
 
 ### Comunicações
@@ -196,7 +194,10 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 
 ## Trabalho Realizado
 ### Classificação
-#### Estação 10
+
+----
+
+#### Estação 10 
 ##### Entradas e Saídas (PLC)
 ###### Entradas 19PLC
 
@@ -384,7 +385,6 @@ HMI_MC_MoveAbsolute_Velocity_2|%MD324|
 HMI_MC_MoveJog_Velocity|%MD328|
 
 ##### Comunicações
-
 ###### Entradas
 
 |Label |Endereço  | Comentário|
@@ -615,8 +615,6 @@ HL11_ON/OFF_Condition|%M15.0|
 HL12_ON/OFF_Condition|%M15.1|
 HL13_ON/OFF_Condition|%M15.2|
 	
-**Comunicações**
-
 ##### Comunicações
 ###### Entradas
 
@@ -1228,7 +1226,7 @@ Tag_39|%QB119|
 
 O Gemma consiste num Guia de estudo dos modos de Marcha e Paragem. Num processo automatizado, por necessidade, é necessário prever todos os estados possíveis, desta forma, com o Gemma, é possível executar arranques ou paragens de forma segura sem prejudicar ou Homem ou a Máquina.
 
-Como podemos observar na figura a baixo, o Gemma, divide-se em 3 grande blocos: “Procedimentos de paragem” , “Procedimentos de execução” , “Procedimentos de falha” e a cada um dele correspondem um conjunto de funções/tarefas.
+Como podemos observar na figura a baixo, o Gemma, divide-se em 3 grande blocos: “Procedimentos de paragem”gg, “Procedimentos de execução”, “Procedimentos de falha” e a cada um dele correspondem um conjunto de funções/tarefas.
 
 Considerações:
 - Modos de Marcha: Automático, Ciclo e Manual
