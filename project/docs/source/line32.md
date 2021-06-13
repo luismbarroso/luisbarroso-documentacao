@@ -1509,8 +1509,8 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 
 ##### Classificação
 
-|Label |Conexão  |Nome PLC |Label PLC |Comentário |  
---- | --- | --- | --- | ---
+| Label                          | Conexão          |Nome PLC|Label PLC                      | Comentário                        |  
+-------------------------------- | ---------------- | ----- | ------------------------------ | -----------------------------------
 | 3210*B11                       | HMI_Connection_1 | 19PLC | "3210*B11"                     | Fim de Curso (Final)              |
 | 3210*B12                       | HMI_Connection_1 | 19PLC | "3210*B12"                     | Fim de Curso (Home)               |
 | 3210*B13                       | HMI_Connection_1 | 19PLC | "3210*B13"                     | Sensor Home                       |
