@@ -1,6 +1,6 @@
 # Line 32
 
-**Autor:** *Luís Barroso*
+**Autor:** *Luis Barroso*
 
 **Data:** *Last Upgrade: 13/06/2021, 16h03*
 
