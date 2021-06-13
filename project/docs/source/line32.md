@@ -2,7 +2,7 @@
 
 **Autor:** *Luis Barroso*
 
-**Data:** *Last Upgrade: 13/06/2021, 18h23*
+**Data:** *Last Upgrade: 13/06/2021, 22h56*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -73,11 +73,12 @@
         - [Gemma](#gemma)
             - [Esquema](#esquema)
             - [Guia de Iluminação](#guia-de-iluminacao)
-            - [Grafcet’s](#grafcet-s)
+            - [Grafcet’s - Funcionamento Gemma](#grafcet-s-funcionamento-gemma)
                 - [Gemma Master](#gemma-master)
                 - [Gemma Estações](#gemma-estacoes)
-                - [Gemma Iluminação Master](#gemma-iluminacao-master)
-                - [Gemma Iluminação Estações](#gemma-iluminacao-estacoes)
+            - [Grafcet’s - Iluminação Gemma](#grafcet-s-iluminacao-gemma)
+                - [Gemma Master](#gemma-master)
+                - [Gemma Estações](#gemma-estacoes)
             - [Modos de Marcha](#modos-de-marcha)        
         - [Programação](#programacao)
             - [Estação 10](#)
@@ -1262,7 +1263,7 @@ A Line 32 pode operar em 3 modos diferentes: **Automático, Ciclo, Manual.**
 
 No **Modo Automático** a Line está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start; No **Modo Ciclo** a Line está a funcionar de forma cíclica, ou seja, é necessária a **Ordem de Start** na etapa inicial do Grafcet de Funcionamento; No **Modo Manual** é possível fazer a ativação de qualquer cilindro ou lâmpada, consultar o estado de um sensor, comandar o robô, ativar/desativar o tapete e consultar o valor do enconder. Para evitar conflitos, o Grafcet de Funcionamento é *comentado* para evitar conflitos. Para fazer a escolha do Modo de Marcha é usada a HMI.
 
-##### Grafcet's
+##### Grafcet’s - Funcionamento Gemma
 ###### Gemma Master
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/Master_Gemma.svg)
@@ -1397,57 +1398,99 @@ No **Modo Automático** a Line está a funcionar de forma automática, ou seja, 
 
 - **Etapa D1** - Paragem de emergência, através da **Ordem de Emergência** é possível proceder a paragem de emergência da estação. Assim que a estação saír da situação de emergência, a **Etapas A6** é executada, ou seja, a *Function (FC)* **Init** é executada.
 
-###### Gemma Iluminação Master
+##### Grafcet’s - Iluminação Gemma
+
+O principio de funcionamento dos Grafcets de Iluminação do Gemma, tanto no Master como nas Estações, baseiam-se em iluminação Pisca-Pisca. Para uma determinada **condição de ON/OFF** e um **contacto normalmente fechado** (servirá com memória do estado da lâmpada), assim que a condição de ON/OFF for ativa a lâmpada acende. Com a lâmpada acessa e com o auxilio de um **Temporizador On-delay**, fazemos o **Set** da **Memória do estado da lâmpada** (Por exemplo, no Master, HL11_M_Cond). Com o **Set** desta memória a lâmpada irá desligar, devido ao contacto normalmente fechado aplicado no incio. Com o **Set** desta memória e com o auxilio de um outro **Temporizador On-delay**, fazemos o **Reset** da **Memória do estado da lâmpada**, permitido assim que a Lampada volte a acender. Com isto concluido voltarmos a incio do grafcet.
+
+Este principio também pode ser aplicado para a iluminação fixa, como por exemplo, na Iluminação Verde do Master. Os estados **F1 e A3**, são estados que a iluminação verde está fixa, para isso basta adicionar um **contacto normalmente fechado** na etapa de  **Set** da **Memória do estado da lâmpada**, assim a iluminação mantém-se fixa a ordem em contrário.
+
+O Estado de cada uma das lâmpada para uma deternidada condição nos Grafcets de Iluminação do Gemma, pode ser consultada no [Guia de Iluminação](#guia-de-iluminacao)
+
+###### Gemma Master
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/Master_Ilum_HL11.svg)
 
-A primeira etapa do Grafcet *Gemma Iluminação Master* consiste na ativação da Lâmpada Verde, do Semáforo. Pode ser feita por F2 ou F1 ou A4 ou F5, a jusante destas condições temos dois contactos normalmente fechados, ou seja, quando ativados a Lâmpada Verde irá desligar. Com 
+*Ilumincação Verde*
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/Master_Ilum_HL12.svg)
 
+*Ilumincação Amarela*
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/Master_Ilum_HL13.svg)
 
-###### Gemma Iluminação Estações
+*Ilumincação Vermelha*
+
+###### Gemma Estações
 
 **Estação 10**
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST10_Ilum_HL11.svg)
 
+*Ilumincação Amarela*
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST10_Ilum_HL12.svg)
 
+*Ilumincação Verde*
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST10_Ilum_HL13.svg)
+
+*Ilumincação Vermelha*
 
 **Estação 20**
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST20_Ilum_HL11.svg)
 
+*Ilumincação Amarela*
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST20_Ilum_HL12.svg)
 
+*Ilumincação Verde*
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST20_Ilum_HL13.svg)
+
+*Ilumincação Vermelha*
 
 **Estação 30**
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST30_Ilum_HL11.svg)
 
+*Ilumincação Amarela*
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST30_Ilum_HL12.svg)
 
+*Ilumincação Verde*
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST30_Ilum_HL13.svg)
+
+*Ilumincação Vermelha*
 
 **Estação 40**
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST40_Ilum_HL11.svg)
 
+*Ilumincação Amarela*
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST40_Ilum_HL12.svg)
 
+*Ilumincação Verde*
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST40_Ilum_HL13.svg)
+
+*Ilumincação Vermelha*
 
 **Estação 50**
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST50_Ilum_HL11.svg)
 
+*Ilumincação Amarela*
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST50_Ilum_HL12.svg)
 
+*Ilumincação Verde*
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST50_Ilum_HL13.svg)
+
+*Ilumincação Vermelha*
 
 ##### Modos de Marcha
 
