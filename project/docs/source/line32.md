@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 14/06/2021, 16h28*
+**Data:** *Last Upgrade: 14/06/2021, 17h18*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -270,51 +270,51 @@ HMI_Init_Manual_All_STS|%I6.0|
 | Label                        | Endereço | Comentário                                                                                                                            |
 |:----------------------------:|:--------:|:-------------------------------------------------------------------------------------------------------------------------------------:|
 | Grafcet_10                   | %MB10  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para garantir que todos o Bits estão a 0                            |
-| E10                          | %M10.0 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E11                          | %M10.1 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E12                          | %M10.2 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E13                          | %M10.3 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E14                          | %M10.4 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E15                          | %M10.5 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E16                          | %M10.6 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E17                          | %M10.7 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| Grafcet_10_1                 | %MB11  | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E18                          | %M11.0 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E19                          | %M11.1 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E20                          | %M11.2 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E21                          | %M11.3 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E22                          | %M11.4 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E23                          | %M11.5 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E24                          | %M11.6 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E25                          | %M11.7 | Etapa de Grafcet (Funcionamento)                                                                                                        |
+| E10                          | %M10.0 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E11                          | %M10.1 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E12                          | %M10.2 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E13                          | %M10.3 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E14                          | %M10.4 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E15                          | %M10.5 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E16                          | %M10.6 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E17                          | %M10.7 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| Grafcet_10_1                 | %MB11  | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E18                          | %M11.0 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E19                          | %M11.1 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E20                          | %M11.2 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E21                          | %M11.3 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E22                          | %M11.4 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E23                          | %M11.5 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E24                          | %M11.6 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E25                          | %M11.7 | Etapa de Grafcet de Funcionamento                                                                                                       |
 | Grafcet_10_2                 | %MB12  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para garantir que todos o Bits estão a 0                            |
-| E26                          | %M12.0 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E27                          | %M12.1 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E28                          | %M12.2 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E29                          | %M12.3 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E30                          | %M12.4 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E31                          | %M12.5 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E32                          | %M12.6 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E33                          | %M12.7 | Etapa de Grafcet (Funcionamento)                                                                                                        |
+| E26                          | %M12.0 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E27                          | %M12.1 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E28                          | %M12.2 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E29                          | %M12.3 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E30                          | %M12.4 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E31                          | %M12.5 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E32                          | %M12.6 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E33                          | %M12.7 | Etapa de Grafcet de Funcionamento                                                                                                       |
 | Grafcet_10_3                 | %MB13  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para garantir que todos o Bits estão a 0                            |
-| E34                          | %M13.0 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E35                          | %M13.1 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E36                          | %M13.2 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E37                          | %M13.3 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E38                          | %M13.4 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E39                          | %M13.5 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E40                          | %M13.6 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E41                          | %M13.7 | Etapa de Grafcet (Funcionamento)                                                                                                        |
+| E34                          | %M13.0 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E35                          | %M13.1 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E36                          | %M13.2 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E37                          | %M13.3 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E38                          | %M13.4 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E39                          | %M13.5 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E40                          | %M13.6 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E41                          | %M13.7 | Etapa de Grafcet de Funcionamento                                                                                                       |
 | Grafcet_10_4                 | %MB14  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para garantir que todos o Bits estão a 0                            |
-| E42                          | %M14.0 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E43                          | %M14.1 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E44                          | %M14.2 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E45                          | %M14.3 | Etapa de Grafcet (Funcionamento)                                                                                                        |
-| E46                          | %M14.4 | Etapa de Grafcet (Funcionamento)                                                                                                        |
+| E42                          | %M14.0 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E43                          | %M14.1 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E44                          | %M14.2 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E45                          | %M14.3 | Etapa de Grafcet de Funcionamento                                                                                                       |
+| E46                          | %M14.4 | Etapa de Grafcet de Funcionamento                                                                                                       |
 | MC_Absolute_Done             | %M15.0 | Confirmação do Movimento Absoluto do Robô                                                                                               |
 | MC_Relative_Done             | %M15.1 | Confirmação do Movimento Relativo do Robô                                                                                               |
 | MC_Home_Done                 | %M15.2 | Confirmação da posição de Home do Robô                                                                                                  |
-| MC_Halt_Done                 | %M15.3 | Confirmação da paragem do Robô                                                                                                          |
+| MC_Halt_Done                 | %M15.3 | Confirmação da paB6:D50                                                                                                                 |
 | Grafcet_Gemma_M              | %MB16  | Byte das Etapas do Grafcet Gemma Master, usado na Inicialização para garantir que todos o Bits estão a 0                                |
 | A6_M                         | %M16.0 | Etapa de Grafcet do Gemma Master                                                                                                        |
 | A1_M                         | %M16.1 | Etapa de Grafcet do Gemma Master                                                                                                        |
@@ -374,9 +374,9 @@ HMI_Init_Manual_All_STS|%I6.0|
 | Reset_ST10_Memorys_4         | %MB24  | Byte das memórias usadas na ST10, usado na Inicialização para garantir que todos o Bits estão a 0                                       |
 | O_Stop_M                     | %M24.0 | Ordem de Stop, dada pela HMI, para o Gemma Master                                                                                       |
 | O_Emerg_M                    | %M24.1 | Ordem de Emergência, dada pela HMI, para o Gemma Master                                                                                 |
-| HL11_Cond                    | %M30.0 | Mémoria do estado da Iluminação HL11                                                                                                    |
-| HL12_Cond                    | %M30.1 | Mémoria do estado da Iluminação HL12                                                                                                    |
-| HL13_Cond                    | %M30.2 | Mémoria do estado da Iluminação HL13                                                                                                    |
+| HL11_Cond                    | %M30.0 | Memória do estado da Iluminação HL11                                                                                                    |
+| HL12_Cond                    | %M30.1 | Memória do estado da Iluminação HL12                                                                                                    |
+| HL13_Cond                    | %M30.2 | Memória do estado da Iluminação HL13                                                                                                    |
 | MC_MoveAbsolute_Position     | %MD300 | Memoria onde é guardado o valor da posições em modo Automático ou Ciclo                                                                 |
 | HMI_MC_MoveRelative_Distance | %MD304 | Em Modo Manual, no Display Numérico é possível fazer a escolha da posição relativa. Esse valor é guardado nesta memória                 |
 | HMI_MC_MoveAbsolute_Position | %MD308 | Em Modo Manual, no Display Numérico é possível fazer a escolha da posição absoluta (Máx: 1051.727). Esse valor é guardado nesta memória |
@@ -578,42 +578,42 @@ Init_Manual|%I2.3|
 
 ##### Memórias
 
-|Label |Endereço  | Comentário|
---- | --- | ---	
-Grafcet_10|%MB10|
-E10|%M10.0|
-E11|%M10.1|
-E12|%M10.2|
-E13|%M10.3|
-E14|%M10.4|
-E15|%M10.5|
-E16|%M10.6|
-E17|%M10.7|
-Grafcet_10_1|%MB11|
-E18|%M11.0|
-Grafcet_Gemma|%MB12|
-A6|%M12.0|
-A1|%M12.1|
-F2|%M12.2|
-F1|%M12.3|
-F1_1|%M12.4|
-F5|%M12.5|
-F6|%M12.6|
-A3|%M12.7|
-Grafcet_Gemma_1|%MB13|
-A4|%M13.0|
-D1|%M13.1|
-Reset_ST20_Memorys|%MB14|
-Grafcet_Parado|%M14.0|
-Grafcet_Emergencia|%M14.1|
-O_Start|%M14.2|
-O_Stop|%M14.3|
-O_Emerg|%M14.4|
-O_Marcha_A|%M14.5|
-O_Marcha_C|%M14.6|
-HL11_ON/OFF_Condition|%M15.0|
-HL12_ON/OFF_Condition|%M15.1|
-HL13_ON/OFF_Condition|%M15.2|
+| Label                       | Endereço | Comentário                                                                                          |
+|:---------------------------:|:---------|:---------------------------------------------------------------------------------------------------:|
+| Grafcet_10         | %MB10  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E10                | %M10.0 | Etapa de Grafcet de Funcionamento                                                                              |
+| E11                | %M10.1 | Etapa de Grafcet de Funcionamento                                                                              |
+| E12                | %M10.2 | Etapa de Grafcet de Funcionamento                                                                              |
+| E13                | %M10.3 | Etapa de Grafcet de Funcionamento                                                                              |
+| E14                | %M10.4 | Etapa de Grafcet de Funcionamento                                                                              |
+| E15                | %M10.5 | Etapa de Grafcet de Funcionamento                                                                              |
+| E16                | %M10.6 | Etapa de Grafcet de Funcionamento                                                                              |
+| E17                | %M10.7 | Etapa de Grafcet de Funcionamento                                                                              |
+| Grafcet_10_1       | %MB11  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E18                | %M11.0 | Etapa de Grafcet (Funcionamento)                                                                               |
+| Grafcet_Gemma      | %MB12  | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| A6                 | %M12.0 | Etapa de Grafcet do Gemma                                                                                      |
+| A1                 | %M12.1 | Etapa de Grafcet do Gemma                                                                                      |
+| F2                 | %M12.2 | Etapa de Grafcet do Gemma                                                                                      |
+| F1                 | %M12.3 | Etapa de Grafcet do Gemma                                                                                      |
+| F1_1               | %M12.4 | Etapa de Grafcet do Gemma                                                                                      |
+| F5                 | %M12.5 | Etapa de Grafcet do Gemma                                                                                      |
+| F6                 | %M12.6 | Etapa de Grafcet do Gemma                                                                                      |
+| A3                 | %M12.7 | Etapa de Grafcet do Gemma                                                                                      |
+| Grafcet_Gemma_1    | %MB13  | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| A4                 | %M13.0 | Etapa de Grafcet do Gemma                                                                                      |
+| D1                 | %M13.1 | Etapa de Grafcet do Gemma                                                                                      |
+| Reset_ST20_Memorys | %MB14  | Byte das memórias usadas na ST20, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| Grafcet_Parado     | %M14.0 | Grafcet Parado por ordem do Gemma                                                                              |
+| Grafcet_Emergencia | %M14.1 | Grafcet em Emergencia por ordem do Gemma                                                                       |
+| O_Start            | %M14.2 | Ordem de Start, dada pela HMI, Tesla ou Localmente para o Gemma                                                |
+| O_Stop             | %M14.3 | Ordem de Stop, dada pela HMI, Tesla ou Localmente  para o Gemma                                                |
+| O_Emerg            | %M14.4 | Ordem de Emergencia, dada pela HMI, Tesla ou Localmente  para o Gemma                                          |
+| O_Marcha_A         | %M14.5 | Ordem de Marcha, Automático, dada pelo Gemma Master                                                            |
+| O_Marcha_C         | %M14.6 | Ordem de Marcha, Ciclo, dada pelo Gemma Master                                                                 |
+| HL11_Cond          | %M15.0 | Memória do estado da Iluminação HL11                                                                           |
+| HL12_Cond          | %M15.1 | Memória do estado da Iluminação HL12                                                                           |
+| HL13_Cond          | %M15.2 | Memória do estado da Iluminação HL13                                                                           |
 	
 ##### Comunicações
 ###### Entradas
@@ -724,43 +724,43 @@ Init_Manual|%I2.3|
 
 ##### Memórias
 
-|Label |Endereço  | Comentário|
---- | --- | ---
-Grafcet_10|%MB10|
-E10|%M10.0|
-E11|%M10.1|
-E12|%M10.2|
-E13|%M10.3|
-E14|%M10.4|
-E15|%M10.5|
-E16|%M10.6|
-E17|%M10.7|
-Grafcet_10_1|%MB11|
-E18|%M11.0|
-E19|%M11.1|
-Grafcet_Gemma|%MB12|
-A6|%M12.0|
-A1|%M12.1|
-F2|%M12.2|
-F1|%M12.3|
-F1_1|%M12.4|
-F5|%M12.5|
-F6|%M12.6|
-A3|%M12.7|
-Grafcet_Gemma_1|%MB13|
-A4|%M13.0|
-D1|%M13.1|
-Reset_ST30_Memorys|%MB14|
-O_Marcha_C|%M14.0|
-Grafcet_Parado|%M14.1|
-Grafcet_Emergencia|%M14.2|
-O_Marcha_A|%M14.3|
-O_Start|%M14.4|
-O_Stop|%M14.5|
-O_Emerg|%M14.6|
-HL11_ON/OFF_Condition|%M15.0|
-HL12_ON/OFF_Condition|%M15.1|
-HL13_ON/OFF_Condition|%M15.2|
+| Label                       | Endereço | Comentário                                                                                             |
+|:---------------------------:|:---------|:------------------------------------------------------------------------------------------------------:|
+| Grafcet_10            | %MB10  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E10                   | %M10.0 | Etapa de Grafcet de Funcionamento                                                                              |
+| E11                   | %M10.1 | Etapa de Grafcet de Funcionamento                                                                              |
+| E12                   | %M10.2 | Etapa de Grafcet de Funcionamento                                                                              |
+| E13                   | %M10.3 | Etapa de Grafcet de Funcionamento                                                                              |
+| E14                   | %M10.4 | Etapa de Grafcet de Funcionamento                                                                              |
+| E15                   | %M10.5 | Etapa de Grafcet de Funcionamento                                                                              |
+| E16                   | %M10.6 | Etapa de Grafcet de Funcionamento                                                                              |
+| E17                   | %M10.7 | Etapa de Grafcet de Funcionamento                                                                              |
+| Grafcet_10_1          | %MB11  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E18                   | %M11.0 | Etapa de Grafcet de Funcionamento                                                                              |
+| E19                   | %M11.1 | Etapa de Grafcet de Funcionamento                                                                              |
+| Grafcet_Gemma         | %MB12  | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| A6                    | %M12.0 | Etapa de Grafcet do Gemma                                                                                      |
+| A1                    | %M12.1 | Etapa de Grafcet do Gemma                                                                                      |
+| F2                    | %M12.2 | Etapa de Grafcet do Gemma                                                                                      |
+| F1                    | %M12.3 | Etapa de Grafcet do Gemma                                                                                      |
+| F1_1                  | %M12.4 | Etapa de Grafcet do Gemma                                                                                      |
+| F5                    | %M12.5 | Etapa de Grafcet do Gemma                                                                                      |
+| F6                    | %M12.6 | Etapa de Grafcet do Gemma                                                                                      |
+| A3                    | %M12.7 | Etapa de Grafcet do Gemma                                                                                      |
+| Grafcet_Gemma_1       | %MB13  | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| A4                    | %M13.0 | Etapa de Grafcet do Gemma                                                                                      |
+| D1                    | %M13.1 | Etapa de Grafcet do Gemma                                                                                      |
+| Reset_ST30_Memorys    | %MB14  | Byte das memórias usadas na ST20, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| Grafcet_Parado        | %M14.0 | Grafcet Parado por ordem do Gemma                                                                              |
+| Grafcet_Emergencia    | %M14.1 | Grafcet em Emergencia por ordem do Gemma                                                                       |
+| O_Start               | %M14.2 | Ordem de Start, dada pela HMI, Tesla ou Localmente para o Gemma                                                |
+| O_Stop                | %M14.3 | Ordem de Stop, dada pela HMI, Tesla ou Localmente  para o Gemma                                                |
+| O_Emerg               | %M14.4 | Ordem de Emergencia, dada pela HMI, Tesla ou Localmente  para o Gemma                                          |
+| O_Marcha_A            | %M14.5 | Ordem de Marcha, Automático, dada pelo Gemma Master                                                            |
+| O_Marcha_C            | %M14.6 | Ordem de Marcha, Ciclo, dada pelo Gemma Master                                                                 |
+| HL11_Cond             | %M15.0 | Memória do estado da Iluminação HL11                                                                           |
+| HL12_Cond             | %M15.1 | Memória do estado da Iluminação HL12                                                                           |
+| HL13_Cond             | %M15.2 | Memória do estado da Iluminação HL13                                                                           |
 
 ##### Comunicações
 ###### Entradas
@@ -888,57 +888,53 @@ Init_Manual|%I2.3|
 
 ##### Memórias
 
-|Label |Endereço  | Comentário|
---- | --- | ---
-Grafcet_10|%MB10|
-E10|%M10.0|
-E11|%M10.1|
-E12|%M10.2|
-E13|%M10.3|
-E14|%M10.4|
-E15||%M10.5|
-Grafcet_20|%MB11|
-E20|%M11.0|
-E21|%M11.1|
-E22|%M11.2|
-E23|%M11.3|
-Grafcet_30|%MB12|
-E30|%M12.0|
-E31|%M12.1|
-E32|%M12.2|
-E33|%M12.3|
-E34|%M12.4|
-E35|%M12.5|
-E36|%M12.6|
-E37|%M12.7|
-Grafcet_30_1|%MB13|
-E38|%M13.0|
-Grafcet_Gemma|%MB14|
-A6|%M14.0|
-A1|%M14.1|
-F2|%M14.2|
-F1|%M14.3|
-F1_1|%M14.4|
-F5|%M14.5|
-F6|%M14.6|
-A3|%M14.7|
-Grafcet_Gemma_1|%MB15|
-A4|%M15.0|
-D1|%M15.1|
-Reset_ST40_Memorys|%MB16|
-Grafcet_Parado|%M16.0|
-O_Marcha_C|%M16.1|
-Grafcet_Emergencia|%M16.2|
-O_Start|%M16.3|
-O_Stop|%M16.4|
-O_Emerg|%M16.5|
-O_Marcha_A|%M16.6|
-HL11_M_ON/OFF_Condition|%M17.0|
-HL11_ON/OFF_Condition|%M17.1|
-HL12_M_ON/OFF_Condition|%M17.2|
-HL12_ON/OFF_Condition|%M17.3|
-HL13_M_ON/OFF_Condition|%M17.4|
-HL13_ON/OFF_Condition|%M17.5|
+| Label                       | Endereço | Comentário                                                                                          |
+|:---------------------------:|:---------|:---------------------------------------------------------------------------------------------------:|
+| Grafcet_10         | %MB10  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E10                | %M10.0 | Etapa de Grafcet de Funcionamento                                                                              |
+| E11                | %M10.1 | Etapa de Grafcet de Funcionamento                                                                              |
+| E12                | %M10.2 | Etapa de Grafcet de Funcionamento                                                                              |
+| E13                | %M10.3 | Etapa de Grafcet de Funcionamento                                                                              |
+| E14                | %M10.4 | Etapa de Grafcet de Funcionamento                                                                              |
+| E15                | %M10.5 | Etapa de Grafcet de Funcionamento                                                                              |
+| Grafcet_20         | %MB11  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E20                | %M11.0 | Etapa de Grafcet de Funcionamento                                                                              |
+| E21                | %M11.1 | Etapa de Grafcet de Funcionamento                                                                              |
+| E22                | %M11.2 | Etapa de Grafcet de Funcionamento                                                                              |
+| E23                | %M11.3 | Etapa de Grafcet de Funcionamento                                                                              |
+| Grafcet_30         | %MB12  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E30                | %M12.0 | Etapa de Grafcet de Funcionamento                                                                              |
+| E31                | %M12.1 | Etapa de Grafcet de Funcionamento                                                                              |
+| E32                | %M12.2 | Etapa de Grafcet de Funcionamento                                                                              |
+| E33                | %M12.3 | Etapa de Grafcet de Funcionamento                                                                              |
+| E34                | %M12.4 | Etapa de Grafcet de Funcionamento                                                                              |
+| E35                | %M12.5 | Etapa de Grafcet de Funcionamento                                                                              |
+| E36                | %M12.6 | Etapa de Grafcet de Funcionamento                                                                              |
+| E37                | %M12.7 | Etapa de Grafcet de Funcionamento                                                                              |
+| Grafcet_30_1       | %MB13  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E38                | %M13.0 | Etapa de Grafcet (Funcionamento)                                                                               |
+| Grafcet_Gemma      | %MB14  | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| A6                 | %M14.0 | Etapa de Grafcet do Gemma                                                                                      |
+| A1                 | %M14.1 | Etapa de Grafcet do Gemma                                                                                      |
+| F2                 | %M14.2 | Etapa de Grafcet do Gemma                                                                                      |
+| F1                 | %M14.3 | Etapa de Grafcet do Gemma                                                                                      |
+| F1_1               | %M14.4 | Etapa de Grafcet do Gemma                                                                                      |
+| F5                 | %M14.5 | Etapa de Grafcet do Gemma                                                                                      |
+| F6                 | %M14.6 | Etapa de Grafcet do Gemma                                                                                      |
+| A3                 | %M14.7 | Etapa de Grafcet do Gemma                                                                                      |
+| Grafcet_Gemma_1    | %MB15  | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| A4                 | %M15.0 | Etapa de Grafcet do Gemma                                                                                      |
+| D1                 | %M15.1 | Etapa de Grafcet do Gemma                                                                                      |
+| Reset_ST40_Memorys | %MB16  | Byte das memórias usadas na ST20, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| Grafcet_Parado     | %M16.0 | Grafcet Parado por ordem do Gemma                                                                              |
+| Grafcet_Emergencia | %M16.1 | Grafcet em Emergencia por ordem do Gemma                                                                       |
+| O_Start            | %M16.2 | Ordem de Start, dada pela HMI, Tesla ou Localmente para o Gemma                                                |
+| O_Stop             | %M16.3 | Ordem de Stop, dada pela HMI, Tesla ou Localmente  para o Gemma                                                |
+| O_Emerg            | %M16.4 | Ordem de Emergencia, dada pela HMI, Tesla ou Localmente  para o Gemma                                          |
+| O_Marcha_A         | %M16.5 | Ordem de Marcha, Automático, dada pelo Gemma Master                                                            |
+| O_Marcha_C         | %M16.6 | Ordem de Marcha, Ciclo, dada pelo Gemma Master                                                                 |
+| HL11_M_Cond        | %M17.0 | Memória do estado da Iluminação HL11 (Gemma Master)                                                            |
+| HL11_Cond          | %M17.1 | Memória do estado da Iluminação HL12 (Gemma)                                                                   |
 
 ##### Comunicações
 ###### Entradas
@@ -1067,63 +1063,56 @@ HMI_Stop_Tapete|%I2.7|
 
 ##### Memórias
 
-|Label |Endereço  | Comentário|
---- | --- | ---
-Grafcet_10|%MB10|
-E10|%M10.0|
-E11|%M10.1|
-E12|%M10.2|
-E13|%M10.3|
-E14|%M10.4|
-E15|%M10.5|
-E16|%M10.6|
-E17|%M10.7|
-Grafcet_10_1|%MB11|
-E18|%M11.0|
-E19|%M11.1|
-E20|%M11.2|
-E21|%M11.3|
-E22|%M11.4|
-E23|%M11.5|
-E24|%M11.6|
-E25|%M11.7|
-Grafcet_10_2|%MB12|
-E26|%M12.0|
-E27|%M12.1|
-E28|%M12.2|
-E29|%M12.3|
-Grafcet_Funcionamento|%M12.4|
-Grafcet_Gemma|%MB13|
-A6|%M13.0|
-A1|%M13.1|
-F2|%M13.2|
-F1|%M13.3|
-F1_1|%M13.4|
-F5|%M13.5|
-F6|%M13.6|
-A3|%M13.7|
-Grafcet_Gemma_1|%MB14|
-A4|%M14.0|
-D1|%M14.1|
-Reset_ST50_Memorys|%MB15|
-Grafcet_Parado|%M15.0|
-Grafcet_Emergencia|%M15.1|
-O_Start|%M15.2|
-O_Stop|%M15.3|
-O_Emerg|%M15.4|
-O_Marcha_A|%M15.5|
-O_Marcha_C|%M15.6|
-HL11_ON/OFF_Condition|%M16.0|
-HL12_ON/OFF_Condition|%M16.1|
-HL13_ON/OFF_Condition|%M16.2|
-HMI_Velocidade_Tapete|%MD300|
-Total_Pecas_Metalicas|%MD304|
-Total_Pecas_Brancas|%MD308|
-Total_Pecas_Pretas|%MD312|
-Total_Pecas|%MD316|
-Total_Pecas_Prefeitas|%MD320|
-Total_Pecas_Defeito|%MD324|
-Valor_Contador|%MD328|
+| Label                       | Endereço | Comentário                                                                                                             |
+|:---------------------------:|:---------|:----------------------------------------------------------------------------------------------------------------------:|
+| Grafcet_10            | %MB10  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0                 |
+| E10                   | %M10.0 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E11                   | %M10.1 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E12                   | %M10.2 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E13                   | %M10.3 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E14                   | %M10.4 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E15                   | %M10.5 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E16                   | %M10.6 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E17                   | %M10.7 | Etapa de Grafcet de Funcionamento                                                                                              |
+| Grafcet_10_1          | %MB11  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0                 |
+| E18                   | %M11.0 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E19                   | %M11.1 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E20                   | %M11.2 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E21                   | %M11.3 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E22                   | %M11.4 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E23                   | %M11.5 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E24                   | %M11.6 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E25                   | %M11.7 | Etapa de Grafcet de Funcionamento                                                                                              |
+| Grafcet_10_2          | %MB12  | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0                 |
+| E26                   | %M12.0 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E27                   | %M12.1 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E28                   | %M12.2 | Etapa de Grafcet de Funcionamento                                                                                              |
+| E29                   | %M12.3 | Etapa de Grafcet de Funcionamento                                                                                              |
+| Grafcet_Funcionamento | %M12.4 | Etapa de Informação sobre o estado do Grafcet                                                                                  |
+| Grafcet_Gemma         | %MB13  | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0                            |
+| A6                    | %M13.0 | Etapa de Grafcet do Gemma                                                                                                      |
+| A1                    | %M13.1 | Etapa de Grafcet do Gemma                                                                                                      |
+| F2                    | %M13.2 | Etapa de Grafcet do Gemma                                                                                                      |
+| F1                    | %M13.3 | Etapa de Grafcet do Gemma                                                                                                      |
+| F1_1                  | %M13.4 | Etapa de Grafcet do Gemma                                                                                                      |
+| F5                    | %M13.5 | Etapa de Grafcet do Gemma                                                                                                      |
+| F6                    | %M13.6 | Etapa de Grafcet do Gemma                                                                                                      |
+| A3                    | %M13.7 | Etapa de Grafcet do Gemma                                                                                                      |
+| Grafcet_Gemma_1       | %MB14  | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0                            |
+| A4                    | %M14.0 | Etapa de Grafcet do Gemma                                                                                                      |
+| D1                    | %M14.1 | Etapa de Grafcet do Gemma                                                                                                      |
+| Reset_ST50_Memorys    | %MB15  | Byte das memórias usadas na ST20, usado na Inicialização para gararantir que todos o Bits estão a 0                            |
+| Grafcet_Parado        | %M15.0 | Grafcet Parado por ordem do Gemma                                                                                              |
+| Grafcet_Emergencia    | %M15.1 | Grafcet em Emergencia por ordem do Gemma                                                                                       |
+| O_Start               | %M15.2 | Ordem de Start, dada pela HMI, Tesla ou Localmente para o Gemma                                                                |
+| O_Stop                | %M15.3 | Ordem de Stop, dada pela HMI, Tesla ou Localmente  para o Gemma                                                                |
+| O_Emerg               | %M15.4 | Ordem de Emergencia, dada pela HMI, Tesla ou Localmente  para o Gemma                                                          |
+| O_Marcha_A            | %M15.5 | Ordem de Marcha, Automático, dada pelo Gemma Master                                                                            |
+| O_Marcha_C            | %M15.6 | Ordem de Marcha, Ciclo, dada pelo Gemma Master                                                                                 |
+| HL11_ON/OFF_Condition | %M16.0 | Memória do estado da Iluminação HL11                                                                                           |
+| HL12_ON/OFF_Condition | %M16.1 | Memória do estado da Iluminação HL12                                                                                           |
+| HL13_ON/OFF_Condition | %M16.2 | Memória do estado da Iluminação HL13                                                                                           |
+| HMI_Velocidade_Tapete | %MD300 | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 30000). Esse valor é guardado nesta memória |
 
 ##### Comunicações
 ###### Entradas
