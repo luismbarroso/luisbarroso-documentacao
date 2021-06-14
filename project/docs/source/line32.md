@@ -2,7 +2,7 @@
 
 **Autor:** *Luis Barroso*
 
-**Data:** *Last Upgrade: 14/06/2021, 00h02*
+**Data:** *Last Upgrade: 14/06/2021, 10h56*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -1501,239 +1501,232 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 ##### Modo de Marcha
 ##### Botões
 
-
-
-
-
 #### HMI
+
+-
 
 ##### Classificação
 
-| Label                          | Conexão          |Nome PLC|Label PLC                      | Comentário                        |  
--------------------------------- | ---------------- | ----- | ------------------------------ | -----------------------------------
-| 3210*B11                       | HMI_Connection_1 | 19PLC | "3210*B11"                     | Fim de Curso (Final)              |
-| 3210*B12                       | HMI_Connection_1 | 19PLC | "3210*B12"                     | Fim de Curso (Home)               |
-| 3210*B13                       | HMI_Connection_1 | 19PLC | "3210*B13"                     | Sensor Home                       |
-| 3211*B11                       | HMI_Connection_1 | 19PLC | "3211*B11"                     |                                   |
-| 3211*B21                       | HMI_Connection_1 | 19PLC | "3211*B21"                     | Sensor Garra Frente               |
-| 3211*B22                       | HMI_Connection_1 | 19PLC | "3211*B22"                     | Sensor Garra Atras                |
-| 3211*B31                       | HMI_Connection_1 | 19PLC | "3211*B31"                     | Sensor Garra Posicao Inicial      |
-| 3211*B32                       | HMI_Connection_1 | 19PLC | "3211*B32"                     | Sensor Garra Esquerda             |
-| 3211*B41                       | HMI_Connection_1 | 19PLC | "3211*B41"                     | Sensor Garra Cima                 |
-| 3211*B42                       | HMI_Connection_1 | 19PLC | "3211*B42"                     | Sensor Garra Baixo                |
-| 3211*Y10A                      | HMI_Connection_1 | 19PLC | "3211*Y10A"                    | Abrir Garra                       |
-| 3211*Y10B                      | HMI_Connection_1 | 19PLC | "3211*Y10B"                    | Fechar Garra                      |
-| 3211*Y20                       | HMI_Connection_1 | 19PLC | "3211*Y20"                     | Frente e Atrás Garra              |
-| 3211*Y30A                      | HMI_Connection_1 | 19PLC | "3211*Y30A"                    | Posiçao Incial Garra              |
-| 3211*Y30B                      | HMI_Connection_1 | 19PLC | "3211*Y30B"                    | Rodar Esquerda Garra              |
-| 3211*Y40                       | HMI_Connection_1 | 19PLC | "3211*Y40"                     | Sobe e Baixa Garra                |
-| 321920HL11                     | HMI_Connection_1 | 19PLC | 321920HL11                     | Painel Luz Laranja                |
-| 321920HL12                     | HMI_Connection_1 | 19PLC | 321920HL12                     | Painel Luz Verde                  |
-| 321920HL13                     | HMI_Connection_1 | 19PLC | 321920HL13                     | Painel Luz Vermelha               |
-| 321920QS24                     | HMI_Connection_1 | 19PLC | 321920QS24                     | Botao Emergencia                  |
-| 321920SA23                     | HMI_Connection_1 | 19PLC | 321920SA23                     | SA                                |
-| 321920SB21                     | HMI_Connection_1 | 19PLC | 321920SB21                     | Botao Verde                       |
-| 321920SB22                     | HMI_Connection_1 | 19PLC | 321920SB22                     | Botao Vermelho                    |
-| 3220*B11                       | HMI_Connection_2 | 29PLC | "3220*B11"                     | Sensor Peca Frente                |
-| 3221*B11                       | HMI_Connection_2 | 29PLC | "3221*B11"                     | Sensor Cilindro1 Avancado         |
-| 3221*B12                       | HMI_Connection_2 | 29PLC | "3221*B12"                     | Sensor Cilindro1 Recuado          |
-| 3221*B21                       | HMI_Connection_2 | 29PLC | "3221*B21"                     | Sensor Cilindro2 Avancado         |
-| 3221*B22                       | HMI_Connection_2 | 29PLC | "3221*B22"                     | Sensor Cilindro2 Recuado          |
-| 3221*B31                       | HMI_Connection_2 | 29PLC | "3221*B31"                     | Sensor Funil Cima                 |
-| 3221*B32                       | HMI_Connection_2 | 29PLC | "3221*B32"                     | Sensor Funil Baixo                |
-| 3221*B33                       | HMI_Connection_2 | 29PLC | "3221*B33"                     | Sensor Peça Metalica              |
-| 3221*Y10                       | HMI_Connection_2 | 29PLC | "3221*Y10"                     | Cilindro 1                        |
-| 3221*Y20                       | HMI_Connection_2 | 29PLC | "3221*Y20"                     | Cilindro 2                        |
-| 322920HL11                     | HMI_Connection_2 | 29PLC | 322920HL11                     | Painel Luz Laranja                |
-| 322920HL12                     | HMI_Connection_2 | 29PLC | 322920HL12                     | Painel Luz Verde                  |
-| 322920HL13                     | HMI_Connection_2 | 29PLC | 322920HL13                     | Painel Luz Vermelha               |
-| 322920QS24                     | HMI_Connection_2 | 29PLC | 322920QS24                     | Botao Emergencia                  |
-| 322920SA23                     | HMI_Connection_2 | 29PLC | 322920SA23                     | SA                                |
-| 322920SB21                     | HMI_Connection_2 | 29PLC | 322920SB21                     | Botao Verde                       |
-| 322920SB22                     | HMI_Connection_2 | 29PLC | 322920SB22                     | Botao Vermelho                    |
-| 3231*B11                       | HMI_Connection_3 | 39PLC | "3231*B11"                     | Sensor Abrir Fechar Pinca         |
-| 3231*B21                       | HMI_Connection_3 | 39PLC | "3231*B21"                     | Sensor Avancado Pinca             |
-| 3231*B22                       | HMI_Connection_3 | 39PLC | "3231*B22"                     | Sensor Recuado Pinca              |
-| 3231*B31                       | HMI_Connection_3 | 39PLC | "3231*B31"                     | Sensor Peca                       |
-| 3231*Y10                       | HMI_Connection_3 | 39PLC | "3231*Y10"                     | Abrir e Fechar a Pinca            |
-| 3231*Y20                       | HMI_Connection_3 | 39PLC | "3231*Y20"                     | Avanca e Recua a Pinca            |
-| 3232*B11                       | HMI_Connection_3 | 39PLC | "3232*B11"                     | Sensor Subido Prensa              |
-| 3232*B12                       | HMI_Connection_3 | 39PLC | "3232*B12"                     | Sensor Descido Prensa             |
-| 3232*Y10                       | HMI_Connection_3 | 39PLC | "3232*Y10"                     | Sobe e Desce Prensa               |
-| 323920HL11                     | HMI_Connection_3 | 39PLC | 323920HL11                     | Painel Luz Laranja                |
-| 323920HL12                     | HMI_Connection_3 | 39PLC | 323920HL12                     | Painel Luz Verde                  |
-| 323920HL13                     | HMI_Connection_3 | 39PLC | 323920HL13                     | Painel Luz Vermelha               |
-| 323920QS24                     | HMI_Connection_3 | 39PLC | 323920QS24                     | Botao Emergencia                  |
-| 323920SA23                     | HMI_Connection_3 | 39PLC | 323920SA23                     | SA                                |
-| 323920SB21                     | HMI_Connection_3 | 39PLC | 323920SB21                     | Botao Verde                       |
-| 323920SB22                     | HMI_Connection_3 | 39PLC | 323920SB22                     | Botao Vermelho                    |
-| 3240*H11                       | HMI_Connection_4 | 49PLC | "3240*H11"                     | Semáforo Verde                    |
-| 3240*H12                       | HMI_Connection_4 | 49PLC | "3240*H12"                     | Semáforo Amarelo                  |
-| 3240*H13                       | HMI_Connection_4 | 49PLC | "3240*H13"                     | Semáforo Vermelho                 |
-| 3241*B11                       | HMI_Connection_4 | 49PLC | "3241*B11"                     | Sensor Cilindro1 Frente           |
-| 3241*B12                       | HMI_Connection_4 | 49PLC | "3241*B12"                     | Sensor Cilindro1 Atras            |
-| 3241*B21                       | HMI_Connection_4 | 49PLC | "3241*B21"                     | Sensor Cilindro2 Frente           |
-| 3241*B22                       | HMI_Connection_4 | 49PLC | "3241*B22"                     | Sensor Cilindro2 Atras            |
-| 3241*B31                       | HMI_Connection_4 | 49PLC | "3241*B31"                     | Sensor BaseMiolo Inicial          |
-| 3241*B32                       | HMI_Connection_4 | 49PLC | "3241*B32"                     | Sensor BaseMiolo Rotacao          |
-| 3241*B41                       | HMI_Connection_4 | 49PLC | "3241*B41"                     | Sensor Cima Funil                 |
-| 3241*B42                       | HMI_Connection_4 | 49PLC | "3241*B42"                     | Sensor Baixo Funil                |
-| 3241*B43                       | HMI_Connection_4 | 49PLC | "3241*B43"                     | Sensor Miolo Esquerdo             |
-| 3241*B44                       | HMI_Connection_4 | 49PLC | "3241*B44"                     | Sensor Miolo Direito              |
-| 3241*Y10                       | HMI_Connection_4 | 49PLC | "3241*Y10"                     | Cilindro 1                        |
-| 3241*Y20                       | HMI_Connection_4 | 49PLC | "3241*Y20"                     | Cilindro 2                        |
-| 3241*Y30                       | HMI_Connection_4 | 49PLC | "3241*Y30"                     | Base Miolo                        |
-| 3242*B11                       | HMI_Connection_4 | 49PLC | "3242*B11"                     | Sensor Frente Pinca               |
-| 3242*B12                       | HMI_Connection_4 | 49PLC | "3242*B12"                     | Sensor Atras Pinca                |
-| 3242*B21                       | HMI_Connection_4 | 49PLC | "3242*B21"                     | Sensor Cima Pinca                 |
-| 3242*B22                       | HMI_Connection_4 | 49PLC | "3242*B22"                     | Sensor Baixo Pinca                |
-| 3242*B31                       | HMI_Connection_4 | 49PLC | "3242*B31"                     | Sensor Abrir Fechar Pinca         |
-| 3242*B41                       | HMI_Connection_4 | 49PLC | "3242*B41"                     | Sensor Frente Peca                |
-| 3242*Y10                       | HMI_Connection_4 | 49PLC | "3242*Y10"                     | Frente e Tras Pinca               |
-| 3242*Y20                       | HMI_Connection_4 | 49PLC | "3242*Y20"                     | Cima e Baixo Pinca                |
-| 3242*Y30                       | HMI_Connection_4 | 49PLC | "3242*Y30"                     | Abrir e Fechar Pinca              |
-| 324920HL11                     | HMI_Connection_4 | 49PLC | 324920HL11                     | Painel Luz Laranja                |
-| 324920HL12                     | HMI_Connection_4 | 49PLC | 324920HL12                     | Painel Luz Verde                  |
-| 324920HL13                     | HMI_Connection_4 | 49PLC | 324920HL13                     | Painel Luz Vermelha               |
-| 324920QS24                     | HMI_Connection_4 | 49PLC | 324920QS24                     | Botao de Emergencia               |
-| 324920SA23                     | HMI_Connection_4 | 49PLC | 324920SA23                     | SA                                |
-| 324920SB21                     | HMI_Connection_4 | 49PLC | 324920SB21                     | Botao Verde                       |
-| 324920SB22                     | HMI_Connection_4 | 49PLC | 324920SB22                     | Botao Vermelho                    |
-| 325010B11                      | HMI_Connection_5 | 59PLC | 325010B11                      | Sensor de Peca                    |
-| 325010B12                      | HMI_Connection_5 | 59PLC | 325010B12                      | Sensor Otico (Branco e Metalico)  |
-| 325010B13                      | HMI_Connection_5 | 59PLC | 325010B13                      | Sensor Metalico                   |
-| 325010B21                      | HMI_Connection_5 | 59PLC | 325010B21                      | Sensor Cilindro 1 Frente          |
-| 325010B31                      | HMI_Connection_5 | 59PLC | 325010B31                      | Sensor Cilindro 2 Frente          |
-| 325010B41                      | HMI_Connection_5 | 59PLC | 325010B41                      | Sensor Cilindro 3 Frente          |
-| 325010Y20                      | HMI_Connection_5 | 59PLC | 325010Y20                      | Cilindro 1                        |
-| 325010Y30                      | HMI_Connection_5 | 59PLC | 325010Y30                      | Cilindro 2                        |
-| 325010Y40                      | HMI_Connection_5 | 59PLC | 325010Y40                      | Cilindro 3                        |
-| 3250M51A                       | HMI_Connection_5 | 59PLC | 3250M51A                       | Inversores de Frequencia (Frente) |
-| 3250M51B                       | HMI_Connection_5 | 59PLC | 3250M51B                       | Inversores de Frequencia (Atras)  |
-| 325920HL11                     | HMI_Connection_5 | 59PLC | 325920HL11                     | Painel Luz Laranja                |
-| 325920HL12                     | HMI_Connection_5 | 59PLC | 325920HL12                     | Painel Luz Verde                  |
-| 325920HL13                     | HMI_Connection_5 | 59PLC | 325920HL13                     | Painel Luz Vermelha               |
-| 325920QS24                     | HMI_Connection_5 | 59PLC | 325920QS24                     | Botao Emergencia                  |
-| 325920SA23                     | HMI_Connection_5 | 59PLC | 325920SA23                     | Seletor                           |
-| 325920SB21                     | HMI_Connection_5 | 59PLC | 325920SB21                     | Botao Verde                       |
-| 325920SB22                     | HMI_Connection_5 | 59PLC | 325920SB22                     | Botao Vermelho                    |
-| A1_M                           | HMI_Connection_1 | 19PLC | A1_M                           |                                   |
-| A1_ST10                        | HMI_Connection_1 | 19PLC | A1                             |                                   |
-| A1_ST20                        | HMI_Connection_2 | 29PLC | A1                             |                                   |
-| A1_ST30                        | HMI_Connection_3 | 39PLC | A1                             |                                   |
-| A1_ST40                        | HMI_Connection_4 | 49PLC | A1                             |                                   |
-| A1_ST50                        | HMI_Connection_5 | 59PLC | A1                             |                                   |
-| A3_M                           | HMI_Connection_1 | 19PLC | A3_M                           |                                   |
-| A3_ST10                        | HMI_Connection_1 | 19PLC | A3                             |                                   |
-| A3_ST20                        | HMI_Connection_2 | 29PLC | A3                             |                                   |
-| A3_ST30                        | HMI_Connection_3 | 39PLC | A3                             |                                   |
-| A3_ST40                        | HMI_Connection_4 | 49PLC | A3                             |                                   |
-| A3_ST50                        | HMI_Connection_5 | 59PLC | A3                             |                                   |
-| A4_M                           | HMI_Connection_1 | 19PLC | A4_M                           |                                   |
-| A4_ST10                        | HMI_Connection_1 | 19PLC | A4                             |                                   |
-| A4_ST20                        | HMI_Connection_2 | 29PLC | A4                             |                                   |
-| A4_ST30                        | HMI_Connection_3 | 39PLC | A4                             |                                   |
-| A4_ST40                        | HMI_Connection_4 | 49PLC | A4                             |                                   |
-| A4_ST50                        | HMI_Connection_5 | 59PLC | A4                             |                                   |
-| A6_M                           | HMI_Connection_1 | 19PLC | A6_M                           |                                   |
-| A6_ST10                        | HMI_Connection_1 | 19PLC | A6                             |                                   |
-| A6_ST20                        | HMI_Connection_2 | 29PLC | A6                             |                                   |
-| A6_ST30                        | HMI_Connection_3 | 39PLC | A6                             |                                   |
-| A6_ST40                        | HMI_Connection_4 | 49PLC | A6                             |                                   |
-| A6_ST50                        | HMI_Connection_5 | 59PLC | A6                             |                                   |
-| D1_M                           | HMI_Connection_1 | 19PLC | D1_M                           |                                   |
-| D1_ST10                        | HMI_Connection_1 | 19PLC | D1                             |                                   |
-| D1_ST20                        | HMI_Connection_2 | 29PLC | D1                             |                                   |
-| D1_ST30                        | HMI_Connection_3 | 39PLC | D1                             |                                   |
-| D1_ST40                        | HMI_Connection_4 | 49PLC | D1                             |                                   |
-| D1_ST50                        | HMI_Connection_5 | 59PLC | D1                             |                                   |
-| F1_M                           | HMI_Connection_1 | 19PLC | F1_M                           |                                   |
-| F1_ST10                        | HMI_Connection_1 | 19PLC | F1                             |                                   |
-| F1_ST20                        | HMI_Connection_2 | 29PLC | F1                             |                                   |
-| F1_ST30                        | HMI_Connection_3 | 39PLC | F1                             |                                   |
-| F1_ST40                        | HMI_Connection_4 | 49PLC | F1                             |                                   |
-| F1_ST50                        | HMI_Connection_5 | 59PLC | F1                             |                                   |
-| F2_M                           | HMI_Connection_1 | 19PLC | F2_M                           |                                   |
-| F2_ST10                        | HMI_Connection_1 | 19PLC | F2                             |                                   |
-| F2_ST20                        | HMI_Connection_2 | 29PLC | F2                             |                                   |
-| F2_ST30                        | HMI_Connection_3 | 39PLC | F2                             |                                   |
-| F2_ST40                        | HMI_Connection_4 | 49PLC | F2                             |                                   |
-| F2_ST50                        | HMI_Connection_5 | 59PLC | F2                             |                                   |
-| F5_M                           | HMI_Connection_1 | 19PLC | F5_M                           |                                   |
-| F5_ST10                        | HMI_Connection_1 | 19PLC | F5                             |                                   |
-| F5_ST20                        | HMI_Connection_2 | 29PLC | F5                             |                                   |
-| F5_ST30                        | HMI_Connection_3 | 39PLC | F5                             |                                   |
-| F5_ST40                        | HMI_Connection_4 | 49PLC | F5                             |                                   |
-| F5_ST50                        | HMI_Connection_5 | 59PLC | F5                             |                                   |
-| HMI_Absolute                   | HMI_Connection_1 | 19PLC | HMI_MC_MoveAbsolute_Execute    |                                   |
-| HMI_CV                         | HMI_Connection_5 | 19PLC | HMI_CV                         |                                   |
-| HMI_Distancia_MC_Relative      | HMI_Connection_1 | 29PLC | HMI_MC_MoveRelative_Distance   |                                   |
-| HMI_Halt                       | HMI_Connection_1 | 39PLC | HMI_MC_Halt_Execute            |                                   |
-| HMI_Home                       | HMI_Connection_1 | 49PLC | HMI_MC_Home_Execute            |                                   |
-| HMI_Init_Manual_All_STS        | HMI_Connection_1 | 59PLC | HMI_Init_Manual_All_STS        |                                   |
-| HMI_Init_Manual_ST10           | HMI_Connection_1 | 19PLC | Init_Manual                    |                                   |
-| HMI_Init_Manual_ST20           | HMI_Connection_2 | 19PLC | Init_Manual                    |                                   |
-| HMI_Init_Manual_ST30           | HMI_Connection_3 | 29PLC | Init_Manual                    |                                   |
-| HMI_Init_Manual_ST40           | HMI_Connection_4 | 39PLC | Init_Manual                    |                                   |
-| HMI_Init_Manual_ST50           | HMI_Connection_5 | 49PLC | Init_Manual                    |                                   |
-| HMI_Jog_Direita                | HMI_Connection_1 | 59PLC | HMI_MC_MoveJog_Drt             |                                   |
-| HMI_Jog_Esquerda               | HMI_Connection_1 | 19PLC | HMI_MC_MoveJog_Esq             |                                   |
-| HMI_MC_MoveAbsolute_Velocity_2 | HMI_Connection_1 | 19PLC | HMI_MC_MoveAbsolute_Velocity_2 |                                   |
-| HMI_MCHome                     | HMI_Connection_1 | 19PLC | HMI_MC_Home_Execute_A          |                                   |
-| HMI_MM_Automatico              | HMI_Connection_1 | 19PLC | HMI_MM_Automatico              |                                   |
-| HMI_MM_Ciclo                   | HMI_Connection_1 | 19PLC | HMI_MM_Ciclo                   |                                   |
-| HMI_MM_Manual                  | HMI_Connection_1 | 19PLC | HMI_MM_Manual                  |                                   |
-| HMI_Modo_HMI                   | HMI_Connection_1 | 19PLC | HMI_Modo_HMI                   |                                   |
-| HMI_Modo_Local                 | HMI_Connection_1 | 19PLC | HMI_Modo_Local                 |                                   |
-| HMI_Modo_Scada                 | HMI_Connection_1 | 19PLC | HMI_Modo_Scada                 |                                   |
-| HMI_Posicao_MC_Absolute        | HMI_Connection_1 | 19PLC | HMI_MC_MoveAbsolute_Position   |                                   |
-| HMI_Posicao_ST20               | HMI_Connection_1 | 19PLC | HMI_Posicao_ST20               |                                   |
-| HMI_Posicao_ST30               | HMI_Connection_1 | 19PLC | HMI_Posicao_ST30               |                                   |
-| HMI_Posicao_ST40               | HMI_Connection_1 | 19PLC | HMI_Posicao_ST40               |                                   |
-| HMI_Posicao_ST50               | HMI_Connection_1 | 19PLC | HMI_Posicao_ST50               |                                   |
-| HMI_Power                      | HMI_Connection_1 | 19PLC | HMI_MC_Power_Enable            |                                   |
-| HMI_QS                         | HMI_Connection_1 | 19PLC | HMI_QS                         |                                   |
-| HMI_QS_ST10                    | HMI_Connection_1 | 19PLC | HMI_QS_ST10                    |                                   |
-| HMI_QS_ST20                    | HMI_Connection_2 | 29PLC | HMI_QS                         |                                   |
-| HMI_QS_ST30                    | HMI_Connection_3 | 39PLC | HMI_QS                         |                                   |
-| HMI_QS_ST40                    | HMI_Connection_4 | 49PLC | HMI_QS                         |                                   |
-| HMI_QS_ST50                    | HMI_Connection_5 | 59PLC | HMI_QS                         |                                   |
-| HMI_Relative                   | HMI_Connection_1 | 19PLC | HMI_MC_MoveRelative_Execute    |                                   |
-| HMI_Reset                      | HMI_Connection_1 | 19PLC | HMI_MC_Reset_Execute           |                                   |
-| HMI_SB1                        | HMI_Connection_1 | 19PLC | HMI_SB1                        |                                   |
-| HMI_SB1_ST10                   | HMI_Connection_1 | 19PLC | HMI_SB1_ST10                   |                                   |
-| HMI_SB1_ST20                   | HMI_Connection_2 | 29PLC | HMI_SB1                        |                                   |
-| HMI_SB1_ST30                   | HMI_Connection_3 | 39PLC | HMI_SB1                        |                                   |
-| HMI_SB1_ST40                   | HMI_Connection_4 | 49PLC | HMI_SB1                        |                                   |
-| HMI_SB1_ST50                   | HMI_Connection_5 | 59PLC | HMI_SB1                        |                                   |
-| HMI_SB2                        | HMI_Connection_1 | 19PLC | HMI_SB2                        |                                   |
-| HMI_SB2_ST10                   | HMI_Connection_1 | 19PLC | HMI_SB2_ST10                   |                                   |
-| HMI_SB2_ST20                   | HMI_Connection_2 | 29PLC | HMI_SB2                        |                                   |
-| HMI_SB2_ST30                   | HMI_Connection_3 | 39PLC | HMI_SB2                        |                                   |
-| HMI_SB2_ST40                   | HMI_Connection_4 | 49PLC | HMI_SB2                        |                                   |
-| HMI_SB2_ST50                   | HMI_Connection_5 | 59PLC | HMI_SB2                        |                                   |
-| HMI_Start_Tapete               | HMI_Connection_5 | 59PLC | HMI_Start_Tapete               |                                   |
-| HMI_Stop_Tapete                | HMI_Connection_5 | 59PLC | HMI_Stop_Tapete                |                                   |
-| HMI_Teste_Luzes                | HMI_Connection_1 | 19PLC | HMI_Teste_Luzes                |                                   |
-| HMI_Testes_Cilindros           | HMI_Connection_1 | 19PLC | HMI_Testes_Cilindros           |                                   |
-| HMI_Velocidade_MC_Absolute     | HMI_Connection_1 | 19PLC | HMI_MC_MoveAbsolute_Velocity   |                                   |
-| HMI_Velocidade_MC_MoveJog      | HMI_Connection_1 | 19PLC | HMI_MC_MoveJog_Velocity        |                                   |
-| HMI_Velocidade_MC_Relative     | HMI_Connection_1 | 19PLC | HMI_MC_MoveRelative_Velocity   |                                   |
-| HMI_Velocidade_Tapete          | HMI_Connection_5 | 59PLC | HMI_Velocidade_Tapete          |                                   |
-| IEC_Counter_0_DB_4_CV          | HMI_Connection_5 | 59PLC | IEC_Counter_0_DB_4.CV          |                                   |
-| IEC_Counter_0_DB_5_CV          | HMI_Connection_5 | 59PLC | IEC_Counter_0_DB_5.CV          |                                   |
-| Input Encoder                  | HMI_Connection_5 | 59PLC | Input_Encoder                  |                                   |
-| Pecas_Brancas                  | HMI_Connection_5 | 59PLC | IEC_Counter_0_DB_1.CV          |                                   |
-| Pecas_Metalicas                | HMI_Connection_5 | 59PLC | IEC_Counter_0_DB.CV            |                                   |
-| Pecas_Pretas                   | HMI_Connection_5 | 59PLC | IEC_Counter_0_DB_2.CV          |                                   |
-| Reset_Contador                 | HMI_Connection_5 | 59PLC | Reset_Contadores               |                                   |
-| Total_Pecas                    | HMI_Connection_5 | 59PLC | IEC_Counter_0_DB_3.CV          |                                   |
-| Total_Pecas_Defeito            | HMI_Connection_5 | 59PLC | Total_Pecas_Defeito            |                                   |
-| Total_Pecas_Prefeitas          | HMI_Connection_5 | 59PLC | Total_Pecas_Prefeitas          |                                   |
-
+| Label                        | Conexão          |Nome PLC|Label PLC                    | Comentário                                                                                         |  
+|------------------------------|------------------|-------|------------------------------|----------------------------------------------------------------------------------------------------|
+| 3210*B11                     | HMI_Connection_1 | 19PLC | 3210*B11                     | Fim de Curso (Final)                                                                               |
+| 3210*B12                     | HMI_Connection_1 | 19PLC | 3210*B12                     | Fim de Curso (Home)                                                                                |
+| 3210*B13                     | HMI_Connection_1 | 19PLC | 3210*B13                     | Sensor Home                                                                                        |
+| 3211*B11                     | HMI_Connection_1 | 19PLC | 3211*B11                     |                                                                                                    |
+| 3211*B21                     | HMI_Connection_1 | 19PLC | 3211*B21                     | Sensor Garra Frente                                                                                |
+| 3211*B22                     | HMI_Connection_1 | 19PLC | 3211*B22                     | Sensor Garra Atras                                                                                 |
+| 3211*B31                     | HMI_Connection_1 | 19PLC | 3211*B31                     | Sensor Garra Posicao Inicial                                                                       |
+| 3211*B32                     | HMI_Connection_1 | 19PLC | 3211*B32                     | Sensor Garra Esquerda                                                                              |
+| 3211*B41                     | HMI_Connection_1 | 19PLC | 3211*B41                     | Sensor Garra Cima                                                                                  |
+| 3211*B42                     | HMI_Connection_1 | 19PLC | 3211*B42                     | Sensor Garra Baixo                                                                                 |
+| 3211*Y10A                    | HMI_Connection_1 | 19PLC | 3211*Y10A                    | Abrir Garra                                                                                        |
+| 3211*Y10B                    | HMI_Connection_1 | 19PLC | 3211*Y10B                    | Fechar Garra                                                                                       |
+| 3211*Y20                     | HMI_Connection_1 | 19PLC | 3211*Y20                     | Frente e Atrás Garra                                                                               |
+| 3211*Y30A                    | HMI_Connection_1 | 19PLC | 3211*Y30A                    | Posiçao Incial Garra                                                                               |
+| 3211*Y30B                    | HMI_Connection_1 | 19PLC | 3211*Y30B                    | Rodar Esquerda Garra                                                                               |
+| 3211*Y40                     | HMI_Connection_1 | 19PLC | 3211*Y40                     | Sobe e Baixa Garra                                                                                 |
+| 321920HL11                   | HMI_Connection_1 | 19PLC | 321920HL11                   | Painel Luz Laranja                                                                                 |
+| 321920HL12                   | HMI_Connection_1 | 19PLC | 321920HL12                   | Painel Luz Verde                                                                                   |
+| 321920HL13                   | HMI_Connection_1 | 19PLC | 321920HL13                   | Painel Luz Vermelha                                                                                |
+| 321920QS24                   | HMI_Connection_1 | 19PLC | 321920QS24                   | Botao Emergencia                                                                                   |
+| 321920SA23                   | HMI_Connection_1 | 19PLC | 321920SA23                   | SA                                                                                                 |
+| 321920SB21                   | HMI_Connection_1 | 19PLC | 321920SB21                   | Botao Verde                                                                                        |
+| 321920SB22                   | HMI_Connection_1 | 19PLC | 321920SB22                   | Botao Vermelho                                                                                     |
+| 3220*B11                     | HMI_Connection_2 | 29PLC | 3220*B11                     | Sensor Peca Frente                                                                                 |
+| 3221*B11                     | HMI_Connection_2 | 29PLC | 3221*B11                     | Sensor Cilindro1 Avancado                                                                          |
+| 3221*B12                     | HMI_Connection_2 | 29PLC | 3221*B12                     | Sensor Cilindro1 Recuado                                                                           |
+| 3221*B21                     | HMI_Connection_2 | 29PLC | 3221*B21                     | Sensor Cilindro2 Avancado                                                                          |
+| 3221*B22                     | HMI_Connection_2 | 29PLC | 3221*B22                     | Sensor Cilindro2 Recuado                                                                           |
+| 3221*B31                     | HMI_Connection_2 | 29PLC | 3221*B31                     | Sensor Funil Cima                                                                                  |
+| 3221*B32                     | HMI_Connection_2 | 29PLC | 3221*B32                     | Sensor Funil Baixo                                                                                 |
+| 3221*B33                     | HMI_Connection_2 | 29PLC | 3221*B33                     | Sensor Peça Metalica                                                                               |
+| 3221*Y10                     | HMI_Connection_2 | 29PLC | 3221*Y10                     | Cilindro 1                                                                                         |
+| 3221*Y20                     | HMI_Connection_2 | 29PLC | 3221*Y20                     | Cilindro 2                                                                                         |
+| 322920HL11                   | HMI_Connection_2 | 29PLC | 322920HL11                   | Painel Luz Laranja                                                                                 |
+| 322920HL12                   | HMI_Connection_2 | 29PLC | 322920HL12                   | Painel Luz Verde                                                                                   |
+| 322920HL13                   | HMI_Connection_2 | 29PLC | 322920HL13                   | Painel Luz Vermelha                                                                                |
+| 322920QS24                   | HMI_Connection_2 | 29PLC | 322920QS24                   | Botao Emergencia                                                                                   |
+| 322920SA23                   | HMI_Connection_2 | 29PLC | 322920SA23                   | SA                                                                                                 |
+| 322920SB21                   | HMI_Connection_2 | 29PLC | 322920SB21                   | Botao Verde                                                                                        |
+| 322920SB22                   | HMI_Connection_2 | 29PLC | 322920SB22                   | Botao Vermelho                                                                                     |
+| 3231*B11                     | HMI_Connection_3 | 39PLC | 3231*B11                     | Sensor Abrir Fechar Pinca                                                                          |
+| 3231*B21                     | HMI_Connection_3 | 39PLC | 3231*B21                     | Sensor Avancado Pinca                                                                              |
+| 3231*B22                     | HMI_Connection_3 | 39PLC | 3231*B22                     | Sensor Recuado Pinca                                                                               |
+| 3231*B31                     | HMI_Connection_3 | 39PLC | 3231*B31                     | Sensor Peca                                                                                        |
+| 3231*Y10                     | HMI_Connection_3 | 39PLC | 3231*Y10                     | Abrir e Fechar a Pinca                                                                             |
+| 3231*Y20                     | HMI_Connection_3 | 39PLC | 3231*Y20                     | Avanca e Recua a Pinca                                                                             |
+| 3232*B11                     | HMI_Connection_3 | 39PLC | 3232*B11                     | Sensor Subido Prensa                                                                               |
+| 3232*B12                     | HMI_Connection_3 | 39PLC | 3232*B12                     | Sensor Descido Prensa                                                                              |
+| 3232*Y10                     | HMI_Connection_3 | 39PLC | 3232*Y10                     | Sobe e Desce Prensa                                                                                |
+| 323920HL11                   | HMI_Connection_3 | 39PLC | 323920HL11                   | Painel Luz Laranja                                                                                 |
+| 323920HL12                   | HMI_Connection_3 | 39PLC | 323920HL12                   | Painel Luz Verde                                                                                   |
+| 323920HL13                   | HMI_Connection_3 | 39PLC | 323920HL13                   | Painel Luz Vermelha                                                                                |
+| 323920QS24                   | HMI_Connection_3 | 39PLC | 323920QS24                   | Botão Emergência                                                                                   |
+| 323920SA23                   | HMI_Connection_3 | 39PLC | 323920SA23                   | SA                                                                                                 |
+| 323920SB21                   | HMI_Connection_3 | 39PLC | 323920SB21                   | Botão Verde                                                                                        |
+| 323920SB22                   | HMI_Connection_3 | 39PLC | 323920SB22                   | Botão Vermelho                                                                                     |
+| 3240*H11                     | HMI_Connection_4 | 49PLC | 3240*H11                     | Semáforo Verde                                                                                     |
+| 3240*H12                     | HMI_Connection_4 | 49PLC | 3240*H12                     | Semáforo Amarelo                                                                                   |
+| 3240*H13                     | HMI_Connection_4 | 49PLC | 3240*H13                     | Semáforo Vermelho                                                                                  |
+| 3241*B11                     | HMI_Connection_4 | 49PLC | 3241*B11                     | Sensor Cilindro1 Frente                                                                            |
+| 3241*B12                     | HMI_Connection_4 | 49PLC | 3241*B12                     | Sensor Cilindro1 Atras                                                                             |
+| 3241*B21                     | HMI_Connection_4 | 49PLC | 3241*B21                     | Sensor Cilindro2 Frente                                                                            |
+| 3241*B22                     | HMI_Connection_4 | 49PLC | 3241*B22                     | Sensor Cilindro2 Atras                                                                             |
+| 3241*B31                     | HMI_Connection_4 | 49PLC | 3241*B31                     | Sensor BaseMiolo Inicial                                                                           |
+| 3241*B32                     | HMI_Connection_4 | 49PLC | 3241*B32                     | Sensor BaseMiolo Rotacao                                                                           |
+| 3241*B41                     | HMI_Connection_4 | 49PLC | 3241*B41                     | Sensor Cima Funil                                                                                  |
+| 3241*B42                     | HMI_Connection_4 | 49PLC | 3241*B42                     | Sensor Baixo Funil                                                                                 |
+| 3241*B43                     | HMI_Connection_4 | 49PLC | 3241*B43                     | Sensor Miolo Esquerdo                                                                              |
+| 3241*B44                     | HMI_Connection_4 | 49PLC | 3241*B44                     | Sensor Miolo Direito                                                                               |
+| 3241*Y10                     | HMI_Connection_4 | 49PLC | 3241*Y10                     | Cilindro 1                                                                                         |
+| 3241*Y20                     | HMI_Connection_4 | 49PLC | 3241*Y20                     | Cilindro 2                                                                                         |
+| 3241*Y30                     | HMI_Connection_4 | 49PLC | 3241*Y30                     | Base Miolo                                                                                         |
+| 3242*B11                     | HMI_Connection_4 | 49PLC | 3242*B11                     | Sensor Frente Pinca                                                                                |
+| 3242*B12                     | HMI_Connection_4 | 49PLC | 3242*B12                     | Sensor Atras Pinca                                                                                 |
+| 3242*B21                     | HMI_Connection_4 | 49PLC | 3242*B21                     | Sensor Cima Pinca                                                                                  |
+| 3242*B22                     | HMI_Connection_4 | 49PLC | 3242*B22                     | Sensor Baixo Pinca                                                                                 |
+| 3242*B31                     | HMI_Connection_4 | 49PLC | 3242*B31                     | Sensor Abrir Fechar Pinca                                                                          |
+| 3242*B41                     | HMI_Connection_4 | 49PLC | 3242*B41                     | Sensor Frente Peca                                                                                 |
+| 3242*Y10                     | HMI_Connection_4 | 49PLC | 3242*Y10                     | Frente e Tras Pinca                                                                                |
+| 3242*Y20                     | HMI_Connection_4 | 49PLC | 3242*Y20                     | Cima e Baixo Pinca                                                                                 |
+| 3242*Y30                     | HMI_Connection_4 | 49PLC | 3242*Y30                     | Abrir e Fechar Pinca                                                                               |
+| 324920HL11                   | HMI_Connection_4 | 49PLC | 324920HL11                   | Painel Luz Laranja                                                                                 |
+| 324920HL12                   | HMI_Connection_4 | 49PLC | 324920HL12                   | Painel Luz Verde                                                                                   |
+| 324920HL13                   | HMI_Connection_4 | 49PLC | 324920HL13                   | Painel Luz Vermelha                                                                                |
+| 324920QS24                   | HMI_Connection_4 | 49PLC | 324920QS24                   | Botao de Emergencia                                                                                |
+| 324920SA23                   | HMI_Connection_4 | 49PLC | 324920SA23                   | SA                                                                                                 |
+| 324920SB21                   | HMI_Connection_4 | 49PLC | 324920SB21                   | Botao Verde                                                                                        |
+| 324920SB22                   | HMI_Connection_4 | 49PLC | 324920SB22                   | Botao Vermelho                                                                                     |
+| 325010B11                    | HMI_Connection_5 | 59PLC | 325010B11                    | Sensor de Peca                                                                                     |
+| 325010B12                    | HMI_Connection_5 | 59PLC | 325010B12                    | Sensor Otico (Branco e Metalico)                                                                   |
+| 325010B13                    | HMI_Connection_5 | 59PLC | 325010B13                    | Sensor Metalico                                                                                    |
+| 325010B21                    | HMI_Connection_5 | 59PLC | 325010B21                    | Sensor Cilindro 1 Frente                                                                           |
+| 325010B31                    | HMI_Connection_5 | 59PLC | 325010B31                    | Sensor Cilindro 2 Frente                                                                           |
+| 325010B41                    | HMI_Connection_5 | 59PLC | 325010B41                    | Sensor Cilindro 3 Frente                                                                           |
+| 325010Y20                    | HMI_Connection_5 | 59PLC | 325010Y20                    | Cilindro 1                                                                                         |
+| 325010Y30                    | HMI_Connection_5 | 59PLC | 325010Y30                    | Cilindro 2                                                                                         |
+| 325010Y40                    | HMI_Connection_5 | 59PLC | 325010Y40                    | Cilindro 3                                                                                         |
+| 3250M51A                     | HMI_Connection_5 | 59PLC | 3250M51A                     | Inversores de Frequencia (Frente)                                                                  |
+| 3250M51B                     | HMI_Connection_5 | 59PLC | 3250M51B                     | Inversores de Frequencia (Atras)                                                                   |
+| 325920HL11                   | HMI_Connection_5 | 59PLC | 325920HL11                   | Painel Luz Laranja                                                                                 |
+| 325920HL12                   | HMI_Connection_5 | 59PLC | 325920HL12                   | Painel Luz Verde                                                                                   |
+| 325920HL13                   | HMI_Connection_5 | 59PLC | 325920HL13                   | Painel Luz Vermelha                                                                                |
+| 325920QS24                   | HMI_Connection_5 | 59PLC | 325920QS24                   | Botao Emergencia                                                                                   |
+| 325920SA23                   | HMI_Connection_5 | 59PLC | 325920SA23                   | Seletor                                                                                            |
+| 325920SB21                   | HMI_Connection_5 | 59PLC | 325920SB21                   | Botao Verde                                                                                        |
+| 325920SB22                   | HMI_Connection_5 | 59PLC | 325920SB22                   | Botao Vermelho                                                                                     |
+| A1_M                         | HMI_Connection_1 | 19PLC | A1_M                         | Etapa de Grafcet (Gemma Master)                                                                    |
+| A1_ST10                      | HMI_Connection_1 | 19PLC | A1                           | Etapa de Grafcet (Gemma ST10)                                                                      |
+| A1_ST20                      | HMI_Connection_2 | 29PLC | A1                           | Etapa de Grafcet (Gemma ST20)                                                                      |
+| A1_ST30                      | HMI_Connection_3 | 39PLC | A1                           | Etapa de Grafcet (Gemma ST30)                                                                      |
+| A1_ST40                      | HMI_Connection_4 | 49PLC | A1                           | Etapa de Grafcet (Gemma ST40)                                                                      |
+| A1_ST50                      | HMI_Connection_5 | 59PLC | A1                           | Etapa de Grafcet (Gemma ST50)                                                                      |
+| A3_M                         | HMI_Connection_1 | 19PLC | A3_M                         | Etapa de Grafcet (Gemma Master)                                                                    |
+| A3_ST10                      | HMI_Connection_1 | 19PLC | A3                           | Etapa de Grafcet (Gemma ST10)                                                                      |
+| A3_ST20                      | HMI_Connection_2 | 29PLC | A3                           | Etapa de Grafcet (Gemma ST20)                                                                      |
+| A3_ST30                      | HMI_Connection_3 | 39PLC | A3                           | Etapa de Grafcet (Gemma ST30)                                                                      |
+| A3_ST40                      | HMI_Connection_4 | 49PLC | A3                           | Etapa de Grafcet (Gemma ST40)                                                                      |
+| A3_ST50                      | HMI_Connection_5 | 59PLC | A3                           | Etapa de Grafcet (Gemma ST50)                                                                      |
+| A4_M                         | HMI_Connection_1 | 19PLC | A4_M                         | Etapa de Grafcet (Gemma Master)                                                                    |
+| A4_ST10                      | HMI_Connection_1 | 19PLC | A4                           | Etapa de Grafcet (Gemma ST10)                                                                      |
+| A4_ST20                      | HMI_Connection_2 | 29PLC | A4                           | Etapa de Grafcet (Gemma ST20)                                                                      |
+| A4_ST30                      | HMI_Connection_3 | 39PLC | A4                           | Etapa de Grafcet (Gemma ST30)                                                                      |
+| A4_ST40                      | HMI_Connection_4 | 49PLC | A4                           | Etapa de Grafcet (Gemma ST40)                                                                      |
+| A4_ST50                      | HMI_Connection_5 | 59PLC | A4                           | Etapa de Grafcet (Gemma ST50)                                                                      |
+| A6_M                         | HMI_Connection_1 | 19PLC | A6_M                         | Etapa de Grafcet (Gemma Master)                                                                    |
+| A6_ST10                      | HMI_Connection_1 | 19PLC | A6                           | Etapa de Grafcet (Gemma ST10)                                                                      |
+| A6_ST20                      | HMI_Connection_2 | 29PLC | A6                           | Etapa de Grafcet (Gemma ST20)                                                                      |
+| A6_ST30                      | HMI_Connection_3 | 39PLC | A6                           | Etapa de Grafcet (Gemma ST30)                                                                      |
+| A6_ST40                      | HMI_Connection_4 | 49PLC | A6                           | Etapa de Grafcet (Gemma ST40)                                                                      |
+| A6_ST50                      | HMI_Connection_5 | 59PLC | A6                           | Etapa de Grafcet (Gemma ST50)                                                                      |
+| D1_M                         | HMI_Connection_1 | 19PLC | D1_M                         | Etapa de Grafcet (Gemma Master)                                                                    |
+| D1_ST10                      | HMI_Connection_1 | 19PLC | D1                           | Etapa de Grafcet (Gemma ST10)                                                                      |
+| D1_ST20                      | HMI_Connection_2 | 29PLC | D1                           | Etapa de Grafcet (Gemma ST20)                                                                      |
+| D1_ST30                      | HMI_Connection_3 | 39PLC | D1                           | Etapa de Grafcet (Gemma ST30)                                                                      |
+| D1_ST40                      | HMI_Connection_4 | 49PLC | D1                           | Etapa de Grafcet (Gemma ST40)                                                                      |
+| D1_ST50                      | HMI_Connection_5 | 59PLC | D1                           | Etapa de Grafcet (Gemma ST50)                                                                      |
+| F1_M                         | HMI_Connection_1 | 19PLC | F1_M                         | Etapa de Grafcet (Gemma Master)                                                                    |
+| F1_ST10                      | HMI_Connection_1 | 19PLC | F1                           | Etapa de Grafcet (Gemma ST10)                                                                      |
+| F1_ST20                      | HMI_Connection_2 | 29PLC | F1                           | Etapa de Grafcet (Gemma ST20)                                                                      |
+| F1_ST30                      | HMI_Connection_3 | 39PLC | F1                           | Etapa de Grafcet (Gemma ST30)                                                                      |
+| F1_ST40                      | HMI_Connection_4 | 49PLC | F1                           | Etapa de Grafcet (Gemma ST40)                                                                      |
+| F1_ST50                      | HMI_Connection_5 | 59PLC | F1                           | Etapa de Grafcet (Gemma ST50)                                                                      |
+| F2_M                         | HMI_Connection_1 | 19PLC | F2_M                         | Etapa de Grafcet (Gemma Master)                                                                    |
+| F2_ST10                      | HMI_Connection_1 | 19PLC | F2                           | Etapa de Grafcet (Gemma ST10)                                                                      |
+| F2_ST20                      | HMI_Connection_2 | 29PLC | F2                           | Etapa de Grafcet (Gemma ST20)                                                                      |
+| F2_ST30                      | HMI_Connection_3 | 39PLC | F2                           | Etapa de Grafcet (Gemma ST30)                                                                      |
+| F2_ST40                      | HMI_Connection_4 | 49PLC | F2                           | Etapa de Grafcet (Gemma ST40)                                                                      |
+| F2_ST50                      | HMI_Connection_5 | 59PLC | F2                           | Etapa de Grafcet (Gemma ST50)                                                                      |
+| F5_M                         | HMI_Connection_1 | 19PLC | F5_M                         | Etapa de Grafcet (Gemma Master)                                                                    |
+| F5_ST10                      | HMI_Connection_1 | 19PLC | F5                           | Etapa de Grafcet (Gemma ST10)                                                                      |
+| F5_ST20                      | HMI_Connection_2 | 29PLC | F5                           | Etapa de Grafcet (Gemma ST20)                                                                      |
+| F5_ST30                      | HMI_Connection_3 | 39PLC | F5                           | Etapa de Grafcet (Gemma ST30)                                                                      |
+| F5_ST40                      | HMI_Connection_4 | 49PLC | F5                           | Etapa de Grafcet (Gemma ST40)                                                                      |
+| F5_ST50                      | HMI_Connection_5 | 59PLC | F5                           | Etapa de Grafcet (Gemma ST50)                                                                      |
+| HMI_MC_MoveAbsolute_Execute  | HMI_Connection_1 | 19PLC | HMI_MC_MoveAbsolute_Execute  | Em Modo Manual, botão de execução do MC_MoveAbsolute                                               |
+| HMI_CV                       | HMI_Connection_5 | 19PLC | HMI_CV                       | Em Modo Manual, botão de reset do Contador                                                         |
+| HMI_MC_MoveRelative_Distance | HMI_Connection_1 | 29PLC | HMI_MC_MoveRelative_Distance | Em Modo Manual, no Display Númerico é possivel fazer a escolha da posição relativa                 |
+| HMI_MC_Halt_Execute          | HMI_Connection_1 | 39PLC | HMI_MC_Halt_Execute          | Em Modo Manual, botão de execução do MC_Halt                                                       |
+| HMI_MC_Home_Execute          | HMI_Connection_1 | 49PLC | HMI_MC_Home_Execute          | Em Modo Manual, botão de execução do MC_Home                                                       |
+| HMI_Init_Manual_All_STS      | HMI_Connection_1 | 59PLC | HMI_Init_Manual_All_STS      | Inicialização Manual de todas as ST (Ordem do Master)                                              |
+| HMI_Init_Manual_ST10         | HMI_Connection_1 | 19PLC | Init_Manual                  | Inicialização Manual ST10                                                                          |
+| HMI_Init_Manual_ST20         | HMI_Connection_2 | 19PLC | Init_Manual                  | Inicialização Manual ST20                                                                          |
+| HMI_Init_Manual_ST30         | HMI_Connection_3 | 29PLC | Init_Manual                  | Inicialização Manual ST30                                                                          |
+| HMI_Init_Manual_ST40         | HMI_Connection_4 | 39PLC | Init_Manual                  | Inicialização Manual ST40                                                                          |
+| HMI_Init_Manual_ST50         | HMI_Connection_5 | 49PLC | Init_Manual                  | Inicialização Manual ST50                                                                          |
+| HMI_Jog_Direita              | HMI_Connection_1 | 59PLC | HMI_MC_MoveJog_Drt           | Em Modo Manual, botão que permite mover o robô para a direita                                      |
+| HMI_Jog_Esquerda             | HMI_Connection_1 | 19PLC | HMI_MC_MoveJog_Esq           | Em Modo Manual, botão que permite mover o robô para a esquerda                                     |
+| HMI_MC_Home_Execute_A        | HMI_Connection_1 | 19PLC | HMI_MC_Home_Execute_A        | Botão de execução do MC_Home                                                                       |
+| HMI_MM_Automatico            | HMI_Connection_1 | 19PLC | HMI_MM_Automatico            | Seleção do Modo de Marcha (Ordem do Master)                                                        |
+| HMI_MM_Ciclo                 | HMI_Connection_1 | 19PLC | HMI_MM_Ciclo                 | Seleção do Modo de Marcha (Ordem do Master)                                                        |
+| HMI_MM_Manual                | HMI_Connection_1 | 19PLC | HMI_MM_Manual                | Seleção do Modo de Marcha (Ordem do Master)                                                        |
+| HMI_Modo_HMI                 | HMI_Connection_1 | 19PLC | HMI_Modo_HMI                 | Seleção do Modo de Funcionamento (Ordem do Master)                                                 |
+| HMI_Modo_Local               | HMI_Connection_1 | 19PLC | HMI_Modo_Local               | Seleção do Modo de Funcionamento (Ordem do Master)                                                 |
+| HMI_Modo_Scada               | HMI_Connection_1 | 19PLC | HMI_Modo_Scada               | Seleção do Modo de Funcionamento (Ordem do Master)                                                 |
+| HMI_MC_MoveAbsolute_Position | HMI_Connection_1 | 19PLC | HMI_MC_MoveAbsolute_Position | Em Modo Manual, no Display Númerico é possivel fazer a escolha da posição absoluta (Máx: 1051.727) |
+| HMI_Posicao_ST20             | HMI_Connection_1 | 19PLC | HMI_Posicao_ST20             | Em Modo Manual, Posição Absoluta da ST20                                                           |
+| HMI_Posicao_ST30             | HMI_Connection_1 | 19PLC | HMI_Posicao_ST30             | Em Modo Manual, Posição Absoluta da ST30                                                           |
+| HMI_Posicao_ST40             | HMI_Connection_1 | 19PLC | HMI_Posicao_ST40             | Em Modo Manual, Posição Absoluta da ST40                                                           |
+| HMI_Posicao_ST50             | HMI_Connection_1 | 19PLC | HMI_Posicao_ST50             | Em Modo Manual, Posição Absoluta da ST50                                                           |
+| HMI_MC_Power_Enable          | HMI_Connection_1 | 19PLC | HMI_MC_Power_Enable          | Em Modo Manual, botão de enable do MC_Power                                                        |
+| HMI_QS                       | HMI_Connection_1 | 19PLC | HMI_QS                       | Botão de Emergência Master                                                                         |
+| HMI_QS_ST10                  | HMI_Connection_1 | 19PLC | HMI_QS_ST10                  | Botão de Emergência ST10                                                                           |
+| HMI_QS_ST20                  | HMI_Connection_2 | 29PLC | HMI_QS                       | Botão de Emergência ST20                                                                           |
+| HMI_QS_ST30                  | HMI_Connection_3 | 39PLC | HMI_QS                       | Botão de Emergência ST30                                                                           |
+| HMI_QS_ST40                  | HMI_Connection_4 | 49PLC | HMI_QS                       | Botão de Emergência ST40                                                                           |
+| HMI_QS_ST50                  | HMI_Connection_5 | 59PLC | HMI_QS                       | Botão de Emergência ST50                                                                           |
+| HMI_MC_MoveRelative_Execute  | HMI_Connection_1 | 19PLC | HMI_MC_MoveRelative_Execute  | Em Modo Manual, botão de execução  do MC_MoveRelative                                              |
+| HMI_MC_Reset_Execute         | HMI_Connection_1 | 19PLC | HMI_MC_Reset_Execute         | Em Modo Manual, botão de execução  do MC_Reset                                                     |
+| HMI_SB1                      | HMI_Connection_1 | 19PLC | HMI_SB1                      | Botão de Start Master                                                                              |
+| HMI_SB1_ST10                 | HMI_Connection_1 | 19PLC | HMI_SB1_ST10                 | Botão de Start ST10                                                                                |
+| HMI_SB1_ST20                 | HMI_Connection_2 | 29PLC | HMI_SB1                      | Botão de Start ST20                                                                                |
+| HMI_SB1_ST30                 | HMI_Connection_3 | 39PLC | HMI_SB1                      | Botão de Start ST30                                                                                |
+| HMI_SB1_ST40                 | HMI_Connection_4 | 49PLC | HMI_SB1                      | Botão de Start ST40                                                                                |
+| HMI_SB1_ST50                 | HMI_Connection_5 | 59PLC | HMI_SB1                      | Botão de Start ST50                                                                                |
+| HMI_SB2                      | HMI_Connection_1 | 19PLC | HMI_SB2                      | Botão de Stop Master                                                                               |
+| HMI_SB2_ST10                 | HMI_Connection_1 | 19PLC | HMI_SB2_ST10                 | Botão de Stop ST10                                                                                 |
+| HMI_SB2_ST20                 | HMI_Connection_2 | 29PLC | HMI_SB2                      | Botão de Stop ST20                                                                                 |
+| HMI_SB2_ST30                 | HMI_Connection_3 | 39PLC | HMI_SB2                      | Botão de Stop ST30                                                                                 |
+| HMI_SB2_ST40                 | HMI_Connection_4 | 49PLC | HMI_SB2                      | Botão de Stop ST40                                                                                 |
+| HMI_SB2_ST50                 | HMI_Connection_5 | 59PLC | HMI_SB2                      | Botão de Stop ST50                                                                                 |
+| HMI_Start_Tapete             | HMI_Connection_5 | 59PLC | HMI_Start_Tapete             | Em Modo Manual, Start Tapete ST50                                                                  |
+| HMI_Stop_Tapete              | HMI_Connection_5 | 59PLC | HMI_Stop_Tapete              | Em Modo Manual, Stop Tapete ST50                                                                   |
+| HMI_Teste_Luzes              | HMI_Connection_1 | 19PLC | HMI_Teste_Luzes              | Botão de Teste de toda a Ilumincação                                                               |
+| HMI_Testes_Cilindros         | HMI_Connection_1 | 19PLC | HMI_Testes_Cilindros         | Botão de Teste de todos os Cilindros                                                               |
+| HMI_Velocidade_MC_Absolute   | HMI_Connection_1 | 19PLC | HMI_MC_MoveAbsolute_Velocity | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 400)            |
+| HMI_Velocidade_MC_MoveJog    | HMI_Connection_1 | 19PLC | HMI_MC_MoveJog_Velocity      | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 400)            |
+| HMI_Velocidade_MC_Relative   | HMI_Connection_1 | 19PLC | HMI_MC_MoveRelative_Velocity | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 400)            |
+| HMI_Velocidade_Tapete        | HMI_Connection_5 | 59PLC | HMI_Velocidade_Tapete        | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 30000)          |
+| Total_Pecas_Pretendidas      | HMI_Connection_5 | 59PLC | IEC_Counter_0_DB_4.CV        | Contador de Pecas Pretendidas                                                                      |
+| Total_Pecas_Defeito          | HMI_Connection_5 | 59PLC | IEC_Counter_0_DB_5.CV        | Contador de Peças com Defeito                                                                      |
+| Input Encoder                | HMI_Connection_5 | 59PLC | Input_Encoder                | Valor do Enconder                                                                                  |
+| Pecas_Brancas                | HMI_Connection_5 | 59PLC | IEC_Counter_0_DB_1.CV        | Contador de Peças Brancas                                                                          |
+| Pecas_Metalicas              | HMI_Connection_5 | 59PLC | IEC_Counter_0_DB.CV          | Contador de Peças Metalicas                                                                        |
+| Pecas_Pretas                 | HMI_Connection_5 | 59PLC | IEC_Counter_0_DB_2.CV        | Contador de Peças Pretas                                                                           |
+| Reset_Contador               | HMI_Connection_5 | 59PLC | Reset_Contadores             | Reset a todos os Contador                                                                          |
+| Total_Pecas                  | HMI_Connection_5 | 59PLC | IEC_Counter_0_DB_3.CV        | Total de Pecas                                                                                     |
 
 ##### Ecrãs
-
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/line32.png)
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_funcionamento.png)
