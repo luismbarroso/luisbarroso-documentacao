@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 14/06/2021, 17h18*
+**Data:** *Last Upgrade: 14/06/2021, 21h48*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -601,7 +601,8 @@ Init_Manual|%I2.3|
 | F6                 | %M12.6 | Etapa de Grafcet do Gemma                                                                                      |
 | A3                 | %M12.7 | Etapa de Grafcet do Gemma                                                                                      |
 | Grafcet_Gemma_1    | %MB13  | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
-| A4                 | %M13.0 | Etapa de Grafcet do Gemma                                                                                      |
+| A4                 | %M13.0 | Etapa de Grafcet do Gemma         
+                                                                             |
 | D1                 | %M13.1 | Etapa de Grafcet do Gemma                                                                                      |
 | Reset_ST20_Memorys | %MB14  | Byte das memórias usadas na ST20, usado na Inicialização para gararantir que todos o Bits estão a 0            |
 | Grafcet_Parado     | %M14.0 | Grafcet Parado por ordem do Gemma                                                                              |
@@ -1737,3 +1738,4 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 #### Tesla Scada
 
 ## Anexos
+
