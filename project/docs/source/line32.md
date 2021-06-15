@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 15/06/2021, 16h46*
+**Data:** *Last Upgrade: 15/06/2021, 17h15*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -1380,7 +1380,7 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 
 #### HMI
 
--
+sou
 
 ##### Classificação
 
