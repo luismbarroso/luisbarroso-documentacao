@@ -1,0 +1,1 @@
+Modbus - https://www.ni.com/pt-pt/innovations/white-papers/14/the-modbus-protocol-in-depth.html

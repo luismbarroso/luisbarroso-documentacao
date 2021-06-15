@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 15/06/2021, 12h18*
+**Data:** *Last Upgrade: 15/06/2021, 13h43*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -83,8 +83,7 @@ A Line 32 é uma das Lines do Grupo 30. Divida em 5 estações das quais resulta
 
 A Line 32, do Grupo 30, consiste num conjunto de estações, **cada uma com Equipamentos/Componentes independentes**. A Line 32, assim com cada uma da estações, funcionam usando **sistemas pneumáticos** e **sistemas eletromecânicos**.
 
-Os **sistemas pneumáticos** estão presentes em todas as estações. Responsáveis pelos movimentos dos Cilindros, ou seja, avanço e recuo. Já os **sistemas eletromecânicos** só estão presentes nas estações 10 e 50. Na estação 10, são responsáveis pelo movimento do **robô**. Este robô é utilizado para o transporte das peças pelas diversas estações. Acoplado ao robô, temos uma **garra**, sendo assim possível realizar as tarefas pretendidas, com por exemplo, o avança e recuo da garra. Para se deslocar pelas diversas estações, o robô, está conectado a um **Servo Motor** (Simotics S-1FL6) e um **Inversor de Frequência** (Siemens V90); Na estação 50, são responsáveis pelo movimento do tapete. Para o movimento deste tapete é usado um **Motor Trifásico** que acoplado tem um **Enconder**, que, através da sua posição é possível fazer o encaminhamento das peças. Para a movimento do Motor é utilizado um **Inversor de Frequência** (Siemens G120C), que converte o sinal elétrico em sinal analógico sendo assim possível fazer o 
-movimento do tapete e controlo da velocidade.
+Os **sistemas pneumáticos** estão presentes em todas as estações. Responsáveis pelos movimentos dos Cilindros, ou seja, avanço e recuo. Já os **sistemas eletromecânicos** só estão presentes nas estações 10 e 50. Na estação 10, são responsáveis pelo movimento do **robô**. Este robô é utilizado para o transporte das peças pelas diversas estações. Acoplado ao robô, temos uma **garra**, sendo assim possível realizar as tarefas pretendidas, com por exemplo, o avança e recuo da garra. Para se deslocar pelas diversas estações, o robô, está conectado a um **Servo Motor** (Simotics S-1FL6) e um **Inversor de Frequência** (Siemens V90); Na estação 50, são responsáveis pelo movimento do tapete. Para o movimento deste tapete é usado um **Motor Trifásico** que acoplado tem um **Enconder**, que, através da sua posição é possível fazer o encaminhamento das peças. Para a movimento do Motor é utilizado um **Inversor de Frequência** (Siemens G120C), que converte o sinal elétrico em sinal analógico sendo assim possível fazer o movimento do tapete e controlo da velocidade.
 
 Para o controlo das peças são usados Sensores, como: **Sensores Fotoelétricos**, usados para a deteção das peças em determinadas posições; **Sensores Indutivos** usados para distinguir as peças metálicas das peças de plástico; **Sensores Óticos** usados para distinguir a peças brancas das peças pretas e **Sensores Magnéticos** usados para detetar a posição da haste do cilindro.
 
@@ -156,6 +155,8 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 
 ### Comunicações
 
+Para comunicações 
+
 ### Profinet
 #### Zonas de Comunicação
 
@@ -173,12 +174,27 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 | -     | Q116, Q117, Q118, Q119     | → | I116, I117, I118, I119   |
 
 ### Modbus
+
+ModBus é um protocolo de comunicação de *Send/Receive* que utiliza um relacionamento **Cliente/Servidor**. A comunicação **Cliente/Servidor** ocorre em pares, ou seja, assim que o **Cliente** fizer um pedido, fica aguardar a resposta por parte do **Servidor**. Assim que **Servidor** receber este pedido envia a informação pretendida para o **Cliente**.
+
+![](./lines/line32/2020_2021/images/modbus/modbus.png)
+
+Tabela do mapa de memória do Modbus:
+
+| Tipo de Objeto   | Acesso     | Tamanho    | Espaço de Endereços |
+|:----------------:|:----------:|:----------:|:-------------------:|
+| Coil             | Read-write | 1 bit      | 00001 - 09999       |
+| Discrete input   | Read-only  | 1 bit      | 10001 - 19999       |
+| Input register   | Read-only  | 16 bits    | 30001 - 39999       |
+| Holding register | Read-write | 16 bits    | 40001 - 49999       |
+
+
 #### Zonas de Comunicação
 
 ## Trabalho Realizado
 ### Classificação
 
-----
+A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do PLC**, **Memórias** e **Comunicações**.
 
 #### Estação 10 
 ##### Entradas e Saídas (PLC)
@@ -598,28 +614,46 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 	
 ##### Comunicações
 
-| Entradas           |          |            | Saidas      |          |            |
-|--------------------|----------|------------|-------------|----------|------------|
-| Label              | Endereço | Comentário | Label       | Endereço | Comentário |
-| ST20_ST10_1        | %IB104   |            | ST10_ST20_1 | %QB104   |            |
-| ST10_Ok_ST20       | %I104.0  |            | ST20_Ok     | %Q104.0  |            |
-| ST20_ST10_2        | %IB105   |            | A6_ST20     | %Q104.1  |            |
-| Emerg_M_ST20       | %I105.2  |            | A1_ST20     | %Q104.2  |            |
-| Stop_M_ST20        | %I105.3  |            | F2_ST20     | %Q104.3  |            |
-| Init_M_ST20        | %I105.4  |            | F1_ST20     | %Q104.4  |            |
-| MM_A_ST20          | %I105.5  |            | A3_ST20     | %Q104.5  |            |
-| MM_C_ST20          | %I105.6  |            | F5_ST20     | %Q104.6  |            |
-| MM_M_ST20          | %I105.7  |            | F6_ST20     | %Q104.7  |            |
-| ST20_ST10_3        | %IB106   |            | ST10_ST20_2 | %QB105   |            |
-| MF_HMI_ST20        | %I106.0  |            | A4_ST20     | %Q105.0  |            |
-| MF_SCADA_ST20      | %I106.1  |            | D1_ST20     | %Q105.1  |            |
-| MF_Local_ST20      | %I106.2  |            | ST10_ST20_3 | %QB106   |            |
-| HLs_ST20           | %I106.3  |            | ST10_ST20_4 | %QB107   |            |
-| Scada_O_Start_ST20 | %I106.4  |            |             |          |            |
-| Scada_O_Stop_ST20  | %I106.5  |            |             |          |            |
-| Scada_O_Emerg_ST20 | %I106.6  |            |             |          |            |
-| Cilindros_ST20     | %I106.7  |            |             |          |            |
-| ST20_ST10_4        | %IB107   |            |             |          |            |
+|                    | Entradas |                                                                      |
+|:------------------:|:--------:|:--------------------------------------------------------------------:|
+| Label              | Endereço | Comentário                                                           |
+| ST20_ST10_1        | %IB104   | Byte de Comunicação, a ST10 recebe informação da ST20                |
+| ST10_Ok_ST20       | %I104.0  | Informação que o Robô está em posição para operar na ST20            |
+| ST20_ST10_2        | %IB105   | Byte de Comunicação, a ST10 recebe informação da ST20                |
+| Emerg_M_ST20       | %I105.2  | Ordem de Emergencia, dada pelo Gemma Master para a ST20              |
+| Stop_M_ST20        | %I105.3  | Ordem de Stop, dada pelo Gemma Master para a ST20                    |
+| Init_M_ST20        | %I105.4  | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST20    |
+| MM_A_ST20          | %I105.5  | Modo de Macha Automático, escolhido pelo Gemma Master para a ST20    |
+| MM_C_ST20          | %I105.6  | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST20         |
+| MM_M_ST20          | %I105.7  | Modo de Macha Manual, escolhido pelo Gemma Master para a ST20        |
+| ST20_ST10_3        | %IB106   | Byte de Comunicação, a ST10 recebe informação da ST20                |
+| MF_HMI_ST20        | %I106.0  | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST20   |
+| MF_SCADA_ST20      | %I106.1  | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST20 |
+| MF_Local_ST20      | %I106.2  | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST20 |
+| HLs_ST20           | %I106.3  | Ordem de teste da Iluminação na ST20                                 |
+| Scada_O_Start_ST20 | %I106.4  | Ordem de Start, dada pelo Tesla Scada para a ST20                    |
+| Scada_O_Stop_ST20  | %I106.5  | Ordem de Stop, dada pelo Tesla Scada para a ST20                     |
+| Scada_O_Emerg_ST20 | %I106.6  | Ordem de Emergencia, dada pelo Tesla Scada para a ST20               |
+| Cilindros_ST20     | %I106.7  | Ordem de teste dos cilindros na ST20                                 |
+| ST20_ST10_4        | %IB107   | Byte de Comunicação, a ST10 recebe informação da ST20                |
+
+|             | Saidas   |                                                                   |
+|:-----------:|:--------:|:-----------------------------------------------------------------:|
+| Label       | Endereço | Comentário                                                        |
+| ST10_ST20_1 | %QB104   | Byte de Comunicação, a ST20 envia informação para a ST10 (Master) |
+| ST20_Ok     | %Q104.0  | Informação que a ST20 está pronta a operar                        |
+| A6_ST20     | %Q104.1  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
+| A1_ST20     | %Q104.2  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
+| F2_ST20     | %Q104.3  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
+| F1_ST20     | %Q104.4  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
+| A3_ST20     | %Q104.5  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
+| F5_ST20     | %Q104.6  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
+| F6_ST20     | %Q104.7  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
+| ST10_ST20_2 | %QB105   | Byte de Comunicação, a ST20 envia informação para a ST10 (Master) |
+| A4_ST20     | %Q105.0  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
+| D1_ST20     | %Q105.1  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
+| ST10_ST20_3 | %QB106   | Byte de Comunicação, a ST20 envia informação para a ST10 (Master) |
+| ST10_ST20_4 | %QB107   | Byte de Comunicação, a ST20 envia informação para a ST10 (Master) |
 
 #### Estação 30
 ##### Entradas e Saídas (PLC)
@@ -695,28 +729,46 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 
 ##### Comunicações
 
-| Entradas           |          |            | Saidas      |          |            |
-|--------------------|----------|------------|-------------|----------|------------|
-| Label              | Endereço | Comentário | Label       | Endereço | Comentário |
-| ST30_ST10_1        | %IB108   |            | ST10_ST30_1 | %QB108   |            |
-| ST10_Ok_ST30       | %I108.0  |            | ST30_Ok     | %Q108.0  |            |
-| ST30_ST10_2        | %IB109   |            | A6_ST30     | %Q108.1  |            |
-| Emerg_M_ST30       | %I109.2  |            | A1_ST30     | %Q108.2  |            |
-| Stop_M_ST30        | %I109.3  |            | F2_ST30     | %Q108.3  |            |
-| Init_M_ST30        | %I109.4  |            | F1_ST30     | %Q108.4  |            |
-| MM_A_ST30          | %I109.5  |            | F5_ST30     | %Q108.5  |            |
-| MM_C_ST30          | %I109.6  |            | F6_ST30     | %Q108.6  |            |
-| MM_M_ST30          | %I109.7  |            | A3_ST30     | %Q108.7  |            |
-| ST30_ST10_3        | %IB110   |            | ST10_ST30_2 | %QB109   |            |
-| MF_HMI_ST30        | %I110.0  |            | A4_ST30     | %Q109.0  |            |
-| MF_Local_ST30      | %I110.1  |            | D1_ST30     | %Q109.1  |            |
-| MF_SCADA_ST30      | %I110.2  |            | ST10_ST30_3 | %QB110   |            |
-| HLs_ST30           | %I110.3  |            | ST10_ST30_4 | %QB111   |            |
-| Scada_O_Start_ST30 | %I110.4  |            |             |          |            |
-| Scada_O_Stop_ST30  | %I110.5  |            |             |          |            |
-| Scada_O_Emerg_ST30 | %I110.6  |            |             |          |            |
-| Cilindros_ST30     | %I110.7  |            |             |          |            |
-| ST30_ST10_4        | %IB111   |            |             
+|                    | Entradas |                                                                      |
+|:------------------:|:--------:|:--------------------------------------------------------------------:|
+| Label              | Endereço | Comentário                                                           |
+| ST30_ST10_1        | %IB108   | Byte de Comunicação, a ST10 recebe informação da ST30                |
+| ST10_Ok_ST30       | %I108.0  | Informação que o Robô está em posição para operar na ST30            |
+| ST30_ST10_2        | %IB109   | Byte de Comunicação, a ST10 recebe informação da ST30                |
+| Emerg_M_ST30       | %I109.2  | Ordem de Emergencia, dada pelo Gemma Master para a ST30              |
+| Stop_M_ST30        | %I109.3  | Ordem de Stop, dada pelo Gemma Master para a ST30                    |
+| Init_M_ST30        | %I109.4  | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST30    |
+| MM_A_ST30          | %I109.5  | Modo de Macha Automático, escolhido pelo Gemma Master para a ST30    |
+| MM_C_ST30          | %I109.6  | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST30         |
+| MM_M_ST30          | %I109.7  | Modo de Macha Manual, escolhido pelo Gemma Master para a ST30        |
+| ST30_ST10_3        | %IB110   | Byte de Comunicação, a ST10 recebe informação da ST30                |
+| MF_HMI_ST30        | %I110.0  | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST30   |
+| MF_Local_ST30      | %I110.1  | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST30 |
+| MF_SCADA_ST30      | %I110.2  | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST30 |
+| HLs_ST30           | %I110.3  | Ordem de teste da Iluminação na ST30                                 |
+| Scada_O_Start_ST30 | %I110.4  | Ordem de Start, dada pelo Tesla Scada para a ST30                    |
+| Scada_O_Stop_ST30  | %I110.5  | Ordem de Stop, dada pelo Tesla Scada para a ST30                     |
+| Scada_O_Emerg_ST30 | %I110.6  | Ordem de Emergencia, dada pelo Tesla Scada para a ST30               |
+| Cilindros_ST30     | %I110.7  | Ordem de teste dos cilindros na ST30                                 |
+| ST30_ST10_4        | %IB111   | Byte de Comunicação, a ST10 recebe informação da ST30                |
+
+|             | Saidas   |                                                                   |
+|:-----------:|:--------:|:-----------------------------------------------------------------:|
+| Label       | Endereço | Comentário                                                        |
+| ST10_ST30_1 | %QB108   | Byte de Comunicação, a ST30 envia informação para a ST10 (Master) |
+| ST30_Ok     | %Q108.0  | Informação que a ST30 está pronta a operar                        |
+| A6_ST30     | %Q108.1  | Informação do estado da Etapa do Grafcet do Gemma (ST30)          |
+| A1_ST30     | %Q108.2  | Informação do estado da Etapa do Grafcet do Gemma (ST30)          |
+| F2_ST30     | %Q108.3  | Informação do estado da Etapa do Grafcet do Gemma (ST30)          |
+| F1_ST30     | %Q108.4  | Informação do estado da Etapa do Grafcet do Gemma (ST30)          |
+| F5_ST30     | %Q108.5  | Informação do estado da Etapa do Grafcet do Gemma (ST30)          |
+| F6_ST30     | %Q108.6  | Informação do estado da Etapa do Grafcet do Gemma (ST30)          |
+| A3_ST30     | %Q108.7  | Informação do estado da Etapa do Grafcet do Gemma (ST30)          |
+| ST10_ST30_2 | %QB109   | Byte de Comunicação, a ST30 envia informação para a ST10 (Master) |
+| A4_ST30     | %Q109.0  | Informação do estado da Etapa do Grafcet do Gemma (ST30)          |
+| D1_ST30     | %Q109.1  | Informação do estado da Etapa do Grafcet do Gemma (ST30)          |
+| ST10_ST30_3 | %QB110   | Byte de Comunicação, a ST30 envia informação para a ST10 (Master) |
+| ST10_ST30_4 | %QB111   | Byte de Comunicação, a ST30 envia informação para a ST10 (Master) |
 
 #### Estação 40
 ##### Entradas e Saídas (PLC)
@@ -817,37 +869,55 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 
 ##### Comunicações
 
-| Entradas           |          |            | Saidas      |          |            |
-|--------------------|----------|------------|-------------|----------|------------|
-| Label              | Endereço | Comentário | Label       | Endereço | Comentário |
-| ST40_ST10_1        | %IB112   |            | ST10_ST40_1 | %QB112   |            |
-| ST10_Ok_ST40       | %I112.0  |            | ST40_Ok     | %Q112.0  |            |
-| ST40_ST10_2        | %IB113   |            | A6_ST40     | %Q112.1  |            |
-| A6_M_ST40          | %I113.2  |            | A1_ST40     | %Q112.2  |            |
-| A1_M_ST40          | %I113.3  |            | F2_ST40     | %Q112.3  |            |
-| F2_M_ST40          | %I113.4  |            | F1_ST40     | %Q112.4  |            |
-| F1_M_ST40          | %I113.5  |            | F5_ST40     | %Q112.5  |            |
-| F5_M_ST40          | %I113.6  |            | F6_ST40     | %Q112.6  |            |
-| F6_M_ST40          | %I113.7  |            | A3_ST40     | %Q112.7  |            |
-| ST40_ST10_3        | %IB114   |            | ST10_ST40_2 | %QB113   |            |
-| A3_M_ST40          | %I114.0  |            | A4_ST40     | %Q113.0  |            |
-| D1_M_ST40          | %I114.1  |            | D1_ST40     | %Q113.1  |            |
-| A4_M_ST40          | %I114.2  |            | ST10_ST40_3 | %QB114   |            |
-| Emerg_M_ST40       | %I114.3  |            | ST10_ST40_4 | %QB115   |            |
-| Stop_M_ST40        | %I114.4  |            |             |          |            |
-| Init_M_ST40        | %I114.5  |            |             |          |            |
-| MM_A_ST40          | %I114.6  |            |             |          |            |
-| MM_C_ST40          | %I114.7  |            |             |          |            |
-| ST40_ST10_4        | %IB115   |            |             |          |            |
-| MM_M_ST40          | %I115.0  |            |             |          |            |
-| MF_HMI_ST40        | %I115.1  |            |             |          |            |
-| MF_SCADA_ST40      | %I115.2  |            |             |          |            |
-| MF_Local_ST40      | %I115.3  |            |             |          |            |
-| HLs_ST40           | %I115.4  |            |             |          |            |
-| Scada_O_Start_ST40 | %I115.5  |            |             |          |            |
-| Scada_O_Stop_ST40  | %I115.6  |            |             |          |            |
-| Scada_O_Emerg_ST40 | %I115.7  |            |             |          |  
-	
+|                    | Entradas |                                                                                   |
+|:------------------:|:--------:|:---------------------------------------------------------------------------------:|
+| Label              | Endereço | Comentário                                                                        |
+| ST40_ST10_1        | %IB112   | Byte de Comunicação, a ST10 recebe informação da ST40                             |
+| ST10_Ok_ST40       | %I112.0  | Informação que o Robô está em posição para operar na ST40                         |
+| ST40_ST10_2        | %IB113   | Byte de Comunicação, a ST10 recebe informação da ST40                             |
+| A6_M_ST40          | %I113.2  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| A1_M_ST40          | %I113.3  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| F2_M_ST40          | %I113.4  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| F1_M_ST40          | %I113.5  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| F5_M_ST40          | %I113.6  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| F6_M_ST40          | %I113.7  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| ST40_ST10_3        | %IB114   | Byte de Comunicação, a ST10 recebe informação da ST40                             |
+| A3_M_ST40          | %I114.0  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| D1_M_ST40          | %I114.1  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| A4_M_ST40          | %I114.2  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| Emerg_M_ST40       | %I114.3  | Ordem de Emergencia, dada pelo Gemma Master para a ST40                           |
+| Stop_M_ST40        | %I114.4  | Ordem de Stop, dada pelo Gemma Master para a ST40                                 |
+| Init_M_ST40        | %I114.5  | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST40                 |
+| MM_A_ST40          | %I114.6  | Modo de Macha Automático, escolhido pelo Gemma Master para a ST40                 |
+| MM_C_ST40          | %I114.7  | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST40                      |
+| ST40_ST10_4        | %IB115   | Byte de Comunicação, a ST10 recebe informação da ST40                             |
+| MM_M_ST40          | %I115.0  | Modo de Macha Manual, escolhido pelo Gemma Master para a ST40                     |
+| MF_HMI_ST40        | %I115.1  | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST40                |
+| MF_SCADA_ST40      | %I115.2  | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST40              |
+| MF_Local_ST40      | %I115.3  | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST40              |
+| HLs_ST40           | %I115.4  | Ordem de teste da Iluminação na ST40                                              |
+| Scada_O_Start_ST40 | %I115.5  | Ordem de Start, dada pelo Tesla Scada para a ST40                                 |
+| Scada_O_Stop_ST40  | %I115.6  | Ordem de Stop, dada pelo Tesla Scada para a ST40                                  |
+| Scada_O_Emerg_ST40 | %I115.7  | Ordem de Emergencia, dada pelo Tesla Scada para a ST40                            |
+
+|             | Saidas   |                                                                   |
+|:-----------:|:--------:|:-----------------------------------------------------------------:|
+| Label       | Endereço | Comentário                                                        |
+| ST10_ST40_1 | %QB112   | Byte de Comunicação, a ST40 envia informação para a ST10 (Master) |
+| ST40_Ok     | %Q112.0  | Informação que a ST40 está pronta a operar                        |
+| A6_ST40     | %Q112.1  | Informação do estado da Etapa do Grafcet do Gemma (ST40)          |
+| A1_ST40     | %Q112.2  | Informação do estado da Etapa do Grafcet do Gemma (ST40)          |
+| F2_ST40     | %Q112.3  | Informação do estado da Etapa do Grafcet do Gemma (ST40)          |
+| F1_ST40     | %Q112.4  | Informação do estado da Etapa do Grafcet do Gemma (ST40)          |
+| F5_ST40     | %Q112.5  | Informação do estado da Etapa do Grafcet do Gemma (ST40)          |
+| F6_ST40     | %Q112.6  | Informação do estado da Etapa do Grafcet do Gemma (ST40)          |
+| A3_ST40     | %Q112.7  | Informação do estado da Etapa do Grafcet do Gemma (ST40)          |
+| ST10_ST40_2 | %QB113   | Byte de Comunicação, a ST40 envia informação para a ST10 (Master) |
+| A4_ST40     | %Q113.0  | Informação do estado da Etapa do Grafcet do Gemma (ST40)          |
+| D1_ST40     | %Q113.1  | Informação do estado da Etapa do Grafcet do Gemma (ST40)          |
+| ST10_ST40_3 | %QB114   | Byte de Comunicação, a ST40 envia informação para a ST10 (Master) |
+| ST10_ST40_4 | %QB115   | Byte de Comunicação, a ST40 envia informação para a ST10 (Master) |
+
 #### Estação 50
 ##### Entradas e Saídas (PLC)
 
@@ -943,29 +1013,47 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 
 ##### Comunicações
 
-| Entradas           |          |            | Saidas      |          |            |
-|--------------------|----------|------------|-------------|----------|------------|
-| Label              | Endereço | Comentário | Label       | Endereço | Comentário |
-| ST50_ST10_1        | %IB116   |            | ST10_ST50_1 | %QB116   |            |
-| ST10_Ok_ST50       | %I116.0  |            | ST50_Ok     | %Q116.0  |            |
-| ST50_ST10_2        | %IB117   |            | A6_ST50     | %Q116.1  |            |
-| Emerg_M_ST50       | %I117.2  |            | A1_ST50     | %Q116.2  |            |
-| Stop_M_ST50        | %I117.3  |            | F2_ST50     | %Q116.3  |            |
-| Init_M_ST50        | %I117.4  |            | F1_ST50     | %Q116.4  |            |
-| MM_A_ST50          | %I117.5  |            | F5_ST50     | %Q116.5  |            |
-| MM_C_ST50          | %I117.6  |            | F6_ST50     | %Q116.6  |            |
-| MM_M_ST50          | %I117.7  |            | A3_ST50     | %Q116.7  |            |
-| ST50_ST10_3        | %IB118   |            | ST10_ST50_2 | %QB117   |            |
-| MF_HMI_ST50        | %I118.0  |            | A4_ST50     | %Q117.0  |            |
-| MF_SCADA_ST50      | %I118.1  |            | D1_ST50     | %Q117.1  |            |
-| MF_Local_ST50      | %I118.2  |            | ST10_ST50_3 | %QB118   |            |
-| HLs_ST50           | %I118.3  |            | ST10_ST50_4 | %QB119   |            |
-| Scada_O_Start_ST50 | %I118.4  |            |             |          |            |
-| Scada_O_Stop_ST50  | %I118.5  |            |             |          |            |
-| Scada_O_Emerg_ST50 | %I118.6  |            |             |          |            |
-| Cilindros_ST50     | %I118.7  |            |             |          |            |
-| ST50_ST10_4        | %IB119   |            |             |          |            |
- 
+|                    | Entradas |                                                                      |
+|:------------------:|:--------:|:--------------------------------------------------------------------:|
+| Label              | Endereço | Comentário                                                           |
+| ST50_ST10_1        | %IB116   | Byte de Comunicação, a ST10 recebe informação da ST50                |
+| ST10_Ok_ST50       | %I116.0  | Informação que o Robô está em posição para operar na ST50            |
+| ST50_ST10_2        | %IB117   | Byte de Comunicação, a ST10 recebe informação da ST50                |
+| Emerg_M_ST50       | %I117.2  | Ordem de Emergencia, dada pelo Gemma Master para a ST50              |
+| Stop_M_ST50        | %I117.3  | Ordem de Stop, dada pelo Gemma Master para a ST50                    |
+| Init_M_ST50        | %I117.4  | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST50    |
+| MM_A_ST50          | %I117.5  | Modo de Macha Automático, escolhido pelo Gemma Master para a ST50    |
+| MM_C_ST50          | %I117.6  | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST50         |
+| MM_M_ST50          | %I117.7  | Modo de Macha Manual, escolhido pelo Gemma Master para a ST50        |
+| ST50_ST10_3        | %IB118   | Byte de Comunicação, a ST10 recebe informação da ST50                |
+| MF_HMI_ST50        | %I118.0  | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST50   |
+| MF_SCADA_ST50      | %I118.1  | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST50 |
+| MF_Local_ST50      | %I118.2  | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST50 |
+| HLs_ST50           | %I118.3  | Ordem de teste da Iluminação na ST50                                 |
+| Scada_O_Start_ST50 | %I118.4  | Ordem de Start, dada pelo Tesla Scada para a ST50                    |
+| Scada_O_Stop_ST50  | %I118.5  | Ordem de Stop, dada pelo Tesla Scada para a ST50                     |
+| Scada_O_Emerg_ST50 | %I118.6  | Ordem de Emergencia, dada pelo Tesla Scada para a ST50               |
+| Cilindros_ST50     | %I118.7  | Ordem de teste dos cilindros na ST50                                 |
+| ST50_ST10_4        | %IB119   | Byte de Comunicação, a ST10 recebe informação da ST50                |
+
+|             | Saidas   |                                                                   |
+|:-----------:|:--------:|:-----------------------------------------------------------------:|
+| Label       | Endereço | Comentário                                                        |
+| ST10_ST50_1 | %QB116   | Byte de Comunicação, a ST50 envia informação para a ST10 (Master) |
+| ST50_Ok     | %Q116.0  | Informação que a ST40 está pronta a operar                        |
+| A6_ST50     | %Q116.1  | Informação do estado da Etapa do Grafcet do Gemma (ST50)          |
+| A1_ST50     | %Q116.2  | Informação do estado da Etapa do Grafcet do Gemma (ST50)          |
+| F2_ST50     | %Q116.3  | Informação do estado da Etapa do Grafcet do Gemma (ST50)          |
+| F1_ST50     | %Q116.4  | Informação do estado da Etapa do Grafcet do Gemma (ST50)          |
+| F5_ST50     | %Q116.5  | Informação do estado da Etapa do Grafcet do Gemma (ST50)          |
+| F6_ST50     | %Q116.6  | Informação do estado da Etapa do Grafcet do Gemma (ST50)          |
+| A3_ST50     | %Q116.7  | Informação do estado da Etapa do Grafcet do Gemma (ST50)          |
+| ST10_ST50_2 | %QB117   | Byte de Comunicação, a ST50 envia informação para a ST10 (Master) |
+| A4_ST50     | %Q117.0  | Informação do estado da Etapa do Grafcet do Gemma (ST50)          |
+| D1_ST50     | %Q117.1  | Informação do estado da Etapa do Grafcet do Gemma (ST50)          |
+| ST10_ST50_3 | %QB118   | Byte de Comunicação, a ST50 envia informação para a ST10 (Master) |
+| ST10_ST50_4 | %QB119   | Byte de Comunicação, a ST50 envia informação para a ST10 (Master) |
+
 ### Software
 #### Grafcets
 ##### Estação 10 
@@ -1514,4 +1602,3 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 #### Tesla Scada
 
 ## Anexos
-
