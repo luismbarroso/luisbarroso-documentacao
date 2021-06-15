@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 14/06/2021, 23h43*
+**Data:** *Last Upgrade: 15/06/2021, 12h18*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -183,53 +183,68 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 #### Estação 10 
 ##### Entradas e Saídas (PLC)
 
-|                             | Entradas |                                                                                    |            | Saidas   |                                     |
-|:---------------------------:|:--------:|:----------------------------------------------------------------------------------:|:----------:|:--------:|:-----------------------------------:|
-| Label                       | Endereço | Comentário                                                                         | Label      | Endereço | Comentário                          |
-| 3212*B62                    | %I0.3    | Sensor de Garra em Baixo                                                           | 3212*Y60   | %Q0.3    | Cilindro da Garra (Sobe e Baixa)    |
-| 3212*B61                    | %I0.4    | Sensor de Garra em Cima                                                            | 3212*Y50   | %Q0.4    | Cilindro da Garra (Rotação)         |
-| 3212*B51                    | %I0.5    | Sensor Garra (Rotação)                                                             | 3212*Y40   | %Q0.5    | Cilindro da Garra (Posição Inicial) |
-| 3212*B41                    | %I0.6    | Sensor Garra (Posição Inicial)                                                     | 3212*Y30   | %Q0.6    | Cilindro da Garra (Frente e Atrás)  |
-| 3212*B31                    | %I0.7    | Sensor de Garra á Frente                                                           | 3212*Y20   | %Q0.7    | Cilindro de Fecho Garra             |
-| 3212*B32                    | %I1.0    | Sensor de Garra Atrás                                                              | 3212*Y10   | %Q1.0    | Cilindro de Abertura da Garra       |
-| 3212*B21                    | %I1.1    | Sensor de Garra Fechada                                                            | 321920HL11 | %Q8.5    | Painel Luz Laranja                  |
-| Reset_HMI_Inputs            | %IB2     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   | 321920HL12 | %Q8.6    | Painel Luz Verde                    |
-| HMI_SB1                     | %I2.0    | Input de Start do Gemma Master                                                     | 321920HL13 | %Q8.7    | Painel Luz Vermelha                 |
-| HMI_SB2                     | %I2.1    | Input de Stop do Gemma Master                                                      |            |          |                                     |
-| HMI_QS                      | %I2.2    | Input de Emergência do Gemma Master                                                |            |          |                                     |
-| HMI_SB1_ST10                | %I2.3    | Input de Start do Gemma Master                                                     |            |          |                                     |
-| HMI_SB2_ST10                | %I2.4    | Input de Stop do Gemma                                                             |            |          |                                     |
-| HMI_QS_ST10                 | %I2.5    | Input de Emergência do Gemma                                                       |            |          |                                     |
-| HMI_Modo_HMI                | %I2.6    | Input de seleção do modo de funcionamento                                          |            |          |                                     |
-| HMI_Modo_Local              | %I2.7    | Input de seleção do modo de funcionamento                                          |            |          |                                     |
-| Reset_HMI_Inputs_2          | %IB3     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |            |          |                                     |
-| HMI_Modo_Scada              | %I3.0    | Input de seleção do modo de funcionamento                                          |            |          |                                     |
-| Init_Manual                 | %I3.1    | Input que permite na Inicialização manual da ST10                                  |            |          |                                     |
-| HMI_MM_Automatico           | %I3.2    | Input de seleção do modo de marcha                                                 |            |          |                                     |
-| HMI_MM_Ciclo                | %I3.3    | Input de seleção do modo de marcha                                                 |            |          |                                     |
-| HMI_MM_Manual               | %I3.4    | Input de seleção do modo de marcha                                                 |            |          |                                     |
-| HMI_MC_Power_Enable         | %I3.5    | Em Modo Manual, input que permite o Enable do MC_Power                             |            |          |                                     |
-| HMI_MC_Home_Execute_A       | %I3.6    | Input que permite o homing do Robô                                                 |            |          |                                     |
-| HMI_MC_Home_Execute         | %I3.7    | Em Modo Manual, input que permite o homing do Robô                                 |            |          |                                     |
-| Reset_HMI_Inputs_3          | %IB4     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |            |          |                                     |
-| HMI_MC_Reset_Execute        | %I4.0    | Em Modo Manual, input que permite o Execute do MC_Reset                            |            |          |                                     |
-| HMI_MC_MoveJog_Esq          | %I4.1    | Em Modo Manual, input que permite o movimento para a Esquerda do Robô              |            |          |                                     |
-| HMI_MC_MoveJog_Drt          | %I4.2    | Em Modo Manual, input que permite o movimento para a Direita do Robô               |            |          |                                     |
-| HMI_MC_MoveAbsolute_Execute | %I4.3    | Em Modo Manual, input que permite o Execute do MC_MoveAbsolute                     |            |          |                                     |
-| HMI_MC_MoveRelative_Execute | %I4.4    | Em Modo Manual, input que permite o Execute do MC_MoveRelative                     |            |          |                                     |
-| HMI_MC_Halt_Execute         | %I4.5    | Em Modo Manual, input que permite o Execute do MC_Halt                             |            |          |                                     |
-| HMI_Teste_Luzes             | %I4.6    | Botão de Teste de toda a Iluminação                                                |            |          |                                     |
-| HMI_Posicao_ST20            | %I4.7    | Em Modo Manual, input que permite a posição absoluta da ST20                       |            |          |                                     |
-| Reset_HMI_Inputs_4          | %IB5     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |            |          |                                     |
-| HMI_Posicao_ST30            | %I5.0    | Em Modo Manual, input que permite a posição absoluta da ST30                       |            |          |                                     |
-| HMI_Posicao_ST40            | %I5.1    | Em Modo Manual, input que permite a posição absoluta da ST40                       |            |          |                                     |
-| HMI_Posicao_ST50            | %I5.2    | Em Modo Manual, input que permite a posição absoluta da ST50                       |            |          |                                     |
-| HMI_Testes_Cilindros        | %I5.3    | Botão de Teste de todos os Cilindros                                               |            |          |                                     |
-| HMI_Init_Manual_All_STS     | %I6.0    | Inicialização Manual de todas as ST (Ordem do Master)                              |            |          |                                     |
-| 321920SB22                  | %I8.4    | Botão Vermelho                                                                     |            |          |                                     |
-| 321920SB21                  | %I8.5    | Botão Verde                                                                        |            |          |                                     |
-| 321920QS24                  | %I8.6    | Botão Emergência                                                                   |            |          |                                     |
-| 321920SA23                  | %I8.7    | Seletor                                                                            |            |          |                                     |
+|                             | Entradas |                                                                                    |       
+|:---------------------------:|:--------:|:----------------------------------------------------------------------------------:|
+| Label                       | Endereço | Comentário                                                                         |
+| 3212*B62                    | %I0.3    | Sensor de Garra em Baixo                                                           |
+| 3212*B61                    | %I0.4    | Sensor de Garra em Cima                                                            |
+| 3212*B51                    | %I0.5    | Sensor Garra (Rotação)                                                             |
+| 3212*B41                    | %I0.6    | Sensor Garra (Posição Inicial)                                                     |
+| 3212*B31                    | %I0.7    | Sensor de Garra á Frente                                                           |
+| 3212*B32                    | %I1.0    | Sensor de Garra Atrás                                                              |
+| 3212*B21                    | %I1.1    | Sensor de Garra Fechada                                                            |
+| Reset_HMI_Inputs            | %IB2     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
+| HMI_SB1                     | %I2.0    | Input de Start do Gemma Master                                                     |
+| HMI_SB2                     | %I2.1    | Input de Stop do Gemma Master                                                      |
+| HMI_QS                      | %I2.2    | Input de Emergência do Gemma Master                                                |
+| HMI_SB1_ST10                | %I2.3    | Input de Start do Gemma Master                                                     |
+| HMI_SB2_ST10                | %I2.4    | Input de Stop do Gemma                                                             |
+| HMI_QS_ST10                 | %I2.5    | Input de Emergência do Gemma                                                       |
+| HMI_Modo_HMI                | %I2.6    | Input de seleção do modo de funcionamento                                          |
+| HMI_Modo_Local              | %I2.7    | Input de seleção do modo de funcionamento                                          |
+| Reset_HMI_Inputs_2          | %IB3     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
+| HMI_Modo_Scada              | %I3.0    | Input de seleção do modo de funcionamento                                          |
+| Init_Manual                 | %I3.1    | Input que permite na Inicialização manual da ST10                                  |
+| HMI_MM_Automatico           | %I3.2    | Input de seleção do modo de marcha                                                 |
+| HMI_MM_Ciclo                | %I3.3    | Input de seleção do modo de marcha                                                 |
+| HMI_MM_Manual               | %I3.4    | Input de seleção do modo de marcha                                                 |
+| HMI_MC_Power_Enable         | %I3.5    | Em Modo Manual, input que permite o Enable do MC_Power                             |
+| HMI_MC_Home_Execute_A       | %I3.6    | Input que permite o homing do Robô                                                 |
+| HMI_MC_Home_Execute         | %I3.7    | Em Modo Manual, input que permite o homing do Robô                                 |
+| Reset_HMI_Inputs_3          | %IB4     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
+| HMI_MC_Reset_Execute        | %I4.0    | Em Modo Manual, input que permite o Execute do MC_Reset                            |
+| HMI_MC_MoveJog_Esq          | %I4.1    | Em Modo Manual, input que permite o movimento para a Esquerda do Robô              |
+| HMI_MC_MoveJog_Drt          | %I4.2    | Em Modo Manual, input que permite o movimento para a Direita do Robô               |
+| HMI_MC_MoveAbsolute_Execute | %I4.3    | Em Modo Manual, input que permite o Execute do MC_MoveAbsolute                     |
+| HMI_MC_MoveRelative_Execute | %I4.4    | Em Modo Manual, input que permite o Execute do MC_MoveRelative                     |
+| HMI_MC_Halt_Execute         | %I4.5    | Em Modo Manual, input que permite o Execute do MC_Halt                             |
+| HMI_Teste_Luzes             | %I4.6    | Botão de Teste de toda a Iluminação                                                |
+| HMI_Posicao_ST20            | %I4.7    | Em Modo Manual, Posição Absoluta da ST20                                           |
+| Reset_HMI_Inputs_4          | %IB5     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
+| HMI_Posicao_ST30            | %I5.0    | Em Modo Manual, Posição Absoluta da ST30                                           |
+| HMI_Posicao_ST40            | %I5.1    | Em Modo Manual, Posição Absoluta da ST40                                           |
+| HMI_Posicao_ST50            | %I5.2    | Em Modo Manual, Posição Absoluta da ST50                                           |
+| HMI_Testes_Cilindros        | %I5.3    | Botão de Teste de todos os Cilindros                                               |
+| HMI_Init_Manual_All_STS     | %I6.0    | Inicialização Manual de todas as ST (Ordem do Master)                              |
+| 321920SB22                  | %I8.4    | Botão Vermelho                                                                     |
+| 321920SB21                  | %I8.5    | Botão Verde                                                                        |
+| 321920QS24                  | %I8.6    | Botão Emergência                                                                   |
+| 321920SA23                  | %I8.7    | SA                                                                                 |
+
+|            | Saidas   |                                     |
+|:----------:|:--------:|:-----------------------------------:|
+| Saidas     |          |                                     |
+|------------|----------|-------------------------------------|
+| Label      | Endereço | Comentário                          |
+| 3212*Y60   | %Q0.3    | Cilindro da Garra (Sobe e Baixa)    |
+| 3212*Y50   | %Q0.4    | Cilindro da Garra (Rotação)         |
+| 3212*Y40   | %Q0.5    | Cilindro da Garra (Posição Inicial) |
+| 3212*Y30   | %Q0.6    | Cilindro da Garra (Frente e Atrás)  |
+| 3212*Y20   | %Q0.7    | Cilindro de Fecho Garra             |
+| 3212*Y10   | %Q1.0    | Cilindro de Abertura da Garra       |
+| 321920HL11 | %Q8.5    | Painel Luz Laranja                  |
+| 321920HL12 | %Q8.6    | Painel Luz Verde                    |
+| 321920HL13 | %Q8.7    | Painel Luz Vermelha                 |
 
 ##### Memórias
 
@@ -352,129 +367,200 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 
 ##### Comunicações
 
-|             | Entradas |            |                         | Saidas   |            |
-|:-----------:|:--------:|:----------:|------------------------:|:--------:|:----------:|
-| Label       | Endereço | Comentário | Label                   | Endereço | Comentário |
-| NA          | %IB100   |            | NA                      | %QB100   |            |
-| NA          | %IB101   |            | NA                      | %QB101   |            |
-| NA          | %IB102   |            | NA                      | %QB102   |            |
-| NA          | %IB103   |            | NA                      | %QB103   |            |
-| ST20_ST10_1 | %IB104   |            | ST10_ST20_1             | %QB104   |            |
-| ST20_Ok     | %I104.0  |            | ST10_Ok_ST20            | %Q104.0  |            |
-| A6_ST20     | %I104.1  |            | ST10_ST20_2             | %QB105   |            |
-| A1_ST20     | %I104.2  |            | Emerg_M_ST20            | %Q105.2  |            |
-| F2_ST20     | %I104.3  |            | Stop_M_ST20             | %Q105.3  |            |
-| F1_ST20     | %I104.4  |            | Init_M_ST20             | %Q105.4  |            |
-| A3_ST20     | %I104.5  |            | MM_A_ST20               | %Q105.5  |            |
-| F5_ST20     | %I104.6  |            | MM_C_ST20               | %Q105.6  |            |
-| F6_ST20     | %I104.7  |            | MM_M_ST20               | %Q105.7  |            |
-| ST20_ST10_2 | %IB105   |            | ST10_ST20_3             | %QB106   |            |
-| A4_ST20     | %I105.0  |            | MF_HMI_ST20             | %Q106.0  |            |
-| D1_ST20     | %I105.1  |            | MF_SCADA_ST20           | %Q106.1  |            |
-| ST20_ST10_3 | %IB106   |            | MF_Local_ST20           | %Q106.2  |            |
-| ST20_ST10_4 | %IB107   |            | HLs_ST20                | %Q106.3  |            |
-| ST30_ST10_1 | %IB108   |            | Scada_O_Start_ST20      | %Q106.4  |            |
-| ST30_Ok     | %I108.0  |            | Scada_O_Stop_ST20       | %Q106.5  |            |
-| A6_ST30     | %I108.1  |            | Scada_O_Emerg_ST20      | %Q106.6  |            |
-| A1_ST30     | %I108.2  |            | Cilindros_ST20          | %Q106.7  |            |
-| F2_ST30     | %I108.3  |            | ST10_ST20_4             | %QB107   |            |
-| F1_ST30     | %I108.4  |            | ST10_ST30_1             | %QB108   |            |
-| F5_ST30     | %I108.5  |            | ST10_Ok_ST30            | %Q108.0  |            |
-| F6_ST30     | %I108.6  |            | ST10_ST30_2             | %QB109   |            |
-| A3_ST30     | %I108.7  |            | Emerg_M_ST30            | %Q109.2  |            |
-| ST30_ST10_2 | %IB109   |            | Stop_M_ST30             | %Q109.3  |            |
-| A4_ST30     | %I109.0  |            | Init_M_ST30             | %Q109.4  |            |
-| D1_ST30     | %I109.1  |            | MM_A_ST30               | %Q109.5  |            |
-| ST30_ST10_3 | %IB110   |            | MM_C_ST30               | %Q109.6  |            |
-| ST30_ST10_4 | %IB111   |            | MM_M_ST30               | %Q109.7  |            |
-| ST40_ST10_1 | %IB112   |            | ST10_ST30_3             | %QB110   |            |
-| ST40_Ok     | %I112.0  |            | MF_HMI_ST30             | %Q110.0  |            |
-| A6_ST40     | %I112.1  |            | MF_Local_ST30           | %Q110.1  |            |
-| A1_ST40     | %I112.2  |            | MF_SCADA_ST30           | %Q110.2  |            |
-| F2_ST40     | %I112.3  |            | HLs_ST30                | %Q110.3  |            |
-| F1_ST40     | %I112.4  |            | Scada_O_Start_ST30      | %Q110.4  |            |
-| F5_ST40     | %I112.5  |            | Scada_O_Stop_ST30       | %Q110.5  |            |
-| F6_ST40     | %I112.6  |            | Scada_O_Emerg_ST30      | %Q110.6  |            |
-| A3_ST40     | %I112.7  |            | Cilindros_ST30          | %Q110.7  |            |
-| ST40_ST10_2 | %IB113   |            | ST10_ST30_4             | %QB111   |            |
-| A4_ST40     | %I113.0  |            | ST10_ST40_1             | %QB112   |            |
-| D1_ST40     | %I113.1  |            | ST10_Ok_ST40            | %Q112.0  |            |
-| ST40_ST10_3 | %IB114   |            | ST10_ST40_2             | %QB113   |            |
-| ST40_ST10_4 | %IB115   |            | A6_M_ST40               | %Q113.2  |            |
-| ST50_ST10_1 | %IB116   |            | A1_M_ST40               | %Q113.3  |            |
-| ST50_Ok     | %I116.0  |            | F2_M_ST40               | %Q113.4  |            |
-| A6_ST50     | %I116.1  |            | F1_M_ST40               | %Q113.5  |            |
-| A1_ST50     | %I116.2  |            | F5_M_ST40               | %Q113.6  |            |
-| F2_ST50     | %I116.3  |            | F6_M_ST40               | %Q113.7  |            |
-| F1_ST50     | %I116.4  |            | ST10_ST40_3             | %QB114   |            |
-| F5_ST50     | %I116.5  |            | A3_M_ST40               | %Q114.0  |            |
-| F6_ST50     | %I116.6  |            | D1_M_ST40               | %Q114.1  |            |
-| A3_ST50     | %I116.7  |            | A4_M_ST40               | %Q114.2  |            |
-| ST50_ST10_2 | %IB117   |            | Emerg_M_ST40            | %Q114.3  |            |
-| A4_ST50     | %I117.0  |            | Stop_M_ST40             | %Q114.4  |            |
-| D1_ST50     | %I117.1  |            | Init_M_ST40             | %Q114.5  |            |
-| ST50_ST10_3 | %IB118   |            | MM_A_ST40               | %Q114.6  |            |
-| ST50_ST10_4 | %IB119   |            | MM_C_ST40               | %Q114.7  |            |
-|             |          |            | ST10_ST40_4             | %QB115   |            |
-|             |          |            | MM_M_ST40               | %Q115.0  |            |
-|             |          |            | MF_HMI_ST40             | %Q115.1  |            |
-|             |          |            | MF_SCADA_ST40           | %Q115.2  |            |
-|             |          |            | MF_Local_ST40           | %Q115.3  |            |
-|             |          |            | Cilindros_ST40_HLs_ST40 | %Q115.4  |            |
-|             |          |            | Scada_O_Start_ST40      | %Q115.5  |            |
-|             |          |            | Scada_O_Stop_ST40       | %Q115.6  |            |
-|             |          |            | Scada_O_Emerg_ST40      | %Q115.7  |            |
-|             |          |            | ST10_ST50_1             | %QB116   |            |
-|             |          |            | ST10_Ok_ST50            | %Q116.0  |            |
-|             |          |            | ST10_ST50_2             | %QB117   |            |
-|             |          |            | Emerg_M_ST50            | %Q117.2  |            |
-|             |          |            | Stop_M_ST50             | %Q117.3  |            |
-|             |          |            | Init_M_ST50             | %Q117.4  |            |
-|             |          |            | MM_A_ST50               | %Q117.5  |            |
-|             |          |            | MM_C_ST50               | %Q117.6  |            |
-|             |          |            | MM_M_ST50               | %Q117.7  |            |
-|             |          |            | ST10_ST50_3             | %QB118   |            |
-|             |          |            | MF_HMI_ST50             | %Q118.0  |            |
-|             |          |            | MF_SCADA_ST50           | %Q118.1  |            |
-|             |          |            | MF_Local_ST50           | %Q118.2  |            |
-|             |          |            | HLs_ST50                | %Q118.3  |            |
-|             |          |            | Scada_O_Start_ST50      | %Q118.4  |            |
-|             |          |            | Scada_O_Stop_ST50       | %Q118.5  |            |
-|             |          |            | Scada_O_Emerg_ST50      | %Q118.6  |            |
-|             |          |            | Cilindros_ST50          | %Q118.7  |            |
-|             |          |            | ST10_ST50_4             | %QB119   |            |
+|             | Entradas |                                                                             |
+|:-----------:|:--------:|:---------------------------------------------------------------------------:|
+| Label       | Endereço | Comentário                                                                  |
+| NA          | %IB100   | Não aplicado, esta Zona está reservada caso se pretenda trocar o PLC Master |
+| NA          | %IB101   | Não aplicado, esta Zona está reservada caso se pretenda trocar o PLC Master |
+| NA          | %IB102   | Não aplicado, esta Zona está reservada caso se pretenda trocar o PLC Master |
+| NA          | %IB103   | Não aplicado, esta Zona está reservada caso se pretenda trocar o PLC Master |
+| ST20_ST10_1 | %IB104   | Byte de Comunicação, a ST20 envia informação para a ST10 (Master)           |
+| ST20_Ok     | %I104.0  | Informação que a ST20 está pronta a operar                                  |
+| A6_ST20     | %I104.1  | Informação do estado da Etapa do Grafcet do Gemma (ST20)                    |
+| A1_ST20     | %I104.2  | Informação do estado da Etapa do Grafcet do Gemma (ST20)                    |
+| F2_ST20     | %I104.3  | Informação do estado da Etapa do Grafcet do Gemma (ST20)                    |
+| F1_ST20     | %I104.4  | Informação do estado da Etapa do Grafcet do Gemma (ST20)                    |
+| A3_ST20     | %I104.5  | Informação do estado da Etapa do Grafcet do Gemma (ST20)                    |
+| F5_ST20     | %I104.6  | Informação do estado da Etapa do Grafcet do Gemma (ST20)                    |
+| F6_ST20     | %I104.7  | Informação do estado da Etapa do Grafcet do Gemma (ST20)                    |
+| ST20_ST10_2 | %IB105   | Byte de Comunicação, a ST20 envia informação para a ST10 (Master)           |
+| A4_ST20     | %I105.0  | Informação do estado da Etapa do Grafcet do Gemma (ST20)                    |
+| D1_ST20     | %I105.1  | Informação do estado da Etapa do Grafcet do Gemma (ST20)                    |
+| ST20_ST10_3 | %IB106   | Byte de Comunicação, a ST20 envia informação para a ST10 (Master)           |
+| ST20_ST10_4 | %IB107   | Byte de Comunicação, a ST20 envia informação para a ST10 (Master)           |
+| ST30_ST10_1 | %IB108   | Byte de Comunicação, a ST30 envia informação para a ST10 (Master)           |
+| ST30_Ok     | %I108.0  | Informação que a ST30 está pronta a operar                                  |
+| A6_ST30     | %I108.1  | Informação do estado da Etapa do Grafcet do Gemma (ST30)                    |
+| A1_ST30     | %I108.2  | Informação do estado da Etapa do Grafcet do Gemma (ST30)                    |
+| F2_ST30     | %I108.3  | Informação do estado da Etapa do Grafcet do Gemma (ST30)                    |
+| F1_ST30     | %I108.4  | Informação do estado da Etapa do Grafcet do Gemma (ST30)                    |
+| F5_ST30     | %I108.5  | Informação do estado da Etapa do Grafcet do Gemma (ST30)                    |
+| F6_ST30     | %I108.6  | Informação do estado da Etapa do Grafcet do Gemma (ST30)                    |
+| A3_ST30     | %I108.7  | Informação do estado da Etapa do Grafcet do Gemma (ST30)                    |
+| ST30_ST10_2 | %IB109   | Byte de Comunicação, a ST30 envia informação para a ST10 (Master)           |
+| A4_ST30     | %I109.0  | Informação do estado da Etapa do Grafcet do Gemma (ST30)                    |
+| D1_ST30     | %I109.1  | Informação do estado da Etapa do Grafcet do Gemma (ST30)                    |
+| ST30_ST10_3 | %IB110   | Byte de Comunicação, a ST30 envia informação para a ST10 (Master)           |
+| ST30_ST10_4 | %IB111   | Byte de Comunicação, a ST30 envia informação para a ST10 (Master)           |
+| ST40_ST10_1 | %IB112   | Byte de Comunicação, a ST40 envia informação para a ST10 (Master)           |
+| ST40_Ok     | %I112.0  | Informação que a ST40 está pronta a operar                                  |
+| A6_ST40     | %I112.1  | Informação do estado da Etapa do Grafcet do Gemma (ST40)                    |
+| A1_ST40     | %I112.2  | Informação do estado da Etapa do Grafcet do Gemma (ST40)                    |
+| F2_ST40     | %I112.3  | Informação do estado da Etapa do Grafcet do Gemma (ST40)                    |
+| F1_ST40     | %I112.4  | Informação do estado da Etapa do Grafcet do Gemma (ST40)                    |
+| F5_ST40     | %I112.5  | Informação do estado da Etapa do Grafcet do Gemma (ST40)                    |
+| F6_ST40     | %I112.6  | Informação do estado da Etapa do Grafcet do Gemma (ST40)                    |
+| A3_ST40     | %I112.7  | Informação do estado da Etapa do Grafcet do Gemma (ST40)                    |
+| ST40_ST10_2 | %IB113   | Byte de Comunicação, a ST40 envia informação para a ST10 (Master)           |
+| A4_ST40     | %I113.0  | Informação do estado da Etapa do Grafcet do Gemma (ST40)                    |
+| D1_ST40     | %I113.1  | Informação do estado da Etapa do Grafcet do Gemma (ST40)                    |
+| ST40_ST10_3 | %IB114   | Byte de Comunicação, a ST40 envia informação para a ST10 (Master)           |
+| ST40_ST10_4 | %IB115   | Byte de Comunicação, a ST40 envia informação para a ST10 (Master)           |
+| ST50_ST10_1 | %IB116   | Byte de Comunicação, a ST50 envia informação para a ST10 (Master)           |
+| ST50_Ok     | %I116.0  | Informação que a ST40 está pronta a operar                                  |
+| A6_ST50     | %I116.1  | Informação do estado da Etapa do Grafcet do Gemma (ST50)                    |
+| A1_ST50     | %I116.2  | Informação do estado da Etapa do Grafcet do Gemma (ST50)                    |
+| F2_ST50     | %I116.3  | Informação do estado da Etapa do Grafcet do Gemma (ST50)                    |
+| F1_ST50     | %I116.4  | Informação do estado da Etapa do Grafcet do Gemma (ST50)                    |
+| F5_ST50     | %I116.5  | Informação do estado da Etapa do Grafcet do Gemma (ST50)                    |
+| F6_ST50     | %I116.6  | Informação do estado da Etapa do Grafcet do Gemma (ST50)                    |
+| A3_ST50     | %I116.7  | Informação do estado da Etapa do Grafcet do Gemma (ST50)                    |
+| ST50_ST10_2 | %IB117   | Byte de Comunicação, a ST50 envia informação para a ST10 (Master)           |
+| A4_ST50     | %I117.0  | Informação do estado da Etapa do Grafcet do Gemma (ST50)                    |
+| D1_ST50     | %I117.1  | Informação do estado da Etapa do Grafcet do Gemma (ST50)                    |
+| ST50_ST10_3 | %IB118   | Byte de Comunicação, a ST50 envia informação para a ST10 (Master)           |
+| ST50_ST10_4 | %IB119   | Byte de Comunicação, a ST50 envia informação para a ST10 (Master)           |
 
-
-
+|                         | Saidas   |                                                                                   |
+|:-----------------------:|:--------:|:---------------------------------------------------------------------------------:|
+| Label                   | Endereço | Comentário                                                                        |
+| NA                      | %QB100   | Não aplicado, esta Zona está reservada caso se pretenda trocar o PLC Master       |
+| NA                      | %QB101   | Não aplicado, esta Zona está reservada caso se pretenda trocar o PLC Master       |
+| NA                      | %QB102   | Não aplicado, esta Zona está reservada caso se pretenda trocar o PLC Master       |
+| NA                      | %QB103   | Não aplicado, esta Zona está reservada caso se pretenda trocar o PLC Master       |
+| ST10_ST20_1             | %QB104   | Byte de Comunicação, a ST10 recebe informação da ST20                             |
+| ST10_Ok_ST20            | %Q104.0  | Informação que o Robô está em posição para operar na ST20                         |
+| ST10_ST20_2             | %QB105   | Byte de Comunicação, a ST10 recebe informação da ST20                             |
+| Emerg_M_ST20            | %Q105.2  | Ordem de Emergencia, dada pelo Gemma Master para a ST20                           |
+| Stop_M_ST20             | %Q105.3  | Ordem de Stop, dada pelo Gemma Master para a ST20                                 |
+| Init_M_ST20             | %Q105.4  | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST20                 |
+| MM_A_ST20               | %Q105.5  | Modo de Macha Automático, escolhido pelo Gemma Master para a ST20                 |
+| MM_C_ST20               | %Q105.6  | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST20                      |
+| MM_M_ST20               | %Q105.7  | Modo de Macha Manual, escolhido pelo Gemma Master para a ST20                     |
+| ST10_ST20_3             | %QB106   | Byte de Comunicação, a ST10 recebe informação da ST20                             |
+| MF_HMI_ST20             | %Q106.0  | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST20                |
+| MF_SCADA_ST20           | %Q106.1  | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST20              |
+| MF_Local_ST20           | %Q106.2  | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST20              |
+| HLs_ST20                | %Q106.3  | Ordem de teste da Iluminação na ST20                                              |
+| Scada_O_Start_ST20      | %Q106.4  | Ordem de Start, dada pelo Tesla Scada para a ST20                                 |
+| Scada_O_Stop_ST20       | %Q106.5  | Ordem de Stop, dada pelo Tesla Scada para a ST20                                  |
+| Scada_O_Emerg_ST20      | %Q106.6  | Ordem de Emergencia, dada pelo Tesla Scada para a ST20                            |
+| Cilindros_ST20          | %Q106.7  | Ordem de teste dos cilindros na ST20                                              |
+| ST10_ST20_4             | %QB107   | Byte de Comunicação, a ST10 recebe informação da ST20                             |
+| ST10_ST30_1             | %QB108   | Byte de Comunicação, a ST10 recebe informação da ST30                             |
+| ST10_Ok_ST30            | %Q108.0  | Informação que o Robô está em posição para operar na ST30                         |
+| ST10_ST30_2             | %QB109   | Byte de Comunicação, a ST10 recebe informação da ST30                             |
+| Emerg_M_ST30            | %Q109.2  | Ordem de Emergencia, dada pelo Gemma Master para a ST30                           |
+| Stop_M_ST30             | %Q109.3  | Ordem de Stop, dada pelo Gemma Master para a ST30                                 |
+| Init_M_ST30             | %Q109.4  | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST30                 |
+| MM_A_ST30               | %Q109.5  | Modo de Macha Automático, escolhido pelo Gemma Master para a ST30                 |
+| MM_C_ST30               | %Q109.6  | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST30                      |
+| MM_M_ST30               | %Q109.7  | Modo de Macha Manual, escolhido pelo Gemma Master para a ST30                     |
+| ST10_ST30_3             | %QB110   | Byte de Comunicação, a ST10 recebe informação da ST30                             |
+| MF_HMI_ST30             | %Q110.0  | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST30                |
+| MF_Local_ST30           | %Q110.1  | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST30              |
+| MF_SCADA_ST30           | %Q110.2  | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST30              |
+| HLs_ST30                | %Q110.3  | Ordem de teste da Iluminação na ST30                                              |
+| Scada_O_Start_ST30      | %Q110.4  | Ordem de Start, dada pelo Tesla Scada para a ST30                                 |
+| Scada_O_Stop_ST30       | %Q110.5  | Ordem de Stop, dada pelo Tesla Scada para a ST30                                  |
+| Scada_O_Emerg_ST30      | %Q110.6  | Ordem de Emergencia, dada pelo Tesla Scada para a ST30                            |
+| Cilindros_ST30          | %Q110.7  | Ordem de teste dos cilindros na ST30                                              |
+| ST10_ST30_4             | %QB111   | Byte de Comunicação, a ST10 recebe informação da ST30                             |
+| ST10_ST40_1             | %QB112   | Byte de Comunicação, a ST10 recebe informação da ST40                             |
+| ST10_Ok_ST40            | %Q112.0  | Informação que o Robô está em posição para operar na ST40                         |
+| ST10_ST40_2             | %QB113   | Byte de Comunicação, a ST10 recebe informação da ST40                             |
+| A6_M_ST40               | %Q113.2  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| A1_M_ST40               | %Q113.3  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| F2_M_ST40               | %Q113.4  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| F1_M_ST40               | %Q113.5  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| F5_M_ST40               | %Q113.6  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| F6_M_ST40               | %Q113.7  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| ST10_ST40_3             | %QB114   | Byte de Comunicação, a ST10 recebe informação da ST40                             |
+| A3_M_ST40               | %Q114.0  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| D1_M_ST40               | %Q114.1  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| A4_M_ST40               | %Q114.2  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| Emerg_M_ST40            | %Q114.3  | Ordem de Emergencia, dada pelo Gemma Master para a ST40                           |
+| Stop_M_ST40             | %Q114.4  | Ordem de Stop, dada pelo Gemma Master para a ST40                                 |
+| Init_M_ST40             | %Q114.5  | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST40                 |
+| MM_A_ST40               | %Q114.6  | Modo de Macha Automático, escolhido pelo Gemma Master para a ST40                 |
+| MM_C_ST40               | %Q114.7  | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST40                      |
+| ST10_ST40_4             | %QB115   | Byte de Comunicação, a ST10 recebe informação da ST40                             |
+| MM_M_ST40               | %Q115.0  | Modo de Macha Manual, escolhido pelo Gemma Master para a ST40                     |
+| MF_HMI_ST40             | %Q115.1  | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST40                |
+| MF_SCADA_ST40           | %Q115.2  | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST40              |
+| MF_Local_ST40           | %Q115.3  | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST40              |
+| Cilindros_ST40_HLs_ST40 | %Q115.4  | Ordem de teste da Iluminação na ST40                                              |
+| Scada_O_Start_ST40      | %Q115.5  | Ordem de Start, dada pelo Tesla Scada para a ST40                                 |
+| Scada_O_Stop_ST40       | %Q115.6  | Ordem de Stop, dada pelo Tesla Scada para a ST40                                  |
+| Scada_O_Emerg_ST40      | %Q115.7  | Ordem de Emergencia, dada pelo Tesla Scada para a ST40                            |
+| ST10_ST50_1             | %QB116   | Byte de Comunicação, a ST10 recebe informação da ST50                             |
+| ST10_Ok_ST50            | %Q116.0  | Informação que o Robô está em posição para operar na ST50                         |
+| ST10_ST50_2             | %QB117   | Byte de Comunicação, a ST10 recebe informação da ST50                             |
+| Emerg_M_ST50            | %Q117.2  | Ordem de Emergencia, dada pelo Gemma Master para a ST50                           |
+| Stop_M_ST50             | %Q117.3  | Ordem de Stop, dada pelo Gemma Master para a ST50                                 |
+| Init_M_ST50             | %Q117.4  | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST50                 |
+| MM_A_ST50               | %Q117.5  | Modo de Macha Automático, escolhido pelo Gemma Master para a ST50                 |
+| MM_C_ST50               | %Q117.6  | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST50                      |
+| MM_M_ST50               | %Q117.7  | Modo de Macha Manual, escolhido pelo Gemma Master para a ST50                     |
+| ST10_ST50_3             | %QB118   | Byte de Comunicação, a ST10 recebe informação da ST50                             |
+| MF_HMI_ST50             | %Q118.0  | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST50                |
+| MF_SCADA_ST50           | %Q118.1  | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST50              |
+| MF_Local_ST50           | %Q118.2  | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST50              |
+| HLs_ST50                | %Q118.3  | Ordem de teste da Iluminação na ST50                                              |
+| Scada_O_Start_ST50      | %Q118.4  | Ordem de Start, dada pelo Tesla Scada para a ST50                                 |
+| Scada_O_Stop_ST50       | %Q118.5  | Ordem de Stop, dada pelo Tesla Scada para a ST50                                  |
+| Scada_O_Emerg_ST50      | %Q118.6  | Ordem de Emergencia, dada pelo Tesla Scada para a ST50                            |
+| Cilindros_ST50          | %Q118.7  | Ordem de teste dos cilindros na ST50                                              |
+| ST10_ST50_4             | %QB119   | Byte de Comunicação, a ST10 recebe informação da ST50                             |
 
 #### Estação 20
 ##### Entradas e Saídas (PLC)
 
-|                  | Entradas |                                                                                    |            | Saidas   |                     |
-|:----------------:|:--------:|:----------------------------------------------------------------------------------:|:----------:|:--------:|:-------------------:|
-| Label            | Endereço | Comentário                                                                         | Label      | Endereço | Comentário          |
-| 3220*B11         | %I0.4    | Sensor de Peça à Frente                                                            | 3221*Y10   | %Q0.0    | Cilindro 1          |
-| 3221*B11         | %I0.0    | Sensor Cilindro1 Avançado                                                          | 3221*Y20   | %Q0.1    | Cilindro 2          |
-| 3221*B12         | %I0.1    | Sensor Cilindro1 Recuado                                                           | 322920HL11 | %Q0.7    | Painel Luz Laranja  |
-| 3221*B21         | %I0.2    | Sensor Cilindro2 Avançado                                                          | 322920HL12 | %Q1.0    | Painel Luz Verde    |
-| 3221*B22         | %I0.3    | Sensor Cilindro2 Recuado                                                           | 322920HL13 | %Q1.1    | Painel Luz Vermelha |
-| 3221*B32         | %I0.5    | Sensor no Copo (Cima)                                                              |            |          |                     |
-| 3221*B33         | %I0.6    | Sensor no Copo (Baixo)                                                             |            |          |                     |
-| 3221*B31         | %I0.7    | Sensor de Peça Metálica                                                            |            |          |                     |
-| 322920SB22       | %I1.2    | Botão Vermelho                                                                     |            |          |                     |
-| 322920SB21       | %I1.3    | Botão Verde                                                                        |            |          |                     |
-| 322920QS24       | %I1.4    | Botão Emergência                                                                   |            |          |                     |
-| 322920SA23       | %I1.5    | Seletor                                                                            |            |          |                     |
-| Reset_HMI_Inputs | %IB2     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |            |          |                     |
-| HMI_SB1          | %I2.0    | Input de Start do Gemma Master                                                     |            |          |                     |
-| HMI_SB2          | %I2.1    | Input de Stop do Gemma                                                             |            |          |                     |
-| HMI_QS           | %I2.2    | Input de Emergencia do Gemma                                                       |            |          |                     |
-| Init_Manual      | %I2.3    | Input que permite na Inicialização manual                                          |            |          |                     |
+|                  | Entradas |                                                                                    |          
+|:----------------:|:--------:|:----------------------------------------------------------------------------------:|
+| Label            | Endereço | Comentário                                                                         |
+| 3220*B11         | %I0.4    | Sensor de Peça à Frente                                                            |
+| 3221*B11         | %I0.0    | Sensor Cilindro1 Avançado                                                          |
+| 3221*B12         | %I0.1    | Sensor Cilindro1 Recuado                                                           |
+| 3221*B21         | %I0.2    | Sensor Cilindro2 Avançado                                                          |
+| 3221*B22         | %I0.3    | Sensor Cilindro2 Recuado                                                           |
+| 3221*B32         | %I0.5    | Sensor no Copo (Cima)                                                              |
+| 3221*B33         | %I0.6    | Sensor no Copo (Baixo)                                                             |
+| 3221*B31         | %I0.7    | Sensor de Peça Metálica                                                            |
+| 322920SB22       | %I1.2    | Botão Vermelho                                                                     |
+| 322920SB21       | %I1.3    | Botão Verde                                                                        |
+| 322920QS24       | %I1.4    | Botão Emergência                                                                   |
+| 322920SA23       | %I1.5    | Seletor                                                                            |
+| Reset_HMI_Inputs | %IB2     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| HMI_SB1          | %I2.0    | Input de Start do Gemma Master                                                     |
+| HMI_SB2          | %I2.1    | Input de Stop do Gemma                                                             |
+| HMI_QS           | %I2.2    | Input de Emergencia do Gemma                                                       |
+| Init_Manual      | %I2.3    | Input que permite na Inicialização manual                                          |
+
+|            | Saidas   |                     |
+|:----------:|:--------:|:-------------------:|
+| Label      | Endereço | Comentário          |
+| 3221*Y10   | %Q0.0    | Cilindro 1          |
+| 3221*Y20   | %Q0.1    | Cilindro 2          |
+| 322920HL11 | %Q0.7    | Painel Luz Laranja  |
+| 322920HL12 | %Q1.0    | Painel Luz Verde    |
+| 322920HL13 | %Q1.1    | Painel Luz Vermelha |
+|            |          |                     |
 
 ##### Memórias
 
 | Label                       | Endereço | Comentário                                                                                                     |
-|:---------------------------:|:---------|:--------------------------------------------------------------------------------------------------------------:|
+|:---------------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
 | Grafcet_10                  | %MB10    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
 | E10                         | %M10.0   | Etapa de Grafcet de Funcionamento                                                                              |
 | E11                         | %M10.1   | Etapa de Grafcet de Funcionamento                                                                              |
@@ -538,29 +624,39 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 #### Estação 30
 ##### Entradas e Saídas (PLC)
 
-|                  | Entradas |                                                                                    |            | Saidas   |                                    |
-|:----------------:|:--------:|:----------------------------------------------------------------------------------:|:----------:|:--------:|:----------------------------------:|
-| Label            | Endereço | Comentário                                                                         | Label      | Endereço | Comentário                         |
-| 3231*B11         | %I0.0    | Sensor Peça na Pinça                                                               | 3231*Y20   | %Q0.0    | Cilindro de Fechar a Pinça         |
-| 3231*B21         | %I0.1    | Sensor da Pinça (Abrir/Fechar)                                                     | 3231*Y20   | %Q0.2    | Cilindro da Pinça (Avanço e Recuo) |
-| 3231*B31         | %I0.2    | Sensor de Pinça Avancada                                                           | 3232*Y10   | %Q0.3    | Cilindro da Prensa (Sobe e Desce)  |
-| 3231*B32         | %I0.3    | Sensor de Pinça Recuada                                                            | 323920HL11 | %Q0.7    | Painel Luz Laranja                 |
-| 3232*B11         | %I0.4    | Sensor de Prensa Subida                                                            | 323920HL12 | %Q1.0    | Painel Luz Verde                   |
-| 3232*B12         | %I0.5    | Sensor de Prensa Descida                                                           | 323920HL13 | %Q1.1    | Painel Luz Vermelha                |
-| 323920SB22       | %I1.2    | Botão Vermelho                                                                     |            |          |                                    |
-| 323920SB21       | %I1.3    | Botão Verde                                                                        |            |          |                                    |
-| 323920QS24       | %I1.4    | Botão Emergência                                                                   |            |          |                                    |
-| 323920SA23       | %I1.5    | Seletor                                                                            |            |          |                                    |
-| Reset_HMI_Inputs | %IB2     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |            |          |                                    |
-| HMI_SB1          | %I2.0    | Input de Start do Gemma Master                                                     |            |          |                                    |
-| HMI_SB2          | %I2.1    | Input de Stop do Gemma                                                             |            |          |                                    |
-| HMI_QS           | %I2.2    | Input de Emergencia do Gemma                                                       |            |          |                                    |
-| Init_Manual      | %I2.3    | Input que permite na Inicialização manual                                          |            |          |                                    |
+|                  | Entradas |                                                                                    |
+|:----------------:|:--------:|:----------------------------------------------------------------------------------:|
+| Label            | Endereço | Comentário                                                                         |
+| 3231*B11         | %I0.0    | Sensor Peça na Pinça                                                               |
+| 3231*B21         | %I0.1    | Sensor da Pinça (Abrir/Fechar)                                                     |
+| 3231*B31         | %I0.2    | Sensor de Pinça Avancada                                                           |
+| 3231*B32         | %I0.3    | Sensor de Pinça Recuada                                                            |
+| 3232*B11         | %I0.4    | Sensor de Prensa Subida                                                            |
+| 3232*B12         | %I0.5    | Sensor de Prensa Descida                                                           |
+| 323920SB22       | %I1.2    | Botão Vermelho                                                                     |
+| 323920SB21       | %I1.3    | Botão Verde                                                                        |
+| 323920QS24       | %I1.4    | Botão Emergência                                                                   |
+| 323920SA23       | %I1.5    | Seletor                                                                            |
+| Reset_HMI_Inputs | %IB2     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| HMI_SB1          | %I2.0    | Input de Start do Gemma Master                                                     |
+| HMI_SB2          | %I2.1    | Input de Stop do Gemma                                                             |
+| HMI_QS           | %I2.2    | Input de Emergencia do Gemma                                                       |
+| Init_Manual      | %I2.3    | Input que permite na Inicialização manual                                          |
+
+|            | Saidas   |                                    |
+|:----------:|:--------:|:----------------------------------:|
+| Label      | Endereço | Comentário                         |
+| 3231*Y20   | %Q0.0    | Cilindro de Fechar a Pinça         |
+| 3231*Y20   | %Q0.2    | Cilindro da Pinça (Avanço e Recuo) |
+| 3232*Y10   | %Q0.3    | Cilindro da Prensa (Sobe e Desce)  |
+| 323920HL11 | %Q0.7    | Painel Luz Laranja                 |
+| 323920HL12 | %Q1.0    | Painel Luz Verde                   |
+| 323920HL13 | %Q1.1    | Painel Luz Vermelha                |
 
 ##### Memórias
 
 | Label                       | Endereço | Comentário                                                                                                     |
-|:---------------------------:|:---------|:--------------------------------------------------------------------------------------------------------------:|
+|:---------------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
 | Grafcet_10                  | %MB10    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
 | E10                         | %M10.0   | Etapa de Grafcet de Funcionamento                                                                              |
 | E11                         | %M10.1   | Etapa de Grafcet de Funcionamento                                                                              |
@@ -625,39 +721,54 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 #### Estação 40
 ##### Entradas e Saídas (PLC)
 
-|                  | Entradas |                                                                                    |            | Saidas   |                                    |
-|:----------------:|:--------:|:----------------------------------------------------------------------------------:|:----------:|:--------:|:----------------------------------:|
-| Label            | Endereço | Comentário                                                                         | Label      | Endereço | Comentário                         |
-| 3241*B11         | %I0.5    | Sensor Cilindro1 Avançado                                                          | 3240*H13   | %Q0.6    | Semáforo Vermelho                  |
-| 3241*B12         | %I0.6    | Sensor Cilindro1 Recuado                                                           | 3240*H12   | %Q0.7    | Semáforo Amarelo                   |
-| 3241*B21         | %I0.7    | Sensor Cilindro2 Avançado                                                          | 3240*H11   | %Q1.0    | Semáforo Verde                     |
-| 3241*B22         | %I1.0    | Sensor Cilindro2 Recuado                                                           | 3241*Y10   | %Q0.1    | Cilindro 1                         |
-| 3241*B31         | %I1.1    | Sensor Prato (Posição Inicial)                                                     | 3241*Y20   | %Q0.0    | Cilindro 2                         |
-| 3241*B32         | %I1.2    | Sensor Prato (Rotação)                                                             | 3241*Y30   | %Q0.2    | Prato                              |
-| 3241*B41         | %I0.0    | Sensor no Copo (Cima)                                                              | 3242*Y10   | %Q0.5    | Cilindro da Garra (Frente e Tras)  |
-| 3241*B42         | %I0.1    | Sensor no Copo (Baixo)                                                             | 3242*Y20   | %Q0.4    | Cilindro da Garra (Cima e Baixo)   |
-| 3241*B43         | %I0.2    | Sensor do Prato (Esquerdo)                                                         | 3242*Y30   | %Q0.3    | Cilindro da Garra (Abrir e Fechar) |
-| 3241*B44         | %I0.3    | Sensor do Prato (Direito)                                                          | 324920HL11 | %Q8.5    | Luz do Painel (Laranja)            |
-| 3242*B11         | %I8.1    | Sensor de Garra á Frente                                                           | 324920HL12 | %Q8.6    | Luz do Painel (Verde)              |
-| 3242*B12         | %I8.0    | Sensor de Garra Atrás                                                              | 324920HL13 | %Q8.7    | Luz do Painel (Vermelha)           |
-| 3242*B21         | %I1.5    | Sensor de Garra em Cima                                                            |            |          |                                    |
-| 3242*B22         | %I1.4    | Sensor de Garra em Baixo                                                           |            |          |                                    |
-| 3242*B31         | %I1.3    | Sensor de Garra (Abrir/Fechar)                                                     |            |          |                                    |
-| 3242*B41         | %I0.4    | Sensor de Peça à Frente                                                            |            |          |                                    |
-| Reset_HMI_Inputs | %IB2     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |            |          |                                    |
-| HMI_SB1          | %I2.0    | Input de Start do Gemma Master                                                     |            |          |                                    |
-| HMI_SB2          | %I2.1    | Input de Stop do Gemma                                                             |            |          |                                    |
-| HMI_QS           | %I2.2    | Input de Emergencia do Gemma                                                       |            |          |                                    |
-| Init_Manual      | %I2.3    | Input que permite na Inicialização manual                                          |            |          |                                    |
-| 324920SB22       | %I8.4    | Botão Vermelho                                                                     |            |          |                                    |
-| 324920SB21       | %I8.5    | Botão Verde                                                                        |            |          |                                    |
-| 324920QS24       | %I8.6    | Botão Emergência                                                                   |            |          |                                    |
-| 324920SA23       | %I8.7    | Seletor                                                                            |            |          |                                    |
+|                  | Entradas |                                                                                    |
+|:----------------:|:--------:|:----------------------------------------------------------------------------------:|
+| Label            | Endereço | Comentário                                                                         |
+| 3241*B11         | %I0.5    | Sensor Cilindro1 Avançado                                                          |
+| 3241*B12         | %I0.6    | Sensor Cilindro1 Recuado                                                           |
+| 3241*B21         | %I0.7    | Sensor Cilindro2 Avançado                                                          |
+| 3241*B22         | %I1.0    | Sensor Cilindro2 Recuado                                                           |
+| 3241*B31         | %I1.1    | Sensor Prato (Posição Inicial)                                                     |
+| 3241*B32         | %I1.2    | Sensor Prato (Rotação)                                                             |
+| 3241*B41         | %I0.0    | Sensor no Copo (Cima)                                                              |
+| 3241*B42         | %I0.1    | Sensor no Copo (Baixo)                                                             |
+| 3241*B43         | %I0.2    | Sensor do Prato (Esquerdo)                                                         |
+| 3241*B44         | %I0.3    | Sensor do Prato (Direito)                                                          |
+| 3242*B11         | %I8.1    | Sensor de Garra á Frente                                                           |
+| 3242*B12         | %I8.0    | Sensor de Garra Atrás                                                              |
+| 3242*B21         | %I1.5    | Sensor de Garra em Cima                                                            |
+| 3242*B22         | %I1.4    | Sensor de Garra em Baixo                                                           |
+| 3242*B31         | %I1.3    | Sensor de Garra (Abrir/Fechar)                                                     |
+| 3242*B41         | %I0.4    | Sensor de Peça à Frente                                                            |
+| Reset_HMI_Inputs | %IB2     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| HMI_SB1          | %I2.0    | Input de Start do Gemma Master                                                     |
+| HMI_SB2          | %I2.1    | Input de Stop do Gemma                                                             |
+| HMI_QS           | %I2.2    | Input de Emergencia do Gemma                                                       |
+| Init_Manual      | %I2.3    | Input que permite na Inicialização manual                                          |
+| 324920SB21       | %I8.5    | Botão Verde                                                                        |
+| 324920QS24       | %I8.6    | Botão Emergência                                                                   |
+| 324920SA23       | %I8.7    | Seletor                                                                            |
+
+|            | Saidas   |                                    |
+|:----------:|:--------:|:----------------------------------:|
+| Label      | Endereço | Comentário                         |
+| 3240*H13   | %Q0.6    | Semáforo Vermelho                  |
+| 3240*H12   | %Q0.7    | Semáforo Amarelo                   |
+| 3240*H11   | %Q1.0    | Semáforo Verde                     |
+| 3241*Y10   | %Q0.1    | Cilindro 1                         |
+| 3241*Y20   | %Q0.0    | Cilindro 2                         |
+| 3241*Y30   | %Q0.2    | Prato                              |
+| 3242*Y10   | %Q0.5    | Cilindro da Garra (Frente e Tras)  |
+| 3242*Y20   | %Q0.4    | Cilindro da Garra (Cima e Baixo)   |
+| 3242*Y30   | %Q0.3    | Cilindro da Garra (Abrir e Fechar) |
+| 324920HL11 | %Q8.5    | Luz do Painel (Laranja)            |
+| 324920HL12 | %Q8.6    | Luz do Painel (Verde)              |
+| 324920HL13 | %Q8.7    | Luz do Painel (Vermelha)           |
 
 ##### Memórias
 
 | Label                       | Endereço | Comentário                                                                                                     |
-|:---------------------------:|:---------|:--------------------------------------------------------------------------------------------------------------:|
+|:---------------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
 | Grafcet_10                  | %MB10    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
 | E10                         | %M10.0   | Etapa de Grafcet de Funcionamento                                                                              |
 | E11                         | %M10.1   | Etapa de Grafcet de Funcionamento                                                                              |
@@ -740,36 +851,47 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 #### Estação 50
 ##### Entradas e Saídas (PLC)
 
-|                  | Entradas |                                                                                    |            | Saidas   |                              |
-|:----------------:|:--------:|:----------------------------------------------------------------------------------:|:----------:|:--------:|:----------------------------:|
-| Label            | Endereço | Comentário                                                                         | Label      | Endereço | Comentário                   |
-| Enconder_A       | %I0.0    | Enconder A                                                                         | 3250M51A   | %Q0.0    | Inversores de Freq. (Frente) |
-| Enconder_B       | %I0.1    | Enconder B                                                                         | 3250M51B   | %Q0.1    | Inversores de Freq. (Atrás)  |
-| Enconder_Z       | %I0.2    | Enconder Z                                                                         | 325010Y20  | %Q0.4    | Cilindro 1                   |
-| 325010B11        | %I0.3    | Sensor de Peça (Tapete)                                                            | 325010Y30  | %Q0.5    | Cilindro 2                   |
-| 325010B13        | %I0.4    | Sensor de Peça Metálica                                                            | 325010Y40  | %Q0.6    | Cilindro 3                   |
-| 325010B12        | %I0.5    | Sensor de Peça Branca/Metálica                                                     | 325920HL11 | %Q0.7    | Luz do Painel (Laranja)      |
-| 325010B21        | %I0.7    | Sensor Cilindro1 Avançado                                                          | 325920HL12 | %Q1.0    | Luz do Painel (Verde)        |
-| 325010B31        | %I1.0    | Sensor Cilindro2 Avançado                                                          | 325920HL13 | %Q1.1    | Luz do Painel (Vermelha)     |
-| 325010B41        | %I1.1    | Sensor Cilindro3 Avançado                                                          |            |          |                              |
-| 325920SB22       | %I1.2    | Botão Vermelho                                                                     |            |          |                              |
-| 325920SB21       | %I1.3    | Botão Verde                                                                        |            |          |                              |
-| 325920QS24       | %I1.4    | Botão Emergência                                                                   |            |          |                              |
-| 325920SA23       | %I1.5    | Seletor                                                                            |            |          |                              |
-| Reset_HMI_Inputs | %IB2     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |            |          |                              |
-| HMI_SB1          | %I2.0    | Input de Start do Gemma Master                                                     |            |          |                              |
-| HMI_SB2          | %I2.1    | Input de Stop do Gemma                                                             |            |          |                              |
-| HMI_QS           | %I2.2    | Input de Emergencia do Gemma                                                       |            |          |                              |
-| Init_Manual      | %I2.3    | Input que permite na Inicialização manual                                          |            |          |                              |
-| Reset_Contadores | %I2.4    | Input que permite o Reset a todos os Contador                                      |            |          |                              |
-| HMI_CV           | %I2.5    | Em Modo Manual, input que permite o reset do Contador                              |            |          |                              |
-| HMI_Start_Tapete | %I2.6    | Em Modo Manual, input que permite o Start do Tapete                                |            |          |                              |
-| HMI_Stop_Tapete  | %I2.7    | Em Modo Manual, input que permite o Start do Tapete                                |            |          |                              |
+|                  | Entradas |                                                                                    |         
+|:----------------:|:--------:|:----------------------------------------------------------------------------------:|
+| Enconder_A       | %I0.0    | Enconder A                                                                         |
+| Enconder_B       | %I0.1    | Enconder B                                                                         |
+| Enconder_Z       | %I0.2    | Enconder Z                                                                         |
+| 325010B11        | %I0.3    | Sensor de Peça (Tapete)                                                            |
+| 325010B13        | %I0.4    | Sensor de Peça Metálica                                                            |
+| 325010B12        | %I0.5    | Sensor de Peça Branca/Metálica                                                     |
+| 325010B21        | %I0.7    | Sensor Cilindro1 Avançado                                                          |
+| 325010B31        | %I1.0    | Sensor Cilindro2 Avançado                                                          |
+| 325010B41        | %I1.1    | Sensor Cilindro3 Avançado                                                          |
+| 325920SB22       | %I1.2    | Botão Vermelho                                                                     |
+| 325920SB21       | %I1.3    | Botão Verde                                                                        |
+| 325920QS24       | %I1.4    | Botão Emergência                                                                   |
+| 325920SA23       | %I1.5    | Seletor                                                                            |
+| Reset_HMI_Inputs | %IB2     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| HMI_SB1          | %I2.0    | Input de Start do Gemma Master                                                     |
+| HMI_SB2          | %I2.1    | Input de Stop do Gemma                                                             |
+| HMI_QS           | %I2.2    | Input de Emergencia do Gemma                                                       |
+| Init_Manual      | %I2.3    | Input que permite na Inicialização manual                                          |
+| Reset_Contadores | %I2.4    | Reset a todos os Contador                                                          |
+| HMI_CV           | %I2.5    | Em Modo Manual, botão de reset do Contador                                         |
+| HMI_Start_Tapete | %I2.6    | Em Modo Manual, Start Tapete ST50                                                  |
+| HMI_Stop_Tapete  | %I2.7    | Em Modo Manual, Stop Tapete ST50                                                   |
+
+|            | Saidas   |                              |
+|:----------:|:--------:|:----------------------------:|
+| Label      | Endereço | Comentário                   |
+| 3250M51A   | %Q0.0    | Inversores de Freq. (Frente) |
+| 3250M51B   | %Q0.1    | Inversores de Freq. (Atrás)  |
+| 325010Y20  | %Q0.4    | Cilindro 1                   |
+| 325010Y30  | %Q0.5    | Cilindro 2                   |
+| 325010Y40  | %Q0.6    | Cilindro 3                   |
+| 325920HL11 | %Q0.7    | Luz do Painel (Laranja)      |
+| 325920HL12 | %Q1.0    | Luz do Painel (Verde)        |
+| 325920HL13 | %Q1.1    | Luz do Painel (Vermelha)     |
 
 ##### Memórias
 
 | Label                       | Endereço | Comentário                                                                                                                     |
-|:---------------------------:|:---------|:------------------------------------------------------------------------------------------------------------------------------:|
+|:---------------------------:|:--------:|:------------------------------------------------------------------------------------------------------------------------------:|
 | Grafcet_10                  | %MB10    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0                 |
 | E10                         | %M10.0   | Etapa de Grafcet de Funcionamento                                                                                              |
 | E11                         | %M10.1   | Etapa de Grafcet de Funcionamento                                                                                              |
@@ -1149,7 +1271,7 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 ##### Classificação
 
 | Label                        | Conexão          | Nome PLC | Label PLC                    | Comentário                                                                                         |  
-|:----------------------------:|------------------|:--------:|:----------------------------:|:--------------------------------------------------------------------------------------------------:|
+|:----------------------------:|:----------------:|:--------:|:----------------------------:|:--------------------------------------------------------------------------------------------------:|
 | 3210*B11                     | HMI_Connection_1 | 19PLC    | 3210*B11                     | Fim de Curso (Final)                                                                               |
 | 3210*B12                     | HMI_Connection_1 | 19PLC    | 3210*B12                     | Fim de Curso (Home)                                                                                |
 | 3210*B13                     | HMI_Connection_1 | 19PLC    | 3210*B13                     | Sensor Home                                                                                        |
@@ -1176,7 +1298,7 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 | 3220*B11                     | HMI_Connection_2 | 29PLC    | 3220*B11                     | Sensor Peca Frente                                                                                 |
 | 3221*B11                     | HMI_Connection_2 | 29PLC    | 3221*B11                     | Sensor Cilindro1 Avancado                                                                          |
 | 3221*B12                     | HMI_Connection_2 | 29PLC    | 3221*B12                     | Sensor Cilindro1 Recuado                                                                           |
-| 3221*B21                     | HMI_Connection_2 | 29PLC     3221*B21                     | Sensor Cilindro2 Avancado                                                                          |
+| 3221*B21                     | HMI_Connection_2 | 29PLC    | 3221*B21                     | Sensor Cilindro2 Avancado                                                                          |
 | 3221*B22                     | HMI_Connection_2 | 29PLC    | 3221*B22                     | Sensor Cilindro2 Recuado                                                                           |
 | 3221*B31                     | HMI_Connection_2 | 29PLC    | 3221*B31                     | Sensor Funil Cima                                                                                  |
 | 3221*B32                     | HMI_Connection_2 | 29PLC    | 3221*B32                     | Sensor Funil Baixo                                                                                 |
