@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 15/06/2021, 13h43*
+**Data:** *Last Upgrade: 15/06/2021, 16h33*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -155,9 +155,57 @@ A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remot
 
 ### Comunicações
 
-Para comunicações 
+Como comunicação, a Line 32, usa dois protocolos de comunicação: **Profinet**, permite a comunicação entre os vários PLC's; **Modbus**, permite ordens para a Line ou para as Estações sejam dadas remotamente.
+
+### Modbus
+
+ModBus é um protocolo de comunicação de *Send/Receive* que utiliza um relacionamento **Master/Slave**. A comunicação **Master/Slave** ocorre em pares, ou seja, assim que o **Slave** fizer um pedido, fica aguardar a resposta por parte do **Master**. Assim que **Master** receber este pedido envia a informação pretendida para o **Slave**.
+
+![](./lines/line32/2020_2021/images/modbus/modbus.png)
+
+O Modbus é constituído por 4 zonas de memorias, como mostra a tabela abaixo: 
+
+| Tipo de Objeto   | Acesso     | Tamanho    | Espaço de Endereços |
+|:----------------:|:----------:|:----------:|:-------------------:|
+| Coil             | Read-write | 1 bit      | 00001 - 09999       |
+| Discrete input   | Read-only  | 1 bit      | 10001 - 19999       |
+| Input register   | Read-only  | 16 bits    | 30001 - 39999       |
+| Holding register | Read-write | 16 bits    | 40001 - 49999       |
+
+Este protocolo de comunicação é usado pelo software Tesla Scada, permitindo assim que ordens para a Line ou para as Estações sejam dadas remotamente.
+
+#### Zonas de Comunicação
+
+| Label              | Endereço | Comentário                                              |
+|:------------------:|:--------:|:-------------------------------------------------------:|
+| Scada_O_Start_ST10 | %M23.1   | Ordem de Start, dada pelo Tesla Scada, para a ST10      |                                                                                
+| Scada_O_Stop_ST10  | %M23.2   | Ordem de Stop, dada pelo Tesla Scada, para a ST10       |                                                                               
+| Scada_O_Emerg_ST10 | %M23.3   | Ordem de Emergência, dada pelo Tesla Scada, para a ST10 |
+| Scada_O_Start_ST20 | %Q106.4  | Ordem de Start, dada pelo Tesla Scada para a ST20       |
+| Scada_O_Stop_ST20  | %Q106.5  | Ordem de Stop, dada pelo Tesla Scada para a ST20        |
+| Scada_O_Emerg_ST20 | %Q106.6  | Ordem de Emergência, dada pelo Tesla Scada para a ST20  |
+| Scada_O_Start_ST30 | %Q110.4  | Ordem de Start, dada pelo Tesla Scada para a ST30       |
+| Scada_O_Stop_ST30  | %Q110.5  | Ordem de Stop, dada pelo Tesla Scada para a ST30        |
+| Scada_O_Emerg_ST30 | %Q110.6  | Ordem de Emergência, dada pelo Tesla Scada para a ST30  |
+| Scada_O_Start_ST40 | %Q115.5  | Ordem de Start, dada pelo Tesla Scada para a ST40       |                         
+| Scada_O_Stop_ST40  | %Q115.6  | Ordem de Stop, dada pelo Tesla Scada para a ST40        |
+| Scada_O_Emerg_ST40 | %Q115.7  | Ordem de Emergência, dada pelo Tesla Scada para a ST40  |
+| Scada_O_Start_ST50 | %Q118.4  | Ordem de Start, dada pelo Tesla Scada para a ST50       |                         
+| Scada_O_Stop_ST50  | %Q118.5  | Ordem de Stop, dada pelo Tesla Scada para a ST50        |                          
+| Scada_O_Emerg_ST50 | %Q118.6  | Ordem de Emergência, dada pelo Tesla Scada para a ST50  |                          
+
+        NOTA: Tabela vista do lado do Master.
 
 ### Profinet
+
+Profinet é um protocolo de comunicação baseado em **Ethernet**, este protocolo destina-se ao **controle de dispositivos de campo** como: Cilindros, Motores, Inversores, Válvulas, Sensores, entre outros, como acontece na Line32. O Profinet, assim como o ModBus, é um protocolo de comunicação de *Send/Receive*. 
+
+O 19PLC, o PLC da ST10, foi definido como o PLC Master, responsável por receber e enviar ordem de todas as estações.
+
+Profinet, para a comunicação entre os vários PLC é necessário definir uma Área de Transferência de Bytes , para que estas comunicações ocorram de forma segura e eficaz.
+
+
+
 #### Zonas de Comunicação
 
 | PLC   | Address in I/O Controller  |   | Address in I-Device      |
@@ -172,24 +220,6 @@ Para comunicações
 | -     | Q112, Q113, Q114, Q115     | → | I112, I113, I114, I115   |
 | 59PLC | I116, I117, I118, I119     | ← | Q116, Q117, Q118, Q119   |
 | -     | Q116, Q117, Q118, Q119     | → | I116, I117, I118, I119   |
-
-### Modbus
-
-ModBus é um protocolo de comunicação de *Send/Receive* que utiliza um relacionamento **Cliente/Servidor**. A comunicação **Cliente/Servidor** ocorre em pares, ou seja, assim que o **Cliente** fizer um pedido, fica aguardar a resposta por parte do **Servidor**. Assim que **Servidor** receber este pedido envia a informação pretendida para o **Cliente**.
-
-![](./lines/line32/2020_2021/images/modbus/modbus.png)
-
-Tabela do mapa de memória do Modbus:
-
-| Tipo de Objeto   | Acesso     | Tamanho    | Espaço de Endereços |
-|:----------------:|:----------:|:----------:|:-------------------:|
-| Coil             | Read-write | 1 bit      | 00001 - 09999       |
-| Discrete input   | Read-only  | 1 bit      | 10001 - 19999       |
-| Input register   | Read-only  | 16 bits    | 30001 - 39999       |
-| Holding register | Read-write | 16 bits    | 40001 - 49999       |
-
-
-#### Zonas de Comunicação
 
 ## Trabalho Realizado
 ### Classificação
@@ -249,8 +279,6 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 
 |            | Saidas   |                                     |
 |:----------:|:--------:|:-----------------------------------:|
-| Saidas     |          |                                     |
-|------------|----------|-------------------------------------|
 | Label      | Endereço | Comentário                          |
 | 3212*Y60   | %Q0.3    | Cilindro da Garra (Sobe e Baixa)    |
 | 3212*Y50   | %Q0.4    | Cilindro da Garra (Rotação)         |
@@ -364,9 +392,9 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | MF_SCADA_ST10                | %M22.7   | Ordem de Funcionamento, Modo Scada, dada pelo Gemma Master                                                                              |
 | Reset_ST10_Memorys_3         | %MB23    | Byte das memórias usadas na ST10, usado na Inicialização para garantir que todos o Bits estão a 0                                       |
 | MF_Local_ST10                | %M23.0   | Ordem de Funcionamento, Modo Local, dada pelo Gemma Master                                                                              |
-| Scada_O_Start_ST10           | %M23.1   | Ordem de Start, dada pelo Tesla Scada, para o Gemma                                                                                     |
-| Scada_O_Stop_ST10            | %M23.2   | Ordem de Stop, dada pelo Tesla Scada, para o Gemma                                                                                      |
-| Scada_O_Emerg_ST10           | %M23.3   | Ordem de Emergência, dada pelo Tesla Scada, para o Gemma                                                                                |
+| Scada_O_Start_ST10           | %M23.1   | Ordem de Start, dada pelo Tesla Scada, para a ST10                                                                                   |
+| Scada_O_Stop_ST10            | %M23.2   | Ordem de Stop, dada pelo Tesla Scada, para a ST10                                                                                     |
+| Scada_O_Emerg_ST10           | %M23.3   | Ordem de Emergência, dada pelo Tesla Scada, para a ST10                                                                              |
 | O_Start_M                    | %M23.7   | Ordem de Start, dada pela HMI, para o Gemma Master                                                                                      |
 | Reset_ST10_Memorys_4         | %MB24    | Byte das memórias usadas na ST10, usado na Inicialização para garantir que todos o Bits estão a 0                                       |
 | O_Stop_M                     | %M24.0   | Ordem de Stop, dada pela HMI, para o Gemma Master                                                                                       |
@@ -1199,15 +1227,15 @@ O Estado de cada uma das lâmpada para uma deternidada condição nos Grafcets d
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/Master_Ilum_HL11.svg)
 
-*Ilumincação Verde*
+*Iluminação Verde*
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/Master_Ilum_HL12.svg)
 
-*Ilumincação Amarela*
+*Iluminação Amarela*
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/Master_Ilum_HL13.svg)
 
-*Ilumincação Vermelha*
+*Iluminação Vermelha*
 
 ###### Gemma Estações
 
@@ -1215,71 +1243,71 @@ O Estado de cada uma das lâmpada para uma deternidada condição nos Grafcets d
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST10_Ilum_HL11.svg)
 
-*Ilumincação Amarela*
+*Iluminação Amarela*
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST10_Ilum_HL12.svg)
 
-*Ilumincação Verde*
+*Iluminação Verde*
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST10_Ilum_HL13.svg)
 
-*Ilumincação Vermelha*
+*Iluminação Vermelha*
 
 **Estação 20**
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST20_Ilum_HL11.svg)
 
-*Ilumincação Amarela*
+*Iluminação Amarela*
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST20_Ilum_HL12.svg)
 
-*Ilumincação Verde*
+*Iluminação Verde*
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST20_Ilum_HL13.svg)
 
-*Ilumincação Vermelha*
+*Iluminação Vermelha*
 
 **Estação 30**
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST30_Ilum_HL11.svg)
 
-*Ilumincação Amarela*
+*Iluminação Amarela*
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST30_Ilum_HL12.svg)
 
-*Ilumincação Verde*
+*Iluminação Verde*
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST30_Ilum_HL13.svg)
 
-*Ilumincação Vermelha*
+*Iluminação Vermelha*
 
 **Estação 40**
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST40_Ilum_HL11.svg)
 
-*Ilumincação Amarela*
+*Iluminação Amarela*
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST40_Ilum_HL12.svg)
 
-*Ilumincação Verde*
+*Iluminação Verde*
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST40_Ilum_HL13.svg)
 
-*Ilumincação Vermelha*
+*Iluminação Vermelha*
 
 **Estação 50**
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST50_Ilum_HL11.svg)
 
-*Ilumincação Amarela*
+*Iluminação Amarela*
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST50_Ilum_HL12.svg)
 
-*Ilumincação Verde*
+*Iluminação Verde*
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST50_Ilum_HL13.svg)
 
-*Ilumincação Vermelha*
+*Iluminação Vermelha*
 
 #### Programação
 
