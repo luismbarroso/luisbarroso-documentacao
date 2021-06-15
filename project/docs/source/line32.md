@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 15/06/2021, 16h33*
+**Data:** *Last Upgrade: 15/06/2021, 16h46*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -198,13 +198,9 @@ Este protocolo de comunicação é usado pelo software Tesla Scada, permitindo a
 
 ### Profinet
 
-Profinet é um protocolo de comunicação baseado em **Ethernet**, este protocolo destina-se ao **controle de dispositivos de campo** como: Cilindros, Motores, Inversores, Válvulas, Sensores, entre outros, como acontece na Line32. O Profinet, assim como o ModBus, é um protocolo de comunicação de *Send/Receive*. 
+Profinet é um protocolo de comunicação baseado em **Ethernet**, este protocolo destina-se ao **controle de dispositivos de campo** como: Cilindros, Motores, Inversores, Válvulas, Sensores, entre outros, como acontece na Line32. O Profinet, assim como o ModBus, é um protocolo de comunicação de *Send/Receive* que utiliza um relacionamento **Master/Slave**. O 19PLC, o PLC da ST10, foi definido como o PLC Master, responsável por receber e enviar ordem de todas as estações, que foram definidas como Slaves. 
 
-O 19PLC, o PLC da ST10, foi definido como o PLC Master, responsável por receber e enviar ordem de todas as estações.
-
-Profinet, para a comunicação entre os vários PLC é necessário definir uma Área de Transferência de Bytes , para que estas comunicações ocorram de forma segura e eficaz.
-
-
+Em todos os PLC's foi definida uma Área de Transferência de Bytes, para que estas comunicações ocorram de forma segura e eficaz, como podemos observar na tabela abaixo.
 
 #### Zonas de Comunicação
 
@@ -220,6 +216,8 @@ Profinet, para a comunicação entre os vários PLC é necessário definir uma �
 | -     | Q112, Q113, Q114, Q115     | → | I112, I113, I114, I115   |
 | 59PLC | I116, I117, I118, I119     | ← | Q116, Q117, Q118, Q119   |
 | -     | Q116, Q117, Q118, Q119     | → | I116, I117, I118, I119   |
+
+Por exemplo: a ST20 envia uma informação para o PLC Master, usando uma saída. O PLC Master recebe esta informação, em Input. O Contrario também é valido, pou seja, o PLC Master envia uma informação para a ST20, usando uma saída. A ST20 recebe esta informação, em Input.
 
 ## Trabalho Realizado
 ### Classificação
