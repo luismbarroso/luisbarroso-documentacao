@@ -2,54 +2,52 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 16/06/2021, 15h09*
-
-- [Trabalho fora da Line](./o_lines/o_lines.md)
+*Last Upgrade: 16/06/2021, 15h33*
 
 - [Introdução](#introducao)
 - [Processo](#processo)
     - [Peças](#pecas)
     - [Estações](#estacoes)
-        - [Estação 10](#)
-        - [Estação 20](#)
-        - [Estação 30](#) 
-        - [Estação 40](#)
-        - [Estação 50](#)
+        - [Estação 10](#est-estacao-10)
+        - [Estação 20](#est-estacao-20)
+        - [Estação 30](#est-estacao-30)
+        - [Estação 40](#est-estacao-40)
+        - [Estação 50](#est-estacao-50)
     - [Modo de Funcionamento](#modo-de-funcionamento)
     - [Comunicações](#comunicacoes)
         - [Profinet](#profinet)
-            - [Zonas de Comunicação Profinet](#zonas-de-comunicacao-profinet)
+            - [Zonas de Comunicação](#profinet-zonas-de-comunicacao)
         - [Modbus](#modbus)
-            - [Zonas de Comunicação Modbus](#zonas-de-comunicacao-modbus)
+            - [Zonas de Comunicação](#modbus-zonas-de-comunicacao)
 - [Trabalho Realizado](#trabalho-realizado)
     - [Classificação](#classificacao)
-        - [Estação 10](#)
+        - [Estação 10](#class-est10)
             - [Entradas e Saidas (PLC)](#est-10-entradas-e-saidas-plc)
-            - [Memórias](#)
-            - [Comunicações](#)
-        - [Estação 20](#)
-            - [Entradas e Saidas (PLC)](#est-10-entradas-e-saidas-plc)
-            - [Memórias](#)
-            - [Comunicações](#)
-        - [Estação 30](#)
-            - [Entradas e Saidas (PLC)](#est-10-entradas-e-saidas-plc)
-            - [Memórias](#)
-            - [Comunicações](#)
-        - [Estação 40](#)
-            - [Entradas e Saidas (PLC)](#est-10-entradas-e-saidas-plc)
-            - [Memórias](#)
-            - [Comunicações](#)
-        - [Estação 50](#)
-            - [Entradas e Saidas (PLC)](#est-10-entradas-e-saidas-plc)
-            - [Memórias](#)
-            - [Comunicações](#)   
+            - [Memórias](#est-10-memorias)
+            - [Comunicações](#est-10-comunicacoes)
+        - [Estação 20](#class-est20)
+            - [Entradas e Saidas (PLC)](#est-20-entradas-e-saidas-plc)
+            - [Memórias](#est-20-memorias)
+            - [Comunicações](#est-20-comunicacoes)
+        - [Estação 30](#class-est30)
+            - [Entradas e Saidas (PLC)](#est-30-entradas-e-saidas-plc)
+            - [Memórias](#est-30-memorias)
+            - [Comunicações](#est-30-comunicacoes)
+        - [Estação 40](#class-est40)
+            - [Entradas e Saidas (PLC)](#est-40-entradas-e-saidas-plc)
+            - [Memórias](#est-40-memorias)
+            - [Comunicações](#est-40-comunicacoes)
+        - [Estação 50](#class-est50)
+            - [Entradas e Saidas (PLC)](#est-50-entradas-e-saidas-plc)
+            - [Memórias](#est-50-memorias)
+            - [Comunicações](#est-50-comunicacoes)  
     - [Software](#software)
         - [Grafcets](#grafcets)
-            - [Estação 10](#)
-            - [Estação 20](#)
-            - [Estação 30](#) 
-            - [Estação 40](#)
-            - [Estação 50](#)
+            - [Estação 10](#graf-estacao-10)
+            - [Estação 20](#graf-estacao-20)
+            - [Estação 30](#graf-estacao-30) 
+            - [Estação 40](#graf-estacao-40)
+            - [Estação 50](#graf-estacao-50)
         - [Gemma](#gemma)
             - [Esquema](#esquema)
             - [Guia de Iluminação](#guia-de-iluminacao)
@@ -61,14 +59,14 @@
                 - [Gemma Master](#gemma-master)
                 - [Gemma Estações](#gemma-estacoes)        
         - [Programação](#programacao)
-            - [Estação 10](#)
-            - [Estação 50](#)
-            - [Inicialização](#)        
-            - [Modos de Funcionamento](#)
+            - [Estação 10](#prog-estacao-10)
+            - [Estação 50](#prog-estacao-50)
+            - [Inicialização](#inicializacao)        
+            - [Modos de Funcionamento](#prog-modo-de-funcionamento)
             - [Modos de Marcha](#modos-de-marcha)
             - [Botões](#botoes)
         - [HMI](#hmi)
-            - [Classificação](#)
+            - [Classificação](#hmi-classificacao)
             - [Ecrãs](#ecras)
         - [Tesla Scada](#tesla-scada)
 - [Anexos](#anexos)
@@ -105,6 +103,7 @@ Os **x** a negrito indicados as combinações pretendidas, quando essas combina�
 
 ### Estações
 #### Estação 10
+<a id="est-estacao-10"></a>
 
 A Estação 10, **estação de transporte da peça**, desde a sua fase inicial até à sua finalização. A Estação 10 é constituída por 7 sensores e 6 cilindros, dos quais resultam: Sensor de Garra em baixo, Sensor de Garra em cima, Sensor de Garra de rotação à esquerda, Sensor de Garra de rotação à direita, Sensor de Garra avançada, Sensor de Garra recuada, Sensor de Garra fechada; Cilindro de Garra subida e descida, Cilindro de rotação à esquerda da Garra, Cilindro de rotação à direita da Garra, Cilindro de Garra avançada e recuada, Cilindro de fecho da Garra, Cilindro de abertura da Garra.
 
@@ -113,6 +112,7 @@ A Estação 10, **estação de transporte da peça**, desde a sua fase inicial a
 ![ST10](./lines/line32/2020_2021/images/station/st_10.jpg)
 
 #### Estação 20
+<a id="est-estacao-20"></a>
 
 A Estação 20, **estação de alimentação do corpo da peça**, o corpo da peça, é colocado no funil para ser processado. A Estação 20 é constituída por 8 sensores e 2 cilindros, dos quais resultam: Sensor de Peça à Frente, Sensor Cilindro1 Avançado, Sensor Cilindro1 Recuado, Sensor Cilindro2 Avançado, Sensor Cilindro2 Recuado, Sensor no Funil (Cima), Sensor no Funil (Baixo), Sensor de Peça Metálica; Cilindro 1, Cilindro 2.
 
@@ -121,6 +121,7 @@ A Estação 20, **estação de alimentação do corpo da peça**, o corpo da pe�
 ![ST20](./lines/line32/2020_2021/images/station/st_20.jpg)
 
 #### Estação 30
+<a id="est-estacao-30"></a>
 
 A Estação 30, **estação de aplicação**, é aplicada uma *cola* para fixar o miolo ao corpo da peça. A Estação 30 é constituída por 7 sensores e 6 cilindros, dos quais resultam: Sensor de peça na Pinça, Sensor de Pinça aberta e fechada, Sensor de Pinça avançada, Sensor de Pinça recuada, Sensor de Prensa subida, Sensor de Prensa descida; Cilindro de fecho da Pinça, Cilindro de Pinça avançada e recuada, Cilindro da Prensa subida e descida.
 
@@ -129,6 +130,7 @@ A Estação 30, **estação de aplicação**, é aplicada uma *cola* para fixar 
 ![ST30](./lines/line32/2020_2021/images/station/st_30.jpg)
 
 #### Estação 40
+<a id="est-estacao-40"></a>
 
 A Estação 40, **estação de alimentação do miolo da peça**, o miolo da peça, é colocado na funil para ser processado. A Estação 40 é constituída por 16 sensores e 6 cilindros, dos quais resultam: Sensor Cilindro1 Avançado, Sensor Cilindro1 Recuado, Sensor Cilindro2 Avançado, Sensor Cilindro2 Recuado, Sensor Prato de rotação à esquerda, Sensor Prato de rotação à direita, Sensor copo em cima, Sensor copo em baixo, Sensor do Prato à esquerda, Sensor do Prato à direita, Sensor de Garra avançada, Sensor de Garra recuada, Sensor de Garra subida, Sensor de Garra descida, Sensor de Garra fechada, Sensor de Peça à frente; Cilindro 1, Cilindro 2, Cilindro Prato, Cilindro da Garra avançada e recuada, Cilindro da Garra subida e descida, Cilindro da Garra aberta e fechada.
 
@@ -137,6 +139,7 @@ A Estação 40, **estação de alimentação do miolo da peça**, o miolo da pe�
 ![ST40](./lines/line32/2020_2021/images/station/st_40.jpg)
 
 #### Estação 50
+<a id="est-estacao-50"></a>
 
 A Estação 50, **estação de seleção**, responsável por ordenar as peças no respetivo armazém.  Estação 40 é constituída por 6 sensores e 3 cilindros, dos quais resultam:
 Sensor de Peça no Tapete, Sensor de Peça Metálica, Sensor de Peça Branca/Metálica, Sensor Cilindro1 Avançado, Sensor Cilindro2 Avançado, Sensor Cilindro3 Avançado; Cilindro 1, Cilindro 2, Cilindro 3.
@@ -175,6 +178,7 @@ O Modbus é constituído por 4 zonas de memorias, como mostra a tabela abaixo:
 Este protocolo de comunicação é usado pelo software Tesla Scada, permitindo assim que ordens para a Line ou para as Estações sejam dadas remotamente.
 
 #### Zonas de Comunicação
+<a id="modbus-de-comunicacao-modbus"></a>
 
 | Label              | Endereço | Comentário                                              |
 |:------------------:|:--------:|:-------------------------------------------------------:|
@@ -203,6 +207,7 @@ Profinet é um protocolo de comunicação baseado em **Ethernet**, este protocol
 Em todos os PLC's foi definida uma Área de Transferência de Bytes, para que estas comunicações ocorram de forma segura e eficaz, como podemos observar na tabela abaixo.
 
 #### Zonas de Comunicação
+<a id="profinet-de-comunicacao-modbus"></a>
 
 | PLC   | Address in I/O Controller  |   | Address in I-Device      |
 |:-----:|:--------------------------:|:-:|:------------------------:|
@@ -224,8 +229,11 @@ Por exemplo: a ST20 envia uma informação para o PLC Master, usando uma saída.
 
 A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do PLC**, **Memórias** e **Comunicações**.
 
-#### Estação 10 
+#### Estação 10
+<a id="class-est10"></a>
+
 ##### Entradas e Saídas (PLC)
+<a id="est-10-entradas-e-saidas-plc"></a>
 
 |                             | Entradas |                                                                                    |       
 |:---------------------------:|:--------:|:----------------------------------------------------------------------------------:|
@@ -289,6 +297,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | 321920HL13 | %Q8.7    | Painel Luz Vermelha                 |
 
 ##### Memórias
+<a id="est-10-memorias"></a>
 
 | Label                        | Endereço | Comentário                                                                                                                              |
 |:----------------------------:|:--------:|:---------------------------------------------------------------------------------------------------------------------------------------:|
@@ -408,6 +417,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HMI_MC_MoveJog_Velocity      | %MD320   | Em Modo Manual, no Display Numérico é possível fazer a escolha da velocidade (Máx: 400). Esse valor é guardado nesta memória            |
 
 ##### Comunicações
+<a id="est-10-comunicacoes"></a>
 
 |             | Entradas |                                                                             |
 |:-----------:|:--------:|:---------------------------------------------------------------------------:|
@@ -566,7 +576,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | ST10_ST50_4             | %QB119   | Byte de Comunicação, a ST10 recebe informação da ST50                             |
 
 #### Estação 20
-##### Entradas e Saídas (PLC)
+<a id="class-est20"></a>
 
 |                  | Entradas |                                                                                    |          
 |:----------------:|:--------:|:----------------------------------------------------------------------------------:|
@@ -600,6 +610,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 |            |          |                     |
 
 ##### Memórias
+<a id="est-20-memorias"></a>
 
 | Label                       | Endereço | Comentário                                                                                                     |
 |:---------------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
@@ -639,6 +650,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HL13_Cond                   | %M15.2   | Memória do estado da Iluminação HL13                                                                           |
 	
 ##### Comunicações
+<a id="est-20-comunicacoes"></a>
 
 |                    | Entradas |                                                                      |
 |:------------------:|:--------:|:--------------------------------------------------------------------:|
@@ -682,7 +694,10 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | ST10_ST20_4 | %QB107   | Byte de Comunicação, a ST20 envia informação para a ST10 (Master) |
 
 #### Estação 30
+<a id="class-est30"></a>
+
 ##### Entradas e Saídas (PLC)
+<a id="est-30-entradas-e-saidas-plc"></a>
 
 |                  | Entradas |                                                                                    |
 |:----------------:|:--------:|:----------------------------------------------------------------------------------:|
@@ -714,6 +729,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | 323920HL13 | %Q1.1    | Painel Luz Vermelha                |
 
 ##### Memórias
+<a id="est-30-memorias"></a>
 
 | Label                       | Endereço | Comentário                                                                                                     |
 |:---------------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
@@ -754,6 +770,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HL13_Cond                   | %M15.2   | Memória do estado da Iluminação HL13                                                                           |
 
 ##### Comunicações
+<a id="est-30-comunicacoes"></a>
 
 |                    | Entradas |                                                                      |
 |:------------------:|:--------:|:--------------------------------------------------------------------:|
@@ -797,7 +814,10 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | ST10_ST30_4 | %QB111   | Byte de Comunicação, a ST30 envia informação para a ST10 (Master) |
 
 #### Estação 40
+<a id="class-est40"></a>
+
 ##### Entradas e Saídas (PLC)
+<a id="est-40-entradas-e-saidas-plc"></a>
 
 |                  | Entradas |                                                                                    |
 |:----------------:|:--------:|:----------------------------------------------------------------------------------:|
@@ -844,6 +864,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | 324920HL13 | %Q8.7    | Luz do Painel (Vermelha)           |
 
 ##### Memórias
+<a id="est-40-memorias"></a>
 
 | Label                       | Endereço | Comentário                                                                                                     |
 |:---------------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
@@ -894,6 +915,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HL11_Cond                   | %M17.1   | Memória do estado da Iluminação HL12 (Gemma)                                                                   |
 
 ##### Comunicações
+<a id="est-40-comunicacoes"></a>
 
 |                    | Entradas |                                                                                   |
 |:------------------:|:--------:|:---------------------------------------------------------------------------------:|
@@ -945,7 +967,10 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | ST10_ST40_4 | %QB115   | Byte de Comunicação, a ST40 envia informação para a ST10 (Master) |
 
 #### Estação 50
+<a id="class-est50"></a>
+
 ##### Entradas e Saídas (PLC)
+<a id="est-50-entradas-e-saidas-plc"></a>
 
 |                  | Entradas |                                                                                    |         
 |:----------------:|:--------:|:----------------------------------------------------------------------------------:|
@@ -985,6 +1010,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | 325920HL13 | %Q1.1    | Luz do Painel (Vermelha)     |
 
 ##### Memórias
+<a id="est-50-memorias"></a>
 
 | Label                       | Endereço | Comentário                                                                                                                     |
 |:---------------------------:|:--------:|:------------------------------------------------------------------------------------------------------------------------------:|
@@ -1038,6 +1064,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HMI_Velocidade_Tapete       | %MD300   | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 30000). Esse valor é guardado nesta memória |
 
 ##### Comunicações
+<a id="est-50-comunicacoes"></a>
 
 |                    | Entradas |                                                                      |
 |:------------------:|:--------:|:--------------------------------------------------------------------:|
@@ -1082,23 +1109,28 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 
 ### Software
 #### Grafcets
-##### Estação 10 
+##### Estação 10
+<a id="graf-estacao-10"></a> 
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST10.svg)
 
 ##### Estação 20
+<a id="graf-estacao-20"></a> 
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST20.svg)
 
 ##### Estação 30 
+<a id="graf-estacao-30"></a> 
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST30.svg)
 
 ##### Estação 40 
+<a id="graf-estacao-40"></a> 
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST40.svg)
 
 ##### Estação 50 
+<a id="graf-estacao-50"></a> 
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST50.svg)
 
@@ -1312,6 +1344,8 @@ O Estado de cada uma das lâmpada para uma deternidada condição nos Grafcets d
 A programação das Line 32 foi feita usando o programa TIA Portal. A Programação pode ser encontrada na integra na parte dos anexos. Desta forma, aqui, serão apenas abordados o blocos mais importantes e fundamentais para o funcionamento da Line32.
 
 ##### Estação 10
+<a id="prog-estacao-10"></a>
+
 
 Como já foi dito anteriormente a estação 10 possui um robô. Para a realização dos seus movimentos são necessários alguns blocos, como: **MC_Power**, **MC_Home**, **MC_Reset**, **MC_Halt**, **MC_MoveAbsolute**-
 
@@ -1363,7 +1397,8 @@ Para não sobrecarregar o código com 4 funções **MC_MoveAbsolute** foi criado
 
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/6.png)
 
-##### Estação 50 
+##### Estação 50
+<a id="prog-estacao-50"></a> 
 
 Como já foi dito anteriormente a estação 50 possui um tapete para transporte das peças processadas. Para o controlo da velocidade do tapete é usada uma função **Move** (como o próprio nome indica, mover valores de entrada de forma a serem aplicados numa saída) na entrada é colocado o valor analógico da velocidade; na saída é saída do Inversor de Frequência. Este valor analógico é enviado para o Inversor de Frequência e convertido em tensão.
 
@@ -1416,6 +1451,7 @@ A Inicialização na Line 32 pode ser feita de duas maneiras:
         NOTA: A Inicialização das outras estações segue o mesmo prinicipio.
 
 ##### Modo de Funcionamento
+<a id="prog-modo-de-funcionamento"></a>
 
 Como já foi explicado anteriormente, a Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remoto**. **No Modo de Funcionamento Local**. Quando um destes Modos de Funcionamento é selecionado, na HMI, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Quando selecionado o Modo de Funcionamento essa informação é enviada para todas as Estações, como demonstra a imagem abaixo.
 
@@ -1468,6 +1504,7 @@ Assim que as **conexões** foram definidas, comecei a criar as **tags** que vão
 Com as **conexões** e as **tags** defenidas já foi possivel começar a criação dos ecrãs. 
 
 ##### Classificação
+<a id="hmi-classificacao"></a>
 
 | Label                        | Conexão          | Nome PLC | Label PLC                    | Comentário                                                                                         |  
 |:----------------------------:|:----------------:|:--------:|:----------------------------:|:--------------------------------------------------------------------------------------------------:|
@@ -1840,4 +1877,4 @@ Assim que concluidos os testes, podemos voltar ao ecrã da Line, Stations - Modo
 
 ## Anexos
 
-[Anexos](./anexos.md)
+![](lines/line32/2020_2021/images/anexos/qr.png)
