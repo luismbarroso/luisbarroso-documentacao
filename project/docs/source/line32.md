@@ -1448,7 +1448,7 @@ A Inicialização na Line 32 pode ser feita de duas maneiras:
 
 *Codigo de Inicialização da ST10*
 
-        NOTA: A Inicialização das outras estações segue o mesmo prinicipio.
+        NOTA: A Inicialização das outras estações segue o mesmo princípio.
 
 ##### Modo de Funcionamento
 <a id="prog-modo-de-funcionamento"></a>
