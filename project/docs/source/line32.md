@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-*Last Upgrade: 16/06/2021, 15h33*
+*Last Upgrade: 16/06/2021, 15h40*
 
 - [Introdução](#introducao)
 - [Processo](#processo)
@@ -1347,7 +1347,7 @@ A programação das Line 32 foi feita usando o programa TIA Portal. A Programaç
 <a id="prog-estacao-10"></a>
 
 
-Como já foi dito anteriormente a estação 10 possui um robô. Para a realização dos seus movimentos são necessários alguns blocos, como: **MC_Power**, **MC_Home**, **MC_Reset**, **MC_Halt**, **MC_MoveAbsolute**-
+Como já foi dito anteriormente a estação 10 possui um robô. Para a realização dos seus movimentos são necessários alguns blocos, como: **MC_Power**, **MC_Home**, **MC_Reset**, **MC_Halt**, **MC_MoveAbsolute**.
 
 **MC_Power** – é uma função que deve ser chamada e ligada antes de qualquer instrução de movimento, sem ela não será possível comando o servo.
 
