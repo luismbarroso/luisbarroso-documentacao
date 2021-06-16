@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 16/06/2021, 12h06*
+**Data:** *Last Upgrade: 16/06/2021, 14h52*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -1456,6 +1456,17 @@ Como o Modo de funcionamento selecionado os comandos para a estações vão depe
 *Ordem de Emergência - Estações*
 
 #### HMI
+
+HMI significa **H**uman **M**achine **I**nterface (Interface Homem-Máquina), consiste num painel que permite o operador comunicar com a máquina. Antes de começar a criar os *Screens*, foi necessário definir as **conexões** na HMI, permitindo que a HMI comunique o todos os PLC da Line.
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/conexoes.png)
+
+Assim que as **conexões** foram definidas, comecei a criar as **tags** que vão estar associadas a Botões, Iluminacação, Displays, entre outros, desta forma, é possivel controlar e supervisionar a Line cada uma das estações. A Tags da HMI, pode ser consultadas na [Classificação](#classificacao)
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/tags.png)
+
+Com as **conexões** e as **tags** defenidas já foi possivel começar a criação dos ecrãs. 
+
 ##### Classificação
 
 | Label                        | Conexão          | Nome PLC | Label PLC                    | Comentário                                                                                         |  
@@ -1679,25 +1690,100 @@ Como o Modo de funcionamento selecionado os comandos para a estações vão depe
 
 ##### Ecrãs
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/line32.png)
+A HMI é constituida por 19 ecrãs dos quais resultam:
+
+- **Root Screen**, ecrã principal da HMI. Neste ecrã podemos ser encaminhados para outros 3 ecrãs: **Line32**, **Peças** e **Modo de Funcionamento**
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/root_screen.png)
+
+*Imagem do Root Screen*
+
+- **Modo de Funcionamento**, neste ecrã podemos escolher o modo de operação da Line32 e das estações: **Modo Local**, **Modo HMI** e **Modo Scada**
+
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_funcionamento.png)
+
+*Imagem do Ecrã - Modo de Funcionamento*
+
+- **Peças**, neste ecrã podemos controlar o **número de peças produzidas**, **saber que tipo de peças foram produzidas** e as **peças com defeito**. Caso se pretenda começar uma nova contagem é possivel dar *reset* aos contadores, através do botão **Reset dos Contadores**. Assim que concluida a consulta do controlo das peças podemos voltar a o ecrã da Line ou para as estações (Menu com todas as Estações).
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/pecas.png)
+
+*Imagem do Ecrã - Peças*
+
+- **Root Screen**, ecrã principal da Line. Neste ecrã podemos: 
+    - Fazer o Start/Stop da Line; 
+    - Entrar em emergência;
+    - Saber o estado da Line;
+    - Escolher o modo de marcha;
+    - Entrar em modo manual;
+    - Dar a ordem de inicialização manual para todas as estações;
+    - Trocar para 5 ecrãs: Estações, Peças, Modo de Funcionamento, Testes e Home (Root Screen).
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/line32.png)
+
+*Imagem do Ecrã - Line32*
+
+- **Stations - Modo Manual**, após da seleção do **Modo Manual** no ecrã da Line 32, este ecrã irá aparecer. Neste ecrã é possivel fazer a escolha da estação a operar em modo manual, antes da escolha da estação é necessário fazer a ativação do modo manual, através do botão a baixo. Assim que concluido o funcionamento em modo manual, podemos voltar a o ecrã da Line.
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/stations_modo_manual.png)
+
+*Imagem do Ecrã - Stations - Modo Manual*
+
+- **ST10 - Modo Manual**, neste ecrã podemos controlar todos os cilindros, consultar o estado de todos os sensores e carregando no botão **Robô** podemos controlar o Robô.
+
+    - ON/OFF do MC_Power;
+    - Levar o Robô para a posição de Home;
+    - ON/OFF do MC_Reset;
+    - Paragem do Robô;
+    - Mover livremente o Robô para a esquerda ou para a direita (Necessário aplicar velocidade (Máx: 400));
+    - Mover o Robô para uma posição absoluta (Necessário aplicar velocidade (Máx: 400) e escolher uma posição (Máx: 1051.727));
+    - Mover o Robô para uma posição relativa (Necessário aplicar velocidade (Máx: 400) e escolher uma posição, pode ser uma posição negativa ou positiva dependendo do sentido pretendido);
+    - Através do Botões: **P_ST20**, **P_ST30**, **P_ST40**, **P_ST50** o Robô vai se movimentar para a posição absoluta da ST20 ou ST30 ou ST40 ou ST50, dependendo da escolha; 
+
+Assim que concluidos os testes, podemos voltar ao ecrã da Line, Stations - Modo Manual (Menu com todas as Estações em Modo Manual) e ST10 (No Ecrã do Robô).
+
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st10.png)
+
+*Imagem do Ecrã - ST10 - Modo Manual*
+
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st10_1.png)
+
+*Imagem do Ecrã - ST10 - Modo Manual (Robô)*
+
+- **ST20 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. Assim que concluidos os testes, podemos voltar ao ecrã da Line ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
+
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st20.png)
+
+*Imagem do Ecrã - ST20 - Modo Manual*
+
+- **ST30 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. Assim que concluidos os testes, podemos voltar ao ecrã da Line ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
+
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st30.png)
+
+*Imagem do Ecrã - ST30 - Modo Manual*
+
+- **ST40 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. A Estação 40 como possui muitos cilindros e sensores, existem dois ecrãs: **Subestação 41** e **Subestação 42**. Assim que concluidos os testes, podemos voltar ao ecrã da Line ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
+
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st40.png)
+
+*Imagem do Ecrã - ST40 - Modo Manual (Subestação 41)*
+
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st40_1.png)
+
+*Imagem do Ecrã - ST40 - Modo Manual (Subestação 42)*
+
+
+
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50.png)
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50_1.png)
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/pecas.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/root_screen.png)
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/st10.png)
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/st20.png)
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/st30.png)
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/st40.png)
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/st50.png)
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/stations.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/stations_modo_manual.png)
+
 
 #### Tesla Scada
 
