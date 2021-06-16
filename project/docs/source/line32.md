@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 16/06/2021, 10h30*
+**Data:** *Last Upgrade: 16/06/2021, 10h40*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -1373,15 +1373,42 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_50/1.PNG)
 
-##### Inicialização   
+##### Inicialização
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_manual_st10_1.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_manual_st10_2.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_1.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_2.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_3.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_4.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_5.PNG)
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st20/init_manual_st20_1.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st20/init_st20_1.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st20/init_st20_2.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st20/init_st20_3.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st20/init_st20_4.PNG)
+
 ##### Modo de Funcionamento
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_funcionamento/modo_funcionamento.PNG)
+
 ##### Modo de Marcha
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_marcha/modo_marcha.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_marcha/modo_marcha_st10.PNG)
+
 ##### Botões
 
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/master/o_start_master.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/master/o_stop_master.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/master/o_emerg_master.PNG)
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/stations/o_start_sts.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/stations/o_stop_sts.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/stations/o_emerg_sts.PNG)
+
 #### HMI
-
-sou
-
 ##### Classificação
 
 | Label                        | Conexão          | Nome PLC | Label PLC                    | Comentário                                                                                         |  
