@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 15/06/2021, 17h15*
+**Data:** *Last Upgrade: 16/06/2021, 10h30*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
