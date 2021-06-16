@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 16/06/2021, 11h49*
+**Data:** *Last Upgrade: 16/06/2021, 12h06*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -1413,6 +1413,8 @@ A Inicialização na Line 32 pode ser feita de duas maneiras:
 
 *Codigo de Inicialização da ST10*
 
+        NOTA: A Inicialização das outras estações segue o mesmo prinicipio.
+
 ##### Modo de Funcionamento
 
 Como já foi explicado anteriormente, a Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remoto**. **No Modo de Funcionamento Local**. Quando um destes Modos de Funcionamento é selecionado, na HMI, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Quando selecionado o Modo de Funcionamento essa informação é enviada para todas as Estações, como demonstra a imagem abaixo.
@@ -1427,13 +1429,31 @@ Como já foi explicado anteriormente, a Line 32 é composta por 3 modos de march
 
 ##### Botões
 
+Como o Modo de funcionamento selecionado os comandos para a estações vão depender desse modo, por exemplo, se estivermos a funcionar em Modo HMI, todos os comandos dados para as estações têm que ser dados pela a HMI e não remotamente ou localmente. Para prevenir qualquer acidente ou falha no sistema, quando um Modo de Funcionamento, os comandos dos outros dois modos, ficam desativados, como demonstra a imagem abaixo.
+
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/master/o_start_master.PNG)
+
+*Ordem de Start - Master*
+
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/master/o_stop_master.PNG)
+
+*Ordem de Stop - Master*
+
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/master/o_emerg_master.PNG)
 
+*Ordem de Emergência - Master*
+
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/stations/o_start_sts.PNG)
+
+*Ordem de Start - Estações*
+
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/stations/o_stop_sts.PNG)
+
+*Ordem de Stop - Estações*
+
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/stations/o_emerg_sts.PNG)
+
+*Ordem de Emergência - Estações*
 
 #### HMI
 ##### Classificação
