@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-*Last Upgrade: 16/06/2021, 15h40*
+*Last Upgrade: 16/06/2021, 15h51*
 
 - [Introdução](#introducao)
 - [Processo](#processo)
@@ -15,10 +15,10 @@
         - [Estação 50](#est-estacao-50)
     - [Modo de Funcionamento](#modo-de-funcionamento)
     - [Comunicações](#comunicacoes)
-        - [Profinet](#profinet)
-            - [Zonas de Comunicação](#profinet-zonas-de-comunicacao)
         - [Modbus](#modbus)
             - [Zonas de Comunicação](#modbus-zonas-de-comunicacao)
+        - [Profinet](#profinet)
+            - [Zonas de Comunicação](#profinet-zonas-de-comunicacao)
 - [Trabalho Realizado](#trabalho-realizado)
     - [Classificação](#classificacao)
         - [Estação 10](#class-est10)
@@ -52,10 +52,10 @@
             - [Esquema](#esquema)
             - [Guia de Iluminação](#guia-de-iluminacao)
             - [Modos de Marcha](#modos-de-marcha)   
-            - [Grafcet’s - Funcionamento Gemma](#grafcet-s-funcionamento-gemma)
+            - [Grafcet’s - Funcionamento Gemma](#grafcets-funcionamento-gemma)
                 - [Gemma Master](#gemma-master)
                 - [Gemma Estações](#gemma-estacoes)
-            - [Grafcet’s - Iluminação Gemma](#grafcet-s-iluminacao-gemma)
+            - [Grafcet’s - Iluminação Gemma](#grafcets-iluminacao-gemma)
                 - [Gemma Master](#gemma-master)
                 - [Gemma Estações](#gemma-estacoes)        
         - [Programação](#programacao)
@@ -178,7 +178,7 @@ O Modbus é constituído por 4 zonas de memorias, como mostra a tabela abaixo:
 Este protocolo de comunicação é usado pelo software Tesla Scada, permitindo assim que ordens para a Line ou para as Estações sejam dadas remotamente.
 
 #### Zonas de Comunicação
-<a id="modbus-de-comunicacao-modbus"></a>
+<a id="modbus-zonas-de-comunicacao"></a>
 
 | Label              | Endereço | Comentário                                              |
 |:------------------:|:--------:|:-------------------------------------------------------:|
@@ -207,7 +207,7 @@ Profinet é um protocolo de comunicação baseado em **Ethernet**, este protocol
 Em todos os PLC's foi definida uma Área de Transferência de Bytes, para que estas comunicações ocorram de forma segura e eficaz, como podemos observar na tabela abaixo.
 
 #### Zonas de Comunicação
-<a id="profinet-de-comunicacao-modbus"></a>
+<a id="profinet-zonas-de-comunicacao"></a>
 
 | PLC   | Address in I/O Controller  |   | Address in I-Device      |
 |:-----:|:--------------------------:|:-:|:------------------------:|
@@ -1416,7 +1416,7 @@ A Inicialização na Line 32 pode ser feita de duas maneiras:
 
 - **No inicio do processo, através de uma 0B100**. Assim que o PLC entra em Modo Run a OB100 é executada, quando concluido este processo, a 0B100 nunca mais volta a ser executada. Para isso foi cridada uma *Function (FC)* (Onde está incluido todo o código para a inicialização) por sua vez esta *Function (FC)* é *chamada* para a OB100.
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/ob100.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/ob100.png)
 
 - **Manualmente**, em algumas situação é necessário inicializar a Line ou alguma estação, para isso foi criado mecanismo que permite isso sem recorrer ao Stop/Run do PLC. A Inicialização, pode ser feita de 3 maneiras: **por ordem do Master**, assim que está ordem for dada é enviada para todas as estações, desta forma todas as estações são inicializadas; **ordem remota**, assim que está ordem for dada é enviada para todas as estações, desta forma todas as estações são inicializadas. A ordem remota também pode ser dada individualmente para cada estação, permitindo assim que só a estação em específico seja inicializada; **localmente (através da HMI)**, assim que está ordem for dada, a estação em específico é inicializada; 
 
@@ -1467,27 +1467,27 @@ Como já foi explicado anteriormente, a Line 32 é composta por 3 modos de march
 
 Como o Modo de funcionamento selecionado os comandos para a estações vão depender desse modo, por exemplo, se estivermos a funcionar em Modo HMI, todos os comandos dados para as estações têm que ser dados pela a HMI e não remotamente ou localmente. Para prevenir qualquer acidente ou falha no sistema, quando um Modo de Funcionamento, os comandos dos outros dois modos, ficam desativados, como demonstra a imagem abaixo.
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/master/o_start_master.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/master/o_start_master.PNG)
 
 *Ordem de Start - Master*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/master/o_stop_master.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/master/o_stop_master.PNG)
 
 *Ordem de Stop - Master*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/master/o_emerg_master.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/master/o_emerg_master.PNG)
 
 *Ordem de Emergência - Master*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/stations/o_start_sts.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/stations/o_start_sts.PNG)
 
 *Ordem de Start - Estações*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/stations/o_stop_sts.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/stations/o_stop_sts.PNG)
 
 *Ordem de Stop - Estações*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/botões/stations/o_emerg_sts.PNG)
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/stations/o_emerg_sts.PNG)
 
 *Ordem de Emergência - Estações*
 
