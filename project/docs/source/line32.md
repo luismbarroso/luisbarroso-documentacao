@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 16/06/2021, 14h52*
+**Data:** *Last Upgrade: 16/06/2021, 15h09*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -1711,13 +1711,14 @@ A HMI é constituida por 19 ecrãs dos quais resultam:
 *Imagem do Ecrã - Peças*
 
 - **Root Screen**, ecrã principal da Line. Neste ecrã podemos: 
+
     - Fazer o Start/Stop da Line; 
     - Entrar em emergência;
     - Saber o estado da Line;
     - Escolher o modo de marcha;
     - Entrar em modo manual;
     - Dar a ordem de inicialização manual para todas as estações;
-    - Trocar para 5 ecrãs: Estações, Peças, Modo de Funcionamento, Testes e Home (Root Screen).
+    - Trocar para 5 ecrãs: Stations, Peças, Modo de Funcionamento, Testes e Home (Root Screen).
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/line32.png)
 
@@ -1772,19 +1773,71 @@ Assim que concluidos os testes, podemos voltar ao ecrã da Line, Stations - Modo
 
 *Imagem do Ecrã - ST40 - Modo Manual (Subestação 42)*
 
+- **ST10 - Modo Manual**, neste ecrã podemos controlar todos os cilindros, consultar o estado de todos os sensores e carregando no botão **Tapete** podemos controlar o Tapete.
 
+    - Start/Stop do Tapete;
+    - Aplicar velocidade no Tapete (Máx: 30000);
+    - Saber o valor do Contador, sendo possivel fazer o Reset do mesmo.
+
+Assim que concluidos os testes, podemos voltar ao ecrã da Line, Stations - Modo Manual (Menu com todas as Estações em Modo Manual) e ST10 (No Ecrã do Robô).
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50.png)
+
+*Imagem do Ecrã - ST50 - Modo Manual*
+
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50_1.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/pecas.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st10.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st20.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st30.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st40.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st50.png)
+
+*Imagem do Ecrã - ST50 - Modo Manual (Tapete)*
+
+- **Stations**, neste ecrã é possivel fazer a escolha da estação a operar. 
+
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/stations.png)
 
+*Imagem do Ecrã - Stations*
+
+- **ST10**, neste ecrã podemos controlar a estação 10. Neste ecrã podemos: 
+
+    - Fazer o Start/Stop da estação; 
+    - Entrar em emergência;
+    - Saber o estado da estação;
+    - Saber qual modo de marcha está selecionado;
+    - Dar ordem de Home do Carro;
+    - Dar a ordem de inicialização manual da estação;
+    - Trocar para 5 ecrãs: Stations, Peças, Lin32 e ST20.
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st10.png)
+
+*Imagem do Ecrã - ST10 - Modo Manual*
+
+- **ST20**, **ST30**, **ST40**, **ST50**, nestes ecrãs podemos controlar a estação 20, 30, 40, 50. Neste ecrã podemos: 
+
+    - Fazer o Start/Stop da estação; 
+    - Entrar em emergência;
+    - Saber o estado da estação;
+    - Saber qual modo de marcha está selecionado;
+    - Dar a ordem de inicialização manual da estação;
+    - Trocar para 5 ecrãs: Stations, Peças, Lin32 e ST20 ou ST30 ou ST40 ou ST50.
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st10.png)
+
+*Imagem do Ecrã - ST20 - Modo Manual*
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st20.png)
+
+*Imagem do Ecrã - ST30 - Modo Manual*
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st30.png)
+
+*Imagem do Ecrã - ST40 - Modo Manual*
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st40.png)
+
+*Imagem do Ecrã - ST50 - Modo Manual*
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st50.png)
 
 #### Tesla Scada
 
 ## Anexos
+
+[Anexos](./anexos.md)
