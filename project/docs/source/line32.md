@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 16/06/2021, 10h40*
+**Data:** *Last Upgrade: 16/06/2021, 11h49*
 
 - [Trabalho fora da Line](./o_lines/o_lines.md)
 
@@ -1375,28 +1375,55 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 
 ##### Inicialização
 
+A Inicialização é um processo bastante importante para o bom funcionamento do automatismo, através da inicialização, conseguimos garantir que todos os Bits se encontram a 0 ou que o primeiro bit de um byte se contra a 1, como acontece para o Grafcets. 
+
+A Inicialização na Line 32 pode ser feita de duas maneiras: 
+
+- **No inicio do processo, através de uma 0B100**. Assim que o PLC entra em Modo Run a OB100 é executada, quando concluido este processo, a 0B100 nunca mais volta a ser executada. Para isso foi cridada uma *Function (FC)* (Onde está incluido todo o código para a inicialização) por sua vez esta *Function (FC)* é *chamada* para a OB100.
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/ob100.PNG)
+
+- **Manualmente**, em algumas situação é necessário inicializar a Line ou alguma estação, para isso foi criado mecanismo que permite isso sem recorrer ao Stop/Run do PLC. A Inicialização, pode ser feita de 3 maneiras: **por ordem do Master**, assim que está ordem for dada é enviada para todas as estações, desta forma todas as estações são inicializadas; **ordem remota**, assim que está ordem for dada é enviada para todas as estações, desta forma todas as estações são inicializadas. A ordem remota também pode ser dada individualmente para cada estação, permitindo assim que só a estação em específico seja inicializada; **localmente (através da HMI)**, assim que está ordem for dada, a estação em específico é inicializada; 
+
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_manual_st10_1.PNG)
+
+*Ordem de Inicialização para todos as Estações, por parte do Master ou Ordem Remota*
+
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_manual_st10_2.PNG)
+
+*Inicialização da ST10, por Ordem Local, Ordem do Master ou Ordem Remota*
+
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_1.PNG)
+
+*Codigo de Inicialização da ST10*
+
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_2.PNG)
+
+*Codigo de Inicialização da ST10*
+
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_3.PNG)
+
+*Codigo de Inicialização da ST10*
+
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_4.PNG)
+
+*Codigo de Inicialização da ST10*
+
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_5.PNG)
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st20/init_manual_st20_1.PNG)
-![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st20/init_st20_1.PNG)
-![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st20/init_st20_2.PNG)
-![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st20/init_st20_3.PNG)
-![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st20/init_st20_4.PNG)
+*Codigo de Inicialização da ST10*
 
 ##### Modo de Funcionamento
+
+Como já foi explicado anteriormente, a Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remoto**. **No Modo de Funcionamento Local**. Quando um destes Modos de Funcionamento é selecionado, na HMI, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Quando selecionado o Modo de Funcionamento essa informação é enviada para todas as Estações, como demonstra a imagem abaixo.
 
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_funcionamento/modo_funcionamento.PNG)
 
 ##### Modo de Marcha
 
+Como já foi explicado anteriormente, a Line 32 é composta por 3 modos de marcha: **Automático, Ciclo, Manual.** . Quando um destes Modos de Funcionamento é selecionado, na HMI pela Lina, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Quando selecionado o Modo de Marcha essa informação é enviada para todas as Estações, como demonstra a imagem abaixo.
+
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_marcha/modo_marcha.PNG)
-![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_marcha/modo_marcha_st10.PNG)
 
 ##### Botões
 
