@@ -2,73 +2,71 @@
 
 **Autor:** *Luís Barroso*
 
-**Data:** *Last Upgrade: 16/06/2021, 10h30*
-
-- [Trabalho fora da Line](./o_lines/o_lines.md)
+*Last Upgrade: 16/06/2021, 15h51*
 
 - [Introdução](#introducao)
 - [Processo](#processo)
     - [Peças](#pecas)
     - [Estações](#estacoes)
-        - [Estação 10](#)
-        - [Estação 20](#)
-        - [Estação 30](#) 
-        - [Estação 40](#)
-        - [Estação 50](#)
+        - [Estação 10](#est-estacao-10)
+        - [Estação 20](#est-estacao-20)
+        - [Estação 30](#est-estacao-30)
+        - [Estação 40](#est-estacao-40)
+        - [Estação 50](#est-estacao-50)
     - [Modo de Funcionamento](#modo-de-funcionamento)
     - [Comunicações](#comunicacoes)
-        - [Profinet](#profinet)
-            - [Zonas de Comunicação Profinet](#zonas-de-comunicacao-profinet)
         - [Modbus](#modbus)
-            - [Zonas de Comunicação Modbus](#zonas-de-comunicacao-modbus)
+            - [Zonas de Comunicação](#modbus-zonas-de-comunicacao)
+        - [Profinet](#profinet)
+            - [Zonas de Comunicação](#profinet-zonas-de-comunicacao)
 - [Trabalho Realizado](#trabalho-realizado)
     - [Classificação](#classificacao)
-        - [Estação 10](#)
+        - [Estação 10](#class-est10)
             - [Entradas e Saidas (PLC)](#est-10-entradas-e-saidas-plc)
-            - [Memórias](#)
-            - [Comunicações](#)
-        - [Estação 20](#)
-            - [Entradas e Saidas (PLC)](#est-10-entradas-e-saidas-plc)
-            - [Memórias](#)
-            - [Comunicações](#)
-        - [Estação 30](#)
-            - [Entradas e Saidas (PLC)](#est-10-entradas-e-saidas-plc)
-            - [Memórias](#)
-            - [Comunicações](#)
-        - [Estação 40](#)
-            - [Entradas e Saidas (PLC)](#est-10-entradas-e-saidas-plc)
-            - [Memórias](#)
-            - [Comunicações](#)
-        - [Estação 50](#)
-            - [Entradas e Saidas (PLC)](#est-10-entradas-e-saidas-plc)
-            - [Memórias](#)
-            - [Comunicações](#)   
+            - [Memórias](#est-10-memorias)
+            - [Comunicações](#est-10-comunicacoes)
+        - [Estação 20](#class-est20)
+            - [Entradas e Saidas (PLC)](#est-20-entradas-e-saidas-plc)
+            - [Memórias](#est-20-memorias)
+            - [Comunicações](#est-20-comunicacoes)
+        - [Estação 30](#class-est30)
+            - [Entradas e Saidas (PLC)](#est-30-entradas-e-saidas-plc)
+            - [Memórias](#est-30-memorias)
+            - [Comunicações](#est-30-comunicacoes)
+        - [Estação 40](#class-est40)
+            - [Entradas e Saidas (PLC)](#est-40-entradas-e-saidas-plc)
+            - [Memórias](#est-40-memorias)
+            - [Comunicações](#est-40-comunicacoes)
+        - [Estação 50](#class-est50)
+            - [Entradas e Saidas (PLC)](#est-50-entradas-e-saidas-plc)
+            - [Memórias](#est-50-memorias)
+            - [Comunicações](#est-50-comunicacoes)  
     - [Software](#software)
         - [Grafcets](#grafcets)
-            - [Estação 10](#)
-            - [Estação 20](#)
-            - [Estação 30](#) 
-            - [Estação 40](#)
-            - [Estação 50](#)
+            - [Estação 10](#graf-estacao-10)
+            - [Estação 20](#graf-estacao-20)
+            - [Estação 30](#graf-estacao-30) 
+            - [Estação 40](#graf-estacao-40)
+            - [Estação 50](#graf-estacao-50)
         - [Gemma](#gemma)
             - [Esquema](#esquema)
             - [Guia de Iluminação](#guia-de-iluminacao)
             - [Modos de Marcha](#modos-de-marcha)   
-            - [Grafcet’s - Funcionamento Gemma](#grafcet-s-funcionamento-gemma)
+            - [Grafcet’s - Funcionamento Gemma](#grafcets-funcionamento-gemma)
                 - [Gemma Master](#gemma-master)
                 - [Gemma Estações](#gemma-estacoes)
-            - [Grafcet’s - Iluminação Gemma](#grafcet-s-iluminacao-gemma)
+            - [Grafcet’s - Iluminação Gemma](#grafcets-iluminacao-gemma)
                 - [Gemma Master](#gemma-master)
                 - [Gemma Estações](#gemma-estacoes)        
         - [Programação](#programacao)
-            - [Estação 10](#)
-            - [Estação 50](#)
-            - [Inicialização](#)        
-            - [Modos de Funcionamento](#)
+            - [Estação 10](#prog-estacao-10)
+            - [Estação 50](#prog-estacao-50)
+            - [Inicialização](#inicializacao)        
+            - [Modos de Funcionamento](#prog-modo-de-funcionamento)
             - [Modos de Marcha](#modos-de-marcha)
             - [Botões](#botoes)
         - [HMI](#hmi)
-            - [Classificação](#)
+            - [Classificação](#hmi-classificacao)
             - [Ecrãs](#ecras)
         - [Tesla Scada](#tesla-scada)
 - [Anexos](#anexos)
@@ -105,6 +103,7 @@ Os **x** a negrito indicados as combinações pretendidas, quando essas combina�
 
 ### Estações
 #### Estação 10
+<a id="est-estacao-10"></a>
 
 A Estação 10, **estação de transporte da peça**, desde a sua fase inicial até à sua finalização. A Estação 10 é constituída por 7 sensores e 6 cilindros, dos quais resultam: Sensor de Garra em baixo, Sensor de Garra em cima, Sensor de Garra de rotação à esquerda, Sensor de Garra de rotação à direita, Sensor de Garra avançada, Sensor de Garra recuada, Sensor de Garra fechada; Cilindro de Garra subida e descida, Cilindro de rotação à esquerda da Garra, Cilindro de rotação à direita da Garra, Cilindro de Garra avançada e recuada, Cilindro de fecho da Garra, Cilindro de abertura da Garra.
 
@@ -113,6 +112,7 @@ A Estação 10, **estação de transporte da peça**, desde a sua fase inicial a
 ![ST10](./lines/line32/2020_2021/images/station/st_10.jpg)
 
 #### Estação 20
+<a id="est-estacao-20"></a>
 
 A Estação 20, **estação de alimentação do corpo da peça**, o corpo da peça, é colocado no funil para ser processado. A Estação 20 é constituída por 8 sensores e 2 cilindros, dos quais resultam: Sensor de Peça à Frente, Sensor Cilindro1 Avançado, Sensor Cilindro1 Recuado, Sensor Cilindro2 Avançado, Sensor Cilindro2 Recuado, Sensor no Funil (Cima), Sensor no Funil (Baixo), Sensor de Peça Metálica; Cilindro 1, Cilindro 2.
 
@@ -121,6 +121,7 @@ A Estação 20, **estação de alimentação do corpo da peça**, o corpo da pe�
 ![ST20](./lines/line32/2020_2021/images/station/st_20.jpg)
 
 #### Estação 30
+<a id="est-estacao-30"></a>
 
 A Estação 30, **estação de aplicação**, é aplicada uma *cola* para fixar o miolo ao corpo da peça. A Estação 30 é constituída por 7 sensores e 6 cilindros, dos quais resultam: Sensor de peça na Pinça, Sensor de Pinça aberta e fechada, Sensor de Pinça avançada, Sensor de Pinça recuada, Sensor de Prensa subida, Sensor de Prensa descida; Cilindro de fecho da Pinça, Cilindro de Pinça avançada e recuada, Cilindro da Prensa subida e descida.
 
@@ -129,6 +130,7 @@ A Estação 30, **estação de aplicação**, é aplicada uma *cola* para fixar 
 ![ST30](./lines/line32/2020_2021/images/station/st_30.jpg)
 
 #### Estação 40
+<a id="est-estacao-40"></a>
 
 A Estação 40, **estação de alimentação do miolo da peça**, o miolo da peça, é colocado na funil para ser processado. A Estação 40 é constituída por 16 sensores e 6 cilindros, dos quais resultam: Sensor Cilindro1 Avançado, Sensor Cilindro1 Recuado, Sensor Cilindro2 Avançado, Sensor Cilindro2 Recuado, Sensor Prato de rotação à esquerda, Sensor Prato de rotação à direita, Sensor copo em cima, Sensor copo em baixo, Sensor do Prato à esquerda, Sensor do Prato à direita, Sensor de Garra avançada, Sensor de Garra recuada, Sensor de Garra subida, Sensor de Garra descida, Sensor de Garra fechada, Sensor de Peça à frente; Cilindro 1, Cilindro 2, Cilindro Prato, Cilindro da Garra avançada e recuada, Cilindro da Garra subida e descida, Cilindro da Garra aberta e fechada.
 
@@ -137,6 +139,7 @@ A Estação 40, **estação de alimentação do miolo da peça**, o miolo da pe�
 ![ST40](./lines/line32/2020_2021/images/station/st_40.jpg)
 
 #### Estação 50
+<a id="est-estacao-50"></a>
 
 A Estação 50, **estação de seleção**, responsável por ordenar as peças no respetivo armazém.  Estação 40 é constituída por 6 sensores e 3 cilindros, dos quais resultam:
 Sensor de Peça no Tapete, Sensor de Peça Metálica, Sensor de Peça Branca/Metálica, Sensor Cilindro1 Avançado, Sensor Cilindro2 Avançado, Sensor Cilindro3 Avançado; Cilindro 1, Cilindro 2, Cilindro 3.
@@ -175,6 +178,7 @@ O Modbus é constituído por 4 zonas de memorias, como mostra a tabela abaixo:
 Este protocolo de comunicação é usado pelo software Tesla Scada, permitindo assim que ordens para a Line ou para as Estações sejam dadas remotamente.
 
 #### Zonas de Comunicação
+<a id="modbus-zonas-de-comunicacao"></a>
 
 | Label              | Endereço | Comentário                                              |
 |:------------------:|:--------:|:-------------------------------------------------------:|
@@ -203,6 +207,7 @@ Profinet é um protocolo de comunicação baseado em **Ethernet**, este protocol
 Em todos os PLC's foi definida uma Área de Transferência de Bytes, para que estas comunicações ocorram de forma segura e eficaz, como podemos observar na tabela abaixo.
 
 #### Zonas de Comunicação
+<a id="profinet-zonas-de-comunicacao"></a>
 
 | PLC   | Address in I/O Controller  |   | Address in I-Device      |
 |:-----:|:--------------------------:|:-:|:------------------------:|
@@ -224,8 +229,11 @@ Por exemplo: a ST20 envia uma informação para o PLC Master, usando uma saída.
 
 A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do PLC**, **Memórias** e **Comunicações**.
 
-#### Estação 10 
+#### Estação 10
+<a id="class-est10"></a>
+
 ##### Entradas e Saídas (PLC)
+<a id="est-10-entradas-e-saidas-plc"></a>
 
 |                             | Entradas |                                                                                    |       
 |:---------------------------:|:--------:|:----------------------------------------------------------------------------------:|
@@ -289,6 +297,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | 321920HL13 | %Q8.7    | Painel Luz Vermelha                 |
 
 ##### Memórias
+<a id="est-10-memorias"></a>
 
 | Label                        | Endereço | Comentário                                                                                                                              |
 |:----------------------------:|:--------:|:---------------------------------------------------------------------------------------------------------------------------------------:|
@@ -408,6 +417,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HMI_MC_MoveJog_Velocity      | %MD320   | Em Modo Manual, no Display Numérico é possível fazer a escolha da velocidade (Máx: 400). Esse valor é guardado nesta memória            |
 
 ##### Comunicações
+<a id="est-10-comunicacoes"></a>
 
 |             | Entradas |                                                                             |
 |:-----------:|:--------:|:---------------------------------------------------------------------------:|
@@ -566,7 +576,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | ST10_ST50_4             | %QB119   | Byte de Comunicação, a ST10 recebe informação da ST50                             |
 
 #### Estação 20
-##### Entradas e Saídas (PLC)
+<a id="class-est20"></a>
 
 |                  | Entradas |                                                                                    |          
 |:----------------:|:--------:|:----------------------------------------------------------------------------------:|
@@ -600,6 +610,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 |            |          |                     |
 
 ##### Memórias
+<a id="est-20-memorias"></a>
 
 | Label                       | Endereço | Comentário                                                                                                     |
 |:---------------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
@@ -639,6 +650,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HL13_Cond                   | %M15.2   | Memória do estado da Iluminação HL13                                                                           |
 	
 ##### Comunicações
+<a id="est-20-comunicacoes"></a>
 
 |                    | Entradas |                                                                      |
 |:------------------:|:--------:|:--------------------------------------------------------------------:|
@@ -682,7 +694,10 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | ST10_ST20_4 | %QB107   | Byte de Comunicação, a ST20 envia informação para a ST10 (Master) |
 
 #### Estação 30
+<a id="class-est30"></a>
+
 ##### Entradas e Saídas (PLC)
+<a id="est-30-entradas-e-saidas-plc"></a>
 
 |                  | Entradas |                                                                                    |
 |:----------------:|:--------:|:----------------------------------------------------------------------------------:|
@@ -714,6 +729,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | 323920HL13 | %Q1.1    | Painel Luz Vermelha                |
 
 ##### Memórias
+<a id="est-30-memorias"></a>
 
 | Label                       | Endereço | Comentário                                                                                                     |
 |:---------------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
@@ -754,6 +770,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HL13_Cond                   | %M15.2   | Memória do estado da Iluminação HL13                                                                           |
 
 ##### Comunicações
+<a id="est-30-comunicacoes"></a>
 
 |                    | Entradas |                                                                      |
 |:------------------:|:--------:|:--------------------------------------------------------------------:|
@@ -797,7 +814,10 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | ST10_ST30_4 | %QB111   | Byte de Comunicação, a ST30 envia informação para a ST10 (Master) |
 
 #### Estação 40
+<a id="class-est40"></a>
+
 ##### Entradas e Saídas (PLC)
+<a id="est-40-entradas-e-saidas-plc"></a>
 
 |                  | Entradas |                                                                                    |
 |:----------------:|:--------:|:----------------------------------------------------------------------------------:|
@@ -844,6 +864,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | 324920HL13 | %Q8.7    | Luz do Painel (Vermelha)           |
 
 ##### Memórias
+<a id="est-40-memorias"></a>
 
 | Label                       | Endereço | Comentário                                                                                                     |
 |:---------------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
@@ -894,6 +915,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HL11_Cond                   | %M17.1   | Memória do estado da Iluminação HL12 (Gemma)                                                                   |
 
 ##### Comunicações
+<a id="est-40-comunicacoes"></a>
 
 |                    | Entradas |                                                                                   |
 |:------------------:|:--------:|:---------------------------------------------------------------------------------:|
@@ -945,7 +967,10 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | ST10_ST40_4 | %QB115   | Byte de Comunicação, a ST40 envia informação para a ST10 (Master) |
 
 #### Estação 50
+<a id="class-est50"></a>
+
 ##### Entradas e Saídas (PLC)
+<a id="est-50-entradas-e-saidas-plc"></a>
 
 |                  | Entradas |                                                                                    |         
 |:----------------:|:--------:|:----------------------------------------------------------------------------------:|
@@ -985,6 +1010,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | 325920HL13 | %Q1.1    | Luz do Painel (Vermelha)     |
 
 ##### Memórias
+<a id="est-50-memorias"></a>
 
 | Label                       | Endereço | Comentário                                                                                                                     |
 |:---------------------------:|:--------:|:------------------------------------------------------------------------------------------------------------------------------:|
@@ -1038,6 +1064,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HMI_Velocidade_Tapete       | %MD300   | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 30000). Esse valor é guardado nesta memória |
 
 ##### Comunicações
+<a id="est-50-comunicacoes"></a>
 
 |                    | Entradas |                                                                      |
 |:------------------:|:--------:|:--------------------------------------------------------------------:|
@@ -1082,23 +1109,28 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 
 ### Software
 #### Grafcets
-##### Estação 10 
+##### Estação 10
+<a id="graf-estacao-10"></a> 
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST10.svg)
 
 ##### Estação 20
+<a id="graf-estacao-20"></a> 
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST20.svg)
 
 ##### Estação 30 
+<a id="graf-estacao-30"></a> 
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST30.svg)
 
 ##### Estação 40 
+<a id="graf-estacao-40"></a> 
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST40.svg)
 
 ##### Estação 50 
+<a id="graf-estacao-50"></a> 
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST50.svg)
 
@@ -1312,8 +1344,10 @@ O Estado de cada uma das lâmpada para uma deternidada condição nos Grafcets d
 A programação das Line 32 foi feita usando o programa TIA Portal. A Programação pode ser encontrada na integra na parte dos anexos. Desta forma, aqui, serão apenas abordados o blocos mais importantes e fundamentais para o funcionamento da Line32.
 
 ##### Estação 10
+<a id="prog-estacao-10"></a>
 
-Como já foi dito anteriormente a estação 10 possui um robô. Para a realização dos seus movimentos são necessários alguns blocos, como: **MC_Power**, **MC_Home**, **MC_Reset**, **MC_Halt**, **MC_MoveAbsolute**-
+
+Como já foi dito anteriormente a estação 10 possui um robô. Para a realização dos seus movimentos são necessários alguns blocos, como: **MC_Power**, **MC_Home**, **MC_Reset**, **MC_Halt**, **MC_MoveAbsolute**.
 
 **MC_Power** – é uma função que deve ser chamada e ligada antes de qualquer instrução de movimento, sem ela não será possível comando o servo.
 
@@ -1363,7 +1397,8 @@ Para não sobrecarregar o código com 4 funções **MC_MoveAbsolute** foi criado
 
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/6.png)
 
-##### Estação 50 
+##### Estação 50
+<a id="prog-estacao-50"></a> 
 
 Como já foi dito anteriormente a estação 50 possui um tapete para transporte das peças processadas. Para o controlo da velocidade do tapete é usada uma função **Move** (como o próprio nome indica, mover valores de entrada de forma a serem aplicados numa saída) na entrada é colocado o valor analógico da velocidade; na saída é saída do Inversor de Frequência. Este valor analógico é enviado para o Inversor de Frequência e convertido em tensão.
 
@@ -1373,16 +1408,103 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_50/1.PNG)
 
-##### Inicialização   
+##### Inicialização
+
+A Inicialização é um processo bastante importante para o bom funcionamento do automatismo, através da inicialização, conseguimos garantir que todos os Bits se encontram a 0 ou que o primeiro bit de um byte se contra a 1, como acontece para o Grafcets. 
+
+A Inicialização na Line 32 pode ser feita de duas maneiras: 
+
+- **No inicio do processo, através de uma 0B100**. Assim que o PLC entra em Modo Run a OB100 é executada, quando concluido este processo, a 0B100 nunca mais volta a ser executada. Para isso foi cridada uma *Function (FC)* (Onde está incluido todo o código para a inicialização) por sua vez esta *Function (FC)* é *chamada* para a OB100.
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/ob100.png)
+
+- **Manualmente**, em algumas situação é necessário inicializar a Line ou alguma estação, para isso foi criado mecanismo que permite isso sem recorrer ao Stop/Run do PLC. A Inicialização, pode ser feita de 3 maneiras: **por ordem do Master**, assim que está ordem for dada é enviada para todas as estações, desta forma todas as estações são inicializadas; **ordem remota**, assim que está ordem for dada é enviada para todas as estações, desta forma todas as estações são inicializadas. A ordem remota também pode ser dada individualmente para cada estação, permitindo assim que só a estação em específico seja inicializada; **localmente (através da HMI)**, assim que está ordem for dada, a estação em específico é inicializada; 
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_manual_st10_1.PNG)
+
+*Ordem de Inicialização para todos as Estações, por parte do Master ou Ordem Remota*
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_manual_st10_2.PNG)
+
+*Inicialização da ST10, por Ordem Local, Ordem do Master ou Ordem Remota*
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_1.PNG)
+
+*Codigo de Inicialização da ST10*
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_2.PNG)
+
+*Codigo de Inicialização da ST10*
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_3.PNG)
+
+*Codigo de Inicialização da ST10*
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_4.PNG)
+
+*Codigo de Inicialização da ST10*
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_5.PNG)
+
+*Codigo de Inicialização da ST10*
+
+        NOTA: A Inicialização das outras estações segue o mesmo princípio.
+
 ##### Modo de Funcionamento
+<a id="prog-modo-de-funcionamento"></a>
+
+Como já foi explicado anteriormente, a Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remoto**. **No Modo de Funcionamento Local**. Quando um destes Modos de Funcionamento é selecionado, na HMI, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Quando selecionado o Modo de Funcionamento essa informação é enviada para todas as Estações, como demonstra a imagem abaixo.
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_funcionamento/modo_funcionamento.PNG)
+
 ##### Modo de Marcha
+
+Como já foi explicado anteriormente, a Line 32 é composta por 3 modos de marcha: **Automático, Ciclo, Manual.** . Quando um destes Modos de Funcionamento é selecionado, na HMI pela Lina, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Quando selecionado o Modo de Marcha essa informação é enviada para todas as Estações, como demonstra a imagem abaixo.
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_marcha/modo_marcha.PNG)
+
 ##### Botões
+
+Como o Modo de funcionamento selecionado os comandos para a estações vão depender desse modo, por exemplo, se estivermos a funcionar em Modo HMI, todos os comandos dados para as estações têm que ser dados pela a HMI e não remotamente ou localmente. Para prevenir qualquer acidente ou falha no sistema, quando um Modo de Funcionamento, os comandos dos outros dois modos, ficam desativados, como demonstra a imagem abaixo.
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/master/o_start_master.PNG)
+
+*Ordem de Start - Master*
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/master/o_stop_master.PNG)
+
+*Ordem de Stop - Master*
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/master/o_emerg_master.PNG)
+
+*Ordem de Emergência - Master*
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/stations/o_start_sts.PNG)
+
+*Ordem de Start - Estações*
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/stations/o_stop_sts.PNG)
+
+*Ordem de Stop - Estações*
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/stations/o_emerg_sts.PNG)
+
+*Ordem de Emergência - Estações*
 
 #### HMI
 
-sou
+HMI significa **H**uman **M**achine **I**nterface (Interface Homem-Máquina), consiste num painel que permite o operador comunicar com a máquina. Antes de começar a criar os *Screens*, foi necessário definir as **conexões** na HMI, permitindo que a HMI comunique o todos os PLC da Line.
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/conexoes.png)
+
+Assim que as **conexões** foram definidas, comecei a criar as **tags** que vão estar associadas a Botões, Iluminacação, Displays, entre outros, desta forma, é possivel controlar e supervisionar a Line cada uma das estações. A Tags da HMI, pode ser consultadas na [Classificação](#classificacao)
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/tags.png)
+
+Com as **conexões** e as **tags** defenidas já foi possivel começar a criação dos ecrãs. 
 
 ##### Classificação
+<a id="hmi-classificacao"></a>
 
 | Label                        | Conexão          | Nome PLC | Label PLC                    | Comentário                                                                                         |  
 |:----------------------------:|:----------------:|:--------:|:----------------------------:|:--------------------------------------------------------------------------------------------------:|
@@ -1605,26 +1727,154 @@ sou
 
 ##### Ecrãs
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/line32.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_funcionamento.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st10.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st10_1.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st20.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st30.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st40.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st40_1.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50_1.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/pecas.png)
+A HMI é constituida por 19 ecrãs dos quais resultam:
+
+- **Root Screen**, ecrã principal da HMI. Neste ecrã podemos ser encaminhados para outros 3 ecrãs: **Line32**, **Peças** e **Modo de Funcionamento**
+
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/root_screen.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st10.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st20.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st30.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st40.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st50.png)
-![](./lines/line32/2020_2021/software/tia_portal/hmi/stations.png)
+
+*Imagem do Root Screen*
+
+- **Modo de Funcionamento**, neste ecrã podemos escolher o modo de operação da Line32 e das estações: **Modo Local**, **Modo HMI** e **Modo Scada**
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_funcionamento.png)
+
+*Imagem do Ecrã - Modo de Funcionamento*
+
+- **Peças**, neste ecrã podemos controlar o **número de peças produzidas**, **saber que tipo de peças foram produzidas** e as **peças com defeito**. Caso se pretenda começar uma nova contagem é possivel dar *reset* aos contadores, através do botão **Reset dos Contadores**. Assim que concluida a consulta do controlo das peças podemos voltar a o ecrã da Line ou para as estações (Menu com todas as Estações).
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/pecas.png)
+
+*Imagem do Ecrã - Peças*
+
+- **Root Screen**, ecrã principal da Line. Neste ecrã podemos: 
+
+    - Fazer o Start/Stop da Line; 
+    - Entrar em emergência;
+    - Saber o estado da Line;
+    - Escolher o modo de marcha;
+    - Entrar em modo manual;
+    - Dar a ordem de inicialização manual para todas as estações;
+    - Trocar para 5 ecrãs: Stations, Peças, Modo de Funcionamento, Testes e Home (Root Screen).
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/line32.png)
+
+*Imagem do Ecrã - Line32*
+
+- **Stations - Modo Manual**, após da seleção do **Modo Manual** no ecrã da Line 32, este ecrã irá aparecer. Neste ecrã é possivel fazer a escolha da estação a operar em modo manual, antes da escolha da estação é necessário fazer a ativação do modo manual, através do botão a baixo. Assim que concluido o funcionamento em modo manual, podemos voltar a o ecrã da Line.
+
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/stations_modo_manual.png)
+
+*Imagem do Ecrã - Stations - Modo Manual*
+
+- **ST10 - Modo Manual**, neste ecrã podemos controlar todos os cilindros, consultar o estado de todos os sensores e carregando no botão **Robô** podemos controlar o Robô.
+
+    - ON/OFF do MC_Power;
+    - Levar o Robô para a posição de Home;
+    - ON/OFF do MC_Reset;
+    - Paragem do Robô;
+    - Mover livremente o Robô para a esquerda ou para a direita (Necessário aplicar velocidade (Máx: 400));
+    - Mover o Robô para uma posição absoluta (Necessário aplicar velocidade (Máx: 400) e escolher uma posição (Máx: 1051.727));
+    - Mover o Robô para uma posição relativa (Necessário aplicar velocidade (Máx: 400) e escolher uma posição, pode ser uma posição negativa ou positiva dependendo do sentido pretendido);
+    - Através do Botões: **P_ST20**, **P_ST30**, **P_ST40**, **P_ST50** o Robô vai se movimentar para a posição absoluta da ST20 ou ST30 ou ST40 ou ST50, dependendo da escolha; 
+
+Assim que concluidos os testes, podemos voltar ao ecrã da Line, Stations - Modo Manual (Menu com todas as Estações em Modo Manual) e ST10 (No Ecrã do Robô).
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st10.png)
+
+*Imagem do Ecrã - ST10 - Modo Manual*
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st10_1.png)
+
+*Imagem do Ecrã - ST10 - Modo Manual (Robô)*
+
+- **ST20 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. Assim que concluidos os testes, podemos voltar ao ecrã da Line ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st20.png)
+
+*Imagem do Ecrã - ST20 - Modo Manual*
+
+- **ST30 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. Assim que concluidos os testes, podemos voltar ao ecrã da Line ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st30.png)
+
+*Imagem do Ecrã - ST30 - Modo Manual*
+
+- **ST40 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. A Estação 40 como possui muitos cilindros e sensores, existem dois ecrãs: **Subestação 41** e **Subestação 42**. Assim que concluidos os testes, podemos voltar ao ecrã da Line ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st40.png)
+
+*Imagem do Ecrã - ST40 - Modo Manual (Subestação 41)*
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st40_1.png)
+
+*Imagem do Ecrã - ST40 - Modo Manual (Subestação 42)*
+
+- **ST10 - Modo Manual**, neste ecrã podemos controlar todos os cilindros, consultar o estado de todos os sensores e carregando no botão **Tapete** podemos controlar o Tapete.
+
+    - Start/Stop do Tapete;
+    - Aplicar velocidade no Tapete (Máx: 30000);
+    - Saber o valor do Contador, sendo possivel fazer o Reset do mesmo.
+
+Assim que concluidos os testes, podemos voltar ao ecrã da Line, Stations - Modo Manual (Menu com todas as Estações em Modo Manual) e ST10 (No Ecrã do Robô).
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50.png)
+
+*Imagem do Ecrã - ST50 - Modo Manual*
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50_1.png)
+
+*Imagem do Ecrã - ST50 - Modo Manual (Tapete)*
+
+- **Stations**, neste ecrã é possivel fazer a escolha da estação a operar. 
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/stations.png)
+
+*Imagem do Ecrã - Stations*
+
+- **ST10**, neste ecrã podemos controlar a estação 10. Neste ecrã podemos: 
+
+    - Fazer o Start/Stop da estação; 
+    - Entrar em emergência;
+    - Saber o estado da estação;
+    - Saber qual modo de marcha está selecionado;
+    - Dar ordem de Home do Carro;
+    - Dar a ordem de inicialização manual da estação;
+    - Trocar para 5 ecrãs: Stations, Peças, Lin32 e ST20.
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st10.png)
+
+*Imagem do Ecrã - ST10 - Modo Manual*
+
+- **ST20**, **ST30**, **ST40**, **ST50**, nestes ecrãs podemos controlar a estação 20, 30, 40, 50. Neste ecrã podemos: 
+
+    - Fazer o Start/Stop da estação; 
+    - Entrar em emergência;
+    - Saber o estado da estação;
+    - Saber qual modo de marcha está selecionado;
+    - Dar a ordem de inicialização manual da estação;
+    - Trocar para 5 ecrãs: Stations, Peças, Lin32 e ST20 ou ST30 ou ST40 ou ST50.
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st10.png)
+
+*Imagem do Ecrã - ST20 - Modo Manual*
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st20.png)
+
+*Imagem do Ecrã - ST30 - Modo Manual*
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st30.png)
+
+*Imagem do Ecrã - ST40 - Modo Manual*
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st40.png)
+
+*Imagem do Ecrã - ST50 - Modo Manual*
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st50.png)
 
 #### Tesla Scada
 
 ## Anexos
+
+![](lines/line32/2020_2021/images/anexos/qr.png)

@@ -7,4 +7,5 @@ O presente documento tem como objetivo principal descrever todo o trabalho reali
 .. toctree::
    :maxdepth: 8
    
+   o_lines
    line32
