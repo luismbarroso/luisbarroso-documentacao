@@ -16,7 +16,7 @@ Atualização de Manuais, na Lu ban Workshop Portugal, ao longo dos tempos, fora
 - Link para o Manual do Enconder, atualizado: [Manual do Enconder](https://documentacao-luban-portugal.readthedocs.io/en/latest/equipments/manuais/manual_enconder.html)
 
 ## Criação de Manuais
-Atualização de Manuais, com o desenvolver desta nova plataforma de criação e documentação, encontrei a necessidade da criação e manuais, tornando assim esta tarefa mais simples e fácil para os futuros estagiários da Lu ban Workshop Portugal.
+Com o desenvolver desta nova plataforma de criação e documentação, encontrei a necessidade da criação e manuais, tornando assim esta tarefa mais simples e fácil para os futuros estagiários da Lu ban Workshop Portugal.
 
 - Link para o Manual - Primeiros Passos: [Primeiros Passos](https://documentacao-luban-portugal.readthedocs.io/en/latest/howtodo/criacao_de_documentacao/primeiros_passos.html)
 - Link para o Manual - Guia Básico - Markdown: [Manual - Guia Básico - Markdown](https://documentacao-luban-portugal.readthedocs.io/en/latest/howtodocriacao_de_documentacao/guia_basico.html) 
