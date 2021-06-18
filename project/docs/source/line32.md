@@ -614,7 +614,6 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | 322920HL11 | %Q0.7    | Painel Luz Laranja  |
 | 322920HL12 | %Q1.0    | Painel Luz Verde    |
 | 322920HL13 | %Q1.1    | Painel Luz Vermelha |
-|            |          |                     |
 
 ##### Memórias
 <a id="est-20-memorias"></a>
