@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-*Last Upgrade: 16/06/2021, 15h51*
+*Last Upgrade: 18/06/2021, 13h57*
 
 - [Introdução](#introducao)
 - [Processo](#processo)
@@ -20,6 +20,7 @@
         - [Profinet](#profinet)
             - [Zonas de Comunicação](#profinet-zonas-de-comunicacao)
 - [Trabalho Realizado](#trabalho-realizado)
+    - [Modelo de Classificação](#modelo-de-classificacao)
     - [Classificação](#classificacao)
         - [Estação 10](#class-est10)
             - [Entradas e Saidas (PLC)](#est-10-entradas-e-saidas-plc)
@@ -225,6 +226,12 @@ Em todos os PLC's foi definida uma Área de Transferência de Bytes, para que es
 Por exemplo: a ST20 envia uma informação para o PLC Master, usando uma saída. O PLC Master recebe esta informação, em Input. O Contrario também é valido, pou seja, o PLC Master envia uma informação para a ST20, usando uma saída. A ST20 recebe esta informação, em Input.
 
 ## Trabalho Realizado
+## Modelo de Classificação
+
+![](./lines/line32/2020_2021/software/classificacao/1.svg)
+
+
+
 ### Classificação
 
 A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do PLC**, **Memórias** e **Comunicações**.
