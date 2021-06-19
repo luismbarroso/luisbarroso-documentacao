@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-*Last Upgrade: 18/06/2021, 13h57*
+*Last Upgrade: 19/06/2021, 12h19*
 
 - [Introdução](#introducao)
 - [Processo](#processo)
@@ -74,13 +74,13 @@
 
 ## Introdução
 
-A Line 32 é uma das Lines do Grupo 30. Divida em 5 estações das quais resultam: **"Transporte (Estação 10)"**, **"Aplicação (Estação 30)"**, **"Alimentação (Corpo (Estação 20) e Miolo (Estação 40))"** e **"Seleção (Estação 50)"**.
+A Linha 32 é uma das Linhas do Grupo 30. Divida em 5 estações das quais resultam: **"Transporte (Estação 10)"**, **"Aplicação (Estação 30)"**, **"Alimentação (Corpo (Estação 20) e Miolo (Estação 40))"** e **"Seleção (Estação 50)"**.
 
 ![LIN32_1](./lines/line32/2020_2021/images/line/line32_1.jpg)
 
 ## Processo
 
-A Line 32, do Grupo 30, consiste num conjunto de estações, **cada uma com Equipamentos/Componentes independentes**. A Line 32, assim com cada uma da estações, funcionam usando **sistemas pneumáticos** e **sistemas eletromecânicos**.
+A Linha 32, do Grupo 30, consiste num conjunto de estações, **cada uma com Equipamentos/Componentes independentes**. A Linha 32, assim com cada uma da estações, funcionam usando **sistemas pneumáticos** e **sistemas eletromecânicos**.
 
 Os **sistemas pneumáticos** estão presentes em todas as estações. Responsáveis pelos movimentos dos Cilindros, ou seja, avanço e recuo. Já os **sistemas eletromecânicos** só estão presentes nas estações 10 e 50. Na estação 10, são responsáveis pelo movimento do **robô**. Este robô é utilizado para o transporte das peças pelas diversas estações. Acoplado ao robô, temos uma **garra**, sendo assim possível realizar as tarefas pretendidas, com por exemplo, o avança e recuo da garra. Para se deslocar pelas diversas estações, o robô, está conectado a um **Servo Motor** (Simotics S-1FL6) e um **Inversor de Frequência** (Siemens V90); Na estação 50, são responsáveis pelo movimento do tapete. Para o movimento deste tapete é usado um **Motor Trifásico** que acoplado tem um **Enconder**, que, através da sua posição é possível fazer o encaminhamento das peças. Para a movimento do Motor é utilizado um **Inversor de Frequência** (Siemens G120C), que converte o sinal elétrico em sinal analógico sendo assim possível fazer o movimento do tapete e controlo da velocidade.
 
@@ -92,7 +92,7 @@ Para a comunicação entre as diversas estações é usado o protocolo de comuni
 
 ![P_1](./lines/line32/2020_2021/images/station/p_1.jpg)
 
-Peças, constituídas por Corpo (Parte Exterior) e por um Miolo (Parte Interior). Representa o objeto processado na Line32, quando os elementos são unificados representam o produto final. Podem ser classificadas de 9 maneiras, como nos mostra a tabela abaixo.
+Peças, constituídas por Corpo (Parte Exterior) e por um Miolo (Parte Interior). Representa o objeto processado na Linha 32, quando os elementos são unificados representam o produto final. Podem ser classificadas de 9 maneiras, como nos mostra a tabela abaixo.
 
 ||Metálico|Branco|Preto|
 -| ------ | ---- | --- |
@@ -153,13 +153,13 @@ Sensor de Peça no Tapete, Sensor de Peça Metálica, Sensor de Peça Branca/Met
 
 Assim que a Estação 20 for alimentada com o corpo da peça, essa informação é enviada para o PLC Master (Estação 10), assim que recebida, a peça é processada. Quando concluído o processamento, a peça, esta pronta para o robô a processar e avançar para a próxima estação. Quando o robô estiver na posição relativa à estação 30, a garra avança e pousa a peça na pinça e a peça é processada. Quando concluído o processamento, a peça, esta pronta para o robô a processar e avançar para a próxima estação. Quando o robô estiver na posição relativa à estação 40, a garra avança e pousa a peça *suporte*. Assim que o corpo da peça for recebido pela estação 40, a estação entra em processamento, ou seja, o miolo é colocado no corpo da peça. Quando concluído o processamento, a peça, esta pronta para o robô a processar e avançar para a próxima estação. Quando o robô estiver na posição relativa à estação 50, a garra avança e pousa a peça no tapete. O tapete entra em funcionamento, a peça é identificada, pelos sensores e encaminhada. Caso for uma peça pretendida (Metálico/Metálico; Branco/Branco; Preto/Preto) é encaminhada para o respetivo armazém, senão, a peça é rejeitada. Depois do robô, pousar a peça no tapete da estação 50, retorna para a sua posição de *home* e desta forma o ciclo foi concluído e pronto a realizar um novo ciclo. 
 
-A Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remoto**. **No Modo de Funcionamento Local**, os comandos para as estações são dados através da Botoneiras. Já os comandos para a line são dados pela HMI. **No Modo de Funcionamento HMI**, todos os comandos, tanto para as estações como para a line, são dados pela HMI. **No Modo de Funcionamento Remoto**, todos os comandos, tanto para as estações como para a line, são dados remotamente, usando o software Tesla Scada. Quando um destes Modos de Funcionamento é selecionado, na HMI, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Assim que um destes três modos de funcionamento for selecionados, todos os comandos, depende do modo selecionado. Por exemplo: se estivermos a funcionar em modo HMI, se forem dados comandos através da Botoneiras ou através do Tesla Scada, este comandos não funcionaram, pois o Modo HMI está selecionado. 
+A Linha 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remoto**. **No Modo de Funcionamento Local**, os comandos para as estações são dados através da Botoneiras. Já os comandos para a linha são dados pela HMI. **No Modo de Funcionamento HMI**, todos os comandos, tanto para as estações como para a linha, são dados pela HMI. **No Modo de Funcionamento Remoto**, todos os comandos, tanto para as estações como para a linha, são dados remotamente, usando o software Tesla Scada. Quando um destes Modos de Funcionamento é selecionado, na HMI, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Assim que um destes três modos de funcionamento for selecionados, todos os comandos, depende do modo selecionado. Por exemplo: se estivermos a funcionar em modo HMI, se forem dados comandos através da Botoneiras ou através do Tesla Scada, este comandos não funcionaram, pois o Modo HMI está selecionado. 
 
         Futuramente: Video!
 
 ### Comunicações
 
-Como comunicação, a Line 32, usa dois protocolos de comunicação: **Profinet**, permite a comunicação entre os vários PLC's; **Modbus**, permite ordens para a Line ou para as Estações sejam dadas remotamente.
+Como comunicação, a linha 32, usa dois protocolos de comunicação: **Profinet**, permite a comunicação entre os vários PLC's; **Modbus**, permite ordens para a linha ou para as Estações sejam dadas remotamente.
 
 ### Modbus
 
@@ -176,7 +176,7 @@ O Modbus é constituído por 4 zonas de memorias, como mostra a tabela abaixo:
 | Input register   | Read-only  | 16 bits    | 30001 - 39999       |
 | Holding register | Read-write | 16 bits    | 40001 - 49999       |
 
-Este protocolo de comunicação é usado pelo software Tesla Scada, permitindo assim que ordens para a Line ou para as Estações sejam dadas remotamente.
+Este protocolo de comunicação é usado pelo software Tesla Scada, permitindo assim que ordens para a linha ou para as Estações sejam dadas remotamente.
 
 #### Zonas de Comunicação
 <a id="modbus-zonas-de-comunicacao"></a>
@@ -203,7 +203,7 @@ Este protocolo de comunicação é usado pelo software Tesla Scada, permitindo a
 
 ### Profinet
 
-Profinet é um protocolo de comunicação baseado em **Ethernet**, este protocolo destina-se ao **controle de dispositivos de campo** como: Cilindros, Motores, Inversores, Válvulas, Sensores, entre outros, como acontece na Line32. O Profinet, assim como o ModBus, é um protocolo de comunicação de *Send/Receive* que utiliza um relacionamento **Master/Slave**. O 19PLC, o PLC da ST10, foi definido como o PLC Master, responsável por receber e enviar ordem de todas as estações, que foram definidas como Slaves. 
+Profinet é um protocolo de comunicação baseado em **Ethernet**, este protocolo destina-se ao **controle de dispositivos de campo** como: Cilindros, Motores, Inversores, Válvulas, Sensores, entre outros, como acontece na linha 32. O Profinet, assim como o ModBus, é um protocolo de comunicação de *Send/Receive* que utiliza um relacionamento **Master/Slave**. O 19PLC, o PLC da ST10, foi definido como o PLC Master, responsável por receber e enviar ordem de todas as estações, que foram definidas como Slaves. 
 
 Em todos os PLC's foi definida uma Área de Transferência de Bytes, para que estas comunicações ocorram de forma segura e eficaz, como podemos observar na tabela abaixo.
 
@@ -228,8 +228,10 @@ Por exemplo: a ST20 envia uma informação para o PLC Master, usando uma saída.
 ## Trabalho Realizado
 ## Modelo de Classificação
 
-![](./lines/line32/2020_2021/software/classificacao/1.svg)
-
+![](./lines/line32/2020_2021/software/classificacao/class_geral.svg)
+![](./lines/line32/2020_2021/software/classificacao/class_motor.svg)
+![](./lines/line32/2020_2021/software/classificacao/class_valvula.svg)
+![](./lines/line32/2020_2021/software/classificacao/class_sensor.svg)
 
 
 ### Classificação
@@ -1172,13 +1174,13 @@ Considerações:
 | -              | -              | Fixo     | Paragem de emergência           | D1           |                               |
 | -              | Fixo           | -        | Marcha de produção com ordem    | F1           |                               |
 | Fixo           | Piscar (500ms) | -        | Marcha de preparação            | F2           |                               |
-| -              | Piscar (500ms) | -        | Marcha de verificação com Ordem | F5           | Apenas na Sinalização da Line |
+| -              | Piscar (500ms) | -        | Marcha de verificação com Ordem | F5           | Apenas na Sinalização da linha |
 
 ##### Modos de Marcha
 
-A Line 32 pode operar em 3 modos diferentes: **Automático, Ciclo, Manual.** 
+A linha 32 pode operar em 3 modos diferentes: **Automático, Ciclo, Manual.** 
 
-No **Modo Automático** a Line está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start; No **Modo Ciclo** a Line está a funcionar de forma cíclica, ou seja, é necessária a **Ordem de Start** na etapa inicial do Grafcet de Funcionamento; No **Modo Manual** é possível fazer a ativação de qualquer cilindro ou lâmpada, consultar o estado de um sensor, comandar o robô, ativar/desativar o tapete e consultar o valor do enconder. Para evitar conflitos, o Grafcet de Funcionamento é *comentado* para evitar conflitos. Para fazer a escolha do Modo de Marcha é usada a HMI.
+No **Modo Automático** a linha está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start; No **Modo Ciclo** a linha está a funcionar de forma cíclica, ou seja, é necessária a **Ordem de Start** na etapa inicial do Grafcet de Funcionamento; No **Modo Manual** é possível fazer a ativação de qualquer cilindro ou lâmpada, consultar o estado de um sensor, comandar o robô, ativar/desativar o tapete e consultar o valor do enconder. Para evitar conflitos, o Grafcet de Funcionamento é *comentado* para evitar conflitos. Para fazer a escolha do Modo de Marcha é usada a HMI.
 
 ##### Grafcet’s - Funcionamento Gemma
 ###### Gemma Master
@@ -1191,17 +1193,17 @@ No **Modo Automático** a Line está a funcionar de forma automática, ou seja, 
 
 - **Etapa F2** - Marcha de preparação, nesta etapa, com a Ordem de Start executada, verificamos se as **Estações 20 e 40** contém peças para começar o processo e se o **Modo de Marcha, Automático e Ciclo** foi escolhido para todas as estações. 
 
-      Através da **HMI** é possível escolher o modo de funcionamento de cada estação, na Janela **Line 32**
+      Através da **HMI** é possível escolher o modo de funcionamento de cada estação, na Janela **linha 32**
 
 - **Etapa F1** - Marcha de produção com ordem, nesta etapa, o processo está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start.
 
 - **Etapa F5** - Marchas de verificação com ordem, nesta etapa, o processo está a funcionar de forma cíclica, ou seja, é necessária a Ordem de Start na Etapa Inicial do Grafcet de Funcionamento.
 
-- **Etapa A3** - Paragem solicitado, através da **Ordem de Stop** é possível proceder a paragem da Line e de todas as estações.
+- **Etapa A3** - Paragem solicitado, através da **Ordem de Stop** é possível proceder a paragem da linha e de todas as estações.
 
-- **Etapa A4** - Paragem finalizada, após paragem solicitada estar concluída (Na line e nas estações) e como o Modo de Marcha selecionado, voltamos à **Marcha de produção com ordem**, voltando assim o processo a ser executado no estado onde ficou parado.
+- **Etapa A4** - Paragem finalizada, após paragem solicitada estar concluída (Na linha e nas estações) e como o Modo de Marcha selecionado, voltamos à **Marcha de produção com ordem**, voltando assim o processo a ser executado no estado onde ficou parado.
 
-- **Etapa D1** - Paragem de emergência, através da **Ordem de Emergência** é possível proceder a paragem de emergência da line e das estações. Assim que a line e as estações saírem da situação de emergência, a **Etapas A6** é executada, ou seja, a *Function (FC)* **Init** é executada.
+- **Etapa D1** - Paragem de emergência, através da **Ordem de Emergência** é possível proceder a paragem de emergência da linha e das estações. Assim que a linha e as estações saírem da situação de emergência, a **Etapas A6** é executada, ou seja, a *Function (FC)* **Init** é executada.
 
 ###### Gemma Estações
 
@@ -1347,7 +1349,7 @@ O Estado de cada uma das lâmpada para uma deternidada condição nos Grafcets d
 
 #### Programação
 
-A programação das Line 32 foi feita usando o programa TIA Portal. A Programação pode ser encontrada na integra na parte dos anexos. Desta forma, aqui, serão apenas abordados o blocos mais importantes e fundamentais para o funcionamento da Line32.
+A programação das linha 32 foi feita usando o programa TIA Portal. A Programação pode ser encontrada na integra na parte dos anexos. Desta forma, aqui, serão apenas abordados o blocos mais importantes e fundamentais para o funcionamento da linha 32.
 
 ##### Estação 10
 <a id="prog-estacao-10"></a>
@@ -1418,7 +1420,7 @@ Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acopla
 
 A Inicialização é um processo bastante importante para o bom funcionamento do automatismo, através da inicialização, conseguimos garantir que todos os Bits se encontram a 0 ou que o primeiro bit de um byte se contra a 1, como acontece para o Grafcets. 
 
-A Inicialização na Line 32 pode ser feita de duas maneiras: 
+A Inicialização na linha 32 pode ser feita de duas maneiras: 
 
 - **No inicio do processo, através de uma 0B100**. Assim que o PLC entra em Modo Run a OB100 é executada, quando concluido este processo, a 0B100 nunca mais volta a ser executada. Para isso foi cridada uma *Function (FC)* (Onde está incluido todo o código para a inicialização) por sua vez esta *Function (FC)* é *chamada* para a OB100.
 
@@ -1459,13 +1461,13 @@ A Inicialização na Line 32 pode ser feita de duas maneiras:
 ##### Modo de Funcionamento
 <a id="prog-modo-de-funcionamento"></a>
 
-Como já foi explicado anteriormente, a Line 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remoto**. **No Modo de Funcionamento Local**. Quando um destes Modos de Funcionamento é selecionado, na HMI, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Quando selecionado o Modo de Funcionamento essa informação é enviada para todas as Estações, como demonstra a imagem abaixo.
+Como já foi explicado anteriormente, a linha 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remoto**. **No Modo de Funcionamento Local**. Quando um destes Modos de Funcionamento é selecionado, na HMI, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Quando selecionado o Modo de Funcionamento essa informação é enviada para todas as Estações, como demonstra a imagem abaixo.
 
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_funcionamento/modo_funcionamento.PNG)
 
 ##### Modo de Marcha
 
-Como já foi explicado anteriormente, a Line 32 é composta por 3 modos de marcha: **Automático, Ciclo, Manual.** . Quando um destes Modos de Funcionamento é selecionado, na HMI pela Lina, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Quando selecionado o Modo de Marcha essa informação é enviada para todas as Estações, como demonstra a imagem abaixo.
+Como já foi explicado anteriormente, a linha 32 é composta por 3 modos de marcha: **Automático, Ciclo, Manual.** . Quando um destes Modos de Funcionamento é selecionado, na HMI pela Lina, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Quando selecionado o Modo de Marcha essa informação é enviada para todas as Estações, como demonstra a imagem abaixo.
 
 ![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_marcha/modo_marcha.PNG)
 
@@ -1499,11 +1501,11 @@ Como o Modo de funcionamento selecionado os comandos para a estações vão depe
 
 #### HMI
 
-HMI significa **H**uman **M**achine **I**nterface (Interface Homem-Máquina), consiste num painel que permite o operador comunicar com a máquina. Antes de começar a criar os *Screens*, foi necessário definir as **conexões** na HMI, permitindo que a HMI comunique o todos os PLC da Line.
+HMI significa **H**uman **M**achine **I**nterface (Interface Homem-Máquina), consiste num painel que permite o operador comunicar com a máquina. Antes de começar a criar os *Screens*, foi necessário definir as **conexões** na HMI, permitindo que a HMI comunique o todos os PLC da linha.
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/conexoes.png)
 
-Assim que as **conexões** foram definidas, comecei a criar as **tags** que vão estar associadas a Botões, Iluminacação, Displays, entre outros, desta forma, é possivel controlar e supervisionar a Line cada uma das estações. A Tags da HMI, pode ser consultadas na [Classificação](#classificacao)
+Assim que as **conexões** foram definidas, comecei a criar as **tags** que vão estar associadas a Botões, Iluminacação, Displays, entre outros, desta forma, é possivel controlar e supervisionar a linha cada uma das estações. A Tags da HMI, pode ser consultadas na [Classificação](#classificacao)
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/tags.png)
 
@@ -1741,23 +1743,23 @@ A HMI é constituida por 19 ecrãs dos quais resultam:
 
 *Imagem do Root Screen*
 
-- **Modo de Funcionamento**, neste ecrã podemos escolher o modo de operação da Line32 e das estações: **Modo Local**, **Modo HMI** e **Modo Scada**
+- **Modo de Funcionamento**, neste ecrã podemos escolher o modo de operação da linha 32 e das estações: **Modo Local**, **Modo HMI** e **Modo Scada**
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_funcionamento.png)
 
 *Imagem do Ecrã - Modo de Funcionamento*
 
-- **Peças**, neste ecrã podemos controlar o **número de peças produzidas**, **saber que tipo de peças foram produzidas** e as **peças com defeito**. Caso se pretenda começar uma nova contagem é possivel dar *reset* aos contadores, através do botão **Reset dos Contadores**. Assim que concluida a consulta do controlo das peças podemos voltar a o ecrã da Line ou para as estações (Menu com todas as Estações).
+- **Peças**, neste ecrã podemos controlar o **número de peças produzidas**, **saber que tipo de peças foram produzidas** e as **peças com defeito**. Caso se pretenda começar uma nova contagem é possivel dar *reset* aos contadores, através do botão **Reset dos Contadores**. Assim que concluida a consulta do controlo das peças podemos voltar a o ecrã da Line32 ou para as estações (Menu com todas as Estações).
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/pecas.png)
 
 *Imagem do Ecrã - Peças*
 
-- **Root Screen**, ecrã principal da Line. Neste ecrã podemos: 
+- **Root Screen**, ecrã principal da linha 32. Neste ecrã podemos: 
 
-    - Fazer o Start/Stop da Line; 
+    - Fazer o Start/Stop da linha; 
     - Entrar em emergência;
-    - Saber o estado da Line;
+    - Saber o estado da linha;
     - Escolher o modo de marcha;
     - Entrar em modo manual;
     - Dar a ordem de inicialização manual para todas as estações;
@@ -1784,7 +1786,7 @@ A HMI é constituida por 19 ecrãs dos quais resultam:
     - Mover o Robô para uma posição relativa (Necessário aplicar velocidade (Máx: 400) e escolher uma posição, pode ser uma posição negativa ou positiva dependendo do sentido pretendido);
     - Através do Botões: **P_ST20**, **P_ST30**, **P_ST40**, **P_ST50** o Robô vai se movimentar para a posição absoluta da ST20 ou ST30 ou ST40 ou ST50, dependendo da escolha; 
 
-Assim que concluidos os testes, podemos voltar ao ecrã da Line, Stations - Modo Manual (Menu com todas as Estações em Modo Manual) e ST10 (No Ecrã do Robô).
+Assim que concluidos os testes, podemos voltar ao ecrã da Line32, Stations - Modo Manual (Menu com todas as Estações em Modo Manual) e ST10 (No Ecrã do Robô).
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st10.png)
 
@@ -1794,19 +1796,19 @@ Assim que concluidos os testes, podemos voltar ao ecrã da Line, Stations - Modo
 
 *Imagem do Ecrã - ST10 - Modo Manual (Robô)*
 
-- **ST20 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. Assim que concluidos os testes, podemos voltar ao ecrã da Line ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
+- **ST20 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. Assim que concluidos os testes, podemos voltar ao ecrã da Line32 ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st20.png)
 
 *Imagem do Ecrã - ST20 - Modo Manual*
 
-- **ST30 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. Assim que concluidos os testes, podemos voltar ao ecrã da Line ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
+- **ST30 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. Assim que concluidos os testes, podemos voltar ao ecrã da Line32 ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st30.png)
 
 *Imagem do Ecrã - ST30 - Modo Manual*
 
-- **ST40 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. A Estação 40 como possui muitos cilindros e sensores, existem dois ecrãs: **Subestação 41** e **Subestação 42**. Assim que concluidos os testes, podemos voltar ao ecrã da Line ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
+- **ST40 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. A Estação 40 como possui muitos cilindros e sensores, existem dois ecrãs: **Subestação 41** e **Subestação 42**. Assim que concluidos os testes, podemos voltar ao ecrã da Line32 ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st40.png)
 
@@ -1822,7 +1824,7 @@ Assim que concluidos os testes, podemos voltar ao ecrã da Line, Stations - Modo
     - Aplicar velocidade no Tapete (Máx: 30000);
     - Saber o valor do Contador, sendo possivel fazer o Reset do mesmo.
 
-Assim que concluidos os testes, podemos voltar ao ecrã da Line, Stations - Modo Manual (Menu com todas as Estações em Modo Manual) e ST10 (No Ecrã do Robô).
+Assim que concluidos os testes, podemos voltar ao ecrã da Line32, Stations - Modo Manual (Menu com todas as Estações em Modo Manual) e ST10 (No Ecrã do Robô).
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50.png)
 
