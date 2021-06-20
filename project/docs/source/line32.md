@@ -7,7 +7,7 @@
 - [Introdução](#introducao)
 - [Processo](#processo)
     - [Peças](#pecas)
-    - [Estações](#estacoes)Last Upgrade: 21/06/2021, 00h41
+    - [Estações](#estacoes)
         - [Estação 10](#est-estacao-10)
         - [Estação 20](#est-estacao-20)
         - [Estação 30](#est-estacao-30)
