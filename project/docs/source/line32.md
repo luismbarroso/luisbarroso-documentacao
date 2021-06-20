@@ -2,12 +2,12 @@
 
 **Autor:** *Luís Barroso*
 
-*Last Upgrade: 20/06/2021, 23h15*
+*Last Upgrade: 21/06/2021, 00h41*
 
 - [Introdução](#introducao)
 - [Processo](#processo)
     - [Peças](#pecas)
-    - [Estações](#estacoes)
+    - [Estações](#estacoes)Last Upgrade: 21/06/2021, 00h41
         - [Estação 10](#est-estacao-10)
         - [Estação 20](#est-estacao-20)
         - [Estação 30](#est-estacao-30)
@@ -228,11 +228,71 @@ Por exemplo: a ST20 envia uma informação para o PLC Master, usando uma saída.
 ## Trabalho Realizado
 ## Modelo de Classificação
 
-![](./lines/line32/2020_2021/software/classificacao/class_geral.svg)
-![](./lines/line32/2020_2021/software/classificacao/class_motor.svg)
-![](./lines/line32/2020_2021/software/classificacao/class_valvula.svg)
-![](./lines/line32/2020_2021/software/classificacao/class_sensor.svg)
+Pra identificar cada componente mais facilmente, seja localmente ou no Software, foi criado um Modelo de Classificação para o Grupo 30. Este modelo divide-se em 4 *blocos* e cada um deste *blocos* ainda se pode desdobrar, como podemos observar na figura abaixo.
 
+![](./lines/line32/2020_2021/software/classificacao/class_geral.svg)
+
+- Grupo:
+
+Os Grupos, classificação-se com um **número** e um **zero** (N0). Por exemplo: Grupo 10, Grupo 20. 
+
+- Linha:
+
+As Linhas, classificação-se com um **número** e outro **número** (NN). Por exemplo: Linha 11, Linha 32.
+
+- Estação:
+
+As Estações, classificação-se com um **número** e um **zero** (N0). Por exemplo: Estação 10, Estação 20. 
+
+- Subestação:
+
+As Subestações, classificação-se com um **número** e outro **número** (NN). Por exemplo: Subestação 21, Subestação 52. 
+
+- Equipamento:
+
+Os Equipamentos, classificação-se com um **número** e um **zero** (N0). Por exemplo: Equipamento 10, Equipamento 40. 
+
+Os equipamentos podem ser classificados como: **Tapetes** (Letra:**TAP**) ou **Motor** (Letra:**M**).
+
+- Subequipamento:
+
+Os Subequipamentos, classificação-se com um **número** e outro **número** (NN). Por exemplo: Subequipamento 31, Subequipamento 52. 
+
+- Componentes:
+
+Os Componentes, classificação-se com um **número** e um **zero** (N0). Por exemplo: Componente 10, Componente 2. 
+
+Os componentes podem ser classificados como: **Sensores** (Letra:**B**), **Vávulas** (Letra:**Y**) ou **Motor** (Letra:**M**).
+
+- Subcomponente:
+
+Os Subcomponentes, classificação-se com um **número** e outro **número** (NN). Por exemplo: Subcomponente 11, Subcomponente 32. 
+
+A classificação dos Grupos, Estações, Equipamentos, Componentes, Subcomponente vai depender a sua localização e da sua função. Para perceber melhor este conceito olhemos para as imagens, da estação 40.
+
+- A Estação 40 pode ser dividida em 2 Subestações, porque acontecem dois processos diferentes: o Armazenamento do Miolo da Peça e a sua colocação no Corpo da Peça. A **Laranja** a **Subestação 41** e **Azul** a **Subestação 42**.
+
+![](./lines/line32/2020_2021/software/classificacao/st_40_1.png)
+
+- A Subestação 41 possui 10 sensores, classificados de cima para baixo e da esqueda para a direita, começando pelos sensores que estão associados aos cilindros: Temos os Sensores B11 e B12, que estão associados ao cilindro Y10; os Sensores B21 e B22, que estão associados ao cilindro Y20; os Sensores B31 e B32, que estão associados ao cilindro Y30 e por ultimo o Grupo de Sensores B40, constituidos pelo B41, B42, B43, B44. Este sensores como não estão associados a nenhum cilindro e como pertencem à Subestação foram agrupados e seguem a numeração.
+
+![](./lines/line32/2020_2021/software/classificacao/st_40_2.png)
+
+- A Subestação 41 possui 6 sensores, classificados de cima para baixo e da esqueda para a direita, começando pelos sensores que estão associados aos cilindros: Temos os Sensores B11 e B12, que estão associados ao cilindro Y10; os Sensores B21 e B22, que estão associados ao cilindro Y20; o Sensores B31, que está associado ao cilindro Y30 e por ultimo o sensor B41. Este sensores como não estão associados a nenhum cilindro e como pretencem à Subestação segue a numeração.
+
+![](./lines/line32/2020_2021/software/classificacao/st_40_3.png)
+
+Como defenida a classificação a Label apresenta o seguinte formato: 
+
+![](./lines/line32/2020_2021/software/classificacao/class_valvula.svg)
+
+*Cilindro 20*
+
+![](./lines/line32/2020_2021/software/classificacao/class_sensor_1.svg)
+
+![](./lines/line32/2020_2021/software/classificacao/class_sensor_2.svg)
+
+*Sensores do Cilindro 20, avanço e recuo*
 
 ### Classificação
 
