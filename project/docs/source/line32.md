@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-*Last Upgrade: 19/06/2021, 12h19*
+*Last Upgrade: 20/06/2021, 23h15*
 
 - [Introdução](#introducao)
 - [Processo](#processo)
