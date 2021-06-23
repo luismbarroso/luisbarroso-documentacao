@@ -21,6 +21,7 @@
             - [Zonas de Comunicação](#profinet-zonas-de-comunicacao)
 - [Trabalho Realizado](#trabalho-realizado)
     - [Modelo de Classificação](#modelo-de-classificacao)
+        - [Aplicação do Modelo de Classificação](#aplicacao-do-modelo-de-classificacao)
     - [Classificação](#classificacao)
         - [Estação 10](#class-est10)
             - [Entradas e Saidas (PLC)](#est-10-entradas-e-saidas-plc)
@@ -270,7 +271,9 @@ Os Subcomponentes, classificação-se com um **número** e outro **número** (NN
 
 A classificação dos Grupos, Estações, Equipamentos, Componentes, Subcomponente vai depender a sua localização e da sua função. Para perceber melhor este conceito olhemos para as imagens, da estação 40.
 
-- A Estação 40 pode ser dividida em 2 Subestações, porque acontecem dois processos diferentes: o Armazenamento do Miolo da Peça e a sua colocação no Corpo da Peça. A **Laranja** a **Subestação 41** e **Azul** a **Subestação 42**.
+### Aplicação do Modelo de Classificação
+
+A Estação 40 pode ser dividida em 2 Subestações, porque acontecem dois processos diferentes: o Armazenamento do Miolo da Peça e a sua colocação no Corpo da Peça. A **Laranja** a **Subestação 41** e **Azul** a **Subestação 42**.
 
 ![](./lines/line32/2020_2021/software/classificacao/st_40_1.png)
 
