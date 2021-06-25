@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-*Last Upgrade: 25/06/2021, 09h59*
+*Last Upgrade: 25/06/2021, 20h52*
 
 - [Introdução](#introducao)
 - [Processo](#processo)
@@ -264,45 +264,45 @@ Por exemplo: a ST20 envia uma informação para o PLC Master, usando uma saída.
 ## Trabalho Realizado
 ## Modelo de Classificação
 
-Pra identificar cada componente mais facilmente, seja localmente ou no Software, foi criado um Modelo de Classificação para o Grupo 30. Este modelo divide-se em 4 *blocos* e cada um deste *blocos* ainda se pode desdobrar, como podemos observar na figura abaixo.
+Pra identificar cada componente mais facilmente, seja localmente ou no Software, foi criado um Modelo de Classificação. Este modelo divide-se em 4 *blocos* e cada um deste *blocos* ainda se pode desdobrar, como podemos observar na figura abaixo.
 
 ![](./lines/line32/2020_2021/software/classificacao/class_geral.svg)
 
 - Grupo:
 
-Os Grupos, classificação-se com um **número** e um **zero** (N0). Por exemplo: Grupo 10, Grupo 20. 
+Os Grupos, classificação-se com um **número (N)** e um **zero (0)**. Por exemplo: Grupo 10, Grupo 20 e Grupo 30. 
 
 - Linha:
 
-As Linhas, classificação-se com um **número** e outro **número** (NN). Por exemplo: Linha 11, Linha 32.
+As Linhas, classificação-se com um **número (N)** e outro **número (N)**. Por exemplo: Linha 31, Linha 32, Linha 33.
 
 - Estação:
 
-As Estações, classificação-se com um **número** e um **zero** (N0). Por exemplo: Estação 10, Estação 20. 
+As Estações, classificação-se com um **número (N)** e um **zero (0)**. Por exemplo: Estação 10, Estação 20, Estação 30.
 
-- Subestação:
+- Subestação: *Falta a definição*
 
-As Subestações, classificação-se com um **número** e outro **número** (NN). Por exemplo: Subestação 21, Subestação 52. 
+As Subestações, classificação-se com um **número (N)** e um **zero (N)**. Por exemplo: Subestação 11, Subestação 21. 
 
-- Equipamento:
+- Equipamento: *Falta a definição*
 
-Os Equipamentos, classificação-se com um **número** e um **zero** (N0). Por exemplo: Equipamento 10, Equipamento 40. 
+Os Equipamentos, classificação-se com um **número (N)** e um **zero (0)**. Por exemplo: Equipamento 10, Equipamento 20. 
 
 Os equipamentos podem ser classificados como: **Tapetes** (Letra:**TAP**) ou **Motor** (Letra:**M**).
 
 - Subequipamento:
 
-Os Subequipamentos, classificação-se com um **número** e outro **número** (NN). Por exemplo: Subequipamento 31, Subequipamento 52. 
+Os Subequipamentos, classificação-se com um **número (N)** e um **zero (N)**. Por exemplo: Subequipamento 31, Subequipamento 32. 
 
 - Componentes:
 
-Os Componentes, classificação-se com um **número** e um **zero** (N0). Por exemplo: Componente 10, Componente 2. 
+Os Componentes, classificação-se com um **número (N)** e um **zero (0)**. Por exemplo: Componente 10, Componente 20. 
 
 Os componentes podem ser classificados como: **Sensores** (Letra:**B**), **Vávulas** (Letra:**Y**) ou **Motor** (Letra:**M**).
 
 - Subcomponente:
 
-Os Subcomponentes, classificação-se com um **número** e outro **número** (NN). Por exemplo: Subcomponente 11, Subcomponente 32. 
+Os Subcomponentes, classificação-se com um **número (N)** e um **zero (0)**. Por exemplo: Subcomponente 11, Subcomponente 32. 
 
 A classificação dos Grupos, Estações, Equipamentos, Componentes, Subcomponente vai depender a sua localização e da sua função. Para perceber melhor este conceito olhemos para as imagens, da estação 40.
 
@@ -1973,13 +1973,18 @@ Assim que concluidos os testes, podemos voltar ao ecrã da Line32, Stations - Mo
 
 #### Tesla Scada
 
-        LOADING...
+O Modo de Funcionamento do Tesla Scada, é muito identico, ao do HMI. Consiste num Software que permite o controlo e supervisão em tempo real de sistemas e processos industriais baseados em PLC. Antes de começar a configurar o Tesla Scada é preciso garantir que no TIA Portal, o Servidor Modbus está configurado.
+
+
+
+
+##### 
 
 ##### Classificação
 <a id="scada-classificacao"></a>
 
-| Name:                     | Data Type | Access Mode | PV Input Server: | PV Input Tag:       |
-|---------------------------|-----------|:-----------:|------------------|---------------------|
+| Name                      | Data Type | Access Mode | PV Input Server  | PV Input Tag        |
+|:-------------------------:|:---------:|:-----------:|:----------------:|:-------------------:|
 | Scada_Init_Manual_All_STS | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=16;dt=1; |
 | Scada_Init_Manual_ST10    | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=17;dt=1; |
 | Scada_Init_Manual_ST20    | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=18;dt=1; |
@@ -2010,7 +2015,7 @@ Assim que concluidos os testes, podemos voltar ao ecrã da Line32, Stations - Mo
 | Scada_MC_Home_Execute     | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=43;dt=1; |
 
 ---
-**Legenda (Coluna PV Input Tag: ):**
+**Legenda (Coluna PV Input Tag)**
 
 - **s** - SlaveID, por definição é 1.
 - **pt** - Point Type, pode ser definido de 1 a 4.
