@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-*Last Upgrade: 21/06/2021, 00h41*
+*Last Upgrade: 25/06/2021, 09h42*
 
 - [Introdução](#introducao)
 - [Processo](#processo)
@@ -69,8 +69,10 @@
             - [Botões](#botoes)
         - [HMI](#hmi)
             - [Classificação](#hmi-classificacao)
-            - [Ecrãs](#ecras)
+            - [Ecrãs](#hmi-ecras)
         - [Tesla Scada](#tesla-scada)
+            - [Classificação](#scada-classificacao)
+            - [Ecrãs](#scada-ecras)
 - [Anexos](#anexos)
 
 ## Introdução
@@ -172,7 +174,7 @@ O Modbus é constituído por 4 zonas de memorias, como mostra a tabela abaixo:
 
 | Tipo de Objeto   | Acesso     | Tamanho    | Espaço de Endereços |
 |:----------------:|:----------:|:----------:|:-------------------:|
-| Coil             | Read-write | 1 bit      | 00001 - 09999       |
+| Holding Coil     | Read-write | 1 bit      | 00001 - 09999       |
 | Discrete input   | Read-only  | 1 bit      | 10001 - 19999       |
 | Input register   | Read-only  | 16 bits    | 30001 - 39999       |
 | Holding register | Read-write | 16 bits    | 40001 - 49999       |
@@ -182,23 +184,56 @@ Este protocolo de comunicação é usado pelo software Tesla Scada, permitindo a
 #### Zonas de Comunicação
 <a id="modbus-zonas-de-comunicacao"></a>
 
-| Label              | Endereço | Comentário                                              |
-|:------------------:|:--------:|:-------------------------------------------------------:|
-| Scada_O_Start_ST10 | %M23.1   | Ordem de Start, dada pelo Tesla Scada, para a ST10      |                                                                                
-| Scada_O_Stop_ST10  | %M23.2   | Ordem de Stop, dada pelo Tesla Scada, para a ST10       |                                                                               
-| Scada_O_Emerg_ST10 | %M23.3   | Ordem de Emergência, dada pelo Tesla Scada, para a ST10 |
-| Scada_O_Start_ST20 | %Q106.4  | Ordem de Start, dada pelo Tesla Scada para a ST20       |
-| Scada_O_Stop_ST20  | %Q106.5  | Ordem de Stop, dada pelo Tesla Scada para a ST20        |
-| Scada_O_Emerg_ST20 | %Q106.6  | Ordem de Emergência, dada pelo Tesla Scada para a ST20  |
-| Scada_O_Start_ST30 | %Q110.4  | Ordem de Start, dada pelo Tesla Scada para a ST30       |
-| Scada_O_Stop_ST30  | %Q110.5  | Ordem de Stop, dada pelo Tesla Scada para a ST30        |
-| Scada_O_Emerg_ST30 | %Q110.6  | Ordem de Emergência, dada pelo Tesla Scada para a ST30  |
-| Scada_O_Start_ST40 | %Q115.5  | Ordem de Start, dada pelo Tesla Scada para a ST40       |                         
-| Scada_O_Stop_ST40  | %Q115.6  | Ordem de Stop, dada pelo Tesla Scada para a ST40        |
-| Scada_O_Emerg_ST40 | %Q115.7  | Ordem de Emergência, dada pelo Tesla Scada para a ST40  |
-| Scada_O_Start_ST50 | %Q118.4  | Ordem de Start, dada pelo Tesla Scada para a ST50       |                         
-| Scada_O_Stop_ST50  | %Q118.5  | Ordem de Stop, dada pelo Tesla Scada para a ST50        |                          
-| Scada_O_Emerg_ST50 | %Q118.6  | Ordem de Emergência, dada pelo Tesla Scada para a ST50  |                          
+| Label                       | Endereço | Comentário                                                                         |
+|:---------------------------:|:--------:|:----------------------------------------------------------------------------------:|
+| Reset_Scada_Memorys         | %QB2     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0 |
+| Scada_Init_Manual_All_STS   | %Q2.0    | Ordem de Inicialização para o Master, dada pelo Tesla Scada                        |
+| Scada_Init_Manual_ST10      | %Q2.1    | Ordem de Inicialização para a ST10, dada pelo Tesla Scada                          |
+| Scada_Init_Manual_ST20      | %Q2.2    | Ordem de Inicialização para a ST20, dada pelo Tesla Scada                          |
+| Scada_Init_Manual_ST30      | %Q2.3    | Ordem de Inicialização para a ST30, dada pelo Tesla Scada                          |
+| Scada_Init_Manual_ST40      | %Q2.4    | Ordem de Inicialização para a ST40, dada pelo Tesla Scada                          |
+| Scada_Init_Manual_ST50      | %Q2.5    | Ordem de Inicialização para a ST50, dada pelo Tesla Scada                          |
+| Scada_O_Emerg_Master        | %Q2.6    | Ordem de Stop, dada pelo Tesla Scada para o Master                                 |
+| Scada_O_Emerg_ST10          | %Q2.7    | Ordem de Emergencia, dada pelo Tesla Scada para a ST10                             |
+| Reset_Scada_Memorys_1       | %QB3     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0 |
+| Scada_O_Emerg_ST20          | %Q3.0    | Ordem de Emergencia, dada pelo Tesla Scada para a ST20                             |
+| Scada_O_Emerg_ST30          | %Q3.1    | Ordem de Emergencia, dada pelo Tesla Scada para a ST30                             |
+| Scada_O_Emerg_ST40          | %Q3.2    | Ordem de Emergencia, dada pelo Tesla Scada para a ST40                             |
+| Scada_O_Emerg_ST50          | %Q3.3    | Ordem de Emergencia, dada pelo Tesla Scada para a ST50                             |
+| Scada_O_Start_Master        | %Q3.4    | Ordem de Start, dada pelo Tesla Scada para o Master                                |
+| Scada_O_Start_ST10          | %Q3.5    | Ordem de Start, dada pelo Tesla Scada para a ST10                                  |
+| Scada_O_Start_ST20          | %Q3.6    | Ordem de Start, dada pelo Tesla Scada para a ST20                                  |
+| Scada_O_Start_ST30          | %Q3.7    | Ordem de Start, dada pelo Tesla Scada para a ST30                                  |
+| Reset_Scada_Memorys_2       | %QB4     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0 |
+| Scada_O_Start_ST40          | %Q4.0    | Ordem de Start, dada pelo Tesla Scada para a ST40                                  |
+| Scada_O_Start_ST50          | %Q4.1    | Ordem de Start, dada pelo Tesla Scada para a ST50                                  |
+| Scada_O_Stop_Master         | %Q4.2    | Ordem de Stop, dada pelo Tesla Scada para a ST10                                   |
+| Scada_O_Stop_ST10           | %Q4.3    | Ordem de Stop, dada pelo Tesla Scada para a ST10                                   |
+| Scada_O_Stop_ST20           | %Q4.4    | Ordem de Stop, dada pelo Tesla Scada para a ST20                                   |
+| Scada_O_Stop_ST30           | %Q4.5    | Ordem de Stop, dada pelo Tesla Scada para a ST30                                   |
+| Scada_O_Stop_ST40           | %Q4.6    | Ordem de Stop, dada pelo Tesla Scada para a ST40                                   |
+| Scada_O_Stop_ST50           | %Q4.7    | Ordem de Stop, dada pelo Tesla Scada para a ST50                                   |
+| Reset_Scada_Memorys_3       | %QB5     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0 |
+| Scada_MM_Automatico         | %Q5.0    | Ordem de Marcha, Automático,  dada pelo Tesla Scada                                |
+| Scada_MM_Ciclo              | %Q5.1    | Ordem de Marcha, Ciclo, dada pelo Tesla Scada                                      |
+| Scada_MM_Manual             | %Q5.2    | Ordem de Marcha, Manual, dada pelo Tesla Scada                                     |
+| Scada_MC_Home_Execute       | %Q5.3    | Ordem de Home para o Robô, dada pelo Tesla Scada                                   |
+| Scada_O_Start_ST10_ST20     | %Q106.4  | Ordem de Start, dada Tesla Scada, da ST10 para a ST20                              |
+| Scada_O_Stop_ST10_ST20      | %Q106.5  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST20                               |
+| Scada_O_Emerg_ST10_ST20     | %Q106.6  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST20                         |
+| Scada_Init_Manual_ST10_ST20 | %Q106.7  | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST20               |
+| Scada_O_Start_ST10_ST30     | %Q110.4  | Ordem de Start, dada Tesla Scada, da ST10 para a ST30                              |
+| Scada_O_Stop_ST10_ST30      | %Q110.5  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST30                               |
+| Scada_O_Emerg_ST10_ST30     | %Q110.6  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST30                         |
+| Scada_Init_Manual_ST10_ST30 | %Q110.7  | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST30               |
+| Scada_Init_Manual_ST10_ST40 | %Q113.7  | Ordem de Start, dada Tesla Scada, da ST10 para a ST40                              |
+| Scada_O_Start_ST10_ST40     | %Q115.5  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST40                               |
+| Scada_O_Stop_ST10_ST40      | %Q115.6  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST40                         |
+| Scada_O_Emerg_ST10_ST40     | %Q115.7  | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST40               |
+| Scada_O_Start_ST10_ST50     | %Q118.4  | Ordem de Start, dada Tesla Scada, da ST10 para a ST50                              |
+| Scada_O_Stop_ST10_ST50      | %Q118.5  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST50                               |
+| Scada_O_Emerg_ST10_ST50     | %Q118.6  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST50                         |
+| Scada_Init_Manual_ST10_ST50 | %Q118.7  | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST50               |
 
         NOTA: Tabela vista do lado do Master.
 
@@ -1797,6 +1832,7 @@ Com as **conexões** e as **tags** defenidas já foi possivel começar a criaç�
 | Total_Pecas                  | HMI_Connection_5 | 59PLC    | IEC_Counter_0_DB_3.CV        | Total de Pecas                                                                                     |
 
 ##### Ecrãs
+<a id="hmi-ecras"></a>
 
 A HMI é constituida por 19 ecrãs dos quais resultam:
 
@@ -1945,6 +1981,59 @@ Assim que concluidos os testes, podemos voltar ao ecrã da Line32, Stations - Mo
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/st50.png)
 
 #### Tesla Scada
+
+        LOADING...
+
+##### Classificação
+<a id="scada-classificacao"></a>
+
+| Name:                     | Data Type | Access Mode | PV Input Server: | PV Input Tag:       |
+|---------------------------|-----------|:-----------:|------------------|---------------------|
+| Scada_Init_Manual_All_STS | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=16;dt=1; |
+| Scada_Init_Manual_ST10    | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=17;dt=1; |
+| Scada_Init_Manual_ST20    | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=18;dt=1; |
+| Scada_Init_Manual_ST30    | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=19;dt=1; |
+| Scada_Init_Manual_ST40    | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=20;dt=1; |
+| Scada_Init_Manual_ST50    | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=21;dt=1; |
+| Scada_O_Emerg_Master      | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=22;dt=1; |
+| Scada_O_Emerg_ST10        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=23;dt=1; |
+| Scada_O_Emerg_ST20        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=24;dt=1; |
+| Scada_O_Emerg_ST30        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=25;dt=1; |
+| Scada_O_Emerg_ST40        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=26;dt=1; |
+| Scada_O_Emerg_ST50        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=27;dt=1; |
+| Scada_O_Start_Master      | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=28;dt=1; |
+| Scada_O_Start_ST10        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=29;dt=1; |
+| Scada_O_Start_ST20        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=30;dt=1; |
+| Scada_O_Start_ST30        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=31;dt=1; |
+| Scada_O_Start_ST40        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=32;dt=1; |
+| Scada_O_Start_ST50        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=33;dt=1; |
+| Scada_O_Stop_Master       | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=34;dt=1; |
+| Scada_O_Stop_ST10         | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=35;dt=1; |
+| Scada_O_Stop_ST20         | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=36;dt=1; |
+| Scada_O_Stop_ST30         | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=37;dt=1; |
+| Scada_O_Stop_ST40         | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=38;dt=1; |
+| Scada_O_Stop_ST50         | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=39;dt=1; |
+| Scada_MM_Automatico       | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=40;dt=1; |
+| Scada_MM_Ciclo            | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=41;dt=1; |
+| Scada_MM_Manual           | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=42;dt=1; |
+| Scada_MC_Home_Execute     | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=43;dt=1; |
+
+---
+**Legenda (Coluna PV Input Tag: ):**
+
+- **s** - SlaveID, por definição é 1.
+- **pt** - Point Type, pode ser definido de 1 a 4.
+    - 1 - Holding Coil             
+    - 2 - Discrete input   
+    - 3 - Holding register
+    - 4 - Input register
+- **o** - Offset, corresponde ao registro Modbus. No meu caso, estou a usar **Holding Coils**, *mexendo* diretamente em Bits. O meu primeiro Bit, do lado do TIA Portal (Servidor), correponde ao Q2.0. Desta forma, o offset, do lado Tesla Scada, corresponderá a 16. (Como um Byte são 8 Bits, logo 8*2=16)
+- **dt** - Data type, corresponde ao tipo de dados usados nos Holding register e nos Input register.
+
+##### Ecrãs
+<a id="scada-ecras"></a>
+
+
 
 ## Anexos
 
