@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-*Last Upgrade: 25/06/2021, 09h42*
+*Last Upgrade: 25/06/2021, 09h59*
 
 - [Introdução](#introducao)
 - [Processo](#processo)
@@ -1854,7 +1854,7 @@ A HMI é constituida por 19 ecrãs dos quais resultam:
 
 *Imagem do Ecrã - Peças*
 
-- **Root Screen**, ecrã principal da linha 32. Neste ecrã podemos: 
+- **Line 32**, ecrã principal da linha 32. Neste ecrã podemos: 
 
     - Fazer o Start/Stop da linha; 
     - Entrar em emergência;
@@ -1939,44 +1939,35 @@ Assim que concluidos os testes, podemos voltar ao ecrã da Line32, Stations - Mo
 
 *Imagem do Ecrã - Stations*
 
-- **ST10**, neste ecrã podemos controlar a estação 10. Neste ecrã podemos: 
+- **ST10**, **ST20**, **ST30**, **ST40**, **ST50**, nestes ecrãs podemos controlar a estação 10, 20, 30, 40, 50. Neste ecrã podemos: 
 
     - Fazer o Start/Stop da estação; 
     - Entrar em emergência;
     - Saber o estado da estação;
     - Saber qual modo de marcha está selecionado;
-    - Dar ordem de Home do Carro;
-    - Dar a ordem de inicialização manual da estação;
-    - Trocar para 5 ecrãs: Stations, Peças, Lin32 e ST20.
-
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st10.png)
-
-*Imagem do Ecrã - ST10 - Modo Manual*
-
-- **ST20**, **ST30**, **ST40**, **ST50**, nestes ecrãs podemos controlar a estação 20, 30, 40, 50. Neste ecrã podemos: 
-
-    - Fazer o Start/Stop da estação; 
-    - Entrar em emergência;
-    - Saber o estado da estação;
-    - Saber qual modo de marcha está selecionado;
+    - Dar ordem de Home do Carro (Na Estação 10); 
     - Dar a ordem de inicialização manual da estação;
     - Trocar para 5 ecrãs: Stations, Peças, Lin32 e ST20 ou ST30 ou ST40 ou ST50.
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/st10.png)
 
-*Imagem do Ecrã - ST20 - Modo Manual*
+*Imagem do Ecrã - ST10*
+
+![](./lines/line32/2020_2021/software/tia_portal/hmi/st10.png)
+
+*Imagem do Ecrã - ST20*
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/st20.png)
 
-*Imagem do Ecrã - ST30 - Modo Manual*
+*Imagem do Ecrã - ST30*
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/st30.png)
 
-*Imagem do Ecrã - ST40 - Modo Manual*
+*Imagem do Ecrã - ST40*
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/st40.png)
 
-*Imagem do Ecrã - ST50 - Modo Manual*
+*Imagem do Ecrã - ST50*
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/st50.png)
 
@@ -2033,8 +2024,61 @@ Assim que concluidos os testes, podemos voltar ao ecrã da Line32, Stations - Mo
 ##### Ecrãs
 <a id="scada-ecras"></a>
 
+- **Root Screen**, ecrã principal do Tesla Scada. Neste ecrã podemos ser encaminhados para outros 2 ecrãs: **Line32** ou **Estações**
 
+![](./lines/line32/2020_2021/software/tesla_scada/ecras/root_screen.png)
+
+*Imagem do Root Screen*
+
+- **Line 32**, ecrã principal da linha 32. Neste ecrã podemos: 
+
+    - Fazer o Start/Stop da linha; 
+    - Entrar em emergência;
+    - Escolher o modo de marcha;
+    - Entrar em modo manual;
+    - Dar a ordem de inicialização manual para todas as estações;
+    - Trocar para 2 ecrãs: Estações e Home (Root Screen).
+
+![](./lines/line32/2020_2021/software/tesla_scada/ecras/line32.png)
+
+*Imagem do Ecrã - Line32*
+
+- **Stations**, neste ecrã é possivel fazer a escolha da estação a operar. 
+
+![](./lines/line32/2020_2021/software/tesla_scada/ecras/stations.png)
+
+*Imagem do Ecrã - Stations*
+
+- **ST10**, **ST20**, **ST30**, **ST40**, **ST50**, nestes ecrãs podemos controlar a estação 10, 20, 30, 40, 50. Neste ecrã podemos: 
+
+    - Fazer o Start/Stop da estação; 
+    - Entrar em emergência;
+    - Saber qual modo de marcha está selecionado;
+    - Dar ordem de Home do Carro (Na Estação 10); 
+    - Dar a ordem de inicialização manual da estação;
+    - Trocar para 5 ecrãs: Estações, Lin32 e ST20 ou ST30 ou ST40 ou ST50.
+
+![](./lines/line32/2020_2021/software/tesla_scada/ecras/st10.png)
+
+*Imagem do Ecrã - ST10*
+
+![](./lines/line32/2020_2021/software/tesla_scada/ecras/st20.png)
+
+*Imagem do Ecrã - ST20*
+
+![](./lines/line32/2020_2021/software/tesla_scada/ecras/st30.png)
+
+*Imagem do Ecrã - ST30*
+
+![](./lines/line32/2020_2021/software/tesla_scada/ecras/st40.png)
+
+*Imagem do Ecrã - ST40*
+
+![](./lines/line32/2020_2021/software/tesla_scada/ecras/st50.png)
+
+*Imagem do Ecrã - ST50*
 
 ## Anexos
 
 ![](lines/line32/2020_2021/images/anexos/qr.png)
+
