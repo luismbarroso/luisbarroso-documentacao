@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-*Last Upgrade: 25/06/2021, 20h52*
+*Last Upgrade: 27/06/2021, 23h19*
 
 - [Introdução](#introducao)
 - [Processo](#processo)
@@ -71,6 +71,7 @@
             - [Classificação](#hmi-classificacao)
             - [Ecrãs](#hmi-ecras)
         - [Tesla Scada](#tesla-scada)
+            - [Servidor](#servidor)   
             - [Classificação](#scada-classificacao)
             - [Ecrãs](#scada-ecras)
 - [Anexos](#anexos)
@@ -1973,12 +1974,37 @@ Assim que concluidos os testes, podemos voltar ao ecrã da Line32, Stations - Mo
 
 #### Tesla Scada
 
-O Modo de Funcionamento do Tesla Scada, é muito identico, ao do HMI. Consiste num Software que permite o controlo e supervisão em tempo real de sistemas e processos industriais baseados em PLC. Antes de começar a configurar o Tesla Scada é preciso garantir que no TIA Portal, o Servidor Modbus está configurado.
+O Modo de Funcionamento do Tesla Scada é muito identico ao do HMI. Consiste num Software que permite o controlo e supervisão em tempo real de sistemas e processos industriais baseados em PLC. 
 
+##### Servidor
 
+Antes de começar a configurar o Tesla Scada é preciso garantir que no TIA Portal, o Servidor Modbus está configurado. Inicialmente é necessário criar um **Data Block (DB)** com 3 paramentros: 
 
+- **mb_data**, um Array de 0 a 20 de Reais, permitindo assim *operar* no Espaço de Endereços dos Holding register (40001 - 49999);
+- **connect**, em que o Data Type é um **TCON_IP_V4**. No connect é onde serão inseridos os dados para a criação do servidor:
+    - Interfaceld: 64, definido pelo Sistema. Pode ser consultado em **Device Configuration**, dois cliques no PLC, e **System Constants**;
+    - ID: 2, Identifica exclusivamente uma conexão no PLC. Este ID pode ir de 1 a 4095;
+    - ConnectionType: 11, definido pelo Sistema. **Type of connection:** 11=TCP/IP, 19=UDP (17=TCP/IP);
+    - Local Port: 502, por defeito, Local Portal é 502.
+- **status**, permite saber o estado do servidor. 
 
-##### 
+![](./lines/line32/2020_2021/software/tesla_scada/config/mb_server_2.PNG)
+
+Depois do **Data Block (DB)** criado, basta *chamar* o **MB_Server** para a Network e fazer corresponder o parametros criados no **Data Block (DB)** ao MB_Server.
+
+![](./lines/line32/2020_2021/software/tesla_scada/config/mb_server_1.PNG)
+
+Com o servidor criado do lado do TIA Portal, passamos para o Tesla Scada. Do lado esquerdo em **Servers**, botão direito, **New Server > Modbus TCP (UDP)**
+
+![](./lines/line32/2020_2021/software/tesla_scada/config/tp_server_1.png)
+![](./lines/line32/2020_2021/software/tesla_scada/config/tp_server_2.png)
+
+- **Name:** Nome do Servidor;
+- **IP or DNS:** Neste caso, é o IP do PLC onde está configurado o **MB_Server**;
+- **Port:** Por defeito, a Local Portal é 502 (Como no Tia Portal);
+- **Pool Interval:** Intervalo dos pedidos do servidor. Quando maior, mais eficaz é a comunicação.
+- **Type:** Protocolo de comunicação do servidor Modbus, TCP ou UDP. Como no Tia Portal definimos a comunicação por TCP, aqui no Tesla, essa escolha tèm que ser correspondida.
+- **Request Type:** Maximum Registers, durante o envio/receção de informação, enviará o máximo de informação em apenas um pedido.
 
 ##### Classificação
 <a id="scada-classificacao"></a>
