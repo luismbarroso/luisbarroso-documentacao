@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-Last Upgrade: 28/06/2021, 05h21
+Last Upgrade: 28/06/2021, 22h07
 
 - [Introdução](#introducao)
 - [Processo](#processo)
@@ -410,7 +410,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 
 | Label                        | Endereço | Comentário                                                                                                                              |
 |:----------------------------:|:--------:|:---------------------------------------------------------------------------------------------------------------------------------------:|
-| Grafcet_10                   | %MB10    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para garantir que todos o Bits estão a 0                            |
+| Grafcet_10                   | %MB10    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0                          |
 | E10                          | %M10.0   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E11                          | %M10.1   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E12                          | %M10.2   | Etapa de Grafcet de Funcionamento                                                                                                       |
@@ -428,7 +428,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | E23                          | %M11.5   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E24                          | %M11.6   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E25                          | %M11.7   | Etapa de Grafcet de Funcionamento                                                                                                       |
-| Grafcet_10_2                 | %MB12    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para garantir que todos o Bits estão a 0                            |
+| Grafcet_10_2                 | %MB12    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0                          |
 | E26                          | %M12.0   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E27                          | %M12.1   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E28                          | %M12.2   | Etapa de Grafcet de Funcionamento                                                                                                       |
@@ -437,7 +437,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | E31                          | %M12.5   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E32                          | %M12.6   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E33                          | %M12.7   | Etapa de Grafcet de Funcionamento                                                                                                       |
-| Grafcet_10_3                 | %MB13    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para garantir que todos o Bits estão a 0                            |
+| Grafcet_10_3                 | %MB13    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0                          |
 | E34                          | %M13.0   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E35                          | %M13.1   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E36                          | %M13.2   | Etapa de Grafcet de Funcionamento                                                                                                       |
@@ -446,7 +446,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | E39                          | %M13.5   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E40                          | %M13.6   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E41                          | %M13.7   | Etapa de Grafcet de Funcionamento                                                                                                       |
-| Grafcet_10_4                 | %MB14    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para garantir que todos o Bits estão a 0                            |
+| Grafcet_10_4                 | %MB14    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0                          |
 | E42                          | %M14.0   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E43                          | %M14.1   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E44                          | %M14.2   | Etapa de Grafcet de Funcionamento                                                                                                       |
@@ -455,8 +455,8 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | MC_Absolute_Done             | %M15.0   | Confirmação do Movimento Absoluto do Robô                                                                                               |
 | MC_Relative_Done             | %M15.1   | Confirmação do Movimento Relativo do Robô                                                                                               |
 | MC_Home_Done                 | %M15.2   | Confirmação da posição de Home do Robô                                                                                                  |
-| MC_Halt_Done                 | %M15.3   | Confirmação da paragem do Robô                                                                                                          |
-| Grafcet_Gemma_M              | %MB16    | Byte das Etapas do Grafcet Gemma Master, usado na Inicialização para garantir que todos o Bits estão a 0                                |
+| MC_Halt_Done                 | %M15.3   | Confirmação da paB6:D50                                                                                                                 |
+| Grafcet_Gemma_M              | %MB16    | Byte das Etapas do Grafcet Gemma Master, usado na Inicialização para gararantir que todos o Bits estão a 0                              |
 | A6_M                         | %M16.0   | Etapa de Grafcet do Gemma Master                                                                                                        |
 | A1_M                         | %M16.1   | Etapa de Grafcet do Gemma Master                                                                                                        |
 | F2_M                         | %M16.2   | Etapa de Grafcet do Gemma Master                                                                                                        |
@@ -465,9 +465,9 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | F6_M                         | %M16.5   | Etapa de Grafcet do Gemma Master                                                                                                        |
 | A3_M                         | %M16.6   | Etapa de Grafcet do Gemma Master                                                                                                        |
 | A4_M                         | %M16.7   | Etapa de Grafcet do Gemma Master                                                                                                        |
-| Grafcet_Gemma_M_1            | %MB17    | Byte das Etapas do Grafcet Gemma Master, usado na Inicialização para garantir que todos o Bits estão a 0                                |
+| Grafcet_Gemma_M_1            | %MB17    | Byte das Etapas do Grafcet Gemma Master, usado na Inicialização para gararantir que todos o Bits estão a 0                              |
 | D1_M                         | %M17.0   | Etapa de Grafcet do Gemma Master                                                                                                        |
-| Grafcet_Gemma                | %MB18    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para garantir que todos o Bits estão a 0                                       |
+| Grafcet_Gemma                | %MB18    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0                                     |
 | A6                           | %M18.0   | Etapa de Grafcet do Gemma                                                                                                               |
 | A1                           | %M18.1   | Etapa de Grafcet do Gemma                                                                                                               |
 | F2                           | %M18.2   | Etapa de Grafcet do Gemma                                                                                                               |
@@ -475,8 +475,8 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | F1_1                         | %M18.4   | Etapa de Grafcet do Gemma                                                                                                               |
 | F5                           | %M18.5   | Etapa de Grafcet do Gemma                                                                                                               |
 | A3                           | %M18.6   | Etapa de Grafcet do Gemma                                                                                                               |
-| A4                           | %M18.7   | Etapa de Grafcet do Gemma                                                                                                               |
-| Grafcet_Gemma_1              | %MB19    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para garantir que todos o Bits estão a 0                                       |
+| A4                           | %M18.7   | Etapa de Grafcet Gemma                                                                                                                  |
+| Grafcet_Gemma_1              | %MB19    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0                                     |
 | D1                           | %M19.0   | Etapa de Grafcet Gemma                                                                                                                  |
 | Reset_ST10_Memorys           | %MB20    | Byte das memórias usadas na ST10, usado na Inicialização para gararantir que todos o Bits estão a 0                                     |
 | Grafcet_Parado               | %M20.0   | Grafcet Parado por ordem do Gemma                                                                                                       |
@@ -487,7 +487,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | O_Marcha_A                   | %M20.5   | Ordem de Marcha, Automático, dada pelo Gemma Master                                                                                     |
 | O_Marcha_C                   | %M20.6   | Ordem de Marcha, Ciclo, dada pelo Gemma Master                                                                                          |
 | A6_ST10                      | %M20.7   | Informação do estado da Etapa, que será enviada para o Gemma Master                                                                     |
-| Reset_ST10_Memorys_1         | %MB21    | Byte das memórias usadas na ST10, usado na Inicialização para garantir que todos o Bits estão a 0                                       |
+| Reset_ST10_Memorys_1         | %MB21    | Byte das memórias usadas na ST10, usado na Inicialização para gararantir que todos o Bits estão a 0                                     |
 | A1_ST10                      | %M21.0   | Informação do estado da Etapa, que será enviada para o Gemma Master                                                                     |
 | F2_ST10                      | %M21.1   | Informação do estado da Etapa, que será enviada para o Gemma Master                                                                     |
 | F1_ST10                      | %M21.2   | Informação do estado da Etapa, que será enviada para o Gemma Master                                                                     |
@@ -495,7 +495,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | A3_ST10                      | %M21.5   | Informação do estado da Etapa, que será enviada para o Gemma Master                                                                     |
 | A4_ST10                      | %M21.6   | Informação do estado da Etapa, que será enviada para o Gemma Master                                                                     |
 | D1_ST10                      | %M21.7   | Informação do estado da Etapa, que será enviada para o Gemma Master                                                                     |
-| Reset_ST10_Memorys_2         | %MB22    | Byte das memórias usadas na ST10, usado na Inicialização para garantir que todos o Bits estão a 0                                       |
+| Reset_ST10_Memorys_2         | %MB22    | Byte das memórias usadas na ST10, usado na Inicialização para gararantir que todos o Bits estão a 0                                     |
 | Emerg_M_ST10                 | %M22.0   | Ordem de Emergencia, dada pelo Gemma Master                                                                                             |
 | Stop_M_ST10                  | %M22.1   | Ordem de Stop, dada pelo Gemma Master                                                                                                   |
 | Init_M_ST10                  | %M22.2   | Ordem de Inicialização Manual, dada pelo Gemma Master                                                                                   |
@@ -504,7 +504,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | MM_M_ST10                    | %M22.5   | Ordem de Marcha, Manual, dada pelo Gemma Master                                                                                         |
 | MF_HMI_ST10                  | %M22.6   | Ordem de Funcionamento, Modo HMI, dada pelo Gemma Master                                                                                |
 | MF_SCADA_ST10                | %M22.7   | Ordem de Funcionamento, Modo Scada, dada pelo Gemma Master                                                                              |
-| Reset_ST10_Memorys_3         | %MB23    | Byte das memórias usadas na ST10, usado na Inicialização para garantir que todos o Bits estão a 0                                       |
+| Reset_ST10_Memorys_3         | %MB23    | Byte das memórias usadas na ST10, usado na Inicialização para gararantir que todos o Bits estão a 0                                     |
 | MF_Local_ST10                | %M23.0   | Ordem de Funcionamento, Modo Local, dada pelo Gemma Master                                                                              |
 | O_Start_M                    | %M23.1   | Ordem de Start, dada pela HMI, para o Gemma Master                                                                                      |
 | O_Stop_M                     | %M23.2   | Ordem de Stop, dada pela HMI, para o Gemma Master                                                                                       |
@@ -616,7 +616,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | Stop_M_ST30                 | %Q109.3  | Ordem de Stop, dada pelo Gemma Master para a ST30                                 |
 | Init_M_ST30                 | %Q109.4  | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST30                 |
 | MM_A_ST30                   | %Q109.5  | Modo de Macha Automático, escolhido pelo Gemma Master para a ST30                 |
-| MM_C_ST30                   | %Q109.6  | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST30                      |
+| MM_C_ST30                   | %Q109.6  |  Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST30                     |
 | MM_M_ST30                   | %Q109.7  | Modo de Macha Manual, escolhido pelo Gemma Master para a ST30                     |
 | ST10_ST30_3                 | %QB110   | Byte de Comunicação, a ST10 recebe informação da ST30                             |
 | MF_HMI_ST30                 | %Q110.0  | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST30                |
@@ -636,7 +636,6 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | F2_M_ST40                   | %Q113.4  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
 | F1_M_ST40                   | %Q113.5  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
 | F5_M_ST40                   | %Q113.6  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
-| Scada_O_Start_ST10_ST40     | %Q115.5  | Ordem de Start, dada Tesla Scada, da ST10 para a ST40                             |
 | F6_M_ST40                   | %Q113.7  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
 | ST10_ST40_3                 | %QB114   | Byte de Comunicação, a ST10 recebe informação da ST40                             |
 | A3_M_ST40                   | %Q114.0  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
@@ -653,6 +652,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | MF_SCADA_ST40               | %Q115.2  | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST40              |
 | MF_Local_ST40               | %Q115.3  | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST40              |
 | HLs_ST40                    | %Q115.4  | Ordem de teste da Iluminação na ST40                                              |
+| Scada_O_Start_ST10_ST40     | %Q115.5  | Ordem de Start, dada Tesla Scada, da ST10 para a ST40                             |
 | Scada_O_Stop_ST10_ST40      | %Q115.6  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST40                              |
 | Scada_O_Emerg_ST10_ST40     | %Q115.7  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST40                        |
 | ST10_ST50_1                 | %QB116   | Byte de Comunicação, a ST10 recebe informação da ST50                             |
@@ -671,7 +671,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HLs_ST50                    | %Q118.3  | Ordem de teste da Iluminação na ST50                                              |
 | Scada_O_Start_ST10_ST50     | %Q118.4  | Ordem de Start, dada Tesla Scada, da ST10 para a ST50                             |
 | Scada_O_Stop_ST10_ST50      | %Q118.5  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST50                              |
-| Scada_O_Emerg_ST10_ST50     | %Q118.6  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST50                        |
+| Scada_O_Emerg_ST10_ST50	  | %Q118.6  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST50                        |
 | Scada_Init_Manual_ST10_ST50 | %Q118.7  | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST50              |
 | ST10_ST50_4                 | %QB119   | Byte de Comunicação, a ST10 recebe informação da ST50                             |
 
@@ -699,7 +699,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HMI_QS           | %I2.2    | Input de Emergencia do Gemma                                                       |
 | Init_Manual      | %I2.3    | Input que permite na Inicialização manual                                          |
 
-|            | Saidas   |                     |
+|            | Saidas   |                     |        
 |:----------:|:--------:|:-------------------:|
 | Label      | Endereço | Comentário          |
 | 3221*Y10   | %Q0.0    | Cilindro 1          |
@@ -711,63 +711,66 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 ##### Memórias
 <a id="est-20-memorias"></a>
 
-| Label                       | Endereço | Comentário                                                                                                     |
-|:---------------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
-| Label                       | Endereço | Comentário                                                                                                     |
-| Grafcet_10                  | %MB10    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
-| E10                         | %M10.0   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E11                         | %M10.1   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E12                         | %M10.2   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E13                         | %M10.3   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E14                         | %M10.4   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E15                         | %M10.5   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E16                         | %M10.6   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E17                         | %M10.7   | Etapa de Grafcet (Funcionamento)                                                                               |
-| Grafcet_10_1                | %MB11    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
-| E18                         | %M11.0   | Etapa de Grafcet (Funcionamento)                                                                               |
-| Grafcet_Gemma               | %MB12    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
-| A6                          | %M12.0   | Etapa de Grafcet do Gemma                                                                                      |
-| A1                          | %M12.1   | Etapa de Grafcet do Gemma                                                                                      |
-| F2                          | %M12.2   | Etapa de Grafcet do Gemma                                                                                      |
-| F1                          | %M12.3   | Etapa de Grafcet do Gemma                                                                                      |
-| F1_1                        | %M12.4   | Etapa de Grafcet do Gemma                                                                                      |
-| F5                          | %M12.5   | Etapa de Grafcet do Gemma                                                                                      |
-| A3                          | %M12.6   | Etapa de Grafcet do Gemma                                                                                      |
-| A4                          | %M12.7   | Etapa de Grafcet do Gemma                                                                                      |
-| Grafcet_Gemma_1             | %MB13    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
-| D1                          | %M13.0   | Etapa de Grafcet do Gemma                                                                                      |
-| Grafcet_Parado              | %M13.1   | Etapa de Grafcet do Gemma                                                                                      |
-| Grafcet_Emergencia          | %M13.2   | Byte das memórias usadas na ST20, usado na Inicialização para gararantir que todos o Bits estão a 0            |
-| O_Start                     | %M13.3   | Grafcet Parado por ordem do Gemma                                                                              |
-| O_Stop                      | %M13.4   | Grafcet em Emergencia por ordem do Gemma                                                                       |
-| O_Emerg                     | %M13.5   | Ordem de Start, dada pela HMI, Tesla ou Localmente para o Gemma                                                |
-| O_Marcha_A                  | %M13.6   | Ordem de Stop, dada pela HMI, Tesla ou Localmente  para o Gemma                                                |
-| O_Marcha_C                  | %M13.7   | Ordem de Emergencia, dada pela HMI, Tesla ou Localmente  para o Gemma                                          |
-| HL11_Cond                   | %M14.0   | Ordem de Marcha, Automático, dada pelo Gemma Master                                                            |
-| HL12_Cond                   | %M14.1   | Ordem de Marcha, Ciclo, dada pelo Gemma Master                                                                 |
-| HL13_Cond                   | %M14.2   | Memória do estado da Iluminação HL11                                                                           |
+| Label              | Endereço | Comentário                                                                                                     |
+|:------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
+| E10                | %M10.0   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E11                | %M10.1   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E12                | %M10.2   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E13                | %M10.3   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E14                | %M10.4   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E15                | %M10.5   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E16                | %M10.6   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E17                | %M10.7   | Etapa de Grafcet (Funcionamento)                                                                               |
+| Grafcet_10_1       | %MB11    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E18                | %M11.0   | Etapa de Grafcet (Funcionamento)                                                                               |
+| Grafcet_Gemma      | %MB12    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| A6                 | %M12.0   | Etapa de Grafcet do Gemma                                                                                      |
+| A1                 | %M12.1   | Etapa de Grafcet do Gemma                                                                                      |
+| F2                 | %M12.2   | Etapa de Grafcet do Gemma                                                                                      |
+| F1                 | %M12.3   | Etapa de Grafcet do Gemma                                                                                      |
+| F1_1               | %M12.4   | Etapa de Grafcet do Gemma                                                                                      |
+| F5                 | %M12.5   | Etapa de Grafcet do Gemma                                                                                      |
+| A3                 | %M12.6   | Etapa de Grafcet do Gemma                                                                                      |
+| A4                 | %M12.7   | Etapa de Grafcet do Gemma                                                                                      |
+| Grafcet_Gemma_1    | %MB13    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| D1                 | %M13.0   | Etapa de Grafcet do Gemma                                                                                      |
+| Reset_ST20_Memorys | %MB14    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| Grafcet_Parado     | %M14.0   | Grafcet Parado por ordem do Gemma                                                                              |
+| Grafcet_Emergencia | %M14.1   | Grafcet em Emergencia por ordem do Gemma                                                                       |
+| O_Start            | %M14.2   | Ordem de Start, dada pela HMI, Tesla ou Localmente para o Gemma                                                |
+| O_Stop             | %M14.3   | Ordem de Stop, dada pela HMI, Tesla ou Localmente  para o Gemma                                                |
+| O_Emerg            | %M14.4   | Ordem de Emergencia, dada pela HMI, Tesla ou Localmente  para o Gemma                                          |
+| O_Marcha_A         | %M14.5   | Ordem de Marcha, Automático, dada pelo Gemma Master                                                            |
+| O_Marcha_C         | %M14.6   | Ordem de Marcha, Ciclo, dada pelo Gemma Master                                                                 |
+| HL11_Cond          | %M15.0   | Memória do estado da Iluminação HL11                                                                           |
+| HL12_Cond          | %M15.1   | Memória do estado da Iluminação HL12                                                                           |
+| HL13_Cond          | %M15.2   | Memória do estado da Iluminação HL13                                                                           |
 	
 ##### Comunicações
 <a id="est-20-comunicacoes"></a>
 
-|                    | Entradas |                                                                |
-|:------------------:|:--------:|:--------------------------------------------------------------:|
-| Label              | Endereço | Comentário                                                     |
-| ST20_ST10_1   | %IB104  | Byte de Comunicação, a ST10 recebe informação da ST20                |
-| ST10_Ok_ST20  | %I104.0 | Informação que o Robô está em posição para operar na ST20            |
-| ST20_ST10_2   | %IB105  | Byte de Comunicação, a ST10 recebe informação da ST20                |
-| Emerg_M_ST20  | %I105.2 | Ordem de Emergencia, dada pelo Gemma Master para a ST20              |
-| Stop_M_ST20   | %I105.3 | Ordem de Stop, dada pelo Gemma Master para a ST20                    |
-| Init_M_ST20   | %I105.4 | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST20    |
-| MM_A_ST20     | %I105.5 | Modo de Macha Automático, escolhido pelo Gemma Master para a ST20    |
-| MM_C_ST20     | %I105.6 | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST20         |
-| MM_M_ST20     | %I105.7 | Modo de Macha Manual, escolhido pelo Gemma Master para a ST20        |
-| ST20_ST10_3   | %IB106  | Byte de Comunicação, a ST10 recebe informação da ST20                |
-| MF_HMI_ST20   | %I106.0 | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST20   |
-| MF_SCADA_ST20 | %I106.1 | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST20 |
-| MF_Local_ST20 | %I106.2 | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST20 |
-| HLs_ST20      | %I106.3 | Ordem de teste da Iluminação na ST20                                 |
-| ST20_ST10_4   | %IB107  | Byte de Comunicação, a ST10 recebe informação da ST20                |
+|                        | Entradas |                                                                      |
+|:----------------------:|:--------:|:--------------------------------------------------------------------:|
+| Label                  | Endereço | Comentário                                                           |
+| ST20_ST10_1            | %IB108   | Byte de Comunicação, a ST10 recebe informação da ST20                |
+| ST10_Ok_ST20           | %I108.0  | Informação que o Robô está em posição para operar na ST20            |
+| ST20_ST10_2            | %IB109   | Byte de Comunicação, a ST10 recebe informação da ST20                |
+| Emerg_M_ST20           | %I109.2  | Ordem de Emergencia, dada pelo Gemma Master para a ST20              |
+| Stop_M_ST20            | %I109.3  | Ordem de Stop, dada pelo Gemma Master para a ST20                    |
+| Init_M_ST20            | %I109.4  | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST20    |
+| MM_A_ST20              | %I109.5  | Modo de Macha Automático, escolhido pelo Gemma Master para a ST20    |
+| MM_C_ST20              | %I109.6  | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST20         |
+| MM_M_ST20              | %I109.7  | Modo de Macha Manual, escolhido pelo Gemma Master para a ST20        |
+| ST20_ST10_3            | %IB110   | Byte de Comunicação, a ST10 recebe informação da ST20                |
+| MF_HMI_ST20            | %I110.0  | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST20   |
+| MF_SCADA_ST20          | %I110.1  | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST20 |
+| MF_Local_ST20          | %I110.2  | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST20 |
+| HLs_ST20               | %I110.3  | Ordem de teste da Iluminação na ST20                                 |
+| Scada_O_Start_ST20     | %I110.4  | Byte de Comunicação, a ST10 recebe informação da ST20                |
+| Scada_O_Start_ST20     | %I110.5  | Ordem de Start, dada Tesla Scada, da ST10 para a ST20                |
+| Scada_O_Stop_ST20      | %I110.6  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST20                 |
+| Scada_O_Emerg_ST20     | %I110.7  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST20           |
+| Scada_Init_Manual_ST20 | %IB111   | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST20 |
 
 |             | Saidas   |                                                                   |
 |:-----------:|:--------:|:-----------------------------------------------------------------:|
@@ -780,10 +783,10 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | F1_ST20     | %Q104.5  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
 | A3_ST20     | %Q104.6  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
 | F5_ST20     | %Q104.7  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
-| A4_ST20     | %QB105   | Byte de Comunicação, a ST20 envia informação para a ST10 (Master) |
-| ST10_ST20_2 | %Q105.0  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
+| ST10_ST20_2 | %QB105   | Byte de Comunicação, a ST20 envia informação para a ST10 (Master) |
+| A4_ST20     | %Q105.0  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
 | D1_ST20     | %Q105.1  | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
-| ST10_ST20_3 | %QB106   | Informação do estado da Etapa do Grafcet do Gemma (ST20)          |
+| ST10_ST20_3 | %QB106   | Byte de Comunicação, a ST20 envia informação para a ST10 (Master) |
 | ST10_ST20_4 | %QB107   | Byte de Comunicação, a ST20 envia informação para a ST10 (Master) |
 
 #### Estação 30
@@ -795,16 +798,16 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 |                  | Entradas |                                                                                    |
 |:----------------:|:--------:|:----------------------------------------------------------------------------------:|
 | Label            | Endereço | Comentário                                                                         |
-| 3231*B31         | %I0.0    | Sensor Peça na Pinça                                                               |
-| 3231*B11         | %I0.1    | Sensor da Pinça (Abrir/Fechar)                                                     |
-| 3231*B21         | %I0.2    | Sensor de Pinça Avancada                                                           |
-| 3231*B22         | %I0.3    | Sensor de Pinça Recuada                                                            |
+| 3231*B11         | %I0.0    | Sensor Peca                                                                        |
+| 3231*B21         | %I0.1    | Sensor de Abertura e Fecho da Pinca                                                |
+| 3231*B31         | %I0.2    | Sensor de Pinca Avancada                                                           |
+| 3231*B32         | %I0.3    | Sensor de Pinca Recuado                                                            |
 | 3232*B11         | %I0.4    | Sensor de Prensa Subida                                                            |
 | 3232*B12         | %I0.5    | Sensor de Prensa Descida                                                           |
-| 323920SB22       | %I1.2    | Botão Vermelho                                                                     |
-| 323920SB21       | %I1.3    | Botão Verde                                                                        |
-| 323920QS24       | %I1.4    | Botão Emergência                                                                   |
-| 323920SA23       | %I1.5    | Seletor                                                                            |
+| 323920SB22       | %I1.2    | Botao Vermelho                                                                     |
+| 323920SB21       | %I1.3    | Botao Verde                                                                        |
+| 323920QS24       | %I1.4    | Botao Emergencia                                                                   |
+| 323920SA23       | %I1.5    | SA                                                                                 |
 | Reset_HMI_Inputs | %IB2     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
 | HMI_SB1          | %I2.0    | Input de Start do Gemma Master                                                     |
 | HMI_SB2          | %I2.1    | Input de Stop do Gemma                                                             |
@@ -824,66 +827,68 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 ##### Memórias
 <a id="est-30-memorias"></a>
 
-| Label                       | Endereço | Comentário                                                                                                     |
-|:---------------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
-| Label                       | Endereço | Comentário                                                                                                     |
-| Grafcet_10                  | %MB10    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
-| E10                         | %M10.0   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E11                         | %M10.1   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E12                         | %M10.2   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E13                         | %M10.3   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E14                         | %M10.4   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E15                         | %M10.5   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E16                         | %M10.6   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E17                         | %M10.7   | Etapa de Grafcet (Funcionamento)                                                                               |
-| Grafcet_10_1                | %MB11    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
-| E18                         | %M11.0   | Etapa de Grafcet (Funcionamento)                                                                               |
-| E19                         | %M11.1   | Etapa de Grafcet (Funcionamento)                                                                               |
-| Grafcet_Gemma               | %MB12    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
-| A6                          | %M12.0   | Etapa de Grafcet do Gemma                                                                                      |
-| A1                          | %M12.1   | Etapa de Grafcet do Gemma                                                                                      |
-| F2                          | %M12.2   | Etapa de Grafcet do Gemma                                                                                      |
-| F1                          | %M12.3   | Etapa de Grafcet do Gemma                                                                                      |
-| F1_1                        | %M12.4   | Etapa de Grafcet do Gemma                                                                                      |
-| F5                          | %M12.5   | Etapa de Grafcet do Gemma                                                                                      |
-| A3                          | %M12.4   | Etapa de Grafcet do Gemma                                                                                      |
-| F5                          | %M12.6   | Etapa de Grafcet do Gemma                                                                                      |
-| Grafcet_Gemma_1             | %MB13    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
-| A4                          | %M12.7   | Etapa de Grafcet do Gemma                                                                                      |
-| D1                          | %M13.0   | Etapa de Grafcet do Gemma                                                                                      |
-| Reset_ST30_Memorys          | %MB14    | Byte das memórias usadas na ST20, usado na Inicialização para gararantir que todos o Bits estão a 0            |
-| Grafcet_Parado              | %M14.0   | Grafcet Parado por ordem do Gemma                                                                              |
-| Grafcet_Emergencia          | %M14.1   | Grafcet em Emergencia por ordem do Gemma                                                                       |
-| O_Start                     | %M14.2   | Ordem de Start, dada pela HMI, Tesla ou Localmente para o Gemma                                                |
-| O_Stop                      | %M14.3   | Ordem de Stop, dada pela HMI, Tesla ou Localmente  para o Gemma                                                |
-| O_Emerg                     | %M14.4   | Ordem de Emergencia, dada pela HMI, Tesla ou Localmente  para o Gemma                                          |
-| O_Marcha_A                  | %M14.5   | Ordem de Marcha, Automático, dada pelo Gemma Master                                                            |
-| O_Marcha_C                  | %M14.6   | Ordem de Marcha, Ciclo, dada pelo Gemma Master                                                                 |
-| HL11_Cond                   | %M15.0   | Memória do estado da Iluminação HL11                                                                           |
-| HL12_Cond                   | %M15.1   | Memória do estado da Iluminação HL12                                                                           |
-| HL13_Cond                   | %M15.2   | Memória do estado da Iluminação HL13                                                                           |
+| Label              | Endereço | Comentário                                                                                                     |
+|:------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
+| Grafcet_10         | %MB10    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E10                | %M10.0   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E11                | %M10.1   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E12                | %M10.2   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E13                | %M10.3   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E14                | %M10.4   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E15                | %M10.5   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E16                | %M10.6   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E17                | %M10.7   | Etapa de Grafcet (Funcionamento)                                                                               |
+| Grafcet_10_1       | %MB11    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E18                | %M11.0   | Etapa de Grafcet (Funcionamento)                                                                               |
+| E19                | %M11.1   | Etapa de Grafcet (Funcionamento)                                                                               |
+| Grafcet_Gemma      | %MB12    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| A6                 | %M12.0   | Etapa de Grafcet do Gemma                                                                                      |
+| A1                 | %M12.1   | Etapa de Grafcet do Gemma                                                                                      |
+| F2                 | %M12.2   | Etapa de Grafcet do Gemma                                                                                      |
+| F1                 | %M12.3   | Etapa de Grafcet do Gemma                                                                                      |
+| F1_1               | %M12.4   | Etapa de Grafcet do Gemma                                                                                      |
+| F5                 | %M12.5   | Etapa de Grafcet do Gemma                                                                                      |
+| A3                 | %M12.6   | Etapa de Grafcet do Gemma                                                                                      |
+| A4                 | %M12.7   | Etapa de Grafcet do Gemma                                                                                      |
+| Grafcet_Gemma_1    | %MB13    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| D1                 | %M13.0   | Etapa de Grafcet do Gemma                                                                                      |
+| Reset_ST30_Memorys | %MB14    | Byte das memórias usadas na ST20, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| Grafcet_Parado     | %M14.0   | Grafcet Parado por ordem do Gemma                                                                              |
+| Grafcet_Emergencia | %M14.1   | Grafcet em Emergencia por ordem do Gemma                                                                       |
+| O_Start            | %M14.2   | Ordem de Start, dada pela HMI, Tesla ou Localmente para o Gemma                                                |
+| O_Stop             | %M14.3   | Ordem de Stop, dada pela HMI, Tesla ou Localmente  para o Gemma                                                |
+| O_Emerg            | %M14.4   | Ordem de Emergencia, dada pela HMI, Tesla ou Localmente  para o Gemma                                          |
+| O_Marcha_A         | %M14.5   | Ordem de Marcha, Automático, dada pelo Gemma Master                                                            |
+| O_Marcha_C         | %M14.6   | Ordem de Marcha, Ciclo, dada pelo Gemma Master                                                                 |
+| HL11_Cond          | %M15.0   | Memória do estado da Iluminação HL11                                                                           |
+| HL12_Cond          | %M15.1   | Memória do estado da Iluminação HL12                                                                           |
+| HL13_Cond          | %M15.2   | Memória do estado da Ilumina
 
 ##### Comunicações
 <a id="est-30-comunicacoes"></a>
 
-|               | Entradas |                                                                      |
-|:-------------:|:--------:|:--------------------------------------------------------------------:|
-| Label         | Endereço | Comentário                                                           |
-| ST30_ST10_1   | %IB108   | Byte de Comunicação, a ST10 recebe informação da ST30                |
-| ST10_Ok_ST30  | %I108.0  | Informação que o Robô está em posição para operar na ST30            |
-| ST30_ST10_2   | %IB109   | Byte de Comunicação, a ST10 recebe informação da ST30                |
-| Emerg_M_ST30  | %I109.2  | Ordem de Emergencia, dada pelo Gemma Master para a ST30              |
-| Stop_M_ST30   | %I109.3  | Ordem de Stop, dada pelo Gemma Master para a ST30                    |
-| Init_M_ST30   | %I109.4  | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST30    |
-| MM_A_ST30     | %I109.5  | Modo de Macha Automático, escolhido pelo Gemma Master para a ST30    |
-| MM_C_ST30     | %I109.6  | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST30         |
-| MM_M_ST30     | %I109.7  | Modo de Macha Manual, escolhido pelo Gemma Master para a ST30        |
-| ST30_ST10_3   | %IB110   | Byte de Comunicação, a ST10 recebe informação da ST30                |
-| MF_HMI_ST30   | %I110.0  | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST30   |
-| MF_Local_ST30 | %I110.1  | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST30 |
-| MF_SCADA_ST30 | %I110.2  | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST30 |
-| HLs_ST30      | %I110.3  | Ordem de teste da Iluminação na ST30                                 |
-| ST30_ST10_4   | %IB111   | Ordem de Start, dada pelo Tesla Scada para a ST30                    |
+|                        | Entradas |                                                                      |
+|:----------------------:|:--------:|:--------------------------------------------------------------------:|
+| Label                  | Endereço | Comentário                                                           |
+| ST30_ST10_1            | %IB108   | Byte de Comunicação, a ST10 recebe informação da ST30                |
+| ST10_Ok_ST30           | %I108.0  | Informação que o Robô está em posição para operar na ST30            |
+| ST30_ST10_2            | %IB109   | Byte de Comunicação, a ST10 recebe informação da ST30                |
+| Emerg_M_ST30           | %I109.2  | Ordem de Emergencia, dada pelo Gemma Master para a ST30              |
+| Stop_M_ST30            | %I109.3  | Ordem de Stop, dada pelo Gemma Master para a ST30                    |
+| Init_M_ST30            | %I109.4  | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST30    |
+| MM_A_ST30              | %I109.5  | Modo de Macha Automático, escolhido pelo Gemma Master para a ST30    |
+| MM_C_ST30              | %I109.6  | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST30         |
+| MM_M_ST30              | %I109.7  | Modo de Macha Manual, escolhido pelo Gemma Master para a ST30        |
+| ST30_ST10_3            | %IB110   | Byte de Comunicação, a ST10 recebe informação da ST30                |
+| MF_HMI_ST30            | %I110.0  | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST30   |
+| MF_Local_ST30          | %I110.1  | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST30 |
+| MF_SCADA_ST30          | %I110.2  | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST30 |
+| HLs_ST30               | %I110.3  | Ordem de teste da Iluminação na ST30                                 |
+| Scada_O_Start_ST30     | %I110.4  | Ordem de Start, dada pelo Tesla Scada para a ST30                    |
+| Scada_O_Stop_ST30      | %I110.5  | Ordem de Start, dada Tesla Scada, da ST10 para a ST30                |
+| Scada_O_Emerg_ST30     | %I110.6  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST30                 |
+| Scada_Init_Manual_ST30 | %I110.7  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST30           |
+| ST30_ST10_4            | %IB111   | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST30 |
 
 |             | Saidas   |                                                                   |
 |:-----------:|:--------:|:-----------------------------------------------------------------:|
@@ -939,6 +944,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 
 |            | Saidas   |                      |
 |:----------:|:--------:|:--------------------:|
+| Label      | Endereço | Comentário           |
 | 3241*Y20   | %Q0.0    | Cilindro 2           |
 | 3241*Y10   | %Q0.1    | Cilindro 1           |
 | 3241*Y30   | %Q0.2    | Base Miolo           |
@@ -955,87 +961,90 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 ##### Memórias
 <a id="est-40-memorias"></a>
 
-| Label                       | Endereço | Comentário                                                                                                     |
-|:---------------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
-| Grafcet_10                  | %MB10    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
-| E10                         | %M10.0   | Etapa de Grafcet de Funcionamento                                                                              |
-| E11                         | %M10.1   | Etapa de Grafcet de Funcionamento                                                                              |
-| E12                         | %M10.2   | Etapa de Grafcet de Funcionamento                                                                              |
-| E13                         | %M10.3   | Etapa de Grafcet de Funcionamento                                                                              |
-| E14                         | %M10.4   | Etapa de Grafcet de Funcionamento                                                                              |
-| E15                         | %M10.5   | Etapa de Grafcet de Funcionamento                                                                              |
-| Grafcet_20                  | %MB11    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
-| E20                         | %M11.0   | Etapa de Grafcet de Funcionamento                                                                              |
-| E21                         | %M11.1   | Etapa de Grafcet de Funcionamento                                                                              |
-| E22                         | %M11.2   | Etapa de Grafcet de Funcionamento                                                                              |
-| E23                         | %M11.3   | Etapa de Grafcet de Funcionamento                                                                              |
-| Grafcet_30                  | %MB12    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
-| E30                         | %M12.0   | Etapa de Grafcet de Funcionamento                                                                              |
-| E31                         | %M12.1   | Etapa de Grafcet de Funcionamento                                                                              |
-| E32                         | %M12.2   | Etapa de Grafcet de Funcionamento                                                                              |
-| E33                         | %M12.3   | Etapa de Grafcet de Funcionamento                                                                              |
-| E34                         | %M12.4   | Etapa de Grafcet de Funcionamento                                                                              |
-| E35                         | %M12.5   | Etapa de Grafcet de Funcionamento                                                                              |
-| E36                         | %M12.6   | Etapa de Grafcet de Funcionamento                                                                              |
-| E37                         | %M12.7   | Etapa de Grafcet de Funcionamento                                                                              |
-| Grafcet_30_1                | %MB13    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
-| E38                         | %M13.0   | Etapa de Grafcet (Funcionamento)                                                                               |
-| Grafcet_Gemma               | %MB14    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
-| A6                          | %M14.0   | Etapa de Grafcet do Gemma                                                                                      |
-| A1                          | %M14.1   | Etapa de Grafcet do Gemma                                                                                      |
-| F2                          | %M14.2   | Etapa de Grafcet do Gemma                                                                                      |
-| F1                          | %M14.3   | Etapa de Grafcet do Gemma                                                                                      |
-| F1_1                        | %M14.4   | Etapa de Grafcet do Gemma                                                                                      |
-| F5                          | %M14.5   | Etapa de Grafcet do Gemma                                                                                      |
-| A3                          | %M14.6   | Etapa de Grafcet do Gemma                                                                                      |
-| A4                          | %M14.7   | Etapa de Grafcet do Gemma                                                                                      |
-| Grafcet_Gemma_1             | %MB15    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
-| D1                          | %M15.0   | Etapa de Grafcet do Gemma                                                                                      |
-| Reset_ST40_Memorys          | %MB16    | Byte das memórias usadas na ST20, usado na Inicialização para gararantir que todos o Bits estão a 0            |
-| Grafcet_Parado              | %M16.0   | Grafcet Parado por ordem do Gemma                                                                              |
-| Grafcet_Emergencia          | %M16.1   | Grafcet em Emergencia por ordem do Gemma                                                                       |
-| O_Start                     | %M16.2   | Ordem de Start, dada pela HMI, Tesla ou Localmente para o Gemma                                                |
-| O_Stop                      | %M16.3   | Ordem de Stop, dada pela HMI, Tesla ou Localmente  para o Gemma                                                |
-| O_Emerg                     | %M16.4   | Ordem de Emergencia, dada pela HMI, Tesla ou Localmente  para o Gemma                                          |
-| O_Marcha_A                  | %M16.5   | Ordem de Marcha, Automático, dada pelo Gemma Master                                                            |
-| O_Marcha_C                  | %M16.6   | Ordem de Marcha, Ciclo, dada pelo Gemma Master                                                                 |
-| HL11_M_Cond                 | %M17.0   | Memória do estado da Iluminação HL11 (Gemma Master)                                                            |
-| HL11_Cond                   | %M17.1   | Memória do estado da Iluminação HL12 (Gemma)                                                                   |
-| HL12_M_Cond                 | %M17.2   | Memória do estado da Iluminação HL12 (Gemma Master)                                                            |
-| HL12_Cond                   | %M17.3   | Memória do estado da Iluminação HL12 (Gemma)                                                                   |
-| HL13_M_Cond                 | %M17.4   | Memória do estado da Iluminação HL13 (Gemma Master)                                                            |
-| HL13_Cond                   | %M17.5   | Memória do estado da Iluminação HL13 (Gemma)                                                                   |
+| Label                 | Endereço | Comentário                                                                                                     |
+|:---------------------:|:--------:|:--------------------------------------------------------------------------------------------------------------:|
+| Grafcet_10            | %MB10    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E10                   | %M10.0   | Etapa de Grafcet de Funcionamento                                                                              |
+| E11                   | %M10.1   | Etapa de Grafcet de Funcionamento                                                                              |
+| E12                   | %M10.2   | Etapa de Grafcet de Funcionamento                                                                              |
+| E13                   | %M10.3   | Etapa de Grafcet de Funcionamento                                                                              |
+| E14                   | %M10.4   | Etapa de Grafcet de Funcionamento                                                                              |
+| E15                   | %M10.5   | Etapa de Grafcet de Funcionamento                                                                              |
+| Grafcet_20            | %MB11    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E20                   | %M11.0   | Etapa de Grafcet de Funcionamento                                                                              |
+| E21                   | %M11.1   | Etapa de Grafcet de Funcionamento                                                                              |
+| E22                   | %M11.2   | Etapa de Grafcet de Funcionamento                                                                              |
+| E23                   | %M11.3   | Etapa de Grafcet de Funcionamento                                                                              |
+| Grafcet_30            | %MB12    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E30                   | %M12.0   | Etapa de Grafcet de Funcionamento                                                                              |
+| E31                   | %M12.1   | Etapa de Grafcet de Funcionamento                                                                              |
+| E32                   | %M12.2   | Etapa de Grafcet de Funcionamento                                                                              |
+| E33                   | %M12.3   | Etapa de Grafcet de Funcionamento                                                                              |
+| E34                   | %M12.4   | Etapa de Grafcet de Funcionamento                                                                              |
+| E35                   | %M12.5   | Etapa de Grafcet de Funcionamento                                                                              |
+| E36                   | %M12.6   | Etapa de Grafcet de Funcionamento                                                                              |
+| E37                   | %M12.7   | Etapa de Grafcet de Funcionamento                                                                              |
+| Grafcet_30_1          | %MB13    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| E38                   | %M13.0   | Etapa de Grafcet (Funcionamento)                                                                               |
+| Grafcet_Gemma         | %MB14    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| A6                    | %M14.0   | Etapa de Grafcet do Gemma                                                                                      |
+| A1                    | %M14.1   | Etapa de Grafcet do Gemma                                                                                      |
+| F2                    | %M14.2   | Etapa de Grafcet do Gemma                                                                                      |
+| F1                    | %M14.3   | Etapa de Grafcet do Gemma                                                                                      |
+| F1_1                  | %M14.4   | Etapa de Grafcet do Gemma                                                                                      |
+| F5                    | %M14.5   | Etapa de Grafcet do Gemma                                                                                      |
+| A3                    | %M14.6   | Etapa de Grafcet do Gemma                                                                                      |
+| A4                    | %M14.7   | Etapa de Grafcet do Gemma                                                                                      |
+| Grafcet_Gemma_1       | %MB15    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| D1                    | %M15.0   | Etapa de Grafcet do Gemma                                                                                      |
+| Reset_ST40_Memorys    | %MB16    | Byte das memórias usadas na ST20, usado na Inicialização para gararantir que todos o Bits estão a 0            |
+| Grafcet_Parado        | %M16.0   | Grafcet Parado por ordem do Gemma                                                                              |
+| Grafcet_Emergencia    | %M16.1   | Grafcet em Emergencia por ordem do Gemma                                                                       |
+| O_Start               | %M16.2   | Ordem de Start, dada pela HMI, Tesla ou Localmente para o Gemma                                                |
+| O_Stop                | %M16.3   | Ordem de Stop, dada pela HMI, Tesla ou Localmente  para o Gemma                                                |
+| O_Emerg               | %M16.4   | Ordem de Emergencia, dada pela HMI, Tesla ou Localmente  para o Gemma                                          |
+| O_Marcha_A            | %M16.5   | Ordem de Marcha, Automático, dada pelo Gemma Master                                                            |
+| O_Marcha_C            | %M16.6   | Ordem de Marcha, Ciclo, dada pelo Gemma Master                                                                 |
+| Grafcet_Funcionamento | %M16.7   |                                                                                                                |
+| HL11_M_Cond           | %M17.0   | Memória do estado da Iluminação HL11 (Gemma Master)                                                            |
+| HL11_Cond             | %M17.1   | Memória do estado da Iluminação HL11 (Gemma)                                                                   |
+| HL12_M_Cond           | %M17.2   | Memória do estado da Iluminação HL12 (Gemma Master)                                                            |
+| HL12_Cond             | %M17.3   | Memória do estado da Iluminação HL12 (Gemma)                                                                   |
+| HL13_M_Cond           | %M17.4   | Memória do estado da Iluminação HL13 (Gemma)                                                                   |
+| HL13_Cond             | %M17.5   | Memória do estado da Iluminação HL13 (Gemma)                                                                   |
 
 ##### Comunicações
 <a id="est-40-comunicacoes"></a>
 
-|                    | Entradas |                                                                                  |
-|:------------------:|:--------:|:--------------------------------------------------------------------------------:|
-| Label              | Endereço | Comentário                                                                       |
-| ST40_ST10_1        | %IB112  | Byte de Comunicação, a ST10 recebe informação da ST40                             |
-| ST10_Ok_ST40       | %I112.0 | Informação que o Robô está em posição para operar na ST40                         |
-| ST40_ST10_2        | %IB113  | Byte de Comunicação, a ST10 recebe informação da ST40                             |
-| A6_M_ST40          | %I113.2 | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
-| A1_M_ST40          | %I113.3 | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
-| F2_M_ST40          | %I113.4 | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
-| F1_M_ST40          | %I113.5 | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
-| F5_M_ST40          | %I113.6 | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
-| F6_M_ST40          | %I113.7 | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
-| ST40_ST10_3        | %IB114  | Byte de Comunicação, a ST10 recebe informação da ST40                             |
-| A3_M_ST40          | %I114.0 | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
-| A4_M_ST40          | %I114.1 | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
-| D1_M_ST40          | %I114.2 | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
-| Emerg_M_ST40       | %I114.3 | Ordem de Emergencia, dada pelo Gemma Master para a ST40                           |
-| Stop_M_ST40        | %I114.4 | Ordem de Stop, dada pelo Gemma Master para a ST40                                 |
-| Init_M_ST40        | %I114.5 | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST40                 |
-| MM_A_ST40          | %I114.6 | Modo de Macha Automático, escolhido pelo Gemma Master para a ST40                 |
-| MM_C_ST40          | %I114.7 | Byte de Comunicação, a ST10 recebe informação da ST40                             |
-| ST40_ST10_4        | %IB115  | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST40                      |
-| MM_M_ST40          | %I115.0 | Modo de Macha Manual, escolhido pelo Gemma Master para a ST40                     |
-| MF_HMI_ST40        | %I115.1 | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST40                |
-| MF_SCADA_ST40      | %I115.2 | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST40              |
-| MF_Local_ST40      | %I115.3 | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST40              |
-| HLs_ST40           | %I115.4 | Ordem de teste da Iluminação na ST40                                              |
+|                    | Entradas |                                                                                   |
+|:------------------:|:--------:|:---------------------------------------------------------------------------------:|
+| Label              | Endereço | Comentário                                                                        |
+| ST10_Ok_ST40       | %IB112   | Byte de Comunicação, a ST10 recebe informação da ST40                             |
+| ST40_ST10_2        | %I112.0  | Informação que o Robô está em posição para operar na ST40                         |
+| A6_M_ST40          | %IB113   | Byte de Comunicação, a ST10 recebe informação da ST40                             |
+| A1_M_ST40          | %I113.2  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| F2_M_ST40          | %I113.3  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| F1_M_ST40          | %I113.4  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| F5_M_ST40          | %I113.5  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| F6_M_ST40          | %I113.6  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| ST40_ST10_3        | %I113.7  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| A3_M_ST40          | %IB114   | Byte de Comunicação, a ST10 recebe informação da ST40                             |
+| A4_M_ST40          | %I114.0  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| D1_M_ST40          | %I114.1  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| Emerg_M_ST40       | %I114.2  | Informação do estado da Etapa do Grafcet do Gemma Master, usada para a Iluminação |
+| Stop_M_ST40        | %I114.3  | Ordem de Emergencia, dada pelo Gemma Master para a ST40                           |
+| Init_M_ST40        | %I114.4  | Ordem de Stop, dada pelo Gemma Master para a ST40                                 |
+| MM_A_ST40          | %I114.5  | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST40                 |
+| MM_C_ST40          | %I114.6  | Modo de Macha Automático, escolhido pelo Gemma Master para a ST40                 |
+| ST40_ST10_4        | %I114.7  | Byte de Comunicação, a ST10 recebe informação da ST40                             |
+| MM_M_ST40          | %IB115   | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST40                      |
+| MF_HMI_ST40        | %I115.0  | Modo de Macha Manual, escolhido pelo Gemma Master para a ST40                     |
+| MF_SCADA_ST40      | %I115.1  | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST40                |
+| MF_Local_ST40      | %I115.2  | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST40              |
+| HLs_ST40           | %I115.3  | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST40              |
+| Scada_O_Start_ST40 | %I115.4  | Ordem de Start, dada Tesla Scada, da ST10 para a ST40                             |
+| Scada_O_Stop_ST40  | %I115.5  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST40                              |
+| Scada_O_Emerg_ST40 | %I115.6  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST40                        |
 
 |             | Saidas   |                                                                   |
 |:-----------:|:--------:|:-----------------------------------------------------------------:|
@@ -1066,15 +1075,15 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | Enconder_A       | %I0.0    | Enconder A                                                                         |
 | Enconder_B       | %I0.1    | Enconder B                                                                         |
 | Enconder_Z       | %I0.2    | Enconder Z                                                                         |
-| 325010B11        | %I0.3    | Sensor de Peça (Tapete)                                                            |
-| 325010B13        | %I0.4    | Sensor de Peça Metálica                                                            |
-| 325010B12        | %I0.5    | Sensor de Peça Branca/Metálica                                                     |
-| 325010B21        | %I0.7    | Sensor Cilindro1 Avançado                                                          |
-| 325010B31        | %I1.0    | Sensor Cilindro2 Avançado                                                          |
-| 325010B41        | %I1.1    | Sensor Cilindro3 Avançado                                                          |
-| 325920SB22       | %I1.2    | Botão Vermelho                                                                     |
-| 325920SB21       | %I1.3    | Botão Verde                                                                        |
-| 325920QS24       | %I1.4    | Botão Emergência                                                                   |
+| 325010B11        | %I0.3    | Sensor de Peca                                                                     |
+| 325010B13        | %I0.4    | Sensor Metalico                                                                    |
+| 325010B12        | %I0.5    | Sensor Otico                                                                       |
+| 325010B21        | %I0.7    | Sensor Cilindro 1 Avancado                                                         |
+| 325010B31        | %I1.0    | Sensor Cilindro 2 Avancado                                                         |
+| 325010B41        | %I1.1    | Sensor Cilindro 3 Avancado                                                         |
+| 325920SB22       | %I1.2    | Botao Vermelho                                                                     |
+| 325920SB21       | %I1.3    | Botao Verde                                                                        |
+| 325920QS24       | %I1.4    | Botao Emergencia                                                                   |
 | 325920SA23       | %I1.5    | Seletor                                                                            |
 | Reset_HMI_Inputs | %IB2     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
 | HMI_SB1          | %I2.0    | Input de Start do Gemma Master                                                     |
@@ -1086,17 +1095,17 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HMI_Start_Tapete | %I2.6    | Em Modo Manual, Start Tapete ST50                                                  |
 | HMI_Stop_Tapete  | %I2.7    | Em Modo Manual, Stop Tapete ST50                                                   |
 
-|            | Saidas   |                              |
-|:----------:|:--------:|:----------------------------:|
-| Label      | Endereço | Comentário                   |
-| 3250M51A   | %Q0.0    | Inversores de Freq. (Frente) |
-| 3250M51B   | %Q0.1    | Inversores de Freq. (Atrás)  |
-| 325010Y20  | %Q0.4    | Cilindro 1                   |
-| 325010Y30  | %Q0.5    | Cilindro 2                   |
-| 325010Y40  | %Q0.6    | Cilindro 3                   |
-| 325920HL11 | %Q0.7    | Luz do Painel (Laranja)      |
-| 325920HL12 | %Q1.0    | Luz do Painel (Verde)        |
-| 325920HL13 | %Q1.1    | Luz do Painel (Vermelha)     |
+|            | Saidas   |                                   |
+|:----------:|:--------:|:---------------------------------:|
+| Label      | Endereço | Comentário                        |
+| 3250M51A   | %Q0.0    | Inversores de Frequencia (Frente) |
+| 3250M51B   | %Q0.1    | Inversores de Frequencia (Atras)  |
+| 325010Y20  | %Q0.4    | Cilindro 1                        |
+| 325010Y30  | %Q0.5    | Cilindro 2                        |
+| 325010Y40  | %Q0.6    | Cilindro 3                        |
+| 325920HL11 | %Q0.7    | Painel Luz Laranja                |
+| 325920HL12 | %Q1.0    | Painel Luz Verde                  |
+| 325920HL13 | %Q1.1    | Painel Luz Vermelha               |
 
 ##### Memórias
 <a id="est-50-memorias"></a>
@@ -1138,45 +1147,50 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | A4                    | %M13.7   | Etapa de Grafcet do Gemma                                                                                                      |
 | Grafcet_Gemma_1       | %MB14    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0                            |
 | D1                    | %M14.0   | Etapa de Grafcet do Gemma                                                                                                      |
-| Grafcet_Parado        | %M14.1   | Grafcet Parado por ordem do Gemma                                                                                              |
-| Grafcet_Emergencia    | %M14.2   | Grafcet em Emergencia por ordem do Gemma                                                                                       |
-| O_Start               | %M14.3   | Ordem de Start, dada pela HMI, Tesla ou Localmente para o Gemma                                                                |
-| O_Stop                | %M14.4   | Ordem de Stop, dada pela HMI, Tesla ou Localmente  para o Gemma                                                                |
-| O_Emerg               | %M14.5   | Ordem de Emergencia, dada pela HMI, Tesla ou Localmente  para o Gemma                                                          |
-| O_Marcha_A            | %M14.6   | Ordem de Marcha, Automático, dada pelo Gemma Master                                                                            |
-| O_Marcha_C            | %M14.7   | Ordem de Marcha, Ciclo, dada pelo Gemma Master                                                                                 |
-| HL11_M_Cond           | %M15.0   | Memória do estado da Iluminação HL11                                                                                           |
-| HL12_M_Cond           | %M15.1   | Memória do estado da Iluminação HL12                                                                                           |
-| HL13_M_Cond           | %M15.2   | Memória do estado da Iluminação HL13                                                                                           |
+| Reset_ST50_Memorys    | %MB15    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0                            |
+| Grafcet_Parado        | %M15.0   | Grafcet Parado por ordem do Gemma                                                                                              |
+| Grafcet_Emergencia    | %M15.1   | Grafcet em Emergencia por ordem do Gemma                                                                                       |
+| O_Start               | %M15.2   | Ordem de Start, dada pela HMI, Tesla ou Localmente para o Gemma                                                                |
+| O_Stop                | %M15.3   | Ordem de Stop, dada pela HMI, Tesla ou Localmente  para o Gemma                                                                |
+| O_Emerg               | %M15.4   | Ordem de Emergencia, dada pela HMI, Tesla ou Localmente  para o Gemma                                                          |
+| O_Marcha_A            | %M15.5   | Ordem de Marcha, Automático, dada pelo Gemma Master                                                                            |
+| O_Marcha_C            | %M15.6   | Ordem de Marcha, Ciclo, dada pelo Gemma Master                                                                                 |
+| HL11_M_Cond           | %M16.0   | Memória do estado da Iluminação HL11                                                                                           |
+| HL12_M_Cond           | %M16.1   | Memória do estado da Iluminação HL12                                                                                           |
+| HL13_M_Cond           | %M16.2   | Memória do estado da Iluminação HL13                                                                                           |
 | HMI_Velocidade_Tapete | %MD300   | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 30000). Esse valor é guardado nesta memória |
 
 ##### Comunicações
 <a id="est-50-comunicacoes"></a>
 
-|                    | Entradas |                                                                     |
-|:------------------:|:--------:|:-------------------------------------------------------------------:|
-| Label              | Endereço | Comentário                                                          |
-| ST50_ST10_1        | %IB116  | Byte de Comunicação, a ST10 recebe informação da ST50                |
-| ST10_Ok_ST50       | %I116.0 | Informação que o Robô está em posição para operar na ST50            |
-| ST50_ST10_2        | %IB117  | Byte de Comunicação, a ST10 recebe informação da ST50                |
-| Emerg_M_ST50       | %I117.2 | Ordem de Emergencia, dada pelo Gemma Master para a ST50              |
-| Stop_M_ST50        | %I117.3 | Ordem de Stop, dada pelo Gemma Master para a ST50                    |
-| Init_M_ST50        | %I117.4 | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST50    |
-| MM_A_ST50          | %I117.5 | Modo de Macha Automático, escolhido pelo Gemma Master para a ST50    |
-| MM_C_ST50          | %I117.6 | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST50         |
-| MM_M_ST50          | %I117.7 | Modo de Macha Manual, escolhido pelo Gemma Master para a ST50        |
-| ST50_ST10_3        | %IB118  | Byte de Comunicação, a ST10 recebe informação da ST50                |
-| MF_HMI_ST50        | %I118.0 | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST50   |
-| MF_SCADA_ST50      | %I118.1 | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST50 |
-| MF_Local_ST50      | %I118.2 | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST50 |
-| HLs_ST50           | %I118.3 | Ordem de teste da Iluminação na ST50                                 |
-| ST50_ST10_4        | %IB119  | Ordem de Start, dada pelo Tesla Scada para a ST50                    |
+|                        | Entradas |                                                                      |
+|:----------------------:|:--------:|:--------------------------------------------------------------------:|
+| Label                  | Endereço | Comentário                                                           |
+| ST50_ST10_1            | %IB116   | Byte de Comunicação, a ST10 recebe informação da ST50                |
+| ST10_Ok_ST50           | %I116.0  | Informação que o Robô está em posição para operar na ST50            |
+| ST50_ST10_2            | %IB117   | Byte de Comunicação, a ST10 recebe informação da ST50                |
+| Emerg_M_ST50           | %I117.2  | Ordem de Emergencia, dada pelo Gemma Master para a ST50              |
+| Stop_M_ST50            | %I117.3  | Ordem de Stop, dada pelo Gemma Master para a ST50                    |
+| Init_M_ST50            | %I117.4  | Ordem de Inicialização Manual, dada pelo Gemma Master para a ST50    |
+| MM_A_ST50              | %I117.5  | Modo de Macha Automático, escolhido pelo Gemma Master para a ST50    |
+| MM_C_ST50              | %I117.6  | Modo de Macha Ciclo, escolhido pelo Gemma Master para a ST50         |
+| MM_M_ST50              | %I117.7  | Modo de Macha Manual, escolhido pelo Gemma Master para a ST50        |
+| ST50_ST10_3            | %IB118   | Byte de Comunicação, a ST10 recebe informação da ST50                |
+| MF_HMI_ST50            | %I118.0  | Modo de Funcionamento HMI, escolhido pelo Gemma Master para a ST50   |
+| MF_SCADA_ST50          | %I118.1  | Modo de Funcionamento SCADA, escolhido pelo Gemma Master para a ST50 |
+| MF_Local_ST50          | %I118.2  | Modo de Funcionamento Local, escolhido pelo Gemma Master para a ST50 |
+| HLs_ST50               | %I118.3  | Ordem de teste da Iluminação na ST50                                 |
+| Scada_O_Start_ST50     | %I118.4  | Ordem de Start, dada Tesla Scada, da ST10 para a ST30                |
+| Scada_O_Stop_ST50      | %I118.5  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST50                 |
+| Scada_O_Emerg_ST50     | %I118.6  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST50           |
+| Scada_Init_Manual_ST50 | %I118.7  | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST50 |
+| ST50_ST10_4            | %IB119   | Byte de Comunicação, a ST10 recebe informação da ST50                |
 
 |             | Saidas   |                                                                   |
 |:-----------:|:--------:|:-----------------------------------------------------------------:|
 | Label       | Endereço | Comentário                                                        |
 | ST10_ST50_1 | %QB116   | Byte de Comunicação, a ST50 envia informação para a ST10 (Master) |
-| ST50_Ok     | %Q116.1  | Informação que a ST40 está pronta a operar                        |
+| ST50_Ok     | %Q116.0  | Informação que a ST40 está pronta a operar                        |
 | A6_ST50     | %Q116.2  | Informação do estado da Etapa do Grafcet do Gemma (ST50)          |
 | A1_ST50     | %Q116.3  | Informação do estado da Etapa do Grafcet do Gemma (ST50)          |
 | F2_ST50     | %Q116.4  | Informação do estado da Etapa do Grafcet do Gemma (ST50)          |
