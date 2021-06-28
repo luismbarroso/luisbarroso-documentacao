@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-Last Upgrade: 28/06/2021, 22h10
+Last Upgrade: 28/06/2021, 23h19
 
 - [Introdução](#introducao)
 - [Processo](#processo)
@@ -159,7 +159,7 @@ Assim que a Estação 20 for alimentada com o corpo da peça, essa informação 
 
 A Linha 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remoto**. **No Modo de Funcionamento Local**, os comandos para as estações são dados através da Botoneiras. Já os comandos para a linha são dados pela HMI. **No Modo de Funcionamento HMI**, todos os comandos, tanto para as estações como para a linha, são dados pela HMI. **No Modo de Funcionamento Remoto**, todos os comandos, tanto para as estações como para a linha, são dados remotamente, usando o software Tesla Scada. Quando um destes Modos de Funcionamento é selecionado, na HMI, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Assim que um destes três modos de funcionamento for selecionados, todos os comandos, depende do modo selecionado. Por exemplo: se estivermos a funcionar em modo HMI, se forem dados comandos através da Botoneiras ou através do Tesla Scada, este comandos não funcionaram, pois o Modo HMI está selecionado. 
 
-        Futuramente: Video!
+[![ModoAutomatico](./lines/line32/2020_2021/images/videos/1.png)](https://youtu.be/W-IelbxjGBI)
 
 ### Comunicações
 
