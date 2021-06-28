@@ -196,7 +196,7 @@ Este protocolo de comunicação é usado pelo software Tesla Scada, permitindo a
 | Scada_Init_Manual_ST50      | %Q2.5    | Ordem de Inicialização para a ST50, dada pelo Tesla Scada                          |
 | Scada_O_Emerg_Master        | %Q2.6    | Ordem de Stop, dada pelo Tesla Scada para o Master                                 |
 | Scada_O_Emerg_ST10          | %Q2.7    | Ordem de Emergência, dada pelo Tesla Scada para a ST10                             |
-| Reset_Scada_Memorys_1       | %QB3     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0 |
+| Reset_Scada_Memorys_1       | %QB3     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
 | Scada_O_Emerg_ST20          | %Q3.0    | Ordem de Emergência, dada pelo Tesla Scada para a ST20                             |
 | Scada_O_Emerg_ST30          | %Q3.1    | Ordem de Emergência, dada pelo Tesla Scada para a ST30                             |
 | Scada_O_Emerg_ST40          | %Q3.2    | Ordem de Emergência, dada pelo Tesla Scada para a ST40                             |
@@ -205,7 +205,7 @@ Este protocolo de comunicação é usado pelo software Tesla Scada, permitindo a
 | Scada_O_Start_ST10          | %Q3.5    | Ordem de Start, dada pelo Tesla Scada para a ST10                                  |
 | Scada_O_Start_ST20          | %Q3.6    | Ordem de Start, dada pelo Tesla Scada para a ST20                                  |
 | Scada_O_Start_ST30          | %Q3.7    | Ordem de Start, dada pelo Tesla Scada para a ST30                                  |
-| Reset_Scada_Memorys_2       | %QB4     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0 |
+| Reset_Scada_Memorys_2       | %QB4     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
 | Scada_O_Start_ST40          | %Q4.0    | Ordem de Start, dada pelo Tesla Scada para a ST40                                  |
 | Scada_O_Start_ST50          | %Q4.1    | Ordem de Start, dada pelo Tesla Scada para a ST50                                  |
 | Scada_O_Stop_Master         | %Q4.2    | Ordem de Stop, dada pelo Tesla Scada para a ST10                                   |
@@ -214,7 +214,7 @@ Este protocolo de comunicação é usado pelo software Tesla Scada, permitindo a
 | Scada_O_Stop_ST30           | %Q4.5    | Ordem de Stop, dada pelo Tesla Scada para a ST30                                   |
 | Scada_O_Stop_ST40           | %Q4.6    | Ordem de Stop, dada pelo Tesla Scada para a ST40                                   |
 | Scada_O_Stop_ST50           | %Q4.7    | Ordem de Stop, dada pelo Tesla Scada para a ST50                                   |
-| Reset_Scada_Memorys_3       | %QB5     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0 |
+| Reset_Scada_Memorys_3       | %QB5     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
 | Scada_MM_Automatico         | %Q5.0    | Ordem de Marcha, Automático,  dada pelo Tesla Scada                                |
 | Scada_MM_Ciclo              | %Q5.1    | Ordem de Marcha, Ciclo, dada pelo Tesla Scada                                      |
 | Scada_MM_Manual             | %Q5.2    | Ordem de Marcha, Manual, dada pelo Tesla Scada                                     |
@@ -345,6 +345,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 
 |                             | Entradas |                                                                                    |       
 |:---------------------------:|:--------:|:----------------------------------------------------------------------------------:|
+| Label                       | Endereço | Comentário                                                                         |
 | 3210*B13                    | %I0.0    | Sensor Home                                                                        |
 | 3210*B12                    | %I0.1    | Fim de Curso (Direita)                                                             |
 | 3210*B11                    | %I0.2    | Fim de Curso (Esquerda)                                                            |
@@ -355,56 +356,56 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | 3211*B21                    | %I0.7    | Sensor Garra Frente                                                                |
 | 3211*B22                    | %I1.0    | Sensor Garra Atras                                                                 |
 | 3211*B11                    | %I1.1    | Sensor Garra Fechada                                                               |
-| Reset_HMI_Inputs            | %IB2     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
+| Reset_HMI_Inputs            | %IB2     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
 | HMI_SB1                     | %I2.0    | Input de Start do Gemma Master                                                     |
 | HMI_SB2                     | %I2.1    | Input de Stop do Gemma Master                                                      |
 | HMI_QS                      | %I2.2    | Input de Emergencia do Gemma Master                                                |
 | HMI_SB1_ST10                | %I2.3    | Input de Start do Gemma Master                                                     |
 | HMI_SB2_ST10                | %I2.4    | Input de Stop do Gemma                                                             |
 | HMI_QS_ST10                 | %I2.5    | Input de Emergencia do Gemma                                                       |
-| Reset_HMI_Inputs_2          | %IB3     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
-| Init_Manual                 | %I3.1    | Input de seleção do modo de funcionamento                                          |
-| HMI_MM_Automatico           | %I3.2    | Input que permite na Inicialização manual da ST10                                  |
+| Reset_HMI_Inputs_2          | %IB3     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| Init_Manual                 | %I3.1    | Input que permite na Inicialização manual da ST10                                  |
+| HMI_MM_Automatico           | %I3.2    | Input de seleção do modo de marcha                                                 |
 | HMI_MM_Ciclo                | %I3.3    | Input de seleção do modo de marcha                                                 |
-| HMI_MC_Power_Enable         | %I3.5    | Input de seleção do modo de marcha                                                 |
-| HMI_MC_Home_Execute_A       | %I3.6    | Input de seleção do modo de marcha                                                 |
-| HMI_MC_Home_Execute         | %I3.7    | Em Modo Manual, input que permite o Enable do MC_Power                             |
-| Reset_HMI_Inputs_3          | %IB4     | Input que permite o homing do Robô                                                 |
-| HMI_MC_Reset_Execute        | %I4.0    | Em Modo Manual, input que permite o homing do Robô                                 |
-| HMI_MC_MoveJog_Esq          | %I4.1    | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
-| HMI_MC_MoveJog_Drt          | %I4.2    | Em Modo Manual, input que permite o Execcute do MC_Reset                           |
-| HMI_MC_MoveAbsolute_Execute | %I4.3    | Em Modo Manual, input que permite o movimento para a Esquerda do Robô              |
-| HMI_MC_MoveRelative_Execute | %I4.4    | Em Modo Manual, input que permite o movimento para a Direita do Robô               |
-| HMI_MC_Halt_Execute         | %I4.5    | Em Modo Manual, input que permite o Execute do MC_MoveAbsolute                     |
-| HMI_Posicao_ST20            | %I4.7    | Em Modo Manual, input que permite o Execute do MC_MoveRelative                     |
-| Reset_HMI_Inputs_4          | %IB5     | Em Modo Manual, input que permite o Execute do MC_Halt                             |
-| HMI_Posicao_ST30            | %I5.0    | Em Modo Manual, Posição Absoluta da ST20                                           |
-| HMI_Posicao_ST40            | %I5.1    | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
-| HMI_Posicao_ST50            | %I5.2    | Em Modo Manual, Posição Absoluta da ST30                                           |
-| HMI_Teste_Luzes             | %I5.3    | Em Modo Manual, Posição Absoluta da ST40                                           |
-| HMI_Init_Manual_All_STS     | %I5.4    | Em Modo Manual, Posição Absoluta da ST50                                           |
-| HMI_Modo_HMI                | %I5.5    | Botão de Teste de toda a Iluminação                                                |
-| HMI_Modo_Local              | %I5.6    | Inicialização Manual de todas as ST (Ordem do Master)                              |
+| HMI_MC_Power_Enable         | %I3.5    | Em Modo Manual, input que permite o Enable do MC_Power                             |
+| HMI_MC_Home_Execute_A       | %I3.6    | Input que permite o homing do Robô                                                 |
+| HMI_MC_Home_Execute         | %I3.7    | Em Modo Manual, input que permite o homing do Robô                                 |
+| Reset_HMI_Inputs_3          | %IB4     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| HMI_MC_Reset_Execute        | %I4.0    | Em Modo Manual, input que permite o Execcute do MC_Reset                           |
+| HMI_MC_MoveJog_Esq          | %I4.1    | Em Modo Manual, input que permite o movimento para a Esquerda do Robô              |
+| HMI_MC_MoveJog_Drt          | %I4.2    | Em Modo Manual, input que permite o movimento para a Direita do Robô               |
+| HMI_MC_MoveAbsolute_Execute | %I4.3    | Em Modo Manual, input que permite o Execute do MC_MoveAbsolute                     |
+| HMI_MC_MoveRelative_Execute | %I4.4    | Em Modo Manual, input que permite o Execute do MC_MoveRelative                     |
+| HMI_MC_Halt_Execute         | %I4.5    | Em Modo Manual, input que permite o Execute do MC_Halt                             |
+| HMI_Posicao_ST20            | %I4.7    | Em Modo Manual, Posição Absoluta da ST20                                           |
+| Reset_HMI_Inputs_4          | %IB5     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| HMI_Posicao_ST30            | %I5.0    | Em Modo Manual, Posição Absoluta da ST30                                           |
+| HMI_Posicao_ST40            | %I5.1    | Em Modo Manual, Posição Absoluta da ST40                                           |
+| HMI_Posicao_ST50            | %I5.2    | Em Modo Manual, Posição Absoluta da ST50                                           |
+| HMI_Teste_Luzes             | %I5.3    | Botão de Teste de toda a Iluminação                                                |
+| HMI_Init_Manual_All_STS     | %I5.4    | Inicialização Manual de todas as ST (Ordem do Master)                              |
+| HMI_Modo_HMI                | %I5.5    | Input de seleção do modo de funcionamento                                          |
+| HMI_Modo_Local              | %I5.6    | Input de seleção do modo de funcionamento                                          |
 | HMI_Modo_Scada              | %I5.7    | Input de seleção do modo de funcionamento                                          |
-| Reset_HMI_Inputs_5          | %IB6     | Em Modo Manual, input que permite o Execute do MC_Halt                             |
-| HMI_MM_Manual               | %I6.0    | Input de seleção do modo de funcionamento                                          |
-| 321920SB22                  | %I8.4    | Input de seleção do modo de funcionamento                                          |
-| 321920SB21                  | %I8.5    | Input de seleção do modo de marcha                                                 |
-| 321920QS24                  | %I8.6    | Botao Vermelho                                                                     |
-| 321920SA23                  | %I8.7    | Botao Verde                                                                        |
+| Reset_HMI_Inputs_5          | %IB6     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| HMI_MM_Manual               | %I6.0    | Input de seleção do modo de marcha                                                 |
+| 321920SB22                  | %I8.4    | Botao Vermelho                                                                     |
+| 321920SB21                  | %I8.5    | Botao Verde                                                                        |
+| 321920QS24                  | %I8.6    | Botao Emergencia                                                                   |
+| 321920SA23                  | %I8.7    | SA                                                                                 |
 
-|            | Saidas   |                                     |
-|:----------:|:--------:|:-----------------------------------:|
-| Label      | Endereço | Comentário                          |
-| 3211*Y40   | %Q0.3    | Sobe e Baixa Garra                  |
-| 3211*Y30B  | %Q0.4    | Rodar Esquerda Garra                |
-| 3211*Y30A  | %Q0.5    | Rodar Direita Garra                 |
-| 3211*Y20   | %Q0.6    | Frente e Atrás Garra                |
-| 3211*Y10B  | %Q0.7    | Fechar Garra                        |
-| 3211*Y10A  | %Q1.0    | Abrir Garra                         |
-| 321920HL11 | %Q8.5    | Painel Luz Laranja                  |
-| 321920HL12 | %Q8.6    | Painel Luz Verde                    |
-| 321920HL13 | %Q8.7    | Painel Luz Vermelha                 |
+|            | Saidas   |                      |
+|:----------:|:--------:|:--------------------:|
+| Label      | Endereço | Comentário           |
+| 3211*Y40   | %Q0.3    | Sobe e Baixa Garra   |
+| 3211*Y30B  | %Q0.4    | Rodar Esquerda Garra |
+| 3211*Y30A  | %Q0.5    | Rodar Direita Garra  |
+| 3211*Y20   | %Q0.6    | Frente e Atrás Garra |
+| 3211*Y10B  | %Q0.7    | Fechar Garra         |
+| 3211*Y10A  | %Q1.0    | Abrir Garra          |
+| 321920HL11 | %Q8.5    | Painel Luz Laranja   |
+| 321920HL12 | %Q8.6    | Painel Luz Verde     |
+| 321920HL13 | %Q8.7    | Painel Luz Vermelha  |
 
 ##### Memórias
 <a id="est-10-memorias"></a>
