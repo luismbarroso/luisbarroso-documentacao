@@ -382,11 +382,12 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HMI_Posicao_ST40            | %I5.1    | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
 | HMI_Posicao_ST50            | %I5.2    | Em Modo Manual, Posição Absoluta da ST30                                           |
 | HMI_Teste_Luzes             | %I5.3    | Em Modo Manual, Posição Absoluta da ST40                                           |
-| HMI_Init_Manual_All_STS     | %I6.0    | Em Modo Manual, Posição Absoluta da ST50                                           |
-| HMI_Modo_HMI                | %I6.1    | Botão de Teste de toda a Iluminação                                                |
-| HMI_Modo_Local              | %I6.2    | Inicialização Manual de todas as ST (Ordem do Master)                              |
-| HMI_Modo_Scada              | %I6.3    | Input de seleção do modo de funcionamento                                          |
-| HMI_MM_Manual               | %I6.4    | Input de seleção do modo de funcionamento                                          |
+| HMI_Init_Manual_All_STS     | %I5.4    | Em Modo Manual, Posição Absoluta da ST50                                           |
+| HMI_Modo_HMI                | %I5.5    | Botão de Teste de toda a Iluminação                                                |
+| HMI_Modo_Local              | %I5.6    | Inicialização Manual de todas as ST (Ordem do Master)                              |
+| HMI_Modo_Scada              | %I5.7    | Input de seleção do modo de funcionamento                                          |
+| Reset_HMI_Inputs_5          | %IB6     | Em Modo Manual, input que permite o Execute do MC_Halt                             |
+| HMI_MM_Manual               | %I6.0    | Input de seleção do modo de funcionamento                                          |
 | 321920SB22                  | %I8.4    | Input de seleção do modo de funcionamento                                          |
 | 321920SB21                  | %I8.5    | Input de seleção do modo de marcha                                                 |
 | 321920QS24                  | %I8.6    | Botao Vermelho                                                                     |
