@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-*Last Upgrade: 28/06/2021, 05h17*
+*Last Upgrade: 28/06/2021, 05h21*
 
 - [Introdução](#introducao)
 - [Processo](#processo)
@@ -195,12 +195,12 @@ Este protocolo de comunicação é usado pelo software Tesla Scada, permitindo a
 | Scada_Init_Manual_ST40      | %Q2.4    | Ordem de Inicialização para a ST40, dada pelo Tesla Scada                          |
 | Scada_Init_Manual_ST50      | %Q2.5    | Ordem de Inicialização para a ST50, dada pelo Tesla Scada                          |
 | Scada_O_Emerg_Master        | %Q2.6    | Ordem de Stop, dada pelo Tesla Scada para o Master                                 |
-| Scada_O_Emerg_ST10          | %Q2.7    | Ordem de Emergencia, dada pelo Tesla Scada para a ST10                             |
+| Scada_O_Emerg_ST10          | %Q2.7    | Ordem de Emergência, dada pelo Tesla Scada para a ST10                             |
 | Reset_Scada_Memorys_1       | %QB3     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0 |
-| Scada_O_Emerg_ST20          | %Q3.0    | Ordem de Emergencia, dada pelo Tesla Scada para a ST20                             |
-| Scada_O_Emerg_ST30          | %Q3.1    | Ordem de Emergencia, dada pelo Tesla Scada para a ST30                             |
-| Scada_O_Emerg_ST40          | %Q3.2    | Ordem de Emergencia, dada pelo Tesla Scada para a ST40                             |
-| Scada_O_Emerg_ST50          | %Q3.3    | Ordem de Emergencia, dada pelo Tesla Scada para a ST50                             |
+| Scada_O_Emerg_ST20          | %Q3.0    | Ordem de Emergência, dada pelo Tesla Scada para a ST20                             |
+| Scada_O_Emerg_ST30          | %Q3.1    | Ordem de Emergência, dada pelo Tesla Scada para a ST30                             |
+| Scada_O_Emerg_ST40          | %Q3.2    | Ordem de Emergência, dada pelo Tesla Scada para a ST40                             |
+| Scada_O_Emerg_ST50          | %Q3.3    | Ordem de Emergência, dada pelo Tesla Scada para a ST50                             |
 | Scada_O_Start_Master        | %Q3.4    | Ordem de Start, dada pelo Tesla Scada para o Master                                |
 | Scada_O_Start_ST10          | %Q3.5    | Ordem de Start, dada pelo Tesla Scada para a ST10                                  |
 | Scada_O_Start_ST20          | %Q3.6    | Ordem de Start, dada pelo Tesla Scada para a ST20                                  |
@@ -355,14 +355,14 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | 3211*B21                    | %I0.7    | Sensor Garra Frente                                                                |
 | 3211*B22                    | %I1.0    | Sensor Garra Atras                                                                 |
 | 3211*B11                    | %I1.1    | Sensor Garra Fechada                                                               |
-| Reset_HMI_Inputs            | %IB2     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| Reset_HMI_Inputs            | %IB2     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
 | HMI_SB1                     | %I2.0    | Input de Start do Gemma Master                                                     |
 | HMI_SB2                     | %I2.1    | Input de Stop do Gemma Master                                                      |
 | HMI_QS                      | %I2.2    | Input de Emergencia do Gemma Master                                                |
 | HMI_SB1_ST10                | %I2.3    | Input de Start do Gemma Master                                                     |
 | HMI_SB2_ST10                | %I2.4    | Input de Stop do Gemma                                                             |
 | HMI_QS_ST10                 | %I2.5    | Input de Emergencia do Gemma                                                       |
-| Reset_HMI_Inputs_2          | %IB3     | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| Reset_HMI_Inputs_2          | %IB3     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
 | Init_Manual                 | %I3.1    | Input de seleção do modo de funcionamento                                          |
 | HMI_MM_Automatico           | %I3.2    | Input que permite na Inicialização manual da ST10                                  |
 | HMI_MM_Ciclo                | %I3.3    | Input de seleção do modo de marcha                                                 |
@@ -371,7 +371,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HMI_MC_Home_Execute         | %I3.7    | Em Modo Manual, input que permite o Enable do MC_Power                             |
 | Reset_HMI_Inputs_3          | %IB4     | Input que permite o homing do Robô                                                 |
 | HMI_MC_Reset_Execute        | %I4.0    | Em Modo Manual, input que permite o homing do Robô                                 |
-| HMI_MC_MoveJog_Esq          | %I4.1    | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| HMI_MC_MoveJog_Esq          | %I4.1    | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
 | HMI_MC_MoveJog_Drt          | %I4.2    | Em Modo Manual, input que permite o Execcute do MC_Reset                           |
 | HMI_MC_MoveAbsolute_Execute | %I4.3    | Em Modo Manual, input que permite o movimento para a Esquerda do Robô              |
 | HMI_MC_MoveRelative_Execute | %I4.4    | Em Modo Manual, input que permite o movimento para a Direita do Robô               |
@@ -379,7 +379,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | HMI_Posicao_ST20            | %I4.7    | Em Modo Manual, input que permite o Execute do MC_MoveRelative                     |
 | Reset_HMI_Inputs_4          | %IB5     | Em Modo Manual, input que permite o Execute do MC_Halt                             |
 | HMI_Posicao_ST30            | %I5.0    | Em Modo Manual, Posição Absoluta da ST20                                           |
-| HMI_Posicao_ST40            | %I5.1    | Byte dos Inputs, usado na Inicialização para gararantir que todos o Bits estão a 0 |
+| HMI_Posicao_ST40            | %I5.1    | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
 | HMI_Posicao_ST50            | %I5.2    | Em Modo Manual, Posição Absoluta da ST30                                           |
 | HMI_Teste_Luzes             | %I5.3    | Em Modo Manual, Posição Absoluta da ST40                                           |
 | HMI_Init_Manual_All_STS     | %I6.0    | Em Modo Manual, Posição Absoluta da ST50                                           |
@@ -410,7 +410,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 
 | Label                        | Endereço | Comentário                                                                                                                              |
 |:----------------------------:|:--------:|:---------------------------------------------------------------------------------------------------------------------------------------:|
-| Grafcet_10                   | %MB10    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0                          |
+| Grafcet_10                   | %MB10    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para garantir que todos o Bits estão a 0                            |
 | E10                          | %M10.0   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E11                          | %M10.1   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E12                          | %M10.2   | Etapa de Grafcet de Funcionamento                                                                                                       |
@@ -428,7 +428,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | E23                          | %M11.5   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E24                          | %M11.6   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E25                          | %M11.7   | Etapa de Grafcet de Funcionamento                                                                                                       |
-| Grafcet_10_2                 | %MB12    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0                          |
+| Grafcet_10_2                 | %MB12    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para garantir que todos o Bits estão a 0                            |
 | E26                          | %M12.0   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E27                          | %M12.1   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E28                          | %M12.2   | Etapa de Grafcet de Funcionamento                                                                                                       |
@@ -437,7 +437,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | E31                          | %M12.5   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E32                          | %M12.6   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E33                          | %M12.7   | Etapa de Grafcet de Funcionamento                                                                                                       |
-| Grafcet_10_3                 | %MB13    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0                          |
+| Grafcet_10_3                 | %MB13    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para garantir que todos o Bits estão a 0                            |
 | E34                          | %M13.0   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E35                          | %M13.1   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E36                          | %M13.2   | Etapa de Grafcet de Funcionamento                                                                                                       |
@@ -446,7 +446,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | E39                          | %M13.5   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E40                          | %M13.6   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E41                          | %M13.7   | Etapa de Grafcet de Funcionamento                                                                                                       |
-| Grafcet_10_4                 | %MB14    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para gararantir que todos o Bits estão a 0                          |
+| Grafcet_10_4                 | %MB14    | Byte das Etapas do Grafcet de Funcionamento, usado na Inicialização para garantir que todos o Bits estão a 0                            |
 | E42                          | %M14.0   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E43                          | %M14.1   | Etapa de Grafcet de Funcionamento                                                                                                       |
 | E44                          | %M14.2   | Etapa de Grafcet de Funcionamento                                                                                                       |
@@ -455,8 +455,8 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | MC_Absolute_Done             | %M15.0   | Confirmação do Movimento Absoluto do Robô                                                                                               |
 | MC_Relative_Done             | %M15.1   | Confirmação do Movimento Relativo do Robô                                                                                               |
 | MC_Home_Done                 | %M15.2   | Confirmação da posição de Home do Robô                                                                                                  |
-| MC_Halt_Done                 | %M15.3   | Confirmação da paB6:D50                                                                                                                 |
-| Grafcet_Gemma_M              | %MB16    | Byte das Etapas do Grafcet Gemma Master, usado na Inicialização para gararantir que todos o Bits estão a 0                              |
+| MC_Halt_Done                 | %M15.3   | Confirmação da paragem do Robô                                                                                                          |
+| Grafcet_Gemma_M              | %MB16    | Byte das Etapas do Grafcet Gemma Master, usado na Inicialização para garantir que todos o Bits estão a 0                                |
 | A6_M                         | %M16.0   | Etapa de Grafcet do Gemma Master                                                                                                        |
 | A1_M                         | %M16.1   | Etapa de Grafcet do Gemma Master                                                                                                        |
 | F2_M                         | %M16.2   | Etapa de Grafcet do Gemma Master                                                                                                        |
@@ -465,9 +465,9 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | F6_M                         | %M16.5   | Etapa de Grafcet do Gemma Master                                                                                                        |
 | A3_M                         | %M16.6   | Etapa de Grafcet do Gemma Master                                                                                                        |
 | A4_M                         | %M16.7   | Etapa de Grafcet do Gemma Master                                                                                                        |
-| Grafcet_Gemma_M_1            | %MB17    | Byte das Etapas do Grafcet Gemma Master, usado na Inicialização para gararantir que todos o Bits estão a 0                              |
+| Grafcet_Gemma_M_1            | %MB17    | Byte das Etapas do Grafcet Gemma Master, usado na Inicialização para garantir que todos o Bits estão a 0                                |
 | D1_M                         | %M17.0   | Etapa de Grafcet do Gemma Master                                                                                                        |
-| Grafcet_Gemma                | %MB18    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0                                     |
+| Grafcet_Gemma                | %MB18    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para garantir que todos o Bits estão a 0                                       |
 | A6                           | %M18.0   | Etapa de Grafcet do Gemma                                                                                                               |
 | A1                           | %M18.1   | Etapa de Grafcet do Gemma                                                                                                               |
 | F2                           | %M18.2   | Etapa de Grafcet do Gemma                                                                                                               |
@@ -476,7 +476,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | F5                           | %M18.5   | Etapa de Grafcet do Gemma                                                                                                               |
 | A3                           | %M18.6   | Etapa de Grafcet do Gemma                                                                                                               |
 | A4                           | %M18.7   | Etapa de Grafcet do Gemma                                                                                                               |
-| Grafcet_Gemma_1              | %MB19    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para gararantir que todos o Bits estão a 0                                     |
+| Grafcet_Gemma_1              | %MB19    | Byte das Etapas do Grafcet Gemma, usado na Inicialização para garantir que todos o Bits estão a 0                                       |
 | D1                           | %M19.0   | Etapa de Grafcet Gemma                                                                                                                  |
 | Reset_ST10_Memorys           | %MB20    | Byte das memórias usadas na ST10, usado na Inicialização para gararantir que todos o Bits estão a 0                                     |
 | Grafcet_Parado               | %M20.0   | Grafcet Parado por ordem do Gemma                                                                                                       |
@@ -487,7 +487,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | O_Marcha_A                   | %M20.5   | Ordem de Marcha, Automático, dada pelo Gemma Master                                                                                     |
 | O_Marcha_C                   | %M20.6   | Ordem de Marcha, Ciclo, dada pelo Gemma Master                                                                                          |
 | A6_ST10                      | %M20.7   | Informação do estado da Etapa, que será enviada para o Gemma Master                                                                     |
-| Reset_ST10_Memorys_1         | %MB21    | Byte das memórias usadas na ST10, usado na Inicialização para gararantir que todos o Bits estão a 0                                     |
+| Reset_ST10_Memorys_1         | %MB21    | Byte das memórias usadas na ST10, usado na Inicialização para garantir que todos o Bits estão a 0                                       |
 | A1_ST10                      | %M21.0   | Informação do estado da Etapa, que será enviada para o Gemma Master                                                                     |
 | F2_ST10                      | %M21.1   | Informação do estado da Etapa, que será enviada para o Gemma Master                                                                     |
 | F1_ST10                      | %M21.2   | Informação do estado da Etapa, que será enviada para o Gemma Master                                                                     |
@@ -495,7 +495,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | A3_ST10                      | %M21.5   | Informação do estado da Etapa, que será enviada para o Gemma Master                                                                     |
 | A4_ST10                      | %M21.6   | Informação do estado da Etapa, que será enviada para o Gemma Master                                                                     |
 | D1_ST10                      | %M21.7   | Informação do estado da Etapa, que será enviada para o Gemma Master                                                                     |
-| Reset_ST10_Memorys_2         | %MB22    | Byte das memórias usadas na ST10, usado na Inicialização para gararantir que todos o Bits estão a 0                                     |
+| Reset_ST10_Memorys_2         | %MB22    | Byte das memórias usadas na ST10, usado na Inicialização para garantir que todos o Bits estão a 0                                       |
 | Emerg_M_ST10                 | %M22.0   | Ordem de Emergencia, dada pelo Gemma Master                                                                                             |
 | Stop_M_ST10                  | %M22.1   | Ordem de Stop, dada pelo Gemma Master                                                                                                   |
 | Init_M_ST10                  | %M22.2   | Ordem de Inicialização Manual, dada pelo Gemma Master                                                                                   |
@@ -504,7 +504,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | MM_M_ST10                    | %M22.5   | Ordem de Marcha, Manual, dada pelo Gemma Master                                                                                         |
 | MF_HMI_ST10                  | %M22.6   | Ordem de Funcionamento, Modo HMI, dada pelo Gemma Master                                                                                |
 | MF_SCADA_ST10                | %M22.7   | Ordem de Funcionamento, Modo Scada, dada pelo Gemma Master                                                                              |
-| Reset_ST10_Memorys_3         | %MB23    | Byte das memórias usadas na ST10, usado na Inicialização para gararantir que todos o Bits estão a 0                                     |
+| Reset_ST10_Memorys_3         | %MB23    | Byte das memórias usadas na ST10, usado na Inicialização para garantir que todos o Bits estão a 0                                       |
 | MF_Local_ST10                | %M23.0   | Ordem de Funcionamento, Modo Local, dada pelo Gemma Master                                                                              |
 | O_Start_M                    | %M23.1   | Ordem de Start, dada pela HMI, para o Gemma Master                                                                                      |
 | O_Stop_M                     | %M23.2   | Ordem de Stop, dada pela HMI, para o Gemma Master                                                                                       |
