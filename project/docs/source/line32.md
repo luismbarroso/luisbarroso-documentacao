@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-Last Upgrade: 29/06/2021, 17h08
+Last Upgrade: 01/07/2021, 22h33
 
 - [Introdução](#introducao)
 - [Processo](#processo)
@@ -1198,7 +1198,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 ##### Estação 10
 <a id="graf-estacao-10"></a> 
 
-![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST10.svg)
+![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST10_1.svg)
 
 ##### Estação 20
 <a id="graf-estacao-20"></a> 
