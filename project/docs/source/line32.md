@@ -1990,48 +1990,63 @@ Com o servidor criado do lado do TIA Portal, passamos para o Tesla Scada. Do lad
 ##### Classificação
 <a id="scada-classificacao"></a>
 
-| Name                      | Data Type | Access Mode | PV Input Server  | PV Input Tag        |
+| Label                     | Data Type | Access Mode | PV Input Server  | PV Input Tag        |
 |:-------------------------:|:---------:|:-----------:|:----------------:|:-------------------:|
-| Scada_Init_Manual_All_STS | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=16;dt=1; |
-| Scada_Init_Manual_ST10    | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=17;dt=1; |
-| Scada_Init_Manual_ST20    | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=18;dt=1; |
-| Scada_Init_Manual_ST30    | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=19;dt=1; |
-| Scada_Init_Manual_ST40    | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=20;dt=1; |
-| Scada_Init_Manual_ST50    | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=21;dt=1; |
-| Scada_O_Emerg_Master      | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=22;dt=1; |
-| Scada_O_Emerg_ST10        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=23;dt=1; |
-| Scada_O_Emerg_ST20        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=24;dt=1; |
-| Scada_O_Emerg_ST30        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=25;dt=1; |
-| Scada_O_Emerg_ST40        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=26;dt=1; |
-| Scada_O_Emerg_ST50        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=27;dt=1; |
-| Scada_O_Start_Master      | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=28;dt=1; |
-| Scada_O_Start_ST10        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=29;dt=1; |
-| Scada_O_Start_ST20        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=30;dt=1; |
-| Scada_O_Start_ST30        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=31;dt=1; |
-| Scada_O_Start_ST40        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=32;dt=1; |
-| Scada_O_Start_ST50        | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=33;dt=1; |
-| Scada_O_Stop_Master       | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=34;dt=1; |
-| Scada_O_Stop_ST10         | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=35;dt=1; |
-| Scada_O_Stop_ST20         | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=36;dt=1; |
-| Scada_O_Stop_ST30         | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=37;dt=1; |
-| Scada_O_Stop_ST40         | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=38;dt=1; |
-| Scada_O_Stop_ST50         | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=39;dt=1; |
-| Scada_MM_Automatico       | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=40;dt=1; |
-| Scada_MM_Ciclo            | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=41;dt=1; |
-| Scada_MM_Manual           | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=42;dt=1; |
-| Scada_MC_Home_Execute     | Boolean   | ReadWrite   | Line32           | s=1;pt=1;o=43;dt=1; |
+| Scada_Init_Manual_All_STS | 0         | 1           | Line32           | s=1;pt=1;o=16;dt=1; |
+| Scada_Init_Manual_ST10    | 0         | 1           | Line32           | s=1;pt=1;o=17;dt=1; |
+| Scada_Init_Manual_ST20    | 0         | 1           | Line32           | s=1;pt=1;o=18;dt=1; |
+| Scada_Init_Manual_ST30    | 0         | 1           | Line32           | s=1;pt=1;o=19;dt=1; |
+| Scada_Init_Manual_ST40    | 0         | 1           | Line32           | s=1;pt=1;o=20;dt=1; |
+| Scada_Init_Manual_ST50    | 0         | 1           | Line32           | s=1;pt=1;o=21;dt=1; |
+| Scada_O_Emerg_Master      | 0         | 1           | Line32           | s=1;pt=1;o=22;dt=1; |
+| Scada_O_Emerg_ST10        | 0         | 1           | Line32           | s=1;pt=1;o=23;dt=1; |
+| Scada_O_Emerg_ST20        | 0         | 1           | Line32           | s=1;pt=1;o=24;dt=1; |
+| Scada_O_Emerg_ST30        | 0         | 1           | Line32           | s=1;pt=1;o=25;dt=1; |
+| Scada_O_Emerg_ST40        | 0         | 1           | Line32           | s=1;pt=1;o=26;dt=1; |
+| Scada_O_Emerg_ST50        | 0         | 1           | Line32           | s=1;pt=1;o=27;dt=1; |
+| Scada_O_Start_Master      | 0         | 1           | Line32           | s=1;pt=1;o=28;dt=1; |
+| Scada_O_Start_ST10        | 0         | 1           | Line32           | s=1;pt=1;o=29;dt=1; |
+| Scada_O_Start_ST20        | 0         | 1           | Line32           | s=1;pt=1;o=30;dt=1; |
+| Scada_O_Start_ST30        | 0         | 1           | Line32           | s=1;pt=1;o=31;dt=1; |
+| Scada_O_Start_ST40        | 0         | 1           | Line32           | s=1;pt=1;o=32;dt=1; |
+| Scada_O_Start_ST50        | 0         | 1           | Line32           | s=1;pt=1;o=33;dt=1; |
+| Scada_O_Stop_Master       | 0         | 1           | Line32           | s=1;pt=1;o=34;dt=1; |
+| Scada_O_Stop_ST10         | 0         | 1           | Line32           | s=1;pt=1;o=35;dt=1; |
+| Scada_O_Stop_ST20         | 0         | 1           | Line32           | s=1;pt=1;o=36;dt=1; |
+| Scada_O_Stop_ST30         | 0         | 1           | Line32           | s=1;pt=1;o=37;dt=1; |
+| Scada_O_Stop_ST40         | 0         | 1           | Line32           | s=1;pt=1;o=38;dt=1; |
+| Scada_O_Stop_ST50         | 0         | 1           | Line32           | s=1;pt=1;o=39;dt=1; |
+| Scada_MM_Automatico       | 0         | 1           | Line32           | s=1;pt=1;o=40;dt=1; |
+| Scada_MM_Ciclo            | 0         | 1           | Line32           | s=1;pt=1;o=41;dt=1; |
+| Scada_MM_Manual           | 0         | 1           | Line32           | s=1;pt=1;o=42;dt=1; |
+| Scada_MC_Home_Execute     | 0         | 1           | Line32           | s=1;pt=1;o=43;dt=1; |
 
 ---
-**Legenda (Coluna PV Input Tag)**
+**Legenda**
 
-- **s** - SlaveID, por definição é 1.
-- **pt** - Point Type, pode ser definido de 1 a 4.
-    - 1 - Holding Coil             
-    - 2 - Discrete input   
-    - 3 - Holding register
-    - 4 - Input register
-- **o** - Offset, corresponde ao registro Modbus. No meu caso, estou a usar **Holding Coils**, *mexendo* diretamente em Bits. O meu primeiro Bit, do lado do TIA Portal (Servidor), correponde ao Q2.0. Desta forma, o offset, do lado Tesla Scada, corresponderá a 16. (Como um Byte são 8 Bits, logo 8*2=16)
-- **dt** - Data type, corresponde ao tipo de dados usados nos Holding register e nos Input register.
+- **Data type**
+    - Boolean=0
+    - Byte=1
+    - Short=2
+    - Integer=3
+    - Long=4
+    - Float=5
+    - Double=6
+    - String=7
+    - Array=8
+- **Access Mod**
+    - ReadOnly=0
+    - ReadWrite=1
+    - WriteOnly=2
+- **PV Input Tag**
+    - **s** - SlaveID, por definição é 1.
+    - **pt** - Point Type, pode ser definido de 1 a 4.
+        - 1 - Holding Coil             
+        - 2 - Discrete input   
+        - 3 - Holding register
+        - 4 - Input register
+    - **o** - Offset, corresponde ao registro Modbus. No meu caso, estou a usar **Holding Coils**, *mexendo* diretamente em Bits. O meu primeiro Bit, do lado do TIA Portal (Servidor), correponde ao Q2.0. Desta forma, o offset, do lado Tesla Scada, corresponderá a 16. (Como um Byte são 8 Bits, logo 8*2=16)
+    - **dt** - Data type, corresponde ao tipo de dados usados nos Holding register e nos Input register.
 
 ##### Ecrãs
 <a id="scada-ecras"></a>
