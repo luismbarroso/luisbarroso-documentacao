@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-Last Upgrade: 06/07/2021, 23h34
+Last Upgrade: 07/07/2021, 23h34
 
 - [Introdução](#introducao)
 - [Processo](#processo)
@@ -299,17 +299,17 @@ A classificação dos Grupos, Estações, Equipamentos, Componentes, Subcomponen
 
 ### Exemplo de Aplicação do Modelo de Classificação
 
-A Estação 40 pode ser dividida em 2 Subestações, porque acontecem dois processos diferentes: o **Armazenamento do Miolo da Peça** e a sua **colocação no Corpo da Peça**. A **Laranja** temos a **Subestação 41** e **Azul** temos a **Subestação 42**.
+A Estação 40 pode ser dividida em 2 Subestações, porque acontecem dois processos diferentes: o **Armazenamento do Miolo da Peça** e a sua **colocação no Corpo da Peça**. A **Laranja** temos a **Subestação 41** e **Verde** temos a **Subestação 42**.
 
-![](./lines/line32/2020_2021/software/classificacao/st_40_1.png)
+![](./lines/line32/2020_2021/software/classificacao/Class_1.png)
 
 - A Subestação 41 possui 10 sensores, classificados de cima para baixo e da esqueda para a direita, começando pelos sensores que estão associados aos cilindros: Temos os Sensores B11 e B12, que estão associados ao cilindro Y10; os Sensores B21 e B22, que estão associados ao cilindro Y20; os Sensores B31 e B32, que estão associados ao cilindro Y30 e por ultimo o Grupo de Sensores B40, constituidos pelo B41, B42, B43, B44. Este sensores como não estão associados a nenhum cilindro e como pertencem à Subestação foram agrupados e seguem a numeração.
 
-![](./lines/line32/2020_2021/software/classificacao/st_40_2.png)
+![](./lines/line32/2020_2021/software/classificacao/Class_2.png)
 
 - A Subestação 41 possui 6 sensores, classificados de cima para baixo e da esqueda para a direita, começando pelos sensores que estão associados aos cilindros: Temos os Sensores B11 e B12, que estão associados ao cilindro Y10; os Sensores B21 e B22, que estão associados ao cilindro Y20; o Sensores B31, que está associado ao cilindro Y30 e por ultimo o sensor B41. Este sensores como não estão associados a nenhum cilindro e como pretencem à Subestação segue a numeração.
 
-![](./lines/line32/2020_2021/software/classificacao/st_40_3.png)
+![](./lines/line32/2020_2021/software/classificacao/Class_3.png)
 
 Como defenida a classificação a Label apresenta o seguinte formato: 
 
