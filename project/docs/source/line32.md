@@ -668,6 +668,9 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 #### Estação 20
 <a id="class-est20"></a>
 
+##### Entradas e Saídas (PLC)
+<a id="est-20-entradas-e-saidas-plc"></a>
+
 |                  | Entradas |                                                                                    |          
 |:----------------:|:--------:|:----------------------------------------------------------------------------------:|
 | Label            | Endereço | Comentário                                                                         |
@@ -1261,7 +1264,7 @@ A linha 32 pode operar em 3 modos diferentes: **Automático, Ciclo, Manual.**
 
 No **Modo Automático** a linha está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start; No **Modo Ciclo** a linha está a funcionar de forma cíclica, ou seja, é necessária a **Ordem de Start** na etapa inicial do Grafcet de Funcionamento; No **Modo Manual** é possível fazer a ativação de qualquer cilindro ou lâmpada, consultar o estado de um sensor, comandar o robô, ativar/desativar o tapete e consultar o valor do enconder. Para evitar conflitos, o Grafcet de Funcionamento é *comentado*. Para fazer a escolha do Modo de Marcha é usada a HMI.
 
-##### Grafcet’s - Funcionamento Gemma **AQUI!**
+##### Grafcet’s - Funcionamento Gemma
 ###### Gemma Master
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/Master_Gemma.svg)
