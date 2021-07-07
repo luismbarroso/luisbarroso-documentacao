@@ -668,6 +668,9 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 #### Estação 20
 <a id="class-est20"></a>
 
+##### Entradas e Saídas (PLC)
+<a id="est-20-entradas-e-saidas-plc"></a>
+
 |                  | Entradas |                                                                                    |          
 |:----------------:|:--------:|:----------------------------------------------------------------------------------:|
 | Label            | Endereço | Comentário                                                                         |
