@@ -259,15 +259,15 @@ Pra identificar cada componente mais facilmente, seja localmente ou no Software,
 
 ![](./lines/line32/2020_2021/software/classificacao/class_geral.svg)
 
-- Grupo: *Falta a definição*
+- Grupo: Consiste num conjunto de Linhas, cujo espaço e o processo correspondem ao mesmo.
 
 Os Grupos, classificação-se com um **número (N)** e um **zero (0)**. Por exemplo: Grupo 10, Grupo 20 e Grupo 30. 
 
-- Linha: *Falta a definição*
+- Linha: Corresponde ao Processo em si, onde estão incluídas todas as Estações, Equipamentos e Componentes essenciais para o funcionamento da Linha. 
 
 As Linhas, classificação-se com um **número (N)** e outro **número (N)**. Por exemplo: Linha 31, Linha 32, Linha 33.
 
-- Estação: *Falta a definição*
+- Estação: Local onde ocorre o processamento de uma ou várias partes do produto produzido na Linha. 
 
 As Estações, classificação-se com um **número (N)** e um **zero (0)**. Por exemplo: Estação 10, Estação 20, Estação 30.
 
@@ -295,11 +295,9 @@ Os componentes podem ser classificados como: **Sensores** (Letra:**B**), **Vávu
 
 Os Subcomponentes, classificação-se com um **número (N)** e um **zero (0)**. Por exemplo: Subcomponente 11, Subcomponente 32. 
 
-A classificação dos Grupos, Estações, Equipamentos, Componentes, Subcomponente vai depender a sua localização e da sua função. Para perceber melhor este conceito olhemos para as imagens, da estação 40.
-
 ### Exemplo de Aplicação do Modelo de Classificação
 
-A Estação 40 pode ser dividida em 2 Subestações, porque acontecem dois processos diferentes: o **Armazenamento do Miolo da Peça** e a sua **colocação no Corpo da Peça**. A **Laranja** temos a **Subestação 41** e **Verde** temos a **Subestação 42**.
+A classificação dos Grupos, Estações, Equipamentos, Componentes, Subcomponente vai depender a sua localização e da sua função. Para perceber melhor este conceito olhemos para as imagens, da estação 40. A Estação 40 pode ser dividida em 2 Subestações, porque acontecem dois processos diferentes: o **Armazenamento do Miolo da Peça** e a sua **colocação no Corpo da Peça**. A **Laranja** temos a **Subestação 41** e **Verde** temos a **Subestação 42**.
 
 ![](./lines/line32/2020_2021/software/classificacao/Class_1.png)
 
