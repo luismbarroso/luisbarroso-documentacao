@@ -303,11 +303,11 @@ A Estação 40 pode ser dividida em 2 Subestações, porque acontecem dois proce
 
 ![](./lines/line32/2020_2021/software/classificacao/Class_1.png)
 
-- A Subestação 41 possui 10 sensores, classificados de cima para baixo e da esqueda para a direita, começando pelos sensores que estão associados aos cilindros: Temos os Sensores B11 e B12, que estão associados ao cilindro Y10; os Sensores B21 e B22, que estão associados ao cilindro Y20; os Sensores B31 e B32, que estão associados ao cilindro Y30 e por ultimo o Grupo de Sensores B40, constituidos pelo B41, B42, B43, B44. Este sensores como não estão associados a nenhum cilindro e como pertencem à Subestação foram agrupados e seguem a numeração.
+- A Subestação 41 possui 10 sensores, classificados de cima para baixo e da esquerda para a direita, começando pelos sensores que estão associados aos cilindros: Temos os Sensores B11 e B12, que estão associados ao cilindro Y10; os Sensores B21 e B22, que estão associados ao cilindro Y20; os Sensores B31 e B32, que estão associados ao cilindro Y30 e por último o Grupo de Sensores B40, constituídos pelo B41, B42, B43, B44. Estes sensores como não estão associados a nenhum cilindro e como pertencem à Subestação foram agrupados e seguem a 
 
 ![](./lines/line32/2020_2021/software/classificacao/Class_2.png)
 
-- A Subestação 41 possui 6 sensores, classificados de cima para baixo e da esqueda para a direita, começando pelos sensores que estão associados aos cilindros: Temos os Sensores B11 e B12, que estão associados ao cilindro Y10; os Sensores B21 e B22, que estão associados ao cilindro Y20; o Sensores B31, que está associado ao cilindro Y30 e por ultimo o sensor B41. Este sensores como não estão associados a nenhum cilindro e como pretencem à Subestação segue a numeração.
+- A Subestação 42 possui 6 sensores, classificados de cima para baixo e da esquerda para a direita, começando pelos sensores que estão associados aos cilindros: Temos os Sensores B11 e B12, que estão associados ao cilindro Y10; os Sensores B21 e B22, que estão associados ao cilindro Y20; o Sensores B31, que está associado ao cilindro Y30 e por último o sensor B41. Estes sensores como não estão associados a nenhum cilindro e como pertencem à Subestação segue a numeração.
 
 ![](./lines/line32/2020_2021/software/classificacao/Class_3.png)
 
