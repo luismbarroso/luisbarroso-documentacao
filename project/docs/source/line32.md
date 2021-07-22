@@ -2,7 +2,7 @@
 
 **Autor:** *Luís Barroso*
 
-Last Upgrade: 07/07/2021, 23h01
+Last Upgrade: 16/07/2021, 23h01
 
 - [Introdução](#introducao)
 - [Processo](#processo)
@@ -59,7 +59,8 @@ Last Upgrade: 07/07/2021, 23h01
                 - [Gemma Estações](#gemma-estacoes)
             - [Grafcet’s - Iluminação Gemma](#grafcets-iluminacao-gemma)
                 - [Gemma Master](#gemma-master)
-                - [Gemma Estações](#gemma-estacoes)        
+                - [Gemma Estações](#gemma-estacoes)
+        - [Modo Distribuído](#modo-distribuido)        
         - [Programação](#programacao)
             - [Estação 10](#prog-estacao-10)
             - [Estação 50](#prog-estacao-50)
@@ -255,45 +256,23 @@ Por exemplo: a ST20 envia uma informação para o PLC Master, usando uma saída.
 ## Trabalho Realizado
 ## Modelo de Classificação
 
-Pra identificar cada componente mais facilmente, seja localmente ou no Software, foi criado um Modelo de Classificação. Este modelo divide-se em 4 *blocos* e cada um deste *blocos* ainda se pode desdobrar, como podemos observar na figura abaixo.
+ara identificar cada componente mais facilmente, seja localmente ou no software, foi criado na Luban um meta-modelo que permite construir modelos de classificação mediante o contexto de aplicação nomeadamente: processo; ferramentas e componentes; armazém; mobiliário; entre outros. O meta-modelo baseia-se em grupos, sub-grupos e extensões de grupos e sub-grupos. No caso dos processos, que será o único caso abordado neste texto, foi criado um modelo baseado em quatro grupos: Linha; Estação; Equipamento; Componente.
 
 ![](./lines/line32/2020_2021/software/classificacao/class_geral.svg)
 
-- Grupo: Consiste num conjunto de Linhas, cujo espaço e o processo correspondem ao mesmo.
+**Grupo de Linhas:** Consiste no conjunto de Linhas, cujo processo é idêntico. No caso da LuBan existem 5 tipos de processos diferentes: processo farmacêutico, processo industrial com robô e visão, processo com células flexíveis, processo elétrico e potência e processo PowerOn (lego). Para cada tipo de processo existem três linhas idênticas. Os Grupos de Linhas cujo processo é idêntico, classificam-se com um número (N) e um zero (0). Por exemplo: Grupo 10 (linhas farmacêuticas), Grupo 20 (linhas com robô e visão) e Grupo 30 (linhas com processamento flexível).
 
-Os Grupos, classificação-se com um **número (N)** e um **zero (0)**. Por exemplo: Grupo 10, Grupo 20 e Grupo 30. 
+**Linha:** Corresponde ao processo em si, onde estão incluídas todas as Estações, Equipamentos e Componentes essenciais para o funcionamento da Linha. As Linhas, classificam-se com um número (N) e outro número diferente de N (M). Por exemplo: Linha 31, Linha 32, Linha 33.
 
-- Linha: Corresponde ao Processo em si, onde estão incluídas todas as Estações, Equipamentos e Componentes essenciais para o funcionamento da Linha. 
+**Estação:** Local onde ocorre o processamento de uma ou várias partes do produto produzido na Linha. As Estações, classificam-se com um número (N) e um zero (0). Por exemplo: Estação 10, Estação 20, Estação 30.
 
-As Linhas, classificação-se com um **número (N)** e outro **número (N)**. Por exemplo: Linha 31, Linha 32, Linha 33.
+**Subestação:** Corresponde à divisão da estação em unidades de processamento menores ou mais finas as quais correspondem a etapas intermédias de transformações bem definidas do produto. Pode acontecer que o processamento das subestações de uma estação se faça em paralelo permitindo melhorar o tempo de ciclo da mesma. As Subestações, classificam-se com um número (N) e outro número diferente de N (M). Por exemplo: Subestação 11, Subestação 21.
 
-- Estação: Local onde ocorre o processamento de uma ou várias partes do produto produzido na Linha. 
+**Equipamento:** É todo o elemento composto por componentes que servem de interface com o mesmo. Os Equipamentos, classificam-se com um número (N) e um zero (0). Por exemplo: Equipamento 10, Equipamento 20. No Software, os equipamentos, podem ser classificados como: Tapetes (Letra: TAP) ou motor (Letra: M).
+Subequipamento: É todo o equipamento que faz parte de um grupo de equipamentos mas cuja identificação deve ser individualizada por conter componentes de interface com o mesmo.  Os Subequipamentos, classificam-se com um número (N) e outro número diferente de N (M). Por exemplo: Subequipamento 31, Subequipamento 32.
 
-As Estações, classificação-se com um **número (N)** e um **zero (0)**. Por exemplo: Estação 10, Estação 20, Estação 30.
-
-- Subestação: *Falta a definição*
-
-As Subestações, classificação-se com um **número (N)** e um **zero (N)**. Por exemplo: Subestação 11, Subestação 21. 
-
-- Equipamento: *Falta a definição*
-
-Os Equipamentos, classificação-se com um **número (N)** e um **zero (0)**. Por exemplo: Equipamento 10, Equipamento 20. 
-
-Os equipamentos podem ser classificados como: **Tapetes** (Letra:**TAP**) ou **Motor** (Letra:**M**).
-
-- Subequipamento: *Falta a definição*
-
-Os Subequipamentos, classificação-se com um **número (N)** e um **zero (N)**. Por exemplo: Subequipamento 31, Subequipamento 32. 
-
-- Componentes: *Falta a definição*
-
-Os Componentes, classificação-se com um **número (N)** e um **zero (0)**. Por exemplo: Componente 10, Componente 20. 
-
-Os componentes podem ser classificados como: **Sensores** (Letra:**B**), **Vávulas** (Letra:**Y**) ou **Motor** (Letra:**M**).
-
-- Subcomponente: *Falta a definição*
-
-Os Subcomponentes, classificação-se com um **número (N)** e um **zero (0)**. Por exemplo: Subcomponente 11, Subcomponente 32. 
+**Componentes:** Elemento que serve de interface aos sinais de comando. Neste sentido, um sensor é um componente de entrada e um atuador é um componente de saída. Os Componentes, classificam-se com um número (N) e um zero (0). Por exemplo: Componente 10, Componente 20. No Software, os componentes podem ser classificados como: Sensores (Letra: B), Válvulas (Letra: Y) ou motor (Letra: M)
+Subcomponente: É todo o componente que por razões funcionais pertence a um grupo de componentes cujos sinais de interface com o automatismo estão correlacionados, facilitando assim a sua localização no campo ou, no caso do software, a associação entre os diversos componentes e subcomponentes pela forma como são atribuídos os nomes dos sinais de comando na tabela de variáveis. Por exemplo, nos cilindros os sensores de fim de curso são normalmente agrupados ao cilindro permitindo assim que, no campo, facilmente se identifique os cilindros e os respetivos sensores e, no software, facilmente se percebe a que cilindro corresponde um qualquer sensor de fim de curso dada a forma como é construído o nome destas variáveis.  Os Subcomponentes, classificam-se com um número (N) e outro número diferente de N (M). Por exemplo: Subcomponente 11, Subcomponente 32.
 
 ### Exemplo de Aplicação do Modelo de Classificação
 
@@ -1427,6 +1406,70 @@ O Estado de cada uma das lâmpada para uma deternidada condição nos Grafcets d
 
 *Iluminação Vermelha*
 
+#### Modo Distribuído
+
+O Modo distribuído consiste na Linha 31 e 32 funcionarem de forma sincronizada. Para as duas linhas comunicarem foi implementado o protocolo de comunicação Modbus (Servidor/Cliente). A Linha 32 ficou definida como Cliente, ou seja, foi na Linha 32 onde foi implementado o Grafcet e a Linha 31 ficou definida como Servidor.
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_distribuido/Modo_Distribuido_Cliente.png)
+
+*Data Block MB_Client*
+
+---
+**Legenda**
+
+**mb_mode**, define a função do Modbus. Para o funcionamento deste modo usamos o MB_Mode 103 e 106.
+- **103:** Leitura de 1 a 125 holding registers.
+- **106:** Escrever de 1 a 125 holding registers.
+**mb_data_addr**, espaço de endereços onde Servidor/Cliente vai operar. Com o mb_mode igual a 103/106 este espaço pode ir de 0 a 65,535.
+**mb_data_len**, diz-nos o quantidade de dados a ler/escrever. Com o mb_mode igual a 103, o mb_data_len, pode ir de 1 a 125; já com o mb_mode igual a 106, o mb_data_len, só pode ser 1.
+mb_data_ptr, um Array de 0 a 9 de Bools, permitindo assim operar no espaço de endereços dos Holding register (0 to 65,535), definida pelo próprio TIA Portal.
+**connect**, em que o Data Type é um TCON_IP_V4. No connect é onde serão inseridos os dados para a criação do servidor:
+- **Interfaceld: 64**, definido pelo Sistema. Pode ser consultado em Device Configuration, dois cliques no PLC, e System Constants;
+- **ID: 2**, Identifica exclusivamente uma conexão no PLC. Este ID pode ir de 1 a 4095;
+- **Connection Type**: 11, definido pelo Sistema. Type of connection: 11=TCP/IP, 19=UDP (17=TCP/IP);
+- **Remote Adress:** Aqui é colocado o IP do MB_Server. Sendo o IP 192.168.31.1 deve ser feita a divisão do IP com é apresentado no Data Blocks (DB);
+- **Remote Port:** 504, corresponde a Local Portal do MB_Server.
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_distribuido/Modo_Distribuido_Servidor.png)
+
+*Data Block MB_Server*
+
+---
+**Legenda**
+
+**mb_data**, um Array de 0 a 9 de Bools, permitindo assim operar no espaço de endereços dos Holding register (0 to 65,535), definida pelo próprio TIA Portal.
+**connect**, em que o Data Type é um TCON_IP_V4. No connect é onde serão inseridos os dados para a criação do servidor:
+- **Interfaceld:** 64, definido pelo Sistema. Pode ser consultado em Device Configuration, dois cliques no PLC, e System Constants;
+- **ID:** 2, Identifica exclusivamente uma conexão no PLC. Este ID pode ir de 1 a 4095;
+- **Connection Type:** 11, definido pelo Sistema. Type of connection: 11=TCP/IP, 19=UDP (17=TCP/IP);
+- **Local Port:** 504, consiste no “local” onde são verificadas as solicitações de conexão do cliente Modbus. A Local Portal pode ir de 1 a 49151. Por defeito, Local Portal é 502.
+
+Depois do Data Block (DB) criado, basta chamar o MB_Server (Linha 31) e MB_Cliente (Linha 32) para a Network e fazer corresponder os parâmetros criados no Data Block (DB) ao MB_Server e MB_Client. Com a Implementação do Servidor/Cliente nas duas Linhas, foi desenvolvido o Grafcet que permite a sincronização das duas linhas como é apresentado nas imagens abaixo. 
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_distribuido/Modo_Distribuido_Line31.png)
+
+*Informação que a Linha 31 está sem peça*
+
+![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_distribuido/Modo_Distribuido.svg)
+
+*Grafcet do Modo Distribuido*
+
+Ambas a linhas estão a trabalhar em simultâneo, de forma, automática, assim que este modo é ativado a Linha 31 entra em paragem e ficando apenas a Linha 32 a produzir. Quando a Linha 32 acabar a sua produção a Linha 31 entra em produção. Também existe a possibilidade de inicialmente começar a produção em Modo Distribuído e depois trocar para Modo Automático, onde ambas a linhas trabalham em simultâneo. C1 e C2 correspondem às condições que nos indicam que a Linha 32 (C1) ou a Linha 31 (C2) estão sem peças. A implementação do contador acaba por ser mais uma garantia da falta de peça na Linha, ou seja, assim que entra o corpo da peça na estação 20, o contador incrementa uma peça, quando a peça é selecionada, seja para o armazém ou rejeitada, o contador, decrementa essa peça. 
+
+O mb_data_ptr consiste na troca de informações, usando os registos do modbus, entre a duas linhas, como nos mostra a tabela abaixo.
+
+|                             | Cliente |       | Servidor |       |
+|-----------------------------|---------|-------|----------|-------|
+|                             | Read    | Write | Read     | Write |
+| MB_DATA_PTR[0] (MB_DATA[0]) | -       | EG10  | EG10     | -     |
+| MB_DATA_PTR[1] (MB_DATA[1]) | -       | EG12  | EG12     | -     |
+| MB_DATA_PTR[2] (MB_DATA[2]) | C2      | -     | -        | C2    |
+
+
+*Zonas de Comunicação entre a Linha 31 e 32*
+
+Analisando a tabela e conjunto com o Grafcet, quando estamos em EG10, diz-nos que o estamos a operar em Modo Automático, o Modo distribuído não foi selecionado e essa informação e enviada para a Linha 31. Quando selecionado, caso a Linha 32 tiver peças, a mesma entra em produção. Quando chegar a fim dessa produção, essa informação é enviada para a Linha 31, através do EG12 e a Linha 31 entra em produção. Assim que a Linha 31 ficar sem peças, essa informação é enviada para a Linha 32, através do C2, onde o MB_Cliente vai ler essa informação.
+
 #### Programação
 
 A programação das linha 32 foi feita usando o programa TIA Portal. A Programação pode ser encontrada na integra na parte dos anexos. Desta forma, aqui, serão apenas abordados o blocos mais importantes e fundamentais para o funcionamento da linha 32.
@@ -1813,7 +1856,6 @@ Com as **conexões** e as **tags** defenidas já foi possivel começar a criaç�
 | Reset_Contador               | HMI_Connection_5 | 59PLC    | Reset_Contadores             | Reset a todos os Contador                                                                          | Bool      |
 | Total_Pecas                  | HMI_Connection_5 | 59PLC    | IEC_Counter_0_DB_3.CV        | Total de Pecas                                                                                     | Int       |
 
-
 ##### Ecrãs
 <a id="hmi-ecras"></a>
 
@@ -2052,7 +2094,9 @@ Com o servidor criado do lado do TIA Portal, passamos para o Tesla Scada. Do lad
 ##### Ecrãs
 <a id="scada-ecras"></a>
 
-- **Root Screen**, ecrã principal do Tesla Scada. Neste ecrã podemos ser encaminhados para outros 2 ecrãs: **Line32** ou **Estações**
+O Tesla Scada é constituido por 2 ecrãs, a sua visualização pode ser feita através da leitura dos códigos QR. Dos 2 ecrãs resultam:
+
+- **Root Screen**, ecrã principal do Tesla Scada. Neste ecrã podemos ser encaminhados para o outro ecrãs: Line 31 & 32 ou Estaçõe.
 
 ![](./lines/line32/2020_2021/software/tesla_scada/ecras/root_screen.png)
 
@@ -2069,44 +2113,10 @@ Com o servidor criado do lado do TIA Portal, passamos para o Tesla Scada. Do lad
 
 ![](./lines/line32/2020_2021/software/tesla_scada/ecras/line32.png)
 
-*Imagem do Ecrã - Line32*
-
-- **Stations**, neste ecrã é possivel fazer a escolha da estação a operar. 
-
-![](./lines/line32/2020_2021/software/tesla_scada/ecras/stations.png)
-
-*Imagem do Ecrã - Stations*
-
-- **ST10**, **ST20**, **ST30**, **ST40**, **ST50**, nestes ecrãs podemos controlar a estação 10, 20, 30, 40, 50. Neste ecrã podemos: 
-
-    - Fazer o Start/Stop da estação; 
-    - Entrar em emergência;
-    - Saber qual modo de marcha está selecionado;
-    - Dar ordem de Home do Carro (Na Estação 10); 
-    - Dar a ordem de inicialização manual da estação;
-    - Trocar para 5 ecrãs: Estações, Lin32 e ST20 ou ST30 ou ST40 ou ST50.
-
-![](./lines/line32/2020_2021/software/tesla_scada/ecras/st10.png)
-
-*Imagem do Ecrã - ST10*
-
-![](./lines/line32/2020_2021/software/tesla_scada/ecras/st20.png)
-
-*Imagem do Ecrã - ST20*
-
-![](./lines/line32/2020_2021/software/tesla_scada/ecras/st30.png)
-
-*Imagem do Ecrã - ST30*
-
-![](./lines/line32/2020_2021/software/tesla_scada/ecras/st40.png)
-
-*Imagem do Ecrã - ST40*
-
-![](./lines/line32/2020_2021/software/tesla_scada/ecras/st50.png)
-
-*Imagem do Ecrã - ST50*
+*Imagem do Ecrã - Line31 & 32*
 
 ## Anexos
 
-![](lines/line32/2020_2021/images/anexos/qr.png)
+Através do scan do código QR é possível aceder a todo o conteúdo utilizado para a realização deste relatório, Imagens, Tabelas, Grafcets, Algoritmos e alguns vídeos.
 
+![](.\lines\line32\2020_2021\images\anexos\Anexos.png)
