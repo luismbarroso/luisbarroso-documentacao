@@ -148,15 +148,31 @@ Assim que a Estação 20 for alimentada com o corpo da peça, essa informação 
 
 A Linha 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remoto**. **No Modo de Funcionamento Local**, os comandos para as estações são dados através da Botoneiras. Já os comandos para a linha são dados pela HMI. **No Modo de Funcionamento HMI**, todos os comandos, tanto para as estações como para a linha, são dados pela HMI. **No Modo de Funcionamento Remoto**, todos os comandos, tanto para as estações como para a linha, são dados remotamente, usando o software Tesla Scada. Quando um destes Modos de Funcionamento é selecionado, na HMI, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Por exemplo: se estivermos a funcionar em modo HMI, se forem dados comandos através da Botoneiras ou através do Tesla Scada, este comandos não funcionaram, pois o Modo HMI está selecionado. 
 
-Através da visualização dos 3 vídeos abaixo apresentados e possível perceber melhor o funcionamento da Linha 32.
+Através da visualização dos 5 vídeos abaixo apresentados é possível perceber melhor o funcionamento da Linha 32.
 
-[![ModoAutomatico](./lines/line32/2020_2021/images/videos/1.png)](https://youtu.be/W-IelbxjGBI)
+**Modos de Marcha**
+
+[![Modo Automático](./lines/line32/2020_2021/videos/modo_automatico.png)](https://youtu.be/s16rJzoUUlg)
 
 *Modo Automático*
 
+[![Modo Ciclo](./lines/line32/2020_2021/videos/modo_ciclo.png)](https://youtu.be/qZMAecL8HLo)
+
 *Modo Ciclo*
 
-*Modo Rejeição*
+[![Rejeição de Peças c/ Defeito](./lines/line32/2020_2021/videos/rejeicao_de_peca.png)](https://youtu.be/m3doHLiySMk)
+
+*Rejeição de Peças c/ Defeito*
+
+**Paragens**
+
+[![Paragem Solicitada](./lines/line32/2020_2021/videos/paragem_solicitada.png)](https://youtu.be/tRBP_l0DHB0)
+
+*Paragem Solicitada*
+
+[![Paragem Emergência](./lines/line32/2020_2021/videos/paragem_emergencia.png)](https://youtu.be/P51M0lgNZZA)
+
+*Paragem Emergência*
 
 ### Comunicações
 
@@ -1407,7 +1423,7 @@ mb_data_ptr, um Array de 0 a 9 de Bools, permitindo assim operar no espaço de e
 
 Depois do Data Block (DB) criado, basta chamar o MB_Server (Linha 31) e MB_Cliente (Linha 32) para a Network e fazer corresponder os parâmetros criados no Data Block (DB) ao MB_Server e MB_Client. Com a Implementação do Servidor/Cliente nas duas Linhas, foi desenvolvido o Grafcet que permite a sincronização das duas linhas como é apresentado nas imagens abaixo. 
 
-![Informação que a Linha 31 está sem peça](./lines/line32/2020_2021/software/tia_portal/programacao/modo_distribuido/Modo_Distribuido_Line31.png)
+![Informação que a Linha 31 está sem peça](./lines/line32/2020_2021/software/tia_portal/programacao/modo_distribuido/Modo_Distribuido_Line31.PNG)
 
 *Informação que a Linha 31 está sem peça*
 
@@ -1430,6 +1446,14 @@ O mb_data_ptr consiste na troca de informações, usando os registos do modbus, 
 *Zonas de Comunicação entre a Linha 31 e 32*
 
 Analisando a tabela e conjunto com o Grafcet, quando estamos em EG10, diz-nos que o estamos a operar em Modo Automático, o Modo distribuído não foi selecionado e essa informação e enviada para a Linha 31. Quando selecionado, caso a Linha 32 tiver peças, a mesma entra em produção. Quando chegar a fim dessa produção, essa informação é enviada para a Linha 31, através do EG12 e a Linha 31 entra em produção. Assim que a Linha 31 ficar sem peças, essa informação é enviada para a Linha 32, através do C2, onde o MB_Cliente vai ler essa informação.
+
+Através do vídeo abaixo apresentados e possível perceber melhor o Modo Distribuido.
+
+**Modos de Marcha**
+
+[![Modo Distribuido](./lines/line32/2020_2021/videos/modo_distribuido.png)](https://youtu.be/-QDFTzMdT-M)
+
+*Modo Distribuido*
 
 #### Programação
 
