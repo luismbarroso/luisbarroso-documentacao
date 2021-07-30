@@ -79,7 +79,7 @@
 
 A Linha 32 é uma das Linhas do Grupo 30. Divida em 5 estações das quais resultam: **Transporte (Estação 10)**, **Aplicação (Estação 30)**, **Alimentação do Corpo (Estação 20) e do Miolo (Estação 40)** e **Seleção (Estação 50)**.
 
-![LIN32_1](./lines/line32/2020_2021/images/line/line32_1.jpg)
+![LINE32](./lines/line32/2020_2021/linhas/Linha_30.jpg)
 
 ## Processo
 
@@ -93,7 +93,7 @@ Para a comunicação entre as diversas estações é usado o protocolo de comuni
 
 ### Peças
 
-![P_1](./lines/line32/2020_2021/images/station/p_1.jpg)
+![Peças](./lines/line32/2020_2021/estacoes/Pecas.png)
 
 Peças, constituídas por Corpo (Parte Exterior) e por um Miolo (Parte Interior). Representa o objeto processado na Linha 32, quando os elementos são unificados representam o produto final. Podem ser classificadas de 9 maneiras, como nos mostra a tabela abaixo.
 
@@ -111,28 +111,28 @@ Os **x** a negrito indicam-nos as combinações pretendidas, quando essas combin
 
 A Estação 10, **estação de transporte da peça**, desde a sua fase inicial até à sua finalização. A Estação 10 é constituída por 7 sensores e 6 cilindros, dos quais resultam: Sensor de Garra em baixo, Sensor de Garra em cima, Sensor de Garra de rotação à esquerda, Sensor de Garra de rotação à direita, Sensor de Garra avançada, Sensor de Garra recuada, Sensor de Garra fechada; Cilindro de Garra subida e descida, Cilindro de rotação à esquerda da Garra, Cilindro de rotação à direita da Garra, Cilindro de Garra avançada e recuada, Cilindro de fecho da Garra, Cilindro de abertura da Garra.
 
-![ST10](./lines/line32/2020_2021/images/station/st_10.jpg)
+![ST10](./lines/line32/2020_2021/estacoes/Estacao_10.jpg)
 
 #### Estação 20
 <a id="est-estacao-20"></a>
 
 A Estação 20, **estação de alimentação do corpo da peça**, o corpo da peça, é colocado no funil para ser processado. A Estação 20 é constituída por 8 sensores e 2 cilindros, dos quais resultam: Sensor de Peça à Frente, Sensor Cilindro1 Avançado, Sensor Cilindro1 Recuado, Sensor Cilindro2 Avançado, Sensor Cilindro2 Recuado, Sensor no Funil (Cima), Sensor no Funil (Baixo), Sensor de Peça Metálica; Cilindro 1, Cilindro 2.
 
-![ST20](./lines/line32/2020_2021/images/station/st_20.jpg)
+![ST20](./lines/line32/2020_2021/estacoes/Estacao_20.jpg)
 
 #### Estação 30
 <a id="est-estacao-30"></a>
 
 A Estação 30, **estação de aplicação**, é aplicada uma *cola* para fixar o miolo ao corpo da peça. A Estação 30 é constituída por 7 sensores e 6 cilindros, dos quais resultam: Sensor de peça na Pinça, Sensor de Pinça aberta e fechada, Sensor de Pinça avançada, Sensor de Pinça recuada, Sensor de Prensa subida, Sensor de Prensa descida; Cilindro de fecho da Pinça, Cilindro de Pinça avançada e recuada, Cilindro da Prensa subida e descida.
 
-![ST30](./lines/line32/2020_2021/images/station/st_30.jpg)
+![ST30](./lines/line32/2020_2021/estacoes/Estacao_30.jpg)
 
 #### Estação 40
 <a id="est-estacao-40"></a>
 
 A Estação 40, **estação de alimentação do miolo da peça**, o miolo da peça, é colocado na funil para ser processado. A Estação 40 é constituída por 16 sensores e 6 cilindros, dos quais resultam: Sensor Cilindro1 Avançado, Sensor Cilindro1 Recuado, Sensor Cilindro2 Avançado, Sensor Cilindro2 Recuado, Sensor Prato de rotação à esquerda, Sensor Prato de rotação à direita, Sensor copo em cima, Sensor copo em baixo, Sensor do Prato à esquerda, Sensor do Prato à direita, Sensor de Garra avançada, Sensor de Garra recuada, Sensor de Garra subida, Sensor de Garra descida, Sensor de Garra fechada, Sensor de Peça à frente; Cilindro 1, Cilindro 2, Cilindro Prato, Cilindro da Garra avançada e recuada, Cilindro da Garra subida e descida, Cilindro da Garra aberta e fechada.
 
-![ST40](./lines/line32/2020_2021/images/station/st_40.jpg)
+![ST40](./lines/line32/2020_2021/estacoes/Estacao_40.jpg)
 
 #### Estação 50
 <a id="est-estacao-50"></a>
@@ -140,7 +140,7 @@ A Estação 40, **estação de alimentação do miolo da peça**, o miolo da pe�
 A Estação 50, **estação de seleção**, responsável por ordenar as peças no respetivo armazém.  Estação 40 é constituída por 6 sensores e 3 cilindros, dos quais resultam:
 Sensor de Peça no Tapete, Sensor de Peça Metálica, Sensor de Peça Branca/Metálica, Sensor Cilindro1 Avançado, Sensor Cilindro2 Avançado, Sensor Cilindro3 Avançado; Cilindro 1, Cilindro 2, Cilindro 3.
 
-![ST50](./lines/line32/2020_2021/images/station/st_50.jpg)
+![ST50](./lines/line32/2020_2021/estacoes/Estacao_50.jpg)
 
 ### Modo de Funcionamento
 
@@ -148,7 +148,15 @@ Assim que a Estação 20 for alimentada com o corpo da peça, essa informação 
 
 A Linha 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remoto**. **No Modo de Funcionamento Local**, os comandos para as estações são dados através da Botoneiras. Já os comandos para a linha são dados pela HMI. **No Modo de Funcionamento HMI**, todos os comandos, tanto para as estações como para a linha, são dados pela HMI. **No Modo de Funcionamento Remoto**, todos os comandos, tanto para as estações como para a linha, são dados remotamente, usando o software Tesla Scada. Quando um destes Modos de Funcionamento é selecionado, na HMI, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Por exemplo: se estivermos a funcionar em modo HMI, se forem dados comandos através da Botoneiras ou através do Tesla Scada, este comandos não funcionaram, pois o Modo HMI está selecionado. 
 
+Através da visualização dos 3 vídeos abaixo apresentados e possível perceber melhor o funcionamento da Linha 32.
+
 [![ModoAutomatico](./lines/line32/2020_2021/images/videos/1.png)](https://youtu.be/W-IelbxjGBI)
+
+*Modo Automático*
+
+*Modo Ciclo*
+
+*Modo Rejeição*
 
 ### Comunicações
 
@@ -158,7 +166,7 @@ A linha 32, usa dois protocolos de comunicação: **Profinet** e **Modbus**.
 
 ModBus é um protocolo de comunicação de *Send/Receive* que utiliza um relacionamento **Master/Slave**. A comunicação **Master/Slave** ocorre em pares, ou seja, assim que o **Slave** fizer um pedido, fica aguardar a resposta por parte do **Master**. Assim que **Master** receber este pedido envia a informação pretendida para o **Slave**.
 
-![](./lines/line32/2020_2021/images/modbus/modbus.png)
+![](./lines/line32/2020_2021/software/modbus/modbus.png)
 
 O Modbus é constituído por 4 zonas de memorias, como mostra a tabela abaixo: 
 
@@ -289,13 +297,19 @@ A classificação dos Grupos, Estações, Equipamentos, Componentes, Subcomponen
 
 ![](./lines/line32/2020_2021/software/classificacao/Class_1.png)
 
+*Estação 40. divida nas duas subestações*
+
 A Subestação 41 possui **10 sensores e 3 cilindros**, classificados de cima para baixo e da esquerda para a direita, começando pelos sensores que estão associados aos cilindros: Temos os **Sensores B11 e B12**, que estão associados ao **cilindro Y10**; os **Sensores B21 e B22**, que estão associados ao **cilindro Y20**; os **Sensores B31 e B32**, que estão associados ao **cilindro Y30** e por último o **Grupo de Sensores B40**, constituídos pelo **B41, B42, B43, B44**. Estes sensores como não estão associados a nenhum cilindro e como pertencem à Subestação foram agrupados e seguem a numeração.
 
 ![](./lines/line32/2020_2021/software/classificacao/Class_2.png)
 
+*Subestação 41*
+
 - A Subestação 42 possui **5 sensores e 2 cilindros**, classificados de cima para baixo e da esquerda para a direita, começando pelos sensores que estão associados aos cilindros: Temos os **Sensores B11 e B12**, que estão associados ao **cilindro Y10**; os **Sensores B21 e B22**, que estão associados ao **cilindro Y20** e por último o **Sensor B31**. Este sensor como não está associado a nenhum cilindro, mas como pertencem à Subestação, seguem a numeração.
 
 ![](./lines/line32/2020_2021/software/classificacao/Class_3.png)
+
+*Subestação 42*
 
 Depois de classificar cada um dos componentes, a *Label* deve apresentar o seguinte formato: 
 
@@ -327,17 +341,17 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | 3211*B42                    | %I0.3    | Sensor Garra Baixo                                                                 |
 | 3211*B41                    | %I0.4    | Sensor Garra Cima                                                                  |
 | 3211*B32                    | %I0.5    | Sensor Garra Esquerda                                                              |
-| 3211*B31                    | %I0.6    | Sensor Garra Posicao Inicial                                                       |
+| 3211*B31                    | %I0.6    | Sensor Garra Posição Inicial                                                       |
 | 3211*B21                    | %I0.7    | Sensor Garra Frente                                                                |
 | 3211*B22                    | %I1.0    | Sensor Garra Atras                                                                 |
 | 3211*B11                    | %I1.1    | Sensor Garra Fechada                                                               |
 | Reset_HMI_Inputs            | %IB2     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
 | HMI_SB1                     | %I2.0    | Input de Start do Gemma Master                                                     |
 | HMI_SB2                     | %I2.1    | Input de Stop do Gemma Master                                                      |
-| HMI_QS                      | %I2.2    | Input de Emergencia do Gemma Master                                                |
+| HMI_QS                      | %I2.2    | Input de Emergência do Gemma Master                                                |
 | HMI_SB1_ST10                | %I2.3    | Input de Start do Gemma Master                                                     |
 | HMI_SB2_ST10                | %I2.4    | Input de Stop do Gemma                                                             |
-| HMI_QS_ST10                 | %I2.5    | Input de Emergencia do Gemma                                                       |
+| HMI_QS_ST10                 | %I2.5    | Input de Emergência do Gemma                                                       |
 | Reset_HMI_Inputs_2          | %IB3     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
 | Init_Manual                 | %I3.1    | Input de seleção do modo de funcionamento                                          |
 | HMI_MM_Automatico           | %I3.2    | Input que permite na Inicialização manual da ST10                                  |
@@ -348,7 +362,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 | Reset_HMI_Inputs_3          | %IB4     | Input que permite o homing do Robô                                                 |
 | HMI_MC_Reset_Execute        | %I4.0    | Em Modo Manual, input que permite o homing do Robô                                 |
 | HMI_MC_MoveJog_Esq          | %I4.1    | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
-| HMI_MC_MoveJog_Drt          | %I4.2    | Em Modo Manual, input que permite o Execcute do MC_Reset                           |
+| HMI_MC_MoveJog_Drt          | %I4.2    | Em Modo Manual, input que permite o Execute do MC_Reset                           |
 | HMI_MC_MoveAbsolute_Execute | %I4.3    | Em Modo Manual, input que permite o movimento para a Esquerda do Robô              |
 | HMI_MC_MoveRelative_Execute | %I4.4    | Em Modo Manual, input que permite o movimento para a Direita do Robô               |
 | HMI_MC_Halt_Execute         | %I4.5    | Em Modo Manual, input que permite o Execute do MC_MoveAbsolute                     |
@@ -1189,35 +1203,45 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 
 Assim que o corpo da peça é processado pela estação 20, a garra avança, fecha e soube. Assim que concluído este processo avança para a próxima estação. Já na estação 30, a garra avança, baixa, abre, recua e aguarda que a peça seja processada pela estação 30. Assim que concluído este processo, a garra avança, fecha, soube, recua e avança para a próxima estação. Já na estação 40, a garra avança, baixa, abre, recua e aguarda que a peça seja processada pela estação 40. Assim que concluído este processo, a garra avança, baixa, fecha, soube, recua, roda para a esquerda e avança para a próxima estação. Já na estação 50, a garra avança, baixa, abre, recua. Assim que concluído este processo, retorna para a sua posição de home. Quando alcançar a posição de home, a garra, roda para a direita, desta forma, está pronta para começar um novo ciclo.
 
-![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST10_1.svg)
+![Estação 10](./lines/line32/2020_2021/software/grafcets/funcionamento/st10.svg)
+
+*Grafcet de Funcionamento, Estação 10*
 
 ##### Estação 20
 <a id="graf-estacao-20"></a> 
 
 Assim que o corpo da peça é detetado pelo sensor (Sensor no Copo em Baixo), o Cilindro 2 avança, isto para evitar que a segunda peça caia antes do Cilindro 1 recuar. Com o Cilindro 2 avançado, o Cilindro 1 avança, colocando a peça á frente, em posição para a Estação 10 a processar. Enquanto a peça se encontrar á frente não será processada mais nenhuma peça. Quando esta peça for retirada pelo robô, uma nova peça ser processada.
 
-![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST20.svg)
+![Estação 20](./lines/line32/2020_2021/software/grafcets/funcionamento/st20.svg)
+
+*Grafcet de Funcionamento, Estação 20*
 
 ##### Estação 30 
 <a id="graf-estacao-30"></a> 
 
 Assim que o corpo da peça é detetado pelo sensor (Sensor de peça na Pinça), a Pinça fecha e recua. Quando for deteta pelo sensor (Sensor de Pinça recuada), a peça, é processada pela prensa. Assim que concluído este processamento, a pinça, avança e abre para que o corpo da peça possa seguir para a próxima estação.
 
-![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST30.svg)
+![Estação 30](./lines/line32/2020_2021/software/grafcets/funcionamento/st30.svg)
+
+*Grafcet de Funcionamento, Estação 30*
 
 ##### Estação 40 
 <a id="graf-estacao-40"></a> 
 
 Assim que o miolo da peça é detetado pelo sensor (Sensor copo em baixo), o miolo é processado, ou seja, cai e o prato roda para que depois seja colocado no corpo da peça. Esta informação fica guardada e assim que o corpo da peça foi recebido pela estação, a garra processa o miolo, colocando-o no corpo da peça. Assim que concluído este processo a peça esta concluída e pronta a seguir para a próxima estação.
 
-![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST40.svg)
+![Estação 40](./lines/line32/2020_2021/software/grafcets/funcionamento/st40.svg)
+
+*Grafcet de Funcionamento, Estação 40*
 
 ##### Estação 50 
 <a id="graf-estacao-50"></a> 
 
 Assim que a peça é detetada pelo sensor (Sensor de Peça no Tapete), o tapete entra em funcionamento, a peça é identificada, pelos sensores e encaminhada. Caso for uma peça pretendida (Metálico/Metálico; Branco/Branco; Preto/Preto) é encaminhada para o respetivo armazém, senão, a peça é rejeitada.
 
-![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST50.svg)
+![Estação 50](./lines/line32/2020_2021/software/grafcets/funcionamento/st50.svg)
+
+*Grafcet de Funcionamento, Estação 50*
 
 #### Gemma
 
@@ -1234,11 +1258,11 @@ Considerações:
 
 **Proposta Inicial:**
 
-![](./lines/line32/2020_2021/software/gemma/imagens/Luban_Gemma.svg)
+![Gemma Luban](./lines/line32/2020_2021/software/gemma/luban_gemma.svg)
 
 **Conseguido:**
 
-![](./lines/line32/2020_2021/software/gemma/imagens/Line32_Gemma.svg)
+![Gemma Line 32](./lines/line32/2020_2021/software/gemma/line32_gemma.svg)
 
 ##### Guia de Iluminação 
 
@@ -1267,31 +1291,33 @@ O Grafcet Gemma Master é responsável por observar o estado das etapas de todos
 
 Ainda no Grafcet Gemma Master estão implementadas **2 paragens**: **Paragem Solicitada (A4)**, em funcionamento, é possível parar o processo no seu estado atual. Após paragem solicitada estar concluída e como o Modo de Marcha selecionado, voltamos à Marcha de produção com ordem (F1) ou à Marchas de verificação com ordem (F5), dependendo do Modo de Marcha selecionado, voltando assim o processo a ser executado no estado onde ficou parado; **Paragem de emergência (D1)**, através da Ordem de Emergência, á semelhança da Ordem de Start, pode ser dada localmente, remotamente ou através da HMI, é possível proceder a paragem de emergência da linha e das estações. Assim que a linha e as estações saírem da situação de emergência, a etapa A6 é executada, ou seja, a Function (FC) Init é executada, voltado ao início do Grafcet.
 
-![](./lines/line32/2020_2021/software/grafcets/gemma/Master_Gemma.svg)
+![Grafcet de Funcionamento (Gemma Master)](./lines/line32/2020_2021/software/grafcets/gemma/funcionamento/master.svg)
+
+*Grafcet de Funcionamento (Gemma Master)*
 
 ###### Gemma Estações
 
 O princípio de funcionamento dos **Grafcets Gemma das estações** é muito **idêntico ao Gemma Master**, a duas principais diferenças estão nas condições das etapas, ou seja, as estações não vão verificar os estado das outras estações mas sim enviar informações do seu estado para o Master e também em F2 onde cada estação verificar a sua condição de preparação: **Estação 10: Se o robô na posição Home; Estação 20: Se a estação contém peças, corpo da peça; Estação 30: Se não há peça na pinça; Estação 40: Se a estação contém peças, miolo da peça; Estação 50: Se não há peça no tapete**.
 
-![](./lines/line32/2020_2021/software/grafcets/gemma/ST10_Gemma.svg)
+![Grafcet de Funcionamento (Gemma ST10)](./lines/line32/2020_2021/software/grafcets/gemma/funcionamento/st10.svg)
 
-*Estação 10*
+*Grafcet de Funcionamento (Gemma ST10)*
 
-![](./lines/line32/2020_2021/software/grafcets/gemma/ST20_Gemma.svg)
+![Grafcet de Funcionamento (Gemma ST20)](./lines/line32/2020_2021/software/grafcets/gemma/funcionamento/st20.svg)
 
-*Estação 20*
+*Grafcet de Funcionamento (Gemma ST20)*
 
-![](./lines/line32/2020_2021/software/grafcets/gemma/ST30_Gemma.svg)
+![Grafcet de Funcionamento (Gemma ST30)](./lines/line32/2020_2021/software/grafcets/gemma/funcionamento/st30.svg)
 
-*Estação 30*
+*Grafcet de Funcionamento (Gemma ST30)*
 
-![](./lines/line32/2020_2021/software/grafcets/gemma/ST40_Gemma.svg)
+![Grafcet de Funcionamento (Gemma ST40)](./lines/line32/2020_2021/software/grafcets/gemma/funcionamento/st40.svg)
 
-*Estação 40*
+*Grafcet de Funcionamento (Gemma ST40)*
 
-![](./lines/line32/2020_2021/software/grafcets/gemma/ST50_Gemma.svg)
+![Grafcet de Funcionamento (Gemma ST50)](./lines/line32/2020_2021/software/grafcets/gemma/funcionamento/st50.svg)
 
-*Estação 50*
+*Grafcet de Funcionamento (Gemma ST50)*
 
 ##### Grafcet’s - Iluminação Gemma
 
@@ -1303,95 +1329,47 @@ O Estado de cada uma das lâmpada para uma deternidada condição nos Grafcets d
 
 ###### Gemma Master
 
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/Master_Ilum_HL11.svg)
+![Grafcet's de Iluminação (Master)](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/master.svg)
 
-*Iluminação Verde*
-
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/Master_Ilum_HL12.svg)
-
-*Iluminação Amarela*
-
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/Master_Ilum_HL13.svg)
-
-*Iluminação Vermelha*
+*Grafcet's de Iluminação (Master), HL11 - Verde; HL12 - Amarela; HL13 - Vermelha*
 
 ###### Gemma Estações
 
 **Estação 10**
 
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST10_Ilum_HL11.svg)
+![Grafcet's de Iluminação (ST10)](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/st10.svg)
 
-*Iluminação Amarela*
-
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST10_Ilum_HL12.svg)
-
-*Iluminação Verde*
-
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST10_Ilum_HL13.svg)
-
-*Iluminação Vermelha*
+*Grafcet's de Iluminação (ST10), HL11 - Amarela; HL12 - Verde; HL13 - Vermelha*
 
 **Estação 20**
 
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST20_Ilum_HL11.svg)
+![Grafcet's de Iluminação (ST20)](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/st20.svg)
 
-*Iluminação Amarela*
-
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST20_Ilum_HL12.svg)
-
-*Iluminação Verde*
-
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST20_Ilum_HL13.svg)
-
-*Iluminação Vermelha*
+*Grafcet's de Iluminação (ST20), HL11 - Amarela; HL12 - Verde; HL13 - Vermelha*
 
 **Estação 30**
 
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST30_Ilum_HL11.svg)
+![Grafcet's de Iluminação (ST30)](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/st30.svg)
 
-*Iluminação Amarela*
-
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST30_Ilum_HL12.svg)
-
-*Iluminação Verde*
-
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST30_Ilum_HL13.svg)
-
-*Iluminação Vermelha*
+*Grafcet's de Iluminação (ST30), HL11 - Amarela; HL12 - Verde; HL13 - Vermelha*
 
 **Estação 40**
 
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST40_Ilum_HL11.svg)
+![Grafcet's de Iluminação (ST40)](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/st40.svg)
 
-*Iluminação Amarela*
-
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST40_Ilum_HL12.svg)
-
-*Iluminação Verde*
-
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST40_Ilum_HL13.svg)
-
-*Iluminação Vermelha*
+*Grafcet's de Iluminação (ST40), HL11 - Amarela; HL12 - Verde; HL13 - Vermelha*
 
 **Estação 50**
 
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST50_Ilum_HL11.svg)
+![Grafcet's de Iluminação (ST50)](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/st50.svg)
 
-*Iluminação Amarela*
-
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST50_Ilum_HL12.svg)
-
-*Iluminação Verde*
-
-![](./lines/line32/2020_2021/software/grafcets/gemma/iluminacao/ST50_Ilum_HL13.svg)
-
-*Iluminação Vermelha*
+*Grafcet's de Iluminação (ST50), HL11 - Amarela; HL12 - Verde; HL13 - Vermelha*
 
 #### Modo Distribuído
 
 O Modo distribuído consiste na Linha 31 e 32 funcionarem de forma sincronizada. Para as duas linhas comunicarem foi implementado o protocolo de comunicação Modbus (Servidor/Cliente). A Linha 32 ficou definida como Cliente, ou seja, foi na Linha 32 onde foi implementado o Grafcet e a Linha 31 ficou definida como Servidor.
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_distribuido/Modo_Distribuido_Cliente.png)
+![Data Block MB_Client](./lines/line32/2020_2021/software/tia_portal/programacao/modo_distribuido/Data_Block_MB_Client.png)
 
 *Data Block MB_Client*
 
@@ -1401,9 +1379,11 @@ O Modo distribuído consiste na Linha 31 e 32 funcionarem de forma sincronizada.
 **mb_mode**, define a função do Modbus. Para o funcionamento deste modo usamos o MB_Mode 103 e 106.
 - **103:** Leitura de 1 a 125 holding registers.
 - **106:** Escrever de 1 a 125 holding registers.
+
 **mb_data_addr**, espaço de endereços onde Servidor/Cliente vai operar. Com o mb_mode igual a 103/106 este espaço pode ir de 0 a 65,535.
 **mb_data_len**, diz-nos o quantidade de dados a ler/escrever. Com o mb_mode igual a 103, o mb_data_len, pode ir de 1 a 125; já com o mb_mode igual a 106, o mb_data_len, só pode ser 1.
 mb_data_ptr, um Array de 0 a 9 de Bools, permitindo assim operar no espaço de endereços dos Holding register (0 to 65,535), definida pelo próprio TIA Portal.
+
 **connect**, em que o Data Type é um TCON_IP_V4. No connect é onde serão inseridos os dados para a criação do servidor:
 - **Interfaceld: 64**, definido pelo Sistema. Pode ser consultado em Device Configuration, dois cliques no PLC, e System Constants;
 - **ID: 2**, Identifica exclusivamente uma conexão no PLC. Este ID pode ir de 1 a 4095;
@@ -1411,7 +1391,7 @@ mb_data_ptr, um Array de 0 a 9 de Bools, permitindo assim operar no espaço de e
 - **Remote Adress:** Aqui é colocado o IP do MB_Server. Sendo o IP 192.168.31.1 deve ser feita a divisão do IP com é apresentado no Data Blocks (DB);
 - **Remote Port:** 504, corresponde a Local Portal do MB_Server.
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_distribuido/Modo_Distribuido_Servidor.png)
+![Data Block MB_Server](./lines/line32/2020_2021/software/tia_portal/programacao/modo_distribuido/Data_Block_MB_Server.png)
 
 *Data Block MB_Server*
 
@@ -1427,11 +1407,11 @@ mb_data_ptr, um Array de 0 a 9 de Bools, permitindo assim operar no espaço de e
 
 Depois do Data Block (DB) criado, basta chamar o MB_Server (Linha 31) e MB_Cliente (Linha 32) para a Network e fazer corresponder os parâmetros criados no Data Block (DB) ao MB_Server e MB_Client. Com a Implementação do Servidor/Cliente nas duas Linhas, foi desenvolvido o Grafcet que permite a sincronização das duas linhas como é apresentado nas imagens abaixo. 
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_distribuido/Modo_Distribuido_Line31.png)
+![Informação que a Linha 31 está sem peça](./lines/line32/2020_2021/software/tia_portal/programacao/modo_distribuido/Modo_Distribuido_Line31.png)
 
 *Informação que a Linha 31 está sem peça*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_distribuido/Modo_Distribuido.svg)
+![Grafcet do Modo Distribuido](./lines/line32/2020_2021/software/grafcets/distribuido/distribuido.svg)
 
 *Grafcet do Modo Distribuido*
 
@@ -1466,7 +1446,7 @@ Como já foi dito anteriormente a estação 10 possui um robô. Para a realizaç
 - **Axis:** Nome do servo/eixo configurado
 - **Enable:** Entrada do sinal que irá ligar o servo
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/1.PNG)
+![MC_Powe](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/1.PNG)
 
 **MC_Home** – é a função responsável de levar o servo até ao local onde está situado o sensor configurado para “homing”, a sua posição inicial.
 
@@ -1476,7 +1456,7 @@ Como já foi dito anteriormente a estação 10 possui um robô. Para a realizaç
 - **Position:** Valor absoluto da localização do servo, após ter chegado à posição home (coordenada absoluta de home)
 - **Mode:** Permite escolher entre os diferentes tipos de **“homing”**
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/2.PNG)
+![MC_Home](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/2.PNG)
 
 **MC_Reset** – é a função que permite ignorar erros causados pela paragem do servo ao entrar em contacto com um fim de curso ou erros de configuração.
 
@@ -1484,7 +1464,7 @@ Como já foi dito anteriormente a estação 10 possui um robô. Para a realizaç
 - **Axis:** Nome do servo/eixo configurado
 - **Enable:** Entrada do sinal que irá ditar a ordem de reset
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/4.PNG)
+![MC_Reset](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/4.PNG)
 
 **MC_Halt** – é a função que para os movimentos do servo.
 
@@ -1492,7 +1472,7 @@ Como já foi dito anteriormente a estação 10 possui um robô. Para a realizaç
 - **Axis:** Nome do servo/eixo configurado
 - **Enable:** Entrada do sinal que irá parar o servo
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/3.PNG)
+![*MC_Halt](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/3.PNG)
 
 **MC_MoveAbsolute** – é a função responsável por levar o servo até uma posição absoluta através de uma coordenada.
 
@@ -1502,22 +1482,26 @@ Como já foi dito anteriormente a estação 10 possui um robô. Para a realizaç
 - **Position:** Coordenada absoluta para a qual o servo se irá mover
 - **Velocity:** Velocidade com a qual o servo executará o movimento
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/5.PNG)
+![MC_MoveAbsolute](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/5.PNG)
 
 Para não sobrecarregar o código com 4 funções **MC_MoveAbsolute** foi criado com conjunto de **Moves** (como o próprio nome indica, mover valores de entrada de forma a serem aplicados numa saída) na entrada é colocado o valor, em mm, da posição do carro relativa a cada estação; na saída é colocado uma memória do tipo Real, com a função de guardar esse valor e enviar para o  **MC_MoveAbsolute**.
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/6.png)
+![Moves](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_10/6.png)
 
 ##### Estação 50
 <a id="prog-estacao-50"></a> 
 
 Como já foi dito anteriormente a estação 50 possui um tapete para transporte das peças processadas. Para o controlo da velocidade do tapete é usada uma função **Move** (como o próprio nome indica, mover valores de entrada de forma a serem aplicados numa saída) na entrada é colocado o valor analógico da velocidade; na saída é saída do Inversor de Frequência. Este valor analógico é enviado para o Inversor de Frequência e convertido em tensão.
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_50/2.PNG)
+![Controlo da velocidade do tapete](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_50/2.PNG)
+
+*Controlo da velocidade do tapete*
 
 Assim que este tapete é posto em funcionamento, por sua vez, o enconder, acoplado ao motor entra em funcionamento. Para analise das posições do enconder é usado um CTRL_HSC, quando configurado, torna-se num contador de alta velocidade. Desta forma, como os valores do enconder, é possível fazer o encaminhamento de cada peça. 
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_50/1.PNG)
+![CTRL_HSC](./lines/line32/2020_2021/software/tia_portal/programacao/estacao_50/1.PNG)
+
+*Contador de Alta Velocidade*
 
 ##### Inicialização
 
@@ -1525,13 +1509,15 @@ A Inicialização é um processo bastante importante para o bom funcionamento do
 
 A Inicialização na linha 32 pode ser feita de duas maneiras: 
 
-- **No inicio do processo, através de uma 0B100**. Assim que o PLC entra em Modo Run a OB100 é executada, quando concluido este processo, a 0B100 nunca mais volta a ser executada. Para isso foi cridada uma *Function (FC)* (Onde está incluido todo o código para a inicialização) por sua vez esta *Function (FC)* é *chamada* para a OB100.
+**No inicio do processo, através de uma 0B100**. Assim que o PLC entra em Modo Run a OB100 é executada, quando concluido este processo, a 0B100 nunca mais volta a ser executada. Para isso foi cridada uma *Function (FC)* (Onde está incluido todo o código para a inicialização) por sua vez esta *Function (FC)* é *chamada* para a OB100.
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/ob100.png)
+![Função Init a ser "chamada" na OB1000](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/ob100.png)
 
-- **Manualmente**, em algumas situação é necessário inicializar a Line ou alguma estação, para isso foi criado mecanismo que permite isso sem recorrer ao Stop/Run do PLC. A Inicialização, pode ser feita de 3 maneiras: **por ordem do Master**, assim que está ordem for dada é enviada para todas as estações, desta forma todas as estações são inicializadas; **ordem remota**, assim que está ordem for dada é enviada para todas as estações, desta forma todas as estações são inicializadas. A ordem remota também pode ser dada individualmente para cada estação, permitindo assim que só a estação em específico seja inicializada; **localmente (através da HMI)**, assim que está ordem for dada, a estação em específico é inicializada; 
+*Função Init a ser "chamada" na OB1000*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_manual_st10_1.PNG)
+**Manualmente**, em algumas situação é necessário inicializar a Line ou alguma estação, para isso foi criado mecanismo que permite isso sem recorrer ao Stop/Run do PLC. A Inicialização, pode ser feita de 3 maneiras: **por ordem do Master**, assim que está ordem for dada é enviada para todas as estações, desta forma todas as estações são inicializadas; **ordem remota**, assim que está ordem for dada é enviada para todas as estações, desta forma todas as estações são inicializadas. A ordem remota também pode ser dada individualmente para cada estação, permitindo assim que só a estação em específico seja inicializada; **localmente (através da HMI)**, assim que está ordem for dada, a estação em específico é inicializada; 
+
+![1](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_manual_st10_1.PNG)
 
 *Ordem de Inicialização para todos as Estações, por parte do Master ou Ordem Remota*
 
@@ -1539,23 +1525,23 @@ A Inicialização na linha 32 pode ser feita de duas maneiras:
 
 *Inicialização da ST10, por Ordem Local, Ordem do Master ou Ordem Remota*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_1.PNG)
+![Codigo de Inicialização da ST10 (1)](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_1.PNG)
 
 *Codigo de Inicialização da ST10*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_2.PNG)
+![Codigo de Inicialização da ST10 (2)](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_2.PNG)
 
 *Codigo de Inicialização da ST10*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_3.PNG)
+![Codigo de Inicialização da ST10 (3)](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_3.PNG)
 
 *Codigo de Inicialização da ST10*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_4.PNG)
+![Codigo de Inicialização da ST10 (4)](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_4.PNG)
 
 *Codigo de Inicialização da ST10*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_5.PNG)
+![Codigo de Inicialização da ST10 (5)](./lines/line32/2020_2021/software/tia_portal/programacao/inicializacao/st10/init_st10_5.PNG)
 
 *Codigo de Inicialização da ST10*
 
@@ -1566,39 +1552,43 @@ A Inicialização na linha 32 pode ser feita de duas maneiras:
 
 Como já foi explicado anteriormente, a linha 32 é composta por 3 modos de funcionamento: **Local**, **HMI** e **Remoto**. **No Modo de Funcionamento Local**. Quando um destes Modos de Funcionamento é selecionado, na HMI, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Quando selecionado o Modo de Funcionamento essa informação é enviada para todas as Estações, como demonstra a imagem abaixo.
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_funcionamento/modo_funcionamento.PNG)
+![Modos de Funcionamento](./lines/line32/2020_2021/software/tia_portal/programacao/modo_funcionamento/modo_funcionamento.PNG)
+
+*Modos de Funcionamento*
 
 ##### Modo de Marcha
 
 Como já foi explicado anteriormente, a linha 32 é composta por 3 modos de marcha: **Automático, Ciclo, Manual.** . Quando um destes Modos de Funcionamento é selecionado, na HMI pela Lina, os outros dois modos, mesmo que sejam selecionados, não terão efeito, prevenido assim qualquer acidente ou falha no sistema. Quando selecionado o Modo de Marcha essa informação é enviada para todas as Estações, como demonstra a imagem abaixo.
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/modo_marcha/modo_marcha.PNG)
+![Modos de Marcha](./lines/line32/2020_2021/software/tia_portal/programacao/modo_marcha/modo_marcha.PNG)
+
+*Modos de Marcha*
 
 ##### Botões
 
 Como o Modo de funcionamento selecionado os comandos para a estações vão depender desse modo, por exemplo, se estivermos a funcionar em Modo HMI, todos os comandos dados para as estações têm que ser dados pela a HMI e não remotamente ou localmente. Para prevenir qualquer acidente ou falha no sistema, quando um Modo de Funcionamento, os comandos dos outros dois modos, ficam desativados, como demonstra a imagem abaixo.
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/master/o_start_master.PNG)
+![Ordem de Start - Master](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/master/o_start_master.PNG)
 
 *Ordem de Start - Master*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/master/o_stop_master.PNG)
+![Ordem de Stop - Master](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/master/o_stop_master.PNG)
 
 *Ordem de Stop - Master*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/master/o_emerg_master.PNG)
+![Ordem de Emergência - Master](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/master/o_emerg_master.PNG)
 
 *Ordem de Emergência - Master*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/stations/o_start_sts.PNG)
+![Ordem de Start - Estações](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/stations/o_start_sts.PNG)
 
 *Ordem de Start - Estações*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/stations/o_stop_sts.PNG)
+![Ordem de Stop - Estações](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/stations/o_stop_sts.PNG)
 
 *Ordem de Stop - Estações*
 
-![](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/stations/o_emerg_sts.PNG)
+![Ordem de Emergência - Estações](./lines/line32/2020_2021/software/tia_portal/programacao/botoes/stations/o_emerg_sts.PNG)
 
 *Ordem de Emergência - Estações*
 
@@ -1606,17 +1596,20 @@ Como o Modo de funcionamento selecionado os comandos para a estações vão depe
 
 HMI significa **H**uman **M**achine **I**nterface (Interface Homem-Máquina), consiste num painel que permite o operador comunicar com a máquina. Antes de começar a criar os *Screens*, foi necessário definir as **conexões** na HMI, permitindo que a HMI comunique o todos os PLC da linha.
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/conexoes.png)
+![Conexões HMI](./lines/line32/2020_2021/software/tia_portal/hmi/conexoes.png)
+
+*Conexões HMI*
 
 Assim que as **conexões** foram definidas, comecei a criar as **tags** que vão estar associadas a Botões, Iluminacação, Displays, entre outros, desta forma, é possivel controlar e supervisionar a linha cada uma das estações. 
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/tags.png)
+![Tags HMI](./lines/line32/2020_2021/software/tia_portal/hmi/tags.png)
+
+*Tags HMI*
 
 Com as **conexões** e as **tags** defenidas já foi possivel começar a criação dos ecrãs. 
 
 ##### Classificação
 <a id="hmi-classificacao"></a>
-
 
 | Name                            | Connection         | PLC Name | PLC Tag                         |                                                                                                                                         | Data Type |
 |:-------------------------------:|:------------------:|:--------:|:-------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------:|:---------:|
@@ -1846,19 +1839,19 @@ A HMI é constituida por 19 ecrãs dos quais resultam:
 
 - **Root Screen**, ecrã principal da HMI. Neste ecrã podemos ser encaminhados para outros 3 ecrãs: **Line32**, **Peças** e **Modo de Funcionamento**
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/root_screen.png)
+![Root Screen*](./lines/line32/2020_2021/software/tia_portal/hmi/root_screen.png)
 
 *Imagem do Root Screen*
 
 - **Modo de Funcionamento**, neste ecrã podemos escolher o modo de operação da linha 32 e das estações: **Modo Local**, **Modo HMI** e **Modo Scada**
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_funcionamento.png)
+![Modo de Funcionamento](./lines/line32/2020_2021/software/tia_portal/hmi/modo_funcionamento.png)
 
 *Imagem do Ecrã - Modo de Funcionamento*
 
 - **Peças**, neste ecrã podemos controlar o **número de peças produzidas**, **saber que tipo de peças foram produzidas** e as **peças com defeito**. Caso se pretenda começar uma nova contagem é possivel dar *reset* aos contadores, através do botão **Reset dos Contadores**. Assim que concluida a consulta do controlo das peças podemos voltar a o ecrã da Line32 ou para as estações (Menu com todas as Estações).
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/pecas.png)
+![Peças](./lines/line32/2020_2021/software/tia_portal/hmi/pecas.png)
 
 *Imagem do Ecrã - Peças*
 
@@ -1872,13 +1865,13 @@ A HMI é constituida por 19 ecrãs dos quais resultam:
     - Dar a ordem de inicialização manual para todas as estações;
     - Trocar para 5 ecrãs: Stations, Peças, Modo de Funcionamento, Testes e Home (Root Screen).
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/line32.png)
+![Line 32](./lines/line32/2020_2021/software/tia_portal/hmi/line32.png)
 
 *Imagem do Ecrã - Line32*
 
 - **Stations - Modo Manual**, após da seleção do **Modo Manual** no ecrã da Line 32, este ecrã irá aparecer. Neste ecrã é possivel fazer a escolha da estação a operar em modo manual, antes da escolha da estação é necessário fazer a ativação do modo manual, através do botão a baixo. Assim que concluido o funcionamento em modo manual, podemos voltar a o ecrã da Line.
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/stations_modo_manual.png)
+![Stations - Modo Manual](./lines/line32/2020_2021/software/tia_portal/hmi/stations_modo_manual.png)
 
 *Imagem do Ecrã - Stations - Modo Manual*
 
@@ -1895,37 +1888,33 @@ A HMI é constituida por 19 ecrãs dos quais resultam:
 
 Assim que concluidos os testes, podemos voltar ao ecrã da Line32, Stations - Modo Manual (Menu com todas as Estações em Modo Manual) e ST10 (No Ecrã do Robô).
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st10.png)
+![ST10 - Modo Manual](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st10.png)
 
 *Imagem do Ecrã - ST10 - Modo Manual*
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st10_1.png)
+![ST10 - Modo Manual (Robô)](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st10_1.png)
 
 *Imagem do Ecrã - ST10 - Modo Manual (Robô)*
 
 - **ST20 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. Assim que concluidos os testes, podemos voltar ao ecrã da Line32 ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st20.png)
+![ST20 - Modo Manual](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st20.png)
 
 *Imagem do Ecrã - ST20 - Modo Manual*
 
 - **ST30 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. Assim que concluidos os testes, podemos voltar ao ecrã da Line32 ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st30.png)
+![ST30 - Modo Manual](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st30.png)
 
 *Imagem do Ecrã - ST30 - Modo Manual*
 
 - **ST40 - Modo Manual**, neste ecrã podemos controlar todos os cilindros e consultar o estado de todos os sensores. A Estação 40 como possui muitos cilindros e sensores, existem dois ecrãs: **Subestação 41** e **Subestação 42**. Assim que concluidos os testes, podemos voltar ao ecrã da Line32 ou Stations - Modo Manual (Menu com todas as Estações em Modo Manual)).
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st40.png)
+![ST40 - Modo Manual (Subestação 41 e 42)](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st40.png)
 
-*Imagem do Ecrã - ST40 - Modo Manual (Subestação 41)*
+*Imagem do Ecrã - ST40 - Modo Manual (Subestação 41 e 42)*
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st40_1.png)
-
-*Imagem do Ecrã - ST40 - Modo Manual (Subestação 42)*
-
-- **ST10 - Modo Manual**, neste ecrã podemos controlar todos os cilindros, consultar o estado de todos os sensores e carregando no botão **Tapete** podemos controlar o Tapete.
+- **ST50 - Modo Manual**, neste ecrã podemos controlar todos os cilindros, consultar o estado de todos os sensores e carregando no botão **Tapete** podemos controlar o Tapete.
 
     - Start/Stop do Tapete;
     - Aplicar velocidade no Tapete (Máx: 30000);
@@ -1933,17 +1922,17 @@ Assim que concluidos os testes, podemos voltar ao ecrã da Line32, Stations - Mo
 
 Assim que concluidos os testes, podemos voltar ao ecrã da Line32, Stations - Modo Manual (Menu com todas as Estações em Modo Manual) e ST10 (No Ecrã do Robô).
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50.png)
+![ST50 - Modo Manual](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50.png)
 
 *Imagem do Ecrã - ST50 - Modo Manual*
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50_1.png)
+![ST50 - Modo Manual (Tapete)](./lines/line32/2020_2021/software/tia_portal/hmi/modo_manual_st50_1.png)
 
 *Imagem do Ecrã - ST50 - Modo Manual (Tapete)*
 
 - **Stations**, neste ecrã é possivel fazer a escolha da estação a operar. 
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/stations.png)
+![Stations](./lines/line32/2020_2021/software/tia_portal/hmi/stations.png)
 
 *Imagem do Ecrã - Stations*
 
@@ -1957,27 +1946,25 @@ Assim que concluidos os testes, podemos voltar ao ecrã da Line32, Stations - Mo
     - Dar a ordem de inicialização manual da estação;
     - Trocar para 5 ecrãs: Stations, Peças, Lin32 e ST20 ou ST30 ou ST40 ou ST50.
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st10.png)
+![ST10](./lines/line32/2020_2021/software/tia_portal/hmi/st10.png)
 
 *Imagem do Ecrã - ST10*
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st10.png)
+![ST20](./lines/line32/2020_2021/software/tia_portal/hmi/st20.png)
 
 *Imagem do Ecrã - ST20*
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st20.png)
+![ST30](./lines/line32/2020_2021/software/tia_portal/hmi/st30.png)
 
 *Imagem do Ecrã - ST30*
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st30.png)
+![ST40](./lines/line32/2020_2021/software/tia_portal/hmi/st40.png)
 
 *Imagem do Ecrã - ST40*
 
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st40.png)
+![ST50](./lines/line32/2020_2021/software/tia_portal/hmi/st50.png)
 
 *Imagem do Ecrã - ST50*
-
-![](./lines/line32/2020_2021/software/tia_portal/hmi/st50.png)
 
 #### Tesla Scada
 
@@ -1987,7 +1974,9 @@ O Modo de Funcionamento do Tesla Scada é muito idêntico ao do HMI. Consiste nu
 
 Antes de começar a configurar o Tesla Scada é preciso garantir que no TIA Portal, o Servidor Modbus está configurado, tanto na Linha 31 e 32. Inicialmente é necessário criar um **Data Block (DB)** com 3 parâmetros:
 
-![](./lines/line32/2020_2021/software/tesla_scada/config/mb_server_2.PNG)
+![Data Block MB_Server (Tesla Scada](./lines/line32/2020_2021/software/tesla_scada/config/Data_Block_MB_Server.png)
+
+*Data Block MB_Server (Tesla Scada)*
 
 ---
 **Legenda**
@@ -2002,18 +1991,24 @@ Antes de começar a configurar o Tesla Scada é preciso garantir que no TIA Port
 
 Depois do **Data Block (DB)** criado, basta *chamar* o **MB_Server** para a Network e fazer corresponder o parametros criados no **Data Block (DB)** ao MB_Server. Com o servidor criado do lado do TIA Portal, passamos para o Tesla Scada. Do lado esquerdo em **Servers**, botão direito, **New Server > Modbus TCP (UDP)**
 
+![Configuração do Servidor, Tesla Scada](./lines/line32/2020_2021/software/tesla_scada/config/Configuracao_do_Servidor_Tesla_Scada.png)
 
-![](./lines/line32/2020_2021/software/tesla_scada/config/tp_server_2.png)
+*Configuração do Servidor, Tesla Scada*
 
 ---
 **Legenda**
 
 **Name:** MB_Server_Line31 e MB_Server_Line32, nome do Servidor.
+
 **IP or DNS:** 192.168.31.11 e 192.168.31.1, é o IP do PLC onde está configurado o MB_Server;
+
 **Port:** 502 e 506, por defeito, a Local Portal é 502 (Como no Tia Portal);
+
 **Pool Interval:** Intervalo dos pedidos do servidor. Quando maior, mais eficaz é a comunicação.
+
 **Type:** TCP, Protocolo de comunicação do servidor Modbus, TCP ou UDP. Como no Tia Portal definimos a comunicação por TCP, aqui no Tesla, essa escolha tèm que ser correspondida.
-- **Request Type:** Maximum Registers, durante o envio/receção de informação, enviará o máximo de informação em apenas um pedido.
+
+**Request Type:** Maximum Registers, durante o envio/receção de informação, enviará o máximo de informação em apenas um pedido.
 
 ##### Classificação
 <a id="scada-classificacao"></a>
@@ -2040,11 +2035,14 @@ Depois do **Data Block (DB)** criado, basta *chamar* o **MB_Server** para a Netw
 **Legenda**
 
 **Data type:** Boolean=0; Byte=1; Short=2; Integer=3; Long=4; Float=5; Double=6; String=7; Array=8
+
 **Access Mod:** ReadOnly=0; ReadWrite=1; WriteOnly=2
+
 **PV Input Tag**:
 - **s** - SlaveID, por definição é 1.
 - **pt** - Point Type.  Holding Coil=1; Discrete input=2; Holding register=3; Input register=4
 - **o** - Offset, corresponde ao registo Modbus. No meu caso, estou a usar **Holding Coils**, *mexendo* diretamente em Bits. O meu primeiro Bit, do lado do TIA Portal (Servidor), correponde ao Q2.0. Desta forma, o offset, do lado Tesla Scada, corresponderá a 16. (Como um Byte são 8 Bits, logo 8*2=16)
+
 **dt** - Data type, corresponde ao tipo de dados usados nos Holding register e nos Input register.
 
 ##### Ecrãs
@@ -2054,7 +2052,7 @@ O Tesla Scada é constituido por 2 ecrãs, a sua visualização pode ser feita a
 
 - **Root Screen**, ecrã principal do Tesla Scada. Neste ecrã podemos ser encaminhados para o outro ecrãs: Line 31 & 32 ou Estações.
 
-![](./lines/line32/2020_2021/software/tesla_scada/ecras/root_screen.png)
+![Root Screen](./lines/line32/2020_2021/software/tesla_scada/ecras/root_screen.png)
 
 *Imagem do Root Screen*
 
@@ -2067,12 +2065,6 @@ O Tesla Scada é constituido por 2 ecrãs, a sua visualização pode ser feita a
     - Dar a ordem de inicialização manual para todas as estações;
     - Trocar para 2 ecrãs: Estações e Home (Root Screen).
 
-![](./lines/line32/2020_2021/software/tesla_scada/ecras/line32.png)
+![Imagem do Ecrã - Line31 & 32](./lines/line32/2020_2021/software/tesla_scada/ecras/line32.png)
 
 *Imagem do Ecrã - Line31 & 32*
-
-## Anexos
-
-Através do scan do código QR é possível aceder a todo o conteúdo utilizado para a realização deste relatório, Imagens, Tabelas, Grafcets, Algoritmos e alguns vídeos.
-
-![](.\lines\line32\2020_2021\images\anexos\Anexos.png)
