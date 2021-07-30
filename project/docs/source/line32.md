@@ -265,7 +265,7 @@ Por exemplo: a ST20 envia uma informação para o PLC Master, usando uma saída.
 ## Trabalho Realizado
 ## Modelo de Classificação
 
-ara identificar cada componente mais facilmente, seja localmente ou no software, foi criado na Luban um meta-modelo que permite construir modelos de classificação mediante o contexto de aplicação nomeadamente: processo; ferramentas e componentes; armazém; mobiliário; entre outros. O meta-modelo baseia-se em grupos, sub-grupos e extensões de grupos e sub-grupos. No caso dos processos, que será o único caso abordado neste texto, foi criado um modelo baseado em quatro grupos: Linha; Estação; Equipamento; Componente.
+Para identificar cada componente mais facilmente, seja localmente ou no software, foi criado na Luban um meta-modelo que permite construir modelos de classificação mediante o contexto de aplicação nomeadamente: processo; ferramentas e componentes; armazém; mobiliário; entre outros. O meta-modelo baseia-se em grupos, sub-grupos e extensões de grupos e sub-grupos. No caso dos processos, que será o único caso abordado neste texto, foi criado um modelo baseado em quatro grupos: Linha; Estação; Equipamento; Componente.
 
 ![](./lines/line32/2020_2021/software/classificacao/class_geral.svg)
 
@@ -285,19 +285,19 @@ Subcomponente: É todo o componente que por razões funcionais pertence a um gru
 
 ### Exemplo de Aplicação do Modelo de Classificação
 
-A classificação dos Grupos, Estações, Equipamentos, Componentes, Subcomponente vai depender a sua localização e da sua função. Para perceber melhor este conceito olhemos para as imagens, da estação 40. A Estação 40 pode ser dividida em 2 Subestações, porque acontecem dois processos diferentes: o **Armazenamento do Miolo da Peça** e a sua **colocação no Corpo da Peça**. A **Laranja** temos a **Subestação 41** e **Verde** temos a **Subestação 42**.
+A classificação dos Grupos, Estações, Equipamentos, Componentes, Subcomponente vai depender a sua localização e da sua função. Para perceber melhor este conceito olhemos para as imagens, da estação 40. A Estação 40 pode ser dividida em 2 Subestações, porque acontecem dois processos diferentes: o **Armazenamento do Miolo da Peça** e a sua **colocação no Corpo da Peça**. A **Cinzento** temos a **Subestação 41** e **Preto** temos a **Subestação 42**.
 
 ![](./lines/line32/2020_2021/software/classificacao/Class_1.png)
 
-- A Subestação 41 possui 10 sensores, classificados de cima para baixo e da esquerda para a direita, começando pelos sensores que estão associados aos cilindros: Temos os Sensores B11 e B12, que estão associados ao cilindro Y10; os Sensores B21 e B22, que estão associados ao cilindro Y20; os Sensores B31 e B32, que estão associados ao cilindro Y30 e por último o Grupo de Sensores B40, constituídos pelo B41, B42, B43, B44. Estes sensores como não estão associados a nenhum cilindro e como pertencem à Subestação foram agrupados e seguem a 
+A Subestação 41 possui **10 sensores e 3 cilindros**, classificados de cima para baixo e da esquerda para a direita, começando pelos sensores que estão associados aos cilindros: Temos os **Sensores B11 e B12**, que estão associados ao **cilindro Y10**; os **Sensores B21 e B22**, que estão associados ao **cilindro Y20**; os **Sensores B31 e B32**, que estão associados ao **cilindro Y30** e por último o **Grupo de Sensores B40**, constituídos pelo **B41, B42, B43, B44**. Estes sensores como não estão associados a nenhum cilindro e como pertencem à Subestação foram agrupados e seguem a numeração.
 
 ![](./lines/line32/2020_2021/software/classificacao/Class_2.png)
 
-- A Subestação 42 possui 6 sensores, classificados de cima para baixo e da esquerda para a direita, começando pelos sensores que estão associados aos cilindros: Temos os Sensores B11 e B12, que estão associados ao cilindro Y10; os Sensores B21 e B22, que estão associados ao cilindro Y20; o Sensores B31, que está associado ao cilindro Y30 e por último o sensor B41. Estes sensores como não estão associados a nenhum cilindro e como pertencem à Subestação segue a numeração.
+- A Subestação 42 possui **5 sensores e 2 cilindros**, classificados de cima para baixo e da esquerda para a direita, começando pelos sensores que estão associados aos cilindros: Temos os **Sensores B11 e B12**, que estão associados ao **cilindro Y10**; os **Sensores B21 e B22**, que estão associados ao **cilindro Y20** e por último o **Sensor B31**. Este sensor como não está associado a nenhum cilindro, mas como pertencem à Subestação, seguem a numeração.
 
 ![](./lines/line32/2020_2021/software/classificacao/Class_3.png)
 
-Como defenida a classificação a Label apresenta o seguinte formato: 
+Depois de classificar cada um dos componentes, a *Label* deve apresentar o seguinte formato: 
 
 ![](./lines/line32/2020_2021/software/classificacao/class_valvula.svg)
 
@@ -1187,25 +1187,35 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 ##### Estação 10
 <a id="graf-estacao-10"></a> 
 
+Assim que o corpo da peça é processado pela estação 20, a garra avança, fecha e soube. Assim que concluído este processo avança para a próxima estação. Já na estação 30, a garra avança, baixa, abre, recua e aguarda que a peça seja processada pela estação 30. Assim que concluído este processo, a garra avança, fecha, soube, recua e avança para a próxima estação. Já na estação 40, a garra avança, baixa, abre, recua e aguarda que a peça seja processada pela estação 40. Assim que concluído este processo, a garra avança, baixa, fecha, soube, recua, roda para a esquerda e avança para a próxima estação. Já na estação 50, a garra avança, baixa, abre, recua. Assim que concluído este processo, retorna para a sua posição de home. Quando alcançar a posição de home, a garra, roda para a direita, desta forma, está pronta para começar um novo ciclo.
+
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST10_1.svg)
 
 ##### Estação 20
 <a id="graf-estacao-20"></a> 
+
+Assim que o corpo da peça é detetado pelo sensor (Sensor no Copo em Baixo), o Cilindro 2 avança, isto para evitar que a segunda peça caia antes do Cilindro 1 recuar. Com o Cilindro 2 avançado, o Cilindro 1 avança, colocando a peça á frente, em posição para a Estação 10 a processar. Enquanto a peça se encontrar á frente não será processada mais nenhuma peça. Quando esta peça for retirada pelo robô, uma nova peça ser processada.
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST20.svg)
 
 ##### Estação 30 
 <a id="graf-estacao-30"></a> 
 
+Assim que o corpo da peça é detetado pelo sensor (Sensor de peça na Pinça), a Pinça fecha e recua. Quando for deteta pelo sensor (Sensor de Pinça recuada), a peça, é processada pela prensa. Assim que concluído este processamento, a pinça, avança e abre para que o corpo da peça possa seguir para a próxima estação.
+
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST30.svg)
 
 ##### Estação 40 
 <a id="graf-estacao-40"></a> 
 
+Assim que o miolo da peça é detetado pelo sensor (Sensor copo em baixo), o miolo é processado, ou seja, cai e o prato roda para que depois seja colocado no corpo da peça. Esta informação fica guardada e assim que o corpo da peça foi recebido pela estação, a garra processa o miolo, colocando-o no corpo da peça. Assim que concluído este processo a peça esta concluída e pronta a seguir para a próxima estação.
+
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST40.svg)
 
 ##### Estação 50 
 <a id="graf-estacao-50"></a> 
+
+Assim que a peça é detetada pelo sensor (Sensor de Peça no Tapete), o tapete entra em funcionamento, a peça é identificada, pelos sensores e encaminhada. Caso for uma peça pretendida (Metálico/Metálico; Branco/Branco; Preto/Preto) é encaminhada para o respetivo armazém, senão, a peça é rejeitada.
 
 ![](./lines/line32/2020_2021/software/grafcets/funcionamento/c_gemma/ST50.svg)
 
@@ -1213,7 +1223,7 @@ A Classificação das 5 Estações divide-se em 3 grupo: **Entradas e Saídas do
 
 O Gemma consiste num Guia de estudo dos modos de Marcha e Paragem. Num processo automatizado, por necessidade, é necessário prever todos os estados possíveis, desta forma, com o Gemma, é possível executar arranques ou paragens de forma segura sem prejudicar ou Homem ou a Máquina.
 
-Como podemos observar na figura a baixo, o Gemma, divide-se em 3 grande blocos: “Procedimentos de paragem”gg, “Procedimentos de execução”, “Procedimentos de falha” e a cada um dele correspondem um conjunto de funções/tarefas.
+Como podemos observar na figura a baixo, o Gemma, divide-se em 3 grande blocos: “Procedimentos de paragem”, “Procedimentos de execução”, “Procedimentos de falha” e a cada um dele correspondem um conjunto de funções/tarefas.
 
 Considerações:
 - Modos de Marcha: Automático, Ciclo e Manual
@@ -1253,53 +1263,15 @@ No **Modo Automático** a linha está a funcionar de forma automática, ou seja,
 ##### Grafcet’s - Funcionamento Gemma
 ###### Gemma Master
 
+O Grafcet Gemma Master é responsável por observar o estado das etapas de todos os gemmas das estações. Assim que o PLC entrar em **Modo Run**, a **Function (FC) Init** é executada, assim que todas as estações estiverem inicializadas o Grafcet Gemma Master evolui para a próxima etapa, **parado no estado inicial (A1)**. Em A1, depois de verificar que o processo está pronto a funcionar, é dada a Ordem de Start (Que pode ser dada localmente, remotamente ou através da HMI, dependendo do Modo de Funcionamento selecionado) permitindo assim, o arranque o processo. Depois de A1 ser executado, entramos em **Marcha de preparação (F2)**, nesta etapa, com a Ordem de Start executada, verificamos se a **Estação 10 está na posição de Home**, **Estação 20 e 40 contém peças**, **Estação 30 não têm peças na Pinça** e a **Estação 50 não têm peças no tapete**, com estás verificações feitas, para dar inicio ao processamento das peças é necessário selecionar um Modo de Marcha: **Marcha de produção com ordem (F1)**, nesta etapa, o processo está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start; **Marchas de verificação com ordem (F5)**, nesta etapa, o processo está a funcionar de forma cíclica, ou seja, é necessária a Ordem de Start na Etapa Inicial do Grafcet de Funcionamento. 
+
+Ainda no Grafcet Gemma Master estão implementadas **2 paragens**: **Paragem Solicitada (A4)**, em funcionamento, é possível parar o processo no seu estado atual. Após paragem solicitada estar concluída e como o Modo de Marcha selecionado, voltamos à Marcha de produção com ordem (F1) ou à Marchas de verificação com ordem (F5), dependendo do Modo de Marcha selecionado, voltando assim o processo a ser executado no estado onde ficou parado; **Paragem de emergência (D1)**, através da Ordem de Emergência, á semelhança da Ordem de Start, pode ser dada localmente, remotamente ou através da HMI, é possível proceder a paragem de emergência da linha e das estações. Assim que a linha e as estações saírem da situação de emergência, a etapa A6 é executada, ou seja, a Function (FC) Init é executada, voltado ao início do Grafcet.
+
 ![](./lines/line32/2020_2021/software/grafcets/gemma/Master_Gemma.svg)
-
-- **Etapa A6** - Parado no estado inicial, assim que o PLC entrar em **Modo Run**, a *Function (FC)* **Init** é executada. Assim que o Grafcet de Funcionamento estiver a primeira Etapa do Grafcet Gemma segue para a próxima etapa. 
-
-- **Etapa A1** - Parado no estado inicial, nesta etapa, é dada a Ordem de Start (O_Start), permitindo assim, o arranque o processo. 
-
-- **Etapa F2** - Marcha de preparação, nesta etapa, com a Ordem de Start executada, verificamos se as **Estações 20 e 40** contém peças para começar o processo e se o **Modo de Marcha, Automático e Ciclo** foi escolhido para todas as estações. 
-
-      Através da **HMI** é possível escolher o modo de funcionamento de cada estação, na Janela **linha 32**
-
-- **Etapa F1** - Marcha de produção com ordem, nesta etapa, o processo está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start.
-
-- **Etapa F5** - Marchas de verificação com ordem, nesta etapa, o processo está a funcionar de forma cíclica, ou seja, é necessária a Ordem de Start na Etapa Inicial do Grafcet de Funcionamento.
-
-- **Etapa A3** - Paragem solicitado, através da **Ordem de Stop** é possível proceder a paragem da linha e de todas as estações.
-
-- **Etapa A4** - Paragem finalizada, após paragem solicitada estar concluída (Na linha e nas estações) e como o Modo de Marcha selecionado, voltamos à **Marcha de produção com ordem**, voltando assim o processo a ser executado no estado onde ficou parado.
-
-- **Etapa D1** - Paragem de emergência, através da **Ordem de Emergência** é possível proceder a paragem de emergência da linha e das estações. Assim que a linha e as estações saírem da situação de emergência, a **Etapas A6** é executada, ou seja, a *Function (FC)* **Init** é executada.
 
 ###### Gemma Estações
 
-- **Etapa A6** - Parado no estado inicial, assim que o PLC entrar em **Modo Run**, a *Function (FC)* **Init** é executada. Assim que o Grafcet de Funcionamento estiver a primeira Etapa do Grafcet Gemma segue para a próxima etapa. 
-
-- **Etapa A1** - Parado no estado inicial, nesta etapa, é dada a Ordem de Start (O_Start), permitindo assim, o arranque da estação. 
-
-- **Etapa F2** - Marcha de preparação, nesta etapa, com a Ordem de Start executada, verificamos para cada umas das estações a seguinte condições:
-
-    - Estação 10: Se o robô na posição *Home*; 
-    - Estação 20: Se a estação contém peças, corpo da peça;
-    - Estação 30: Se não há peça na pinça;
-    - Estação 40: Se a estação contém peças, miolo da peça;
-    - Estação 50: Se não há peça no tapete;
-
-Depois destas condicções serem verificadas, também é verificado se o **Modo de Marcha, Automático e Ciclo** foi escolhido. 
-
-- **Etapa F1** - Marcha de produção com ordem, nesta etapa, o processo está a funcionar de forma automática, ou seja, não é necessária qualquer Ordem de Start.
-
-- **Etapa F5** - Marchas de verificação com ordem, nesta etapa, o processo está a funcionar de forma cíclica, ou seja, é necessária a Ordem de Start na Etapa Inicial do Grafcet de Funcionamento.
-
-        Nota: Os Modos de Marcha, são selecionados pelo Gemma Master.
-
-- **Etapa A3** - Paragem solicitado, através da **Ordem de Stop** é possível proceder a paragem das estações.
-
-- **Etapa A4** - Paragem finalizada, após paragem solicitada estar concluída e como o Modo de Marcha selecionado, voltamos à **Marcha de produção com ordem**, desta forma, a estação, entra em execução no estado onde ficou parado.
-
-- **Etapa D1** - Paragem de emergência, através da **Ordem de Emergência** é possível proceder a paragem de emergência da estação. Assim que a estação saír da situação de emergência, a **Etapas A6** é executada, ou seja, a *Function (FC)* **Init** é executada.
+O princípio de funcionamento dos **Grafcets Gemma das estações** é muito **idêntico ao Gemma Master**, a duas principais diferenças estão nas condições das etapas, ou seja, as estações não vão verificar os estado das outras estações mas sim enviar informações do seu estado para o Master e também em F2 onde cada estação verificar a sua condição de preparação: **Estação 10: Se o robô na posição Home; Estação 20: Se a estação contém peças, corpo da peça; Estação 30: Se não há peça na pinça; Estação 40: Se a estação contém peças, miolo da peça; Estação 50: Se não há peça no tapete**.
 
 ![](./lines/line32/2020_2021/software/grafcets/gemma/ST10_Gemma.svg)
 
@@ -1636,7 +1608,7 @@ HMI significa **H**uman **M**achine **I**nterface (Interface Homem-Máquina), co
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/conexoes.png)
 
-Assim que as **conexões** foram definidas, comecei a criar as **tags** que vão estar associadas a Botões, Iluminacação, Displays, entre outros, desta forma, é possivel controlar e supervisionar a linha cada uma das estações. A Tags da HMI, pode ser consultadas na [Classificação](#classificacao)
+Assim que as **conexões** foram definidas, comecei a criar as **tags** que vão estar associadas a Botões, Iluminacação, Displays, entre outros, desta forma, é possivel controlar e supervisionar a linha cada uma das estações. 
 
 ![](./lines/line32/2020_2021/software/tia_portal/hmi/tags.png)
 
@@ -1645,225 +1617,227 @@ Com as **conexões** e as **tags** defenidas já foi possivel começar a criaç�
 ##### Classificação
 <a id="hmi-classificacao"></a>
 
-| Label                        | Conexão          | Nome PLC | Label PLC                    | Comentário                                                                                                     |  
-|:----------------------------:|:----------------:|:--------:|:----------------------------:|:--------------------------------------------------------------------------------------------------------------:|
-| 3210*B11                     | HMI_Connection_1 | 19PLC    | 3210*B11                     | Fim de Curso (Final)                                                                               | Bool      |
-| 3210*B12                     | HMI_Connection_1 | 19PLC    | 3210*B12                     | Fim de Curso (Home)                                                                                | Bool      |
-| 3210*B13                     | HMI_Connection_1 | 19PLC    | 3210*B13                     | Sensor Home                                                                                        | Bool      |
-| 3211*B11                     | HMI_Connection_1 | 19PLC    | 3211*B11                     |                                                                                                    | Bool      |
-| 3211*B21                     | HMI_Connection_1 | 19PLC    | 3211*B21                     | Sensor Garra Frente                                                                                | Bool      |
-| 3211*B22                     | HMI_Connection_1 | 19PLC    | 3211*B22                     | Sensor Garra Atras                                                                                 | Bool      |
-| 3211*B31                     | HMI_Connection_1 | 19PLC    | 3211*B31                     | Sensor Garra Posicao Inicial                                                                       | Bool      |
-| 3211*B32                     | HMI_Connection_1 | 19PLC    | 3211*B32                     | Sensor Garra Esquerda                                                                              | Bool      |
-| 3211*B41                     | HMI_Connection_1 | 19PLC    | 3211*B41                     | Sensor Garra Cima                                                                                  | Bool      |
-| 3211*B42                     | HMI_Connection_1 | 19PLC    | 3211*B42                     | Sensor Garra Baixo                                                                                 | Bool      |
-| 3211*Y10A                    | HMI_Connection_1 | 19PLC    | 3211*Y10A                    | Abrir Garra                                                                                        | Bool      |
-| 3211*Y10B                    | HMI_Connection_1 | 19PLC    | 3211*Y10B                    | Fechar Garra                                                                                       | Bool      |
-| 3211*Y20                     | HMI_Connection_1 | 19PLC    | 3211*Y20                     | Frente e Atrás Garra                                                                               | Bool      |
-| 3211*Y30A                    | HMI_Connection_1 | 19PLC    | 3211*Y30A                    | Posiçao Incial Garra                                                                               | Bool      |
-| 3211*Y30B                    | HMI_Connection_1 | 19PLC    | 3211*Y30B                    | Rodar Esquerda Garra                                                                               | Bool      |
-| 3211*Y40                     | HMI_Connection_1 | 19PLC    | 3211*Y40                     | Sobe e Baixa Garra                                                                                 | Bool      |
-| 321920HL11                   | HMI_Connection_1 | 19PLC    | 321920HL11                   | Painel Luz Laranja                                                                                 | Bool      |
-| 321920HL12                   | HMI_Connection_1 | 19PLC    | 321920HL12                   | Painel Luz Verde                                                                                   | Bool      |
-| 321920HL13                   | HMI_Connection_1 | 19PLC    | 321920HL13                   | Painel Luz Vermelha                                                                                | Bool      |
-| 321920QS24                   | HMI_Connection_1 | 19PLC    | 321920QS24                   | Botao Emergencia                                                                                   | Bool      |
-| 321920SA23                   | HMI_Connection_1 | 19PLC    | 321920SA23                   | SA                                                                                                 | Bool      |
-| 321920SB21                   | HMI_Connection_1 | 19PLC    | 321920SB21                   | Botao Verde                                                                                        | Bool      |
-| 321920SB22                   | HMI_Connection_1 | 19PLC    | 321920SB22                   | Botao Vermelho                                                                                     | Bool      |
-| 3220*B11                     | HMI_Connection_2 | 29PLC    | 3220*B11                     | Sensor Peca Frente                                                                                 | Bool      |
-| 3221*B11                     | HMI_Connection_2 | 29PLC    | 3221*B11                     | Sensor Cilindro1 Avancado                                                                          | Bool      |
-| 3221*B12                     | HMI_Connection_2 | 29PLC    | 3221*B12                     | Sensor Cilindro1 Recuado                                                                           | Bool      |
-| 3221*B21                     | HMI_Connection_2 | 29PLC    | 3221*B21                     | Sensor Cilindro2 Avancado                                                                          | Bool      |
-| 3221*B22                     | HMI_Connection_2 | 29PLC    | 3221*B22                     | Sensor Cilindro2 Recuado                                                                           | Bool      |
-| 3221*B31                     | HMI_Connection_2 | 29PLC    | 3221*B31                     | Sensor Funil Cima                                                                                  | Bool      |
-| 3221*B32                     | HMI_Connection_2 | 29PLC    | 3221*B32                     | Sensor Funil Baixo                                                                                 | Bool      |
-| 3221*B33                     | HMI_Connection_2 | 29PLC    | 3221*B33                     | Sensor Peça Metalica                                                                               | Bool      |
-| 3221*Y10                     | HMI_Connection_2 | 29PLC    | 3221*Y10                     | Cilindro 1                                                                                         | Bool      |
-| 3221*Y20                     | HMI_Connection_2 | 29PLC    | 3221*Y20                     | Cilindro 2                                                                                         | Bool      |
-| 322920HL11                   | HMI_Connection_2 | 29PLC    | 322920HL11                   | Painel Luz Laranja                                                                                 | Bool      |
-| 322920HL12                   | HMI_Connection_2 | 29PLC    | 322920HL12                   | Painel Luz Verde                                                                                   | Bool      |
-| 322920HL13                   | HMI_Connection_2 | 29PLC    | 322920HL13                   | Painel Luz Vermelha                                                                                | Bool      |
-| 322920QS24                   | HMI_Connection_2 | 29PLC    | 322920QS24                   | Botao Emergencia                                                                                   | Bool      |
-| 322920SA23                   | HMI_Connection_2 | 29PLC    | 322920SA23                   | SA                                                                                                 | Bool      |
-| 322920SB21                   | HMI_Connection_2 | 29PLC    | 322920SB21                   | Botao Verde                                                                                        | Bool      |
-| 322920SB22                   | HMI_Connection_2 | 29PLC    | 322920SB22                   | Botao Vermelho                                                                                     | Bool      |
-| 3231*B11                     | HMI_Connection_3 | 39PLC    | 3231*B11                     | Sensor Abrir Fechar Pinca                                                                          | Bool      |
-| 3231*B21                     | HMI_Connection_3 | 39PLC    | 3231*B21                     | Sensor Avancado Pinca                                                                              | Bool      |
-| 3231*B22                     | HMI_Connection_3 | 39PLC    | 3231*B22                     | Sensor Recuado Pinca                                                                               | Bool      |
-| 3231*B31                     | HMI_Connection_3 | 39PLC    | 3231*B31                     | Sensor Peca                                                                                        | Bool      |
-| 3231*Y10                     | HMI_Connection_3 | 39PLC    | 3231*Y10                     | Abrir e Fechar a Pinca                                                                             | Bool      |
-| 3231*Y20                     | HMI_Connection_3 | 39PLC    | 3231*Y20                     | Avanca e Recua a Pinca                                                                             | Bool      |
-| 3232*B11                     | HMI_Connection_3 | 39PLC    | 3232*B11                     | Sensor Subido Prensa                                                                               | Bool      |
-| 3232*B12                     | HMI_Connection_3 | 39PLC    | 3232*B12                     | Sensor Descido Prensa                                                                              | Bool      |
-| 3232*Y10                     | HMI_Connection_3 | 39PLC    | 3232*Y10                     | Sobe e Desce Prensa                                                                                | Bool      |
-| 323920HL11                   | HMI_Connection_3 | 39PLC    | 323920HL11                   | Painel Luz Laranja                                                                                 | Bool      |
-| 323920HL12                   | HMI_Connection_3 | 39PLC    | 323920HL12                   | Painel Luz Verde                                                                                   | Bool      |
-| 323920HL13                   | HMI_Connection_3 | 39PLC    | 323920HL13                   | Painel Luz Vermelha                                                                                | Bool      |
-| 323920QS24                   | HMI_Connection_3 | 39PLC    | 323920QS24                   | Botao Emergencia                                                                                   | Bool      |
-| 323920SA23                   | HMI_Connection_3 | 39PLC    | 323920SA23                   | SA                                                                                                 | Bool      |
-| 323920SB21                   | HMI_Connection_3 | 39PLC    | 323920SB21                   | Botao Verde                                                                                        | Bool      |
-| 323920SB22                   | HMI_Connection_3 | 39PLC    | 323920SB22                   | Botao Vermelho                                                                                     | Bool      |
-| 3240*H11                     | HMI_Connection_4 | 49PLC    | 3240*H11                     | Semáforo Verde                                                                                     | Bool      |
-| 3240*H12                     | HMI_Connection_4 | 49PLC    | 3240*H12                     | Semáforo Amarelo                                                                                   | Bool      |
-| 3240*H13                     | HMI_Connection_4 | 49PLC    | 3240*H13                     | Semáforo Vermelho                                                                                  | Bool      |
-| 3241*B11                     | HMI_Connection_4 | 49PLC    | 3241*B11                     | Sensor Cilindro1 Frente                                                                            | Bool      |
-| 3241*B12                     | HMI_Connection_4 | 49PLC    | 3241*B12                     | Sensor Cilindro1 Atras                                                                             | Bool      |
-| 3241*B21                     | HMI_Connection_4 | 49PLC    | 3241*B21                     | Sensor Cilindro2 Frente                                                                            | Bool      |
-| 3241*B22                     | HMI_Connection_4 | 49PLC    | 3241*B22                     | Sensor Cilindro2 Atras                                                                             | Bool      |
-| 3241*B31                     | HMI_Connection_4 | 49PLC    | 3241*B31                     | Sensor BaseMiolo Inicial                                                                           | Bool      |
-| 3241*B32                     | HMI_Connection_4 | 49PLC    | 3241*B32                     | Sensor BaseMiolo Rotacao                                                                           | Bool      |
-| 3241*B41                     | HMI_Connection_4 | 49PLC    | 3241*B41                     | Sensor Cima Funil                                                                                  | Bool      |
-| 3241*B42                     | HMI_Connection_4 | 49PLC    | 3241*B42                     | Sensor Baixo Funil                                                                                 | Bool      |
-| 3241*B43                     | HMI_Connection_4 | 49PLC    | 3241*B43                     | Sensor Miolo Esquerdo                                                                              | Bool      |
-| 3241*B44                     | HMI_Connection_4 | 49PLC    | 3241*B44                     | Sensor Miolo Direito                                                                               | Bool      |
-| 3241*Y10                     | HMI_Connection_4 | 49PLC    | 3241*Y10                     | Cilindro 1                                                                                         | Bool      |
-| 3241*Y20                     | HMI_Connection_4 | 49PLC    | 3241*Y20                     | Cilindro 2                                                                                         | Bool      |
-| 3241*Y30                     | HMI_Connection_4 | 49PLC    | 3241*Y30                     | Base Miolo                                                                                         | Bool      |
-| 3242*B11                     | HMI_Connection_4 | 49PLC    | 3242*B11                     | Sensor Frente Pinca                                                                                | Bool      |
-| 3242*B12                     | HMI_Connection_4 | 49PLC    | 3242*B12                     | Sensor Atras Pinca                                                                                 | Bool      |
-| 3242*B21                     | HMI_Connection_4 | 49PLC    | 3242*B21                     | Sensor Cima Pinca                                                                                  | Bool      |
-| 3242*B22                     | HMI_Connection_4 | 49PLC    | 3242*B22                     | Sensor Baixo Pinca                                                                                 | Bool      |
-| 3242*B31                     | HMI_Connection_4 | 49PLC    | 3242*B31                     | Sensor Abrir Fechar Pinca                                                                          | Bool      |
-| 3242*B41                     | HMI_Connection_4 | 49PLC    | 3242*B41                     | Sensor Frente Peca                                                                                 | Bool      |
-| 3242*Y10                     | HMI_Connection_4 | 49PLC    | 3242*Y10                     | Frente e Tras Pinca                                                                                | Bool      |
-| 3242*Y20                     | HMI_Connection_4 | 49PLC    | 3242*Y20                     | Cima e Baixo Pinca                                                                                 | Bool      |
-| 3242*Y30                     | HMI_Connection_4 | 49PLC    | 3242*Y30                     | Abrir e Fechar Pinca                                                                               | Bool      |
-| 324920HL11                   | HMI_Connection_4 | 49PLC    | 324920HL11                   | Painel Luz Laranja                                                                                 | Bool      |
-| 324920HL12                   | HMI_Connection_4 | 49PLC    | 324920HL12                   | Painel Luz Verde                                                                                   | Bool      |
-| 324920HL13                   | HMI_Connection_4 | 49PLC    | 324920HL13                   | Painel Luz Vermelha                                                                                | Bool      |
-| 324920QS24                   | HMI_Connection_4 | 49PLC    | 324920QS24                   | Botao de Emergencia                                                                                | Bool      |
-| 324920SA23                   | HMI_Connection_4 | 49PLC    | 324920SA23                   | SA                                                                                                 | Bool      |
-| 324920SB21                   | HMI_Connection_4 | 49PLC    | 324920SB21                   | Botao Verde                                                                                        | Bool      |
-| 324920SB22                   | HMI_Connection_4 | 49PLC    | 324920SB22                   | Botao Vermelho                                                                                     | Bool      |
-| 325010B11                    | HMI_Connection_5 | 59PLC    | 325010B11                    | Sensor de Peca                                                                                     | Bool      |
-| 325010B12                    | HMI_Connection_5 | 59PLC    | 325010B12                    | Sensor Otico (Branco e Metalico)                                                                   | Bool      |
-| 325010B13                    | HMI_Connection_5 | 59PLC    | 325010B13                    | Sensor Metalico                                                                                    | Bool      |
-| 325010B21                    | HMI_Connection_5 | 59PLC    | 325010B21                    | Sensor Cilindro 1 Frente                                                                           | Bool      |
-| 325010B31                    | HMI_Connection_5 | 59PLC    | 325010B31                    | Sensor Cilindro 2 Frente                                                                           | Bool      |
-| 325010B41                    | HMI_Connection_5 | 59PLC    | 325010B41                    | Sensor Cilindro 3 Frente                                                                           | Bool      |
-| 325010Y20                    | HMI_Connection_5 | 59PLC    | 325010Y20                    | Cilindro 1                                                                                         | Bool      |
-| 325010Y30                    | HMI_Connection_5 | 59PLC    | 325010Y30                    | Cilindro 2                                                                                         | Bool      |
-| 325010Y40                    | HMI_Connection_5 | 59PLC    | 325010Y40                    | Cilindro 3                                                                                         | Bool      |
-| 3250M51A                     | HMI_Connection_5 | 59PLC    | 3250M51A                     | Inversores de Frequencia (Frente)                                                                  | Bool      |
-| 3250M51B                     | HMI_Connection_5 | 59PLC    | 3250M51B                     | Inversores de Frequencia (Atras)                                                                   | Bool      |
-| 325920HL11                   | HMI_Connection_5 | 59PLC    | 325920HL11                   | Painel Luz Laranja                                                                                 | Bool      |
-| 325920HL12                   | HMI_Connection_5 | 59PLC    | 325920HL12                   | Painel Luz Verde                                                                                   | Bool      |
-| 325920HL13                   | HMI_Connection_5 | 59PLC    | 325920HL13                   | Painel Luz Vermelha                                                                                | Bool      |
-| 325920QS24                   | HMI_Connection_5 | 59PLC    | 325920QS24                   | Botao Emergencia                                                                                   | Bool      |
-| 325920SA23                   | HMI_Connection_5 | 59PLC    | 325920SA23                   | Seletor                                                                                            | Bool      |
-| 325920SB21                   | HMI_Connection_5 | 59PLC    | 325920SB21                   | Botao Verde                                                                                        | Bool      |
-| 325920SB22                   | HMI_Connection_5 | 59PLC    | 325920SB22                   | Botao Vermelho                                                                                     | Bool      |
-| A1_M                         | HMI_Connection_1 | 19PLC    | A1_M                         | Etapa de Grafcet (Gemma Master)                                                                    | Bool      |
-| A1_ST10                      | HMI_Connection_1 | 19PLC    | A1                           | Etapa de Grafcet (Gemma ST10)                                                                      | Bool      |
-| A1_ST20                      | HMI_Connection_2 | 29PLC    | A1                           | Etapa de Grafcet (Gemma ST20)                                                                      | Bool      |
-| A1_ST30                      | HMI_Connection_3 | 39PLC    | A1                           | Etapa de Grafcet (Gemma ST30)                                                                      | Bool      |
-| A1_ST40                      | HMI_Connection_4 | 49PLC    | A1                           | Etapa de Grafcet (Gemma ST40)                                                                      | Bool      |
-| A1_ST50                      | HMI_Connection_5 | 59PLC    | A1                           | Etapa de Grafcet (Gemma ST50)                                                                      | Bool      |
-| A3_M                         | HMI_Connection_1 | 19PLC    | A3_M                         | Etapa de Grafcet (Gemma Master)                                                                    | Bool      |
-| A3_ST10                      | HMI_Connection_1 | 19PLC    | A3                           | Etapa de Grafcet (Gemma ST10)                                                                      | Bool      |
-| A3_ST20                      | HMI_Connection_2 | 29PLC    | A3                           | Etapa de Grafcet (Gemma ST20)                                                                      | Bool      |
-| A3_ST30                      | HMI_Connection_3 | 39PLC    | A3                           | Etapa de Grafcet (Gemma ST30)                                                                      | Bool      |
-| A3_ST40                      | HMI_Connection_4 | 49PLC    | A3                           | Etapa de Grafcet (Gemma ST40)                                                                      | Bool      |
-| A3_ST50                      | HMI_Connection_5 | 59PLC    | A3                           | Etapa de Grafcet (Gemma ST50)                                                                      | Bool      |
-| A4_M                         | HMI_Connection_1 | 19PLC    | A4_M                         | Etapa de Grafcet (Gemma Master)                                                                    | Bool      |
-| A4_ST10                      | HMI_Connection_1 | 19PLC    | A4                           | Etapa de Grafcet (Gemma ST10)                                                                      | Bool      |
-| A4_ST20                      | HMI_Connection_2 | 29PLC    | A4                           | Etapa de Grafcet (Gemma ST20)                                                                      | Bool      |
-| A4_ST30                      | HMI_Connection_3 | 39PLC    | A4                           | Etapa de Grafcet (Gemma ST30)                                                                      | Bool      |
-| A4_ST40                      | HMI_Connection_4 | 49PLC    | A4                           | Etapa de Grafcet (Gemma ST40)                                                                      | Bool      |
-| A4_ST50                      | HMI_Connection_5 | 59PLC    | A4                           | Etapa de Grafcet (Gemma ST50)                                                                      | Bool      |
-| A6_M                         | HMI_Connection_1 | 19PLC    | A6_M                         | Etapa de Grafcet (Gemma Master)                                                                    | Bool      |
-| A6_ST10                      | HMI_Connection_1 | 19PLC    | A6                           | Etapa de Grafcet (Gemma ST10)                                                                      | Bool      |
-| A6_ST20                      | HMI_Connection_2 | 29PLC    | A6                           | Etapa de Grafcet (Gemma ST20)                                                                      | Bool      |
-| A6_ST30                      | HMI_Connection_3 | 39PLC    | A6                           | Etapa de Grafcet (Gemma ST30)                                                                      | Bool      |
-| A6_ST40                      | HMI_Connection_4 | 49PLC    | A6                           | Etapa de Grafcet (Gemma ST40)                                                                      | Bool      |
-| A6_ST50                      | HMI_Connection_5 | 59PLC    | A6                           | Etapa de Grafcet (Gemma ST50)                                                                      | Bool      |
-| D1_M                         | HMI_Connection_1 | 19PLC    | D1_M                         | Etapa de Grafcet (Gemma Master)                                                                    | Bool      |
-| D1_ST10                      | HMI_Connection_1 | 19PLC    | D1                           | Etapa de Grafcet (Gemma ST10)                                                                      | Bool      |
-| D1_ST20                      | HMI_Connection_2 | 29PLC    | D1                           | Etapa de Grafcet (Gemma ST20)                                                                      | Bool      |
-| D1_ST30                      | HMI_Connection_3 | 39PLC    | D1                           | Etapa de Grafcet (Gemma ST30)                                                                      | Bool      |
-| D1_ST40                      | HMI_Connection_4 | 49PLC    | D1                           | Etapa de Grafcet (Gemma ST40)                                                                      | Bool      |
-| D1_ST50                      | HMI_Connection_5 | 59PLC    | D1                           | Etapa de Grafcet (Gemma ST50)                                                                      | Bool      |
-| F1_M                         | HMI_Connection_1 | 19PLC    | F1_M                         | Etapa de Grafcet (Gemma Master)                                                                    | Bool      |
-| F1_ST10                      | HMI_Connection_1 | 19PLC    | F1                           | Etapa de Grafcet (Gemma ST10)                                                                      | Bool      |
-| F1_ST20                      | HMI_Connection_2 | 29PLC    | F1                           | Etapa de Grafcet (Gemma ST20)                                                                      | Bool      |
-| F1_ST30                      | HMI_Connection_3 | 39PLC    | F1                           | Etapa de Grafcet (Gemma ST30)                                                                      | Bool      |
-| F1_ST40                      | HMI_Connection_4 | 49PLC    | F1                           | Etapa de Grafcet (Gemma ST40)                                                                      | Bool      |
-| F1_ST50                      | HMI_Connection_5 | 59PLC    | F1                           | Etapa de Grafcet (Gemma ST50)                                                                      | Bool      |
-| F2_M                         | HMI_Connection_1 | 19PLC    | F2_M                         | Etapa de Grafcet (Gemma Master)                                                                    | Bool      |
-| F2_ST10                      | HMI_Connection_1 | 19PLC    | F2                           | Etapa de Grafcet (Gemma ST10)                                                                      | Bool      |
-| F2_ST20                      | HMI_Connection_2 | 29PLC    | F2                           | Etapa de Grafcet (Gemma ST20)                                                                      | Bool      |
-| F2_ST30                      | HMI_Connection_3 | 39PLC    | F2                           | Etapa de Grafcet (Gemma ST30)                                                                      | Bool      |
-| F2_ST40                      | HMI_Connection_4 | 49PLC    | F2                           | Etapa de Grafcet (Gemma ST40)                                                                      | Bool      |
-| F2_ST50                      | HMI_Connection_5 | 59PLC    | F2                           | Etapa de Grafcet (Gemma ST50)                                                                      | Bool      |
-| F5_M                         | HMI_Connection_1 | 19PLC    | F5_M                         | Etapa de Grafcet (Gemma Master)                                                                    | Bool      |
-| F5_ST10                      | HMI_Connection_1 | 19PLC    | F5                           | Etapa de Grafcet (Gemma ST10)                                                                      | Bool      |
-| F5_ST20                      | HMI_Connection_2 | 29PLC    | F5                           | Etapa de Grafcet (Gemma ST20)                                                                      | Bool      |
-| F5_ST30                      | HMI_Connection_3 | 39PLC    | F5                           | Etapa de Grafcet (Gemma ST30)                                                                      | Bool      |
-| F5_ST40                      | HMI_Connection_4 | 49PLC    | F5                           | Etapa de Grafcet (Gemma ST40)                                                                      | Bool      |
-| F5_ST50                      | HMI_Connection_5 | 59PLC    | F5                           | Etapa de Grafcet (Gemma ST50)                                                                      | Bool      |
-| F6_M                         | HMI_Connection_1 | 19PLC    | F6_M                         | Etapa de Grafcet (Gemma Master)                                                                    | Bool      |
-| HMI_MC_MoveAbsolute_Execute  | HMI_Connection_1 | 19PLC    | HMI_MC_MoveAbsolute_Execute  | Em Modo Manual, botão de execução do MC_MoveAbsolute                                               | Bool      |
-| HMI_Inf_MF                   | HMI_Connection_1 | 19PLC    | HMI_Inf_MF                   | Informação se algum Modo de Funcionamento está selecionado                                         | Bool      |
-| HMI_CV                       | HMI_Connection_5 | 19PLC    | HMI_CV                       | Em Modo Manual, botão de reset do Contador                                                         | Bool      |
-| HMI_MC_MoveRelative_Distance | HMI_Connection_1 | 29PLC    | HMI_MC_MoveRelative_Distance | Em Modo Manual, no Display Númerico é possivel fazer a escolha da posição relativa                 | Real      |
-| HMI_MC_Halt_Execute          | HMI_Connection_1 | 39PLC    | HMI_MC_Halt_Execute          | Em Modo Manual, botão de execução do MC_Halt                                                       | Bool      |
-| HMI_MC_Home_Execute          | HMI_Connection_1 | 49PLC    | HMI_MC_Home_Execute          | Em Modo Manual, botão de execução do MC_Home                                                       | Bool      |
-| HMI_Init_Manual_All_STS      | HMI_Connection_1 | 59PLC    | HMI_Init_Manual_All_STS      | Inicialização Manual de todas as ST (Ordem do Master)                                              | Bool      |
-| HMI_Init_Manual_ST10         | HMI_Connection_1 | 19PLC    | Init_Manual                  | Inicialização Manual ST10                                                                          | Bool      |
-| HMI_Init_Manual_ST20         | HMI_Connection_2 | 19PLC    | Init_Manual                  | Inicialização Manual ST20                                                                          | Bool      |
-| HMI_Init_Manual_ST30         | HMI_Connection_3 | 29PLC    | Init_Manual                  | Inicialização Manual ST30                                                                          | Bool      |
-| HMI_Init_Manual_ST40         | HMI_Connection_4 | 39PLC    | Init_Manual                  | Inicialização Manual ST40                                                                          | Bool      |
-| HMI_Init_Manual_ST50         | HMI_Connection_5 | 49PLC    | Init_Manual                  | Inicialização Manual ST50                                                                          | Bool      |
-| HMI_Jog_Direita              | HMI_Connection_1 | 59PLC    | HMI_MC_MoveJog_Drt           | Em Modo Manual, botão que permite mover o robô para a direita                                      | Bool      |
-| HMI_Jog_Esquerda             | HMI_Connection_1 | 19PLC    | HMI_MC_MoveJog_Esq           | Em Modo Manual, botão que permite mover o robô para a esquerda                                     | Bool      |
-| HMI_MC_Home_Execute_A        | HMI_Connection_1 | 19PLC    | HMI_MC_Home_Execute_A        | Botão de execução do MC_Home                                                                       | Bool      |
-| HMI_MM_Automatico            | HMI_Connection_1 | 19PLC    | HMI_MM_Automatico            | Seleção do Modo de Marcha (Ordem do Master)                                                        | Bool      |
-| HMI_MM_Ciclo                 | HMI_Connection_1 | 19PLC    | HMI_MM_Ciclo                 | Seleção do Modo de Marcha (Ordem do Master)                                                        | Bool      |
-| HMI_MM_Manual                | HMI_Connection_1 | 19PLC    | HMI_MM_Manual                | Seleção do Modo de Marcha (Ordem do Master)                                                        | Bool      |
-| HMI_Modo_HMI                 | HMI_Connection_1 | 19PLC    | HMI_Modo_HMI                 | Seleção do Modo de Funcionamento (Ordem do Master)                                                 | Bool      |
-| HMI_Modo_Local               | HMI_Connection_1 | 19PLC    | HMI_Modo_Local               | Seleção do Modo de Funcionamento (Ordem do Master)                                                 | Bool      |
-| HMI_Modo_Scada               | HMI_Connection_1 | 19PLC    | HMI_Modo_Scada               | Seleção do Modo de Funcionamento (Ordem do Master)                                                 | Bool      |
-| HMI_MC_MoveAbsolute_Position | HMI_Connection_1 | 19PLC    | HMI_MC_MoveAbsolute_Position | Em Modo Manual, no Display Númerico é possivel fazer a escolha da posição absoluta (Máx: 1051.727) | Real      |
-| HMI_Posicao_ST20             | HMI_Connection_1 | 19PLC    | HMI_Posicao_ST20             | Em Modo Manual, Posição Absoluta da ST20                                                           | Bool      |
-| HMI_Posicao_ST30             | HMI_Connection_1 | 19PLC    | HMI_Posicao_ST30             | Em Modo Manual, Posição Absoluta da ST30                                                           | Bool      |
-| HMI_Posicao_ST40             | HMI_Connection_1 | 19PLC    | HMI_Posicao_ST40             | Em Modo Manual, Posição Absoluta da ST40                                                           | Bool      |
-| HMI_Posicao_ST50             | HMI_Connection_1 | 19PLC    | HMI_Posicao_ST50             | Em Modo Manual, Posição Absoluta da ST50                                                           | Bool      |
-| HMI_MC_Power_Enable          | HMI_Connection_1 | 19PLC    | HMI_MC_Power_Enable          | Em Modo Manual, botão de enable do MC_Power                                                        | Bool      |
-| HMI_QS                       | HMI_Connection_1 | 19PLC    | HMI_QS                       | Botão de Emergência Master                                                                         | Bool      |
-| HMI_QS_ST10                  | HMI_Connection_1 | 19PLC    | HMI_QS_ST10                  | Botão de Emergência ST10                                                                           | Bool      |
-| HMI_QS_ST20                  | HMI_Connection_2 | 29PLC    | HMI_QS                       | Botão de Emergência ST20                                                                           | Bool      |
-| HMI_QS_ST30                  | HMI_Connection_3 | 39PLC    | HMI_QS                       | Botão de Emergência ST30                                                                           | Bool      |
-| HMI_QS_ST40                  | HMI_Connection_4 | 49PLC    | HMI_QS                       | Botão de Emergência ST40                                                                           | Bool      |
-| HMI_QS_ST50                  | HMI_Connection_5 | 59PLC    | HMI_QS                       | Botão de Emergência ST50                                                                           | Bool      |
-| HMI_MC_MoveRelative_Execute  | HMI_Connection_1 | 19PLC    | HMI_MC_MoveRelative_Execute  | Em Modo Manual, botão de execução  do MC_MoveRelative                                              | Bool      |
-| HMI_MC_Reset_Execute         | HMI_Connection_1 | 19PLC    | HMI_MC_Reset_Execute         | Em Modo Manual, botão de execução  do MC_Reset                                                     | Bool      |
-| HMI_SB1                      | HMI_Connection_1 | 19PLC    | HMI_SB1                      | Botão de Start Master                                                                              | Bool      |
-| HMI_SB1_ST10                 | HMI_Connection_1 | 19PLC    | HMI_SB1_ST10                 | Botão de Start ST10                                                                                | Bool      |
-| HMI_SB1_ST20                 | HMI_Connection_2 | 29PLC    | HMI_SB1                      | Botão de Start ST20                                                                                | Bool      |
-| HMI_SB1_ST30                 | HMI_Connection_3 | 39PLC    | HMI_SB1                      | Botão de Start ST30                                                                                | Bool      |
-| HMI_SB1_ST40                 | HMI_Connection_4 | 49PLC    | HMI_SB1                      | Botão de Start ST40                                                                                | Bool      |
-| HMI_SB1_ST50                 | HMI_Connection_5 | 59PLC    | HMI_SB1                      | Botão de Start ST50                                                                                | Bool      |
-| HMI_SB2                      | HMI_Connection_1 | 19PLC    | HMI_SB2                      | Botão de Stop Master                                                                               | Bool      |
-| HMI_SB2_ST10                 | HMI_Connection_1 | 19PLC    | HMI_SB2_ST10                 | Botão de Stop ST10                                                                                 | Bool      |
-| HMI_SB2_ST20                 | HMI_Connection_2 | 29PLC    | HMI_SB2                      | Botão de Stop ST20                                                                                 | Bool      |
-| HMI_SB2_ST30                 | HMI_Connection_3 | 39PLC    | HMI_SB2                      | Botão de Stop ST30                                                                                 | Bool      |
-| HMI_SB2_ST40                 | HMI_Connection_4 | 49PLC    | HMI_SB2                      | Botão de Stop ST40                                                                                 | Bool      |
-| HMI_SB2_ST50                 | HMI_Connection_5 | 59PLC    | HMI_SB2                      | Botão de Stop ST50                                                                                 | Bool      |
-| HMI_Start_Tapete             | HMI_Connection_5 | 59PLC    | HMI_Start_Tapete             | Em Modo Manual, Start Tapete ST50                                                                  | Bool      |
-| HMI_Stop_Tapete              | HMI_Connection_5 | 59PLC    | HMI_Stop_Tapete              | Em Modo Manual, Stop Tapete ST50                                                                   | Bool      |
-| HMI_Teste_Luzes              | HMI_Connection_1 | 19PLC    | HMI_Teste_Luzes              | Botão de Teste de toda a Ilumincação                                                               | Bool      |
-| HMI_Velocidade_MC_Absolute   | HMI_Connection_1 | 19PLC    | HMI_MC_MoveAbsolute_Velocity | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 400)            | Real      |
-| HMI_Velocidade_MC_MoveJog    | HMI_Connection_1 | 19PLC    | HMI_MC_MoveJog_Velocity      | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 400)            | Real      |
-| HMI_Velocidade_MC_Relative   | HMI_Connection_1 | 19PLC    | HMI_MC_MoveRelative_Velocity | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 400)            | Real      |
-| HMI_Velocidade_Tapete        | HMI_Connection_5 | 59PLC    | HMI_Velocidade_Tapete        | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 30000)          | DWord     |
-| Total_Pecas_Pretendidas      | HMI_Connection_5 | 59PLC    | IEC_Counter_0_DB_4.CV        | Contador de Pecas Pretendidas                                                                      | Int       |
-| Total_Pecas_Defeito          | HMI_Connection_5 | 59PLC    | IEC_Counter_0_DB_5.CV        | Contador de Peças com Defeito                                                                      | Int       |
-| Input Encoder                | HMI_Connection_5 | 59PLC    | Input_Encoder                | Valor do Enconder                                                                                  | DWord     |
-| Pecas_Brancas                | HMI_Connection_5 | 59PLC    | IEC_Counter_0_DB_1.CV        | Contador de Peças Brancas                                                                          | Int       |
-| Pecas_Metalicas              | HMI_Connection_5 | 59PLC    | IEC_Counter_0_DB.CV          | Contador de Peças Metalicas                                                                        | Int       |
-| Pecas_Pretas                 | HMI_Connection_5 | 59PLC    | IEC_Counter_0_DB_2.CV        | Contador de Peças Pretas                                                                           | Int       |
-| Reset_Contador               | HMI_Connection_5 | 59PLC    | Reset_Contadores             | Reset a todos os Contador                                                                          | Bool      |
-| Total_Pecas                  | HMI_Connection_5 | 59PLC    | IEC_Counter_0_DB_3.CV        | Total de Pecas                                                                                     | Int       |
+
+| Name                            | Connection         | PLC Name | PLC Tag                         |                                                                                                                                         | Data Type |
+|:-------------------------------:|:------------------:|:--------:|:-------------------------------:|:---------------------------------------------------------------------------------------------------------------------------------------:|:---------:|
+| 3210\*B11                       | HMI\_Connection\_1 | 19PLC    | 3210\*B11                       | Fim de Curso (Esquerda)                                                                                                                 | Bool      |
+| 3210\*B12                       | HMI\_Connection\_1 | 19PLC    | 3210\*B12                       | Fim de Curso (Direita)                                                                                                                  | Bool      |
+| 3210\*B13                       | HMI\_Connection\_1 | 19PLC    | 3210\*B13                       | Sensor Home                                                                                                                             | Bool      |
+| 3211\*B11                       | HMI\_Connection\_1 | 19PLC    | 3211\*B11                       | Sensor Garra Fechada                                                                                                                    | Bool      |
+| 3211\*B21                       | HMI\_Connection\_1 | 19PLC    | 3211\*B21                       | Sensor Garra Frente                                                                                                                     | Bool      |
+| 3211\*B22                       | HMI\_Connection\_1 | 19PLC    | 3211\*B22                       | Sensor Garra Atras                                                                                                                      | Bool      |
+| 3211\*B31                       | HMI\_Connection\_1 | 19PLC    | 3211\*B31                       | Sensor Garra Posicao Inicial                                                                                                            | Bool      |
+| 3211\*B32                       | HMI\_Connection\_1 | 19PLC    | 3211\*B32                       | Sensor Garra Esquerda                                                                                                                   | Bool      |
+| 3211\*B41                       | HMI\_Connection\_1 | 19PLC    | 3211\*B41                       | Sensor Garra Cima                                                                                                                       | Bool      |
+| 3211\*B42                       | HMI\_Connection\_1 | 19PLC    | 3211\*B42                       | Sensor Garra Baixo                                                                                                                      | Bool      |
+| 3211\*Y10A                      | HMI\_Connection\_1 | 19PLC    | 3211\*Y10A                      | Abrir Garra                                                                                                                             | Bool      |
+| 3211\*Y10B                      | HMI\_Connection\_1 | 19PLC    | 3211\*Y10B                      | Fechar Garra                                                                                                                            | Bool      |
+| 3211\*Y20                       | HMI\_Connection\_1 | 19PLC    | 3211\*Y20                       | Frente e Atrás Garra                                                                                                                    | Bool      |
+| 3211\*Y30A                      | HMI\_Connection\_1 | 19PLC    | 3211\*Y30A                      | Posiçao Incial Garra                                                                                                                    | Bool      |
+| 3211\*Y30B                      | HMI\_Connection\_1 | 19PLC    | 3211\*Y30B                      | Rodar Esquerda Garra                                                                                                                    | Bool      |
+| 3211\*Y40                       | HMI\_Connection\_1 | 19PLC    | 3211\*Y40                       | Sobe e Baixa Garra                                                                                                                      | Bool      |
+| 321920HL11                      | HMI\_Connection\_1 | 19PLC    | 321920HL11                      | Painel Luz Laranja                                                                                                                      | Bool      |
+| 321920HL12                      | HMI\_Connection\_1 | 19PLC    | 321920HL12                      | Painel Luz Verde                                                                                                                        | Bool      |
+| 321920HL13                      | HMI\_Connection\_1 | 19PLC    | 321920HL13                      | Painel Luz Vermelha                                                                                                                     | Bool      |
+| 321920QS24                      | HMI\_Connection\_1 | 19PLC    | 321920QS24                      | Botao Emergencia                                                                                                                        | Bool      |
+| 321920SA23                      | HMI\_Connection\_1 | 19PLC    | 321920SA23                      | SA                                                                                                                                      | Bool      |
+| 321920SB21                      | HMI\_Connection\_1 | 19PLC    | 321920SB21                      | Botao Verde                                                                                                                             | Bool      |
+| 321920SB22                      | HMI\_Connection\_1 | 19PLC    | 321920SB22                      | Botao Vermelho                                                                                                                          | Bool      |
+| 3220\*B11                       | HMI\_Connection\_2 | 29PLC    | 3220\*B11                       | Sensor Peca Frente                                                                                                                      | Bool      |
+| 3221\*B11                       | HMI\_Connection\_2 | 29PLC    | 3221\*B11                       | Sensor Cilindro1 Avancado                                                                                                               | Bool      |
+| 3221\*B12                       | HMI\_Connection\_2 | 29PLC    | 3221\*B12                       | Sensor Cilindro1 Recuado                                                                                                                | Bool      |
+| 3221\*B21                       | HMI\_Connection\_2 | 29PLC    | 3221\*B21                       | Sensor Cilindro2 Avancado                                                                                                               | Bool      |
+| 3221\*B22                       | HMI\_Connection\_2 | 29PLC    | 3221\*B22                       | Sensor Cilindro2 Recuado                                                                                                                | Bool      |
+| 3221\*B31                       | HMI\_Connection\_2 | 29PLC    | 3221\*B31                       | Sensor Funil Cima                                                                                                                       | Bool      |
+| 3221\*B32                       | HMI\_Connection\_2 | 29PLC    | 3221\*B32                       | Sensor Funil Baixo                                                                                                                      | Bool      |
+| 3221\*B33                       | HMI\_Connection\_2 | 29PLC    | 3221\*B33                       | Sensor Peça Metalica                                                                                                                    | Bool      |
+| 3221\*Y10                       | HMI\_Connection\_2 | 29PLC    | 3221\*Y10                       | Cilindro 1                                                                                                                              | Bool      |
+| 3221\*Y20                       | HMI\_Connection\_2 | 29PLC    | 3221\*Y20                       | Cilindro 2                                                                                                                              | Bool      |
+| 322920HL11                      | HMI\_Connection\_2 | 29PLC    | 322920HL11                      | Painel Luz Laranja                                                                                                                      | Bool      |
+| 322920HL12                      | HMI\_Connection\_2 | 29PLC    | 322920HL12                      | Painel Luz Verde                                                                                                                        | Bool      |
+| 322920HL13                      | HMI\_Connection\_2 | 29PLC    | 322920HL13                      | Painel Luz Vermelha                                                                                                                     | Bool      |
+| 322920QS24                      | HMI\_Connection\_2 | 29PLC    | 322920QS24                      | Botao Emergencia                                                                                                                        | Bool      |
+| 322920SA23                      | HMI\_Connection\_2 | 29PLC    | 322920SA23                      | SA                                                                                                                                      | Bool      |
+| 322920SB21                      | HMI\_Connection\_2 | 29PLC    | 322920SB21                      | Botao Verde                                                                                                                             | Bool      |
+| 322920SB22                      | HMI\_Connection\_2 | 29PLC    | 322920SB22                      | Botao Vermelho                                                                                                                          | Bool      |
+| 3231\*B11                       | HMI\_Connection\_3 | 39PLC    | 3231\*B11                       | Sensor Peca                                                                                                                             | Bool      |
+| 3231\*B21                       | HMI\_Connection\_3 | 39PLC    | 3231\*B21                       | Sensor Abrir Fechar Pinca                                                                                                               | Bool      |
+| 3231\*B31                       | HMI\_Connection\_3 | 39PLC    | 3231\*B31                       | Sensor Avancado Pinca                                                                                                                   | Bool      |
+| 3231\*B32                       | HMI\_Connection\_3 | 39PLC    | 3231\*B32                       | Sensor Recuado Pinca                                                                                                                    | Bool      |
+| 3231\*Y20                       | HMI\_Connection\_3 | 39PLC    | 3231\*Y20                       | Abrir e Fechar a Pinca                                                                                                                  | Bool      |
+| 3231\*Y30                       | HMI\_Connection\_3 | 39PLC    | 3231\*Y30                       | Avanca e Recua a Pinca                                                                                                                  | Bool      |
+| 3232\*B11                       | HMI\_Connection\_3 | 39PLC    | 3232\*B11                       | Sensor Subido Prensa                                                                                                                    | Bool      |
+| 3232\*B12                       | HMI\_Connection\_3 | 39PLC    | 3232\*B12                       | Sensor Descido Prensa                                                                                                                   | Bool      |
+| 3232\*Y10                       | HMI\_Connection\_3 | 39PLC    | 3232\*Y10                       | Sobe e Desce Prensa                                                                                                                     | Bool      |
+| 323920HL11                      | HMI\_Connection\_3 | 39PLC    | 323920HL11                      | Painel Luz Laranja                                                                                                                      | Bool      |
+| 323920HL12                      | HMI\_Connection\_3 | 39PLC    | 323920HL12                      | Painel Luz Verde                                                                                                                        | Bool      |
+| 323920HL13                      | HMI\_Connection\_3 | 39PLC    | 323920HL13                      | Painel Luz Vermelha                                                                                                                     | Bool      |
+| 323920QS24                      | HMI\_Connection\_3 | 39PLC    | 323920QS24                      | Botao Emergencia                                                                                                                        | Bool      |
+| 323920SA23                      | HMI\_Connection\_3 | 39PLC    | 323920SA23                      | SA                                                                                                                                      | Bool      |
+| 323920SB21                      | HMI\_Connection\_3 | 39PLC    | 323920SB21                      | Botao Verde                                                                                                                             | Bool      |
+| 323920SB22                      | HMI\_Connection\_3 | 39PLC    | 323920SB22                      | Botao Vermelho                                                                                                                          | Bool      |
+| 3240\*H11                       | HMI\_Connection\_4 | 49PLC    | 3240\*H11                       | Semáforo Verde                                                                                                                          | Bool      |
+| 3240\*H12                       | HMI\_Connection\_4 | 49PLC    | 3240\*H12                       | Semáforo Amarelo                                                                                                                        | Bool      |
+| 3240\*H13                       | HMI\_Connection\_4 | 49PLC    | 3240\*H13                       | Semáforo Vermelho                                                                                                                       | Bool      |
+| 3241\*B11                       | HMI\_Connection\_4 | 49PLC    | 3241\*B11                       | Sensor Cilindro1 Frente                                                                                                                 | Bool      |
+| 3241\*B12                       | HMI\_Connection\_4 | 49PLC    | 3241\*B12                       | Sensor Cilindro1 Atras                                                                                                                  | Bool      |
+| 3241\*B21                       | HMI\_Connection\_4 | 49PLC    | 3241\*B21                       | Sensor Cilindro2 Frente                                                                                                                 | Bool      |
+| 3241\*B22                       | HMI\_Connection\_4 | 49PLC    | 3241\*B22                       | Sensor Cilindro2 Atras                                                                                                                  | Bool      |
+| 3241\*B31                       | HMI\_Connection\_4 | 49PLC    | 3241\*B31                       | Sensor BaseMiolo Inicial                                                                                                                | Bool      |
+| 3241\*B32                       | HMI\_Connection\_4 | 49PLC    | 3241\*B32                       | Sensor BaseMiolo Rotacao                                                                                                                | Bool      |
+| 3241\*B41                       | HMI\_Connection\_4 | 49PLC    | 3241\*B41                       | Sensor Cima Funil                                                                                                                       | Bool      |
+| 3241\*B42                       | HMI\_Connection\_4 | 49PLC    | 3241\*B42                       | Sensor Baixo Funil                                                                                                                      | Bool      |
+| 3241\*B43                       | HMI\_Connection\_4 | 49PLC    | 3241\*B43                       | Sensor Miolo Esquerdo                                                                                                                   | Bool      |
+| 3241\*B44                       | HMI\_Connection\_4 | 49PLC    | 3241\*B44                       | Sensor Miolo Direito                                                                                                                    | Bool      |
+| 3241\*Y10                       | HMI\_Connection\_4 | 49PLC    | 3241\*Y10                       | Cilindro 1                                                                                                                              | Bool      |
+| 3241\*Y20                       | HMI\_Connection\_4 | 49PLC    | 3241\*Y20                       | Cilindro 2                                                                                                                              | Bool      |
+| 3241\*Y30                       | HMI\_Connection\_4 | 49PLC    | 3241\*Y30                       | Base Miolo                                                                                                                              | Bool      |
+| 3242\*B11                       | HMI\_Connection\_4 | 49PLC    | 3242\*B11                       | Sensor Frente Pinca                                                                                                                     | Bool      |
+| 3242\*B12                       | HMI\_Connection\_4 | 49PLC    | 3242\*B12                       | Sensor Atras Pinca                                                                                                                      | Bool      |
+| 3242\*B21                       | HMI\_Connection\_4 | 49PLC    | 3242\*B21                       | Sensor Cima Pinca                                                                                                                       | Bool      |
+| 3242\*B22                       | HMI\_Connection\_4 | 49PLC    | 3242\*B22                       | Sensor Baixo Pinca                                                                                                                      | Bool      |
+| 3242\*B31                       | HMI\_Connection\_4 | 49PLC    | 3242\*B31                       | Sensor Abrir Fechar Pinca                                                                                                               | Bool      |
+| 3242\*B41                       | HMI\_Connection\_4 | 49PLC    | 3242\*B41                       | Sensor Frente Peca                                                                                                                      | Bool      |
+| 3242\*Y10                       | HMI\_Connection\_4 | 49PLC    | 3242\*Y10                       | Frente e Tras Pinca                                                                                                                     | Bool      |
+| 3242\*Y20                       | HMI\_Connection\_4 | 49PLC    | 3242\*Y20                       | Cima e Baixo Pinca                                                                                                                      | Bool      |
+| 3242\*Y30                       | HMI\_Connection\_4 | 49PLC    | 3242\*Y30                       | Abrir e Fechar Pinca                                                                                                                    | Bool      |
+| 324920HL11                      | HMI\_Connection\_4 | 49PLC    | 324920HL11                      | Painel Luz Laranja                                                                                                                      | Bool      |
+| 324920HL12                      | HMI\_Connection\_4 | 49PLC    | 324920HL12                      | Painel Luz Verde                                                                                                                        | Bool      |
+| 324920HL13                      | HMI\_Connection\_4 | 49PLC    | 324920HL13                      | Painel Luz Vermelha                                                                                                                     | Bool      |
+| 324920QS24                      | HMI\_Connection\_4 | 49PLC    | 324920QS24                      | Botao de Emergencia                                                                                                                     | Bool      |
+| 324920SA23                      | HMI\_Connection\_4 | 49PLC    | 324920SA23                      | SA                                                                                                                                      | Bool      |
+| 324920SB21                      | HMI\_Connection\_4 | 49PLC    | 324920SB21                      | Botao Verde                                                                                                                             | Bool      |
+| 324920SB22                      | HMI\_Connection\_4 | 49PLC    | 324920SB22                      | Botao Vermelho                                                                                                                          | Bool      |
+| 325010B11                       | HMI\_Connection\_5 | 59PLC    | 325010B11                       | Sensor de Peca                                                                                                                          | Bool      |
+| 325010B12                       | HMI\_Connection\_5 | 59PLC    | 325010B12                       | Sensor Otico (Branco e Metalico)                                                                                                        | Bool      |
+| 325010B13                       | HMI\_Connection\_5 | 59PLC    | 325010B13                       | Sensor Metalico                                                                                                                         | Bool      |
+| 325010B21                       | HMI\_Connection\_5 | 59PLC    | 325010B21                       | Sensor Cilindro 1 Frente                                                                                                                | Bool      |
+| 325010B31                       | HMI\_Connection\_5 | 59PLC    | 325010B31                       | Sensor Cilindro 2 Frente                                                                                                                | Bool      |
+| 325010B41                       | HMI\_Connection\_5 | 59PLC    | 325010B41                       | Sensor Cilindro 3 Frente                                                                                                                | Bool      |
+| 325010Y20                       | HMI\_Connection\_5 | 59PLC    | 325010Y20                       | Cilindro 1                                                                                                                              | Bool      |
+| 325010Y30                       | HMI\_Connection\_5 | 59PLC    | 325010Y30                       | Cilindro 2                                                                                                                              | Bool      |
+| 325010Y40                       | HMI\_Connection\_5 | 59PLC    | 325010Y40                       | Cilindro 3                                                                                                                              | Bool      |
+| 3250M51A                        | HMI\_Connection\_5 | 59PLC    | 3250M51A                        | Inversores de Frequencia (Frente)                                                                                                       | Bool      |
+| 3250M51B                        | HMI\_Connection\_5 | 59PLC    | 3250M51B                        | Inversores de Frequencia (Atras)                                                                                                        | Bool      |
+| 325920HL11                      | HMI\_Connection\_5 | 59PLC    | 325920HL11                      | Painel Luz Laranja                                                                                                                      | Bool      |
+| 325920HL12                      | HMI\_Connection\_5 | 59PLC    | 325920HL12                      | Painel Luz Verde                                                                                                                        | Bool      |
+| 325920HL13                      | HMI\_Connection\_5 | 59PLC    | 325920HL13                      | Painel Luz Vermelha                                                                                                                     | Bool      |
+| 325920QS24                      | HMI\_Connection\_5 | 59PLC    | 325920QS24                      | Botao Emergencia                                                                                                                        | Bool      |
+| 325920SA23                      | HMI\_Connection\_5 | 59PLC    | 325920SA23                      | Seletor                                                                                                                                 | Bool      |
+| 325920SB21                      | HMI\_Connection\_5 | 59PLC    | 325920SB21                      | Botao Verde                                                                                                                             | Bool      |
+| 325920SB22                      | HMI\_Connection\_5 | 59PLC    | 325920SB22                      | Botao Vermelho                                                                                                                          | Bool      |
+| A1\_M                           | HMI\_Connection\_1 | 19PLC    | A1\_M                           | Etapa de Grafcet do Gemma Master                                                                                                        | Bool      |
+| A1\_ST10                        | HMI\_Connection\_1 | 19PLC    | A1                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A1\_ST20                        | HMI\_Connection\_2 | 29PLC    | A1                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A1\_ST30                        | HMI\_Connection\_3 | 39PLC    | A1                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A1\_ST40                        | HMI\_Connection\_4 | 49PLC    | A1                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A1\_ST50                        | HMI\_Connection\_5 | 59PLC    | A1                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A3\_M                           | HMI\_Connection\_1 | 19PLC    | A3\_M                           | Etapa de Grafcet do Gemma Master                                                                                                        | Bool      |
+| A3\_ST10                        | HMI\_Connection\_1 | 19PLC    | A3                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A3\_ST20                        | HMI\_Connection\_2 | 29PLC    | A3                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A3\_ST30                        | HMI\_Connection\_3 | 39PLC    | A3                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A3\_ST40                        | HMI\_Connection\_4 | 49PLC    | A3                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A3\_ST50                        | HMI\_Connection\_5 | 59PLC    | A3                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A4\_M                           | HMI\_Connection\_1 | 19PLC    | A4\_M                           | Etapa de Grafcet do Gemma Master                                                                                                        | Bool      |
+| A4\_ST10                        | HMI\_Connection\_1 | 19PLC    | A4                              | Etapa de Grafcet Gemma                                                                                                                  | Bool      |
+| A4\_ST20                        | HMI\_Connection\_2 | 29PLC    | A4                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A4\_ST30                        | HMI\_Connection\_3 | 39PLC    | A4                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A4\_ST40                        | HMI\_Connection\_4 | 49PLC    | A4                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A4\_ST50                        | HMI\_Connection\_5 | 59PLC    | A4                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A6\_M                           | HMI\_Connection\_1 | 19PLC    | A6\_M                           | Etapa de Grafcet do Gemma Master                                                                                                        | Bool      |
+| A6\_ST10                        | HMI\_Connection\_1 | 19PLC    | A6                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A6\_ST20                        | HMI\_Connection\_2 | 29PLC    | A6                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A6\_ST30                        | HMI\_Connection\_3 | 39PLC    | A6                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A6\_ST40                        | HMI\_Connection\_4 | 49PLC    | A6                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| A6\_ST50                        | HMI\_Connection\_5 | 59PLC    | A6                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| D1\_M                           | HMI\_Connection\_1 | 19PLC    | D1\_M                           | Etapa de Grafcet do Gemma Master                                                                                                        | Bool      |
+| D1\_ST10                        | HMI\_Connection\_1 | 19PLC    | D1                              | Etapa de Grafcet Gemma                                                                                                                  | Bool      |
+| D1\_ST20                        | HMI\_Connection\_2 | 29PLC    | D1                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| D1\_ST30                        | HMI\_Connection\_3 | 39PLC    | D1                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| D1\_ST40                        | HMI\_Connection\_4 | 49PLC    | D1                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| D1\_ST50                        | HMI\_Connection\_5 | 59PLC    | D1                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F1\_M                           | HMI\_Connection\_1 | 19PLC    | F1\_M                           | Etapa de Grafcet do Gemma Master                                                                                                        | Bool      |
+| F1\_ST10                        | HMI\_Connection\_1 | 19PLC    | F1                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F1\_ST20                        | HMI\_Connection\_2 | 29PLC    | F1                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F1\_ST30                        | HMI\_Connection\_3 | 39PLC    | F1                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F1\_ST40                        | HMI\_Connection\_4 | 49PLC    | F1                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F1\_ST50                        | HMI\_Connection\_5 | 59PLC    | F1                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F2\_M                           | HMI\_Connection\_1 | 19PLC    | F2\_M                           | Etapa de Grafcet do Gemma Master                                                                                                        | Bool      |
+| F2\_ST10                        | HMI\_Connection\_1 | 19PLC    | F2                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F2\_ST20                        | HMI\_Connection\_2 | 29PLC    | F2                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F2\_ST30                        | HMI\_Connection\_3 | 39PLC    | F2                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F2\_ST40                        | HMI\_Connection\_4 | 49PLC    | F2                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F2\_ST50                        | HMI\_Connection\_5 | 59PLC    | F2                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F5\_M                           | HMI\_Connection\_1 | 19PLC    | F5\_M                           | Etapa de Grafcet do Gemma Master                                                                                                        | Bool      |
+| F5\_ST10                        | HMI\_Connection\_1 | 19PLC    | F5                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F5\_ST20                        | HMI\_Connection\_2 | 29PLC    | F5                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F5\_ST30                        | HMI\_Connection\_3 | 39PLC    | F5                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F5\_ST40                        | HMI\_Connection\_4 | 49PLC    | F5                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F5\_ST50                        | HMI\_Connection\_5 | 59PLC    | F5                              | Etapa de Grafcet do Gemma                                                                                                               | Bool      |
+| F6\_M                           | HMI\_Connection\_1 | 19PLC    | F6\_M                           | Etapa de Grafcet do Gemma Master                                                                                                        | Bool      |
+| HMI\_CV                         | HMI\_Connection\_5 | 59PLC    | HMI\_CV                         | Em Modo Manual, botão de reset do Contador                                                                                              | Bool      |
+| HMI\_Inf\_MF                    | HMI\_Connection\_1 | 19PLC    | HMI\_Inf\_MF                    | Informação se algum Modo de Funcionamento está selecionado                                                                              | Bool      |
+| HMI\_Init\_Manual\_All\_STS     | HMI\_Connection\_1 | 19PLC    | HMI\_Init\_Manual\_All\_STS     | Inicialização Manual de todas as ST (Ordem do Master)                                                                                   | Bool      |
+| HMI\_Init\_Manual\_ST10         | HMI\_Connection\_1 | 29PLC    | Init\_Manual                    | Input que permite na Inicialização manual da ST10                                                                                       | Real      |
+| HMI\_Init\_Manual\_ST20         | HMI\_Connection\_2 | 29PLC    | Init\_Manual                    | Input que permite na Inicialização manual                                                                                               | Bool      |
+| HMI\_Init\_Manual\_ST30         | HMI\_Connection\_3 | 39PLC    | Init\_Manual                    | Input que permite na Inicialização manual                                                                                               | Bool      |
+| HMI\_Init\_Manual\_ST40         | HMI\_Connection\_4 | 49PLC    | Init\_Manual                    | Input que permite na Inicialização manual                                                                                               | Bool      |
+| HMI\_Init\_Manual\_ST50         | HMI\_Connection\_5 | 59PLC    | Init\_Manual                    | Input que permite na Inicialização manual                                                                                               | Bool      |
+| HMI\_MC\_Halt\_Execute          | HMI\_Connection\_1 | 19PLC    | HMI\_MC\_Halt\_Execute          | Em Modo Manual, input que permite o Execute do MC\_Halt                                                                                 | Bool      |
+| HMI\_MC\_Home\_Execute          | HMI\_Connection\_1 | 19PLC    | HMI\_MC\_Home\_Execute          | Em Modo Manual, input que permite o homing do Robô                                                                                      | Bool      |
+| HMI\_MC\_Home\_Execute\_A       | HMI\_Connection\_1 | 19PLC    | HMI\_MC\_Home\_Execute\_A       | Input que permite o homing do Robô                                                                                                      | Bool      |
+| HMI\_MC\_MoveAbsolute\_Execute  | HMI\_Connection\_1 | 19PLC    | HMI\_MC\_MoveAbsolute\_Execute  | Em Modo Manual, input que permite o Execute do MC\_MoveAbsolute                                                                         | Bool      |
+| HMI\_MC\_MoveAbsolute\_Position | HMI\_Connection\_1 | 19PLC    | HMI\_MC\_MoveAbsolute\_Position | Em Modo Manual, no Display Númerico é possivel fazer a escolha da posição absoluta (Máx: 1051.727). Esse valor é guardado nesta memória | Bool      |
+| HMI\_MC\_MoveAbsolute\_Velocity | HMI\_Connection\_1 | 19PLC    | HMI\_MC\_MoveAbsolute\_Velocity | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 400). Esse valor é guardado nesta memória            | Bool      |
+| HMI\_MC\_MoveJog\_Drt           | HMI\_Connection\_1 | 19PLC    | HMI\_MC\_MoveJog\_Drt           | Em Modo Manual, input que permite o movimento para a Direita do Robô                                                                    | Bool      |
+| HMI\_MC\_MoveJog\_Esq           | HMI\_Connection\_1 | 19PLC    | HMI\_MC\_MoveJog\_Esq           | Em Modo Manual, input que permite o movimento para a Esquerda do Robô                                                                   | Bool      |
+| HMI\_MC\_MoveJog\_Velocity      | HMI\_Connection\_1 | 19PLC    | HMI\_MC\_MoveJog\_Velocity      | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 400). Esse valor é guardado nesta memória            | Bool      |
+| HMI\_MC\_MoveRelative\_Distance | HMI\_Connection\_1 | 19PLC    | HMI\_MC\_MoveRelative\_Distance | Em Modo Manual, no Display Númerico é possivel fazer a escolha da posição relativa. Esse valor é guardado nesta memória                 | Bool      |
+| HMI\_MC\_MoveRelative\_Execute  | HMI\_Connection\_1 | 19PLC    | HMI\_MC\_MoveRelative\_Execute  | Em Modo Manual, input que permite o Execute do MC\_MoveRelative                                                                         | Bool      |
+| HMI\_MC\_MoveRelative\_Velocity | HMI\_Connection\_1 | 19PLC    | HMI\_MC\_MoveRelative\_Velocity | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 400). Esse valor é guardado nesta memória            | Bool      |
+| HMI\_MC\_Power\_Enable          | HMI\_Connection\_1 | 19PLC    | HMI\_MC\_Power\_Enable          | Em Modo Manual, input que permite o Enable do MC\_Power                                                                                 | Bool      |
+| HMI\_MC\_Reset\_Execute         | HMI\_Connection\_1 | 19PLC    | HMI\_MC\_Reset\_Execute         | Em Modo Manual, input que permite o Execcute do MC\_Reset                                                                               | Real      |
+| HMI\_MM\_Automatico             | HMI\_Connection\_1 | 19PLC    | HMI\_MM\_Automatico             | Input de seleção do modo de marcha                                                                                                      | Bool      |
+| HMI\_MM\_Ciclo                  | HMI\_Connection\_1 | 19PLC    | HMI\_MM\_Ciclo                  | Input de seleção do modo de marcha                                                                                                      | Bool      |
+| HMI\_MM\_Manual                 | HMI\_Connection\_1 | 19PLC    | HMI\_MM\_Manual                 | Input de seleção do modo de marcha                                                                                                      | Bool      |
+| HMI\_Modo\_Distribuido          | HMI\_Connection\_1 | 19PLC    | HMI\_Modo\_Distribuido          | Input de seleção do modo distruido                                                                                                      | Bool      |
+| HMI\_Modo\_HMI                  | HMI\_Connection\_1 | 19PLC    | HMI\_Modo\_HMI                  | Input de seleção do modo de funcionamento                                                                                               | Bool      |
+| HMI\_Modo\_Local                | HMI\_Connection\_1 | 19PLC    | HMI\_Modo\_Local                | Input de seleção do modo de funcionamento                                                                                               | Bool      |
+| HMI\_Modo\_Scada                | HMI\_Connection\_1 | 19PLC    | HMI\_Modo\_Scada                | Input de seleção do modo de funcionamento                                                                                               | Bool      |
+| HMI\_Posicao\_ST20              | HMI\_Connection\_1 | 19PLC    | HMI\_Posicao\_ST20              | Em Modo Manual, Posição Absoluta da ST20                                                                                                | Bool      |
+| HMI\_Posicao\_ST30              | HMI\_Connection\_1 | 19PLC    | HMI\_Posicao\_ST30              | Em Modo Manual, Posição Absoluta da ST30                                                                                                | Bool      |
+| HMI\_Posicao\_ST40              | HMI\_Connection\_1 | 19PLC    | HMI\_Posicao\_ST40              | Em Modo Manual, Posição Absoluta da ST40                                                                                                | Bool      |
+| HMI\_Posicao\_ST50              | HMI\_Connection\_1 | 19PLC    | HMI\_Posicao\_ST50              | Em Modo Manual, Posição Absoluta da ST50                                                                                                | Bool      |
+| HMI\_QS                         | HMI\_Connection\_1 | 19PLC    | HMI\_QS                         | Input de Emergencia do Gemma Master                                                                                                     | Bool      |
+| HMI\_QS\_ST10                   | HMI\_Connection\_1 | 19PLC    | HMI\_QS\_ST10                   | Input de Emergencia do Gemma                                                                                                            | Bool      |
+| HMI\_QS\_ST20                   | HMI\_Connection\_2 | 29PLC    | HMI\_QS                         | Input de Emergencia do Gemma                                                                                                            | Bool      |
+| HMI\_QS\_ST30                   | HMI\_Connection\_3 | 39PLC    | HMI\_QS                         | Input de Emergencia do Gemma                                                                                                            | Bool      |
+| HMI\_QS\_ST40                   | HMI\_Connection\_4 | 49PLC    | HMI\_QS                         | Input de Emergencia do Gemma                                                                                                            | Bool      |
+| HMI\_QS\_ST50                   | HMI\_Connection\_5 | 59PLC    | HMI\_QS                         | Input de Emergencia do Gemma                                                                                                            | Bool      |
+| HMI\_Reset\_Contadores          | HMI\_Connection\_5 | 59PLC    | Reset\_Contadores               | Reset a todos os Contador                                                                                                               | Bool      |
+| HMI\_SB1                        | HMI\_Connection\_1 | 19PLC    | HMI\_SB1                        | Input de Start do Gemma Master                                                                                                          | Bool      |
+| HMI\_SB1\_ST10                  | HMI\_Connection\_1 | 19PLC    | HMI\_SB1\_ST10                  | Input de Start do Gemma Master                                                                                                          | Bool      |
+| HMI\_SB1\_ST20                  | HMI\_Connection\_2 | 29PLC    | HMI\_SB1                        | Input de Start do Gemma Master                                                                                                          | Bool      |
+| HMI\_SB1\_ST30                  | HMI\_Connection\_3 | 39PLC    | HMI\_SB1                        | Input de Start do Gemma Master                                                                                                          | Bool      |
+| HMI\_SB1\_ST40                  | HMI\_Connection\_4 | 29PLC    | HMI\_SB1                        | Input de Start do Gemma Master                                                                                                          | Bool      |
+| HMI\_SB1\_ST50                  | HMI\_Connection\_5 | 59PLC    | HMI\_SB1                        | Input de Start do Gemma Master                                                                                                          | Bool      |
+| HMI\_SB2                        | HMI\_Connection\_1 | 19PLC    | HMI\_SB2                        | Input de Stop do Gemma Master                                                                                                           | Bool      |
+| HMI\_SB2\_ST10                  | HMI\_Connection\_1 | 19PLC    | HMI\_SB2\_ST10                  | Input de Stop do Gemma                                                                                                                  | Bool      |
+| HMI\_SB2\_ST20                  | HMI\_Connection\_2 | 29PLC    | HMI\_SB2                        | Input de Stop do Gemma                                                                                                                  | Bool      |
+| HMI\_SB2\_ST30                  | HMI\_Connection\_3 | 39PLC    | HMI\_SB2                        | Input de Stop do Gemma                                                                                                                  | Bool      |
+| HMI\_SB2\_ST40                  | HMI\_Connection\_4 | 49PLC    | HMI\_SB2                        | Input de Stop do Gemma                                                                                                                  | Bool      |
+| HMI\_SB2\_ST50                  | HMI\_Connection\_5 | 59PLC    | HMI\_SB2                        | Input de Stop do Gemma                                                                                                                  | Real      |
+| HMI\_Start\_Tapete              | HMI\_Connection\_5 | 59PLC    | HMI\_Start\_Tapete              | Em Modo Manual, Start Tapete ST50                                                                                                       | Real      |
+| HMI\_Stop\_Tapete               | HMI\_Connection\_5 | 59PLC    | HMI\_Stop\_Tapete               | Em Modo Manual, Stop Tapete ST50                                                                                                        | Real      |
+| HMI\_Teste\_Luzes               | HMI\_Connection\_1 | 19PLC    | HMI\_Teste\_Luzes               | Botão de Teste de toda a Iluminação                                                                                                     | DWord     |
+| HMI\_Velocidade\_Tapete         | HMI\_Connection\_5 | 59PLC    | HMI\_Velocidade\_Tapete         | Em Modo Manual, no Display Númerico é possivel fazer a escolha da velocidade (Máx: 30000). Esse valor é guardado nesta memória          | Int       |
+| Input\_Encoder                  | HMI\_Connection\_5 | 59PLC    | Input\_Encoder                  | Valor do Contador                                                                                                                       | Int       |
+| Pecas\_Brancas                  | HMI\_Connection\_5 | 59PLC    | IEC\_Counter\_0\_DB\_1.CV       | Valor do Enconder                                                                                                                       | DWord     |
+| Pecas\_Defeito                  | HMI\_Connection\_5 | 59PLC    | IEC\_Counter\_0\_DB\_5.CV       | Contador de Peças Brancas                                                                                                               | Int       |
+| Pecas\_Metalicas                | HMI\_Connection\_5 | 59PLC    | IEC\_Counter\_0\_DB.CV          | Contador de Peças Metalicas                                                                                                             | Int       |
+| Pecas\_Pretas                   | HMI\_Connection\_5 | 59PLC    | IEC\_Counter\_0\_DB\_2.CV       | Contador de Peças Pretas                                                                                                                | Int       |
+| Pecas\_Pretendidas              | HMI\_Connection\_5 | 59PLC    | IEC\_Counter\_0\_DB\_4.CV       | Reset a todos os Contador                                                                                                               | Bool      |
+| Total\_Pecas                    | HMI\_Connection\_5 | 59PLC    | IEC\_Counter\_0\_DB\_3.CV       | Total de Pecas                                                                                                                          | Int       |
 
 ##### Ecrãs
 <a id="hmi-ecras"></a>
@@ -2007,105 +1981,78 @@ Assim que concluidos os testes, podemos voltar ao ecrã da Line32, Stations - Mo
 
 #### Tesla Scada
 
-O Modo de Funcionamento do Tesla Scada é muito identico ao do HMI. Consiste num Software que permite o controlo e supervisão em tempo real de sistemas e processos industriais baseados em PLC. 
+O Modo de Funcionamento do Tesla Scada é muito idêntico ao do HMI. Consiste num Software que permite o controlo e supervisão em tempo real de sistemas e processos industriais baseados em PLC. O Tesla Scada foi implementado para o controlo e supervisão da Linha 31 e 32. 
 
 ##### Servidor
 
-Antes de começar a configurar o Tesla Scada é preciso garantir que no TIA Portal, o Servidor Modbus está configurado. Inicialmente é necessário criar um **Data Block (DB)** com 3 paramentros: 
-
-- **mb_data**, um Array de 0 a 20 de Reais, permitindo assim *operar* no Espaço de Endereços dos Holding register (40001 - 49999);
-- **connect**, em que o Data Type é um **TCON_IP_V4**. No connect é onde serão inseridos os dados para a criação do servidor:
-    - Interfaceld: 64, definido pelo Sistema. Pode ser consultado em **Device Configuration**, dois cliques no PLC, e **System Constants**;
-    - ID: 2, Identifica exclusivamente uma conexão no PLC. Este ID pode ir de 1 a 4095;
-    - ConnectionType: 11, definido pelo Sistema. **Type of connection:** 11=TCP/IP, 19=UDP (17=TCP/IP);
-    - Local Port: 502, por defeito, Local Portal é 502.
-- **status**, permite saber o estado do servidor. 
+Antes de começar a configurar o Tesla Scada é preciso garantir que no TIA Portal, o Servidor Modbus está configurado, tanto na Linha 31 e 32. Inicialmente é necessário criar um **Data Block (DB)** com 3 parâmetros:
 
 ![](./lines/line32/2020_2021/software/tesla_scada/config/mb_server_2.PNG)
 
-Depois do **Data Block (DB)** criado, basta *chamar* o **MB_Server** para a Network e fazer corresponder o parametros criados no **Data Block (DB)** ao MB_Server.
+---
+**Legenda**
 
-![](./lines/line32/2020_2021/software/tesla_scada/config/mb_server_1.PNG)
+**mb_data**, um Array de 0 a 10 de Words, permitindo assim operar no espaço de endereços dos Holding Register (40001 – 49999) definidos pelo Modbus.
+**connect**, em que o Data Type é um TCON_IP_V4. No connect é onde serão inseridos os dados para a criação do servidor:
+- **Interfaceld: 64**, definido pelo Sistema. Pode ser consultado em Device Configuration, dois cliques no PLC, e System Constants;
+- **ID: 3**, Identifica exclusivamente uma conexão no PLC. Este ID pode ir de 1 a 4095;
+- **Connection Type: 11**, definido pelo Sistema. Type of connection: 11=TCP/IP, 19=UDP (17=TCP/IP);
+- **Local Port: 506**, consiste no “local” onde são verificadas as solicitações de conexão do cliente Modbus. A Local Portal pode ir de 1 a 49151. Por defeito, Local Portal é 502.
+**status**, permite saber o estado do servidor. 
 
-Com o servidor criado do lado do TIA Portal, passamos para o Tesla Scada. Do lado esquerdo em **Servers**, botão direito, **New Server > Modbus TCP (UDP)**
+Depois do **Data Block (DB)** criado, basta *chamar* o **MB_Server** para a Network e fazer corresponder o parametros criados no **Data Block (DB)** ao MB_Server. Com o servidor criado do lado do TIA Portal, passamos para o Tesla Scada. Do lado esquerdo em **Servers**, botão direito, **New Server > Modbus TCP (UDP)**
 
-![](./lines/line32/2020_2021/software/tesla_scada/config/tp_server_1.png)
+
 ![](./lines/line32/2020_2021/software/tesla_scada/config/tp_server_2.png)
 
-- **Name:** Nome do Servidor;
-- **IP or DNS:** Neste caso, é o IP do PLC onde está configurado o **MB_Server**;
-- **Port:** Por defeito, a Local Portal é 502 (Como no Tia Portal);
-- **Pool Interval:** Intervalo dos pedidos do servidor. Quando maior, mais eficaz é a comunicação.
-- **Type:** Protocolo de comunicação do servidor Modbus, TCP ou UDP. Como no Tia Portal definimos a comunicação por TCP, aqui no Tesla, essa escolha tèm que ser correspondida.
+---
+**Legenda**
+
+**Name:** MB_Server_Line31 e MB_Server_Line32, nome do Servidor.
+**IP or DNS:** 192.168.31.11 e 192.168.31.1, é o IP do PLC onde está configurado o MB_Server;
+**Port:** 502 e 506, por defeito, a Local Portal é 502 (Como no Tia Portal);
+**Pool Interval:** Intervalo dos pedidos do servidor. Quando maior, mais eficaz é a comunicação.
+**Type:** TCP, Protocolo de comunicação do servidor Modbus, TCP ou UDP. Como no Tia Portal definimos a comunicação por TCP, aqui no Tesla, essa escolha tèm que ser correspondida.
 - **Request Type:** Maximum Registers, durante o envio/receção de informação, enviará o máximo de informação em apenas um pedido.
 
 ##### Classificação
 <a id="scada-classificacao"></a>
 
-| Label                     | Data Type | Access Mode | PV Input Server  | PV Input Tag        |
-|:-------------------------:|:---------:|:-----------:|:----------------:|:-------------------:|
-| Scada_Init_Manual_All_STS | 0         | 1           | Line32           | s=1;pt=1;o=16;dt=1; |
-| Scada_Init_Manual_ST10    | 0         | 1           | Line32           | s=1;pt=1;o=17;dt=1; |
-| Scada_Init_Manual_ST20    | 0         | 1           | Line32           | s=1;pt=1;o=18;dt=1; |
-| Scada_Init_Manual_ST30    | 0         | 1           | Line32           | s=1;pt=1;o=19;dt=1; |
-| Scada_Init_Manual_ST40    | 0         | 1           | Line32           | s=1;pt=1;o=20;dt=1; |
-| Scada_Init_Manual_ST50    | 0         | 1           | Line32           | s=1;pt=1;o=21;dt=1; |
-| Scada_O_Emerg_Master      | 0         | 1           | Line32           | s=1;pt=1;o=22;dt=1; |
-| Scada_O_Emerg_ST10        | 0         | 1           | Line32           | s=1;pt=1;o=23;dt=1; |
-| Scada_O_Emerg_ST20        | 0         | 1           | Line32           | s=1;pt=1;o=24;dt=1; |
-| Scada_O_Emerg_ST30        | 0         | 1           | Line32           | s=1;pt=1;o=25;dt=1; |
-| Scada_O_Emerg_ST40        | 0         | 1           | Line32           | s=1;pt=1;o=26;dt=1; |
-| Scada_O_Emerg_ST50        | 0         | 1           | Line32           | s=1;pt=1;o=27;dt=1; |
-| Scada_O_Start_Master      | 0         | 1           | Line32           | s=1;pt=1;o=28;dt=1; |
-| Scada_O_Start_ST10        | 0         | 1           | Line32           | s=1;pt=1;o=29;dt=1; |
-| Scada_O_Start_ST20        | 0         | 1           | Line32           | s=1;pt=1;o=30;dt=1; |
-| Scada_O_Start_ST30        | 0         | 1           | Line32           | s=1;pt=1;o=31;dt=1; |
-| Scada_O_Start_ST40        | 0         | 1           | Line32           | s=1;pt=1;o=32;dt=1; |
-| Scada_O_Start_ST50        | 0         | 1           | Line32           | s=1;pt=1;o=33;dt=1; |
-| Scada_O_Stop_Master       | 0         | 1           | Line32           | s=1;pt=1;o=34;dt=1; |
-| Scada_O_Stop_ST10         | 0         | 1           | Line32           | s=1;pt=1;o=35;dt=1; |
-| Scada_O_Stop_ST20         | 0         | 1           | Line32           | s=1;pt=1;o=36;dt=1; |
-| Scada_O_Stop_ST30         | 0         | 1           | Line32           | s=1;pt=1;o=37;dt=1; |
-| Scada_O_Stop_ST40         | 0         | 1           | Line32           | s=1;pt=1;o=38;dt=1; |
-| Scada_O_Stop_ST50         | 0         | 1           | Line32           | s=1;pt=1;o=39;dt=1; |
-| Scada_MM_Automatico       | 0         | 1           | Line32           | s=1;pt=1;o=40;dt=1; |
-| Scada_MM_Ciclo            | 0         | 1           | Line32           | s=1;pt=1;o=41;dt=1; |
-| Scada_MM_Manual           | 0         | 1           | Line32           | s=1;pt=1;o=42;dt=1; |
-| Scada_MC_Home_Execute     | 0         | 1           | Line32           | s=1;pt=1;o=43;dt=1; |
+| Group   | Label                          | Data Type | Access Mode | PV Input Server    | PV Input Tag        |
+|:-------:|:------------------------------:|:---------:|:-----------:|:------------------:|:-------------------:|
+|         | Modo\_Distribuido              | 0         | 1           | MB\_Server\_Line32 | s=1;pt=1;o=57;dt=1; |
+| Line 31 | Init\_Manual\_All\_STS\_Line31 | 0         | 1           | MB\_Server\_Line31 | s=1;pt=1;o=16;dt=1; |
+| Line 31 | MM\_Automatico\_Line31         | 0         | 1           | MB\_Server\_Line31 | s=1;pt=1;o=40;dt=1; |
+| Line 31 | MM\_Ciclo\_Line31              | 0         | 1           | MB\_Server\_Line31 | s=1;pt=1;o=41;dt=1; |
+| Line 31 | O\_Emerg\_Master\_Line31       | 0         | 1           | MB\_Server\_Line31 | s=1;pt=1;o=22;dt=1; |
+| Line 31 | O\_Start\_All\_Sts\_Line31     | 0         | 1           | MB\_Server\_Line31 | s=1;pt=1;o=56;dt=1; |
+| Line 31 | O\_Start\_Master\_Line31       | 0         | 1           | MB\_Server\_Line31 | s=1;pt=1;o=28;dt=1; |
+| Line 31 | O\_Stop\_Master\_Line31        | 0         | 1           | MB\_Server\_Line31 | s=1;pt=1;o=34;dt=1; |
+| Line 32 | Init\_Manual\_All\_STS\_Line32 | 0         | 1           | MB\_Server\_Line32 | s=1;pt=1;o=16;dt=1; |
+| Line 32 | MM\_Automatico\_Line32         | 0         | 1           | MB\_Server\_Line32 | s=1;pt=1;o=40;dt=1; |
+| Line 32 | MM\_Ciclo\_Line32              | 0         | 1           | MB\_Server\_Line32 | s=1;pt=1;o=41;dt=1; |
+| Line 32 | O\_Emerg\_Master\_Line32       | 0         | 1           | MB\_Server\_Line32 | s=1;pt=1;o=22;dt=1; |
+| Line 32 | O\_Start\_All\_Sts\_Line32     | 0         | 1           | MB\_Server\_Line32 | s=1;pt=1;o=56;dt=1; |
+| Line 32 | O\_Start\_Master\_Line32       | 0         | 1           | MB\_Server\_Line32 | s=1;pt=1;o=28;dt=1; |
+| Line 32 | O\_Stop\_Master\_Line32        | 0         | 1           | MB\_Server\_Line32 | s=1;pt=1;o=34;dt=1; |
 
 ---
 **Legenda**
 
-- **Data type**
-    - Boolean=0
-    - Byte=1
-    - Short=2
-    - Integer=3
-    - Long=4
-    - Float=5
-    - Double=6
-    - String=7
-    - Array=8
-- **Access Mod**
-    - ReadOnly=0
-    - ReadWrite=1
-    - WriteOnly=2
-- **PV Input Tag**
-    - **s** - SlaveID, por definição é 1.
-    - **pt** - Point Type, pode ser definido de 1 a 4.
-        - 1 - Holding Coil             
-        - 2 - Discrete input   
-        - 3 - Holding register
-        - 4 - Input register
-    - **o** - Offset, corresponde ao registro Modbus. No meu caso, estou a usar **Holding Coils**, *mexendo* diretamente em Bits. O meu primeiro Bit, do lado do TIA Portal (Servidor), correponde ao Q2.0. Desta forma, o offset, do lado Tesla Scada, corresponderá a 16. (Como um Byte são 8 Bits, logo 8*2=16)
-    - **dt** - Data type, corresponde ao tipo de dados usados nos Holding register e nos Input register.
+**Data type:** Boolean=0; Byte=1; Short=2; Integer=3; Long=4; Float=5; Double=6; String=7; Array=8
+**Access Mod:** ReadOnly=0; ReadWrite=1; WriteOnly=2
+**PV Input Tag**:
+- **s** - SlaveID, por definição é 1.
+- **pt** - Point Type.  Holding Coil=1; Discrete input=2; Holding register=3; Input register=4
+- **o** - Offset, corresponde ao registo Modbus. No meu caso, estou a usar **Holding Coils**, *mexendo* diretamente em Bits. O meu primeiro Bit, do lado do TIA Portal (Servidor), correponde ao Q2.0. Desta forma, o offset, do lado Tesla Scada, corresponderá a 16. (Como um Byte são 8 Bits, logo 8*2=16)
+**dt** - Data type, corresponde ao tipo de dados usados nos Holding register e nos Input register.
 
 ##### Ecrãs
 <a id="scada-ecras"></a>
 
 O Tesla Scada é constituido por 2 ecrãs, a sua visualização pode ser feita através da leitura dos códigos QR. Dos 2 ecrãs resultam:
 
-- **Root Screen**, ecrã principal do Tesla Scada. Neste ecrã podemos ser encaminhados para o outro ecrãs: Line 31 & 32 ou Estaçõe.
+- **Root Screen**, ecrã principal do Tesla Scada. Neste ecrã podemos ser encaminhados para o outro ecrãs: Line 31 & 32 ou Estações.
 
 ![](./lines/line32/2020_2021/software/tesla_scada/ecras/root_screen.png)
 
