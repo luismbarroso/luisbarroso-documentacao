@@ -2,6 +2,8 @@
 
 **Autor:** *Luís Barroso*
 
+*Last Upgrade: 30/07/2021, 16h57*
+
 - [Introdução](#introducao)
 - [Processo](#processo)
     - [Peças](#pecas)
