@@ -2,8 +2,6 @@
 
 **Autor:** *Luís Barroso*
 
-Last Upgrade: 16/07/2021, 23h01
-
 - [Introdução](#introducao)
 - [Processo](#processo)
     - [Peças](#pecas)
@@ -176,56 +174,67 @@ Este protocolo de comunicação é usado pelo software Tesla Scada, permitindo a
 #### Zonas de Comunicação
 <a id="modbus-zonas-de-comunicacao"></a>
 
-| Label                       | Endereço | Comentário                                                                         |
-|:---------------------------:|:--------:|:----------------------------------------------------------------------------------:|
-| Reset_Scada_Memorys         | %QB2     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0 |
-| Scada_Init_Manual_All_STS   | %Q2.0    | Ordem de Inicialização para o Master, dada pelo Tesla Scada                        |
-| Scada_Init_Manual_ST10      | %Q2.1    | Ordem de Inicialização para a ST10, dada pelo Tesla Scada                          |
-| Scada_Init_Manual_ST20      | %Q2.2    | Ordem de Inicialização para a ST20, dada pelo Tesla Scada                          |
-| Scada_Init_Manual_ST30      | %Q2.3    | Ordem de Inicialização para a ST30, dada pelo Tesla Scada                          |
-| Scada_Init_Manual_ST40      | %Q2.4    | Ordem de Inicialização para a ST40, dada pelo Tesla Scada                          |
-| Scada_Init_Manual_ST50      | %Q2.5    | Ordem de Inicialização para a ST50, dada pelo Tesla Scada                          |
-| Scada_O_Emerg_Master        | %Q2.6    | Ordem de Stop, dada pelo Tesla Scada para o Master                                 |
-| Scada_O_Emerg_ST10          | %Q2.7    | Ordem de Emergência, dada pelo Tesla Scada para a ST10                             |
-| Reset_Scada_Memorys_1       | %QB3     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0 |
-| Scada_O_Emerg_ST20          | %Q3.0    | Ordem de Emergência, dada pelo Tesla Scada para a ST20                             |
-| Scada_O_Emerg_ST30          | %Q3.1    | Ordem de Emergência, dada pelo Tesla Scada para a ST30                             |
-| Scada_O_Emerg_ST40          | %Q3.2    | Ordem de Emergência, dada pelo Tesla Scada para a ST40                             |
-| Scada_O_Emerg_ST50          | %Q3.3    | Ordem de Emergência, dada pelo Tesla Scada para a ST50                             |
-| Scada_O_Start_Master        | %Q3.4    | Ordem de Start, dada pelo Tesla Scada para o Master                                |
-| Scada_O_Start_ST10          | %Q3.5    | Ordem de Start, dada pelo Tesla Scada para a ST10                                  |
-| Scada_O_Start_ST20          | %Q3.6    | Ordem de Start, dada pelo Tesla Scada para a ST20                                  |
-| Scada_O_Start_ST30          | %Q3.7    | Ordem de Start, dada pelo Tesla Scada para a ST30                                  |
-| Reset_Scada_Memorys_2       | %QB4     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0 |
-| Scada_O_Start_ST40          | %Q4.0    | Ordem de Start, dada pelo Tesla Scada para a ST40                                  |
-| Scada_O_Start_ST50          | %Q4.1    | Ordem de Start, dada pelo Tesla Scada para a ST50                                  |
-| Scada_O_Stop_Master         | %Q4.2    | Ordem de Stop, dada pelo Tesla Scada para a ST10                                   |
-| Scada_O_Stop_ST10           | %Q4.3    | Ordem de Stop, dada pelo Tesla Scada para a ST10                                   |
-| Scada_O_Stop_ST20           | %Q4.4    | Ordem de Stop, dada pelo Tesla Scada para a ST20                                   |
-| Scada_O_Stop_ST30           | %Q4.5    | Ordem de Stop, dada pelo Tesla Scada para a ST30                                   |
-| Scada_O_Stop_ST40           | %Q4.6    | Ordem de Stop, dada pelo Tesla Scada para a ST40                                   |
-| Scada_O_Stop_ST50           | %Q4.7    | Ordem de Stop, dada pelo Tesla Scada para a ST50                                   |
-| Reset_Scada_Memorys_3       | %QB5     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0 |
-| Scada_MM_Automatico         | %Q5.0    | Ordem de Marcha, Automático,  dada pelo Tesla Scada                                |
-| Scada_MM_Ciclo              | %Q5.1    | Ordem de Marcha, Ciclo, dada pelo Tesla Scada                                      |
-| Scada_MM_Manual             | %Q5.2    | Ordem de Marcha, Manual, dada pelo Tesla Scada                                     |
-| Scada_MC_Home_Execute       | %Q5.3    | Ordem de Home para o Robô, dada pelo Tesla Scada                                   |
-| Scada_O_Start_ST10_ST20     | %Q106.4  | Ordem de Start, dada Tesla Scada, da ST10 para a ST20                              |
-| Scada_O_Stop_ST10_ST20      | %Q106.5  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST20                               |
-| Scada_O_Emerg_ST10_ST20     | %Q106.6  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST20                         |
-| Scada_Init_Manual_ST10_ST20 | %Q106.7  | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST20               |
-| Scada_O_Start_ST10_ST30     | %Q110.4  | Ordem de Start, dada Tesla Scada, da ST10 para a ST30                              |
-| Scada_O_Stop_ST10_ST30      | %Q110.5  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST30                               |
-| Scada_O_Emerg_ST10_ST30     | %Q110.6  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST30                         |
-| Scada_Init_Manual_ST10_ST30 | %Q110.7  | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST30               |
-| Scada_Init_Manual_ST10_ST40 | %Q113.7  | Ordem de Start, dada Tesla Scada, da ST10 para a ST40                              |
-| Scada_O_Start_ST10_ST40     | %Q115.5  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST40                               |
-| Scada_O_Stop_ST10_ST40      | %Q115.6  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST40                         |
-| Scada_O_Emerg_ST10_ST40     | %Q115.7  | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST40               |
-| Scada_O_Start_ST10_ST50     | %Q118.4  | Ordem de Start, dada Tesla Scada, da ST10 para a ST50                              |
-| Scada_O_Stop_ST10_ST50      | %Q118.5  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST50                               |
-| Scada_O_Emerg_ST10_ST50     | %Q118.6  | Ordem de Emergencia, dada Tesla Scada, da ST10 para a ST50                         |
-| Scada_Init_Manual_ST10_ST50 | %Q118.7  | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST50               |
+| Label                            | Endereço | Comentário                                                                         |
+|:--------------------------------:|:--------:|:----------------------------------------------------------------------------------:|
+| Reset\_Scada\_Memorys            | %QB2     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
+| Scada\_Init\_Manual\_All\_STS    | %Q2.0    | Ordem de Inicialização para o Master, dada pelo Tesla Scada                        |
+| Scada\_Init\_Manual\_ST10        | %Q2.1    | Ordem de Inicialização para a ST10, dada pelo Tesla Scada                          |
+| Scada\_Init\_Manual\_ST20        | %Q2.2    | Ordem de Inicialização para a ST20, dada pelo Tesla Scada                          |
+| Scada\_Init\_Manual\_ST30        | %Q2.3    | Ordem de Inicialização para a ST30, dada pelo Tesla Scada                          |
+| Scada\_Init\_Manual\_ST40        | %Q2.4    | Ordem de Inicialização para a ST40, dada pelo Tesla Scada                          |
+| Scada\_Init\_Manual\_ST50        | %Q2.5    | Ordem de Inicialização para a ST50, dada pelo Tesla Scada                          |
+| Scada\_O\_Emerg\_Master          | %Q2.6    | Ordem de Stop, dada pelo Tesla Scada para o Master                                 |
+| Scada\_O\_Emerg\_ST10            | %Q2.7    | Ordem de Emergência, dada pelo Tesla Scada para a ST10                             |
+| Reset\_Scada\_Memorys\_1         | %QB3     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
+| Scada\_O\_Emerg\_ST20            | %Q3.0    | Ordem de Emergência, dada pelo Tesla Scada para a ST20                             |
+| Scada\_O\_Emerg\_ST30            | %Q3.1    | Ordem de Emergência, dada pelo Tesla Scada para a ST30                             |
+| Scada\_O\_Emerg\_ST40            | %Q3.2    | Ordem de Emergência, dada pelo Tesla Scada para a ST40                             |
+| Scada\_O\_Emerg\_ST50            | %Q3.3    | Ordem de Emergência, dada pelo Tesla Scada para a ST50                             |
+| Scada\_O\_Start\_Master          | %Q3.4    | Ordem de Start, dada pelo Tesla Scada para o Master                                |
+| Scada\_O\_Start\_ST10            | %Q3.5    | Ordem de Start, dada pelo Tesla Scada para a ST10                                  |
+| Scada\_O\_Start\_ST20            | %Q3.6    | Ordem de Start, dada pelo Tesla Scada para a ST20                                  |
+| Scada\_O\_Start\_ST30            | %Q3.7    | Ordem de Start, dada pelo Tesla Scada para a ST30                                  |
+| Reset\_Scada\_Memorys\_2         | %QB4     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
+| Scada\_O\_Start\_ST40            | %Q4.0    | Ordem de Start, dada pelo Tesla Scada para a ST40                                  |
+| Scada\_O\_Start\_ST50            | %Q4.1    | Ordem de Start, dada pelo Tesla Scada para a ST50                                  |
+| Scada\_O\_Stop\_Master           | %Q4.2    | Ordem de Stop, dada pelo Tesla Scada para a ST10                                   |
+| Scada\_O\_Stop\_ST10             | %Q4.3    | Ordem de Stop, dada pelo Tesla Scada para a ST10                                   |
+| Scada\_O\_Stop\_ST20             | %Q4.4    | Ordem de Stop, dada pelo Tesla Scada para a ST20                                   |
+| Scada\_O\_Stop\_ST30             | %Q4.5    | Ordem de Stop, dada pelo Tesla Scada para a ST30                                   |
+| Scada\_O\_Stop\_ST40             | %Q4.6    | Ordem de Stop, dada pelo Tesla Scada para a ST40                                   |
+| Scada\_O\_Stop\_ST50             | %Q4.7    | Ordem de Stop, dada pelo Tesla Scada para a ST50                                   |
+| Reset\_Scada\_Memorys\_3         | %QB5     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
+| Scada\_MM\_Automatico            | %Q5.0    | Ordem de Marcha, Automático,  dada pelo Tesla Scada                                |
+| Scada\_MM\_Ciclo                 | %Q5.1    | Ordem de Marcha, Ciclo, dada pelo Tesla Scada                                      |
+| Scada\_MM\_Manual                | %Q5.2    | Ordem de Marcha, Manual, dada pelo Tesla Scada                                     |
+| Scada\_MC\_Home\_Execute         | %Q5.3    | Ordem de Home para o Robô, dada pelo Tesla Scada                                   |
+| Reset\_Scada\_Memorys\_4         | %QB6     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
+| Scada\_MC\_Power\_Enable         | %Q6.0    | No Tesla Scada, output que permite o Enable do MC\_Power                           |
+| Scada\_MC\_Home\_Execute         | %Q6.1    | No Tesla Scada, output que permite o homing do Robô                                |
+| Scada\_MC\_Reset\_Execute        | %Q6.2    | No Tesla Scada, output que permite o Execute do MC\_Reset                          |
+| Scada\_MC\_Halt\_Execute         | %Q6.3    | No Tesla Scada, output que permite o Execute do MC\_Halt                           |
+| Scada\_MC\_MoveJog\_Esq          | %Q6.4    | No Tesla Scada, output que permite o movimento para a Esquerda do Robô             |
+| Scada\_MC\_MoveJog\_Drt          | %Q6.5    | No Tesla Scada, output que permite o movimento para a Direita do Robô              |
+| Scada\_MC\_MoveAbsolute\_Execute | %Q6.6    | No Tesla Scada, output que permite o Execute do MC\_MoveAbsolute                   |
+| Reset\_Scada\_Memorys\_6         | %QB7     | Byte dos Inputs, usado na Inicialização para garantir que todos o Bits estão a 0   |
+| Scada\_O\_Start\_All\_Sts        | %Q7.0    | Ordem de Start, dada pelo Tesla Scada para todas as Estações                       |
+| Scada\_Modo\_Distribuido         | %Q7.1    | Seleção do Modo Distribuo pelo Tesla Scada                                         |
+| Scada\_O\_Start\_ST10\_ST20      | %Q106.4  | Ordem de Start, dada Tesla Scada, da ST10 para a ST20                              |
+| Scada\_O\_Stop\_ST10\_ST20       | %Q106.5  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST20                               |
+| Scada\_O\_Emerg\_ST10\_ST20      | %Q106.6  | Ordem de Emergência, dada Tesla Scada, da ST10 para a ST20                         |
+| Scada\_Init\_Manual\_ST10\_ST20  | %Q106.7  | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST20               |
+| Scada\_O\_Start\_ST10\_ST30      | %Q110.4  | Ordem de Start, dada Tesla Scada, da ST10 para a ST30                              |
+| Scada\_O\_Stop\_ST10\_ST30       | %Q110.5  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST30                               |
+| Scada\_O\_Emerg\_ST10\_ST30      | %Q110.6  | Ordem de Emergência, dada Tesla Scada, da ST10 para a ST30                         |
+| Scada\_Init\_Manual\_ST10\_ST30  | %Q110.7  | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST30               |
+| Scada\_O\_Start\_ST10\_ST40      | %Q115.5  | Ordem de Start, dada Tesla Scada, da ST10 para a ST40                              |
+| Scada\_O\_Stop\_ST10\_ST40       | %Q115.6  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST40                               |
+| Scada\_O\_Emerg\_ST10\_ST40      | %Q115.7  | Ordem de Emergência, dada Tesla Scada, da ST10 para a ST40                         |
+| Scada\_Init\_Manual\_ST10\_ST40  | \-       | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST40               |
+| Scada\_O\_Start\_ST10\_ST50      | %Q118.4  | Ordem de Start, dada Tesla Scada, da ST10 para a ST50                              |
+| Scada\_O\_Stop\_ST10\_ST50       | %Q118.5  | Ordem de Stop, dada Tesla Scada, da ST10 para a ST50                               |
+| Scada\_O\_Emerg\_ST10\_ST50      | %Q118.6  | Ordem de Emergência, dada Tesla Scada, da ST10 para a ST50                         |
+| Scada\_Init\_Manual\_ST10\_ST50  | %Q118.7  | Ordem de Inicialização Manual, dada Tesla Scada, da ST10 para a ST50               |
 
         NOTA: Tabela vista do lado do Master.
 
