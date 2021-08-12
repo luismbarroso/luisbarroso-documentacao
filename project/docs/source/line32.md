@@ -2115,7 +2115,7 @@ Através do 5 passos abaixo explicados, é possivel perceber como deve ser opera
 	- Através do *Start - Todas as Estações*, como o nome indica dar a Ordem de Start a todas a estações simulatanenamente; 
 	- Através do ecrã de cada uma das estações, dando a Ordem de Start uma a uma.
 
-Depois deste Start realizado, cada uma das Estações vai apresentar a iluminação **Amarelo Fixo** e **Verde a Piscar**; O Semáforo, presente na Estação 40, apresentará a cor   **Amarelo Fixo**, indicando que a Ordem de Start na Linha ainda não foi dada, para isso basta dar a Ordem de Start no **Screen Line32**, desta forma o Semaforo irá apresentar a iluminação **Amarelo Fixo** e **Verde a Piscar**. Na HMI também é possivel observar a evolução do Estado da Linha, passado assim para a Etapa **Modo de Preparação**
+	Depois deste Start realizado, cada uma das Estações vai apresentar a iluminação **Amarelo Fixo** e **Verde a Piscar**; O Semáforo, presente na Estação 40, apresentará a 	 cor   **Amarelo Fixo**, indicando que a Ordem de Start na Linha ainda não foi dada, para isso basta dar a Ordem de Start no **Screen Line32**, desta forma o Semaforo irá 	   apresentar a iluminação **Amarelo Fixo** e **Verde a Piscar**. Na HMI também é possivel observar a evolução do Estado da Linha, passado assim para a Etapa **Modo de 	Preparação**
 
 5. Depois do processo anterior realizado, procedemos a seleção do Modo de Marcha: Automatico ou Ciclo.
 
