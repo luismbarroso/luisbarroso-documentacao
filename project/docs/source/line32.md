@@ -2112,10 +2112,12 @@ Através do 5 passos abaixo explicados, é possivel perceber como deve ser opera
 1. Na fase inicial do processo, deve executar o **Init Manual** presente no **Screen Line32**, de forma a garantir que todos os **Input's**, **Output's** e **Memórias** estão *limpos*
 2. Com a inicilização feita, procedemos a seleção do Modo de Funcionamento: **Local, Scada, HMI**;
 3. Depois de selecionado o Modo de Funcionamento, procedemos à **Ordem Start** de todas as estações, no **Screen Stations** é possivel dar a **Ordem de Start de duas maneiras:**
-- Através do *Start - Todas as Estações*, como o nome indica dar a Ordem de Start a todas a estações simulatanenamente; 
-- Através do ecrã de cada uma das estações, dando a Ordem de Start uma a uma.
+
+	- Através do *Start - Todas as Estações*, como o nome indica dar a Ordem de Start a todas a estações simulatanenamente; 
+	- Através do ecrã de cada uma das estações, dando a Ordem de Start uma a uma.
+	
 Depois deste Start realizado, cada uma das Estações vai apresentar a iluminação **Amarelo Fixo** e **Verde a Pisca**; O Semáforo, presente na Estação 40, apresentará a cor **Amarelo Fixo**, indicando que a Ordem de Start na Linha ainda não foi dada, para isso basta dar a Ordem de Start no **Screen Line32** e desta forma o Semaforo irá apresentar a iluminação **Amarelo Fixo** e **Verde a Pisca**. Na HMI também é possivel observar a evolução do Estado da Linha, passado assim para a Etapa **Modo de Preparação**.
 4. Depois do processo anterior realizado, procedemos a seleção do Modo de Marcha: Automatico ou Ciclo.
 5. Caso o processo contenha peças, o **Corpo da Peça na Estação 20** e o **Miolo da Peça na Estação 40** o processo entra em funcionamento, apresentando a iluminação **Verde fixa no Semaforo (Modo Automatico)** ou **Verde a Piscar (Modo Ciclo)**. Caso estas condições não sejam cumpridas o processo não entrará em funcionamneto.
 
-	Estes procedimentos tanto de aplicam para o Modo de Funcionamento na HMI ou no Tesla Scada
+		Estes procedimentos tanto de aplicam para o Modo de Funcionamento na HMI ou no Tesla Scada
