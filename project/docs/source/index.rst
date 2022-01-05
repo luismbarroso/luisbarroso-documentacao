@@ -9,4 +9,3 @@ O presente documento tem como objetivo principal descrever todo o trabalho reali
    
    o_lines
    line32
-   ㅤㅤ
