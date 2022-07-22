@@ -76,7 +76,6 @@
             - [Classificação](#scada-classificacao)
             - [Ecrãs](#scada-ecras)
         - [Operar a Linha 32](#operar-a-linha-32)
-- [Anexos](#anexos)
 
 ## Introdução
 
@@ -2078,8 +2077,7 @@ Depois do **Data Block (DB)** criado, basta *chamar* o **MB_Server** para a Netw
 - **s** - SlaveID, por definição é 1.
 - **pt** - Point Type.  Holding Coil=1; Discrete input=2; Holding register=3; Input register=4
 - **o** - Offset, corresponde ao registo Modbus. No meu caso, estou a usar **Holding Coils**, *mexendo* diretamente em Bits. O meu primeiro Bit, do lado do TIA Portal (Servidor), correponde ao Q2.0. Desta forma, o offset, do lado Tesla Scada, corresponderá a 16. (Como um Byte são 8 Bits, logo 8*2=16)
-
-**dt** - Data type, corresponde ao tipo de dados usados nos Holding register e nos Input register.
+- **dt** - Data type, corresponde ao tipo de dados usados nos Holding register e nos Input register.
 
 ##### Ecrãs
 <a id="scada-ecras"></a>
